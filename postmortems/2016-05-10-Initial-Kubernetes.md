@@ -32,7 +32,7 @@ infrastructure.
 ---
 
 ## Timeline
-*No timeline was kept up to dat, therefore all dataes are approximate and might
+*No timeline was kept up to date, therefore all dates are approximate and might
 not be accurate.*
 
 * 2015-10: Daedalus provisioned.
@@ -66,13 +66,9 @@ Possible Action: IMPROVE, REMOVE, ADD
 
 | Description | Type-Action | Related Issue | Assignee |
 | ----------- | ----------- | ------------- | -------- |
-| Do not seek the perfect solution - implement the basic version and improve
-on that, eg use Gluster initially and then move to proper NFS | PROCESS-IMPROVE
-| | |
-| Save progress live in docs as things are being developed. | PROCESS-IMPROVE |
-| |
-| Store configuration on external servers so the configurations are not lost
-as the servers are decommissioned | CONFIG-ADD | | |
+| Do not seek the perfect solution - implement the basic version and improve on that, eg: use Gluster initially and then move to proper NFS | PROCESS-IMPROVE | | |
+| Save progress live in docs as things are being developed. | PROCESS-IMPROVE | | |
+| Store configuration on external servers so the configurations are not lost as the servers are decommissioned | CONFIG-ADD | | |
 | Develop ways of automatically provisioning new machines | CODE-ADD | | |
  
 
