@@ -64,8 +64,8 @@ not be accurate.*
 Possible Types: PROCESS, CODE, CONFIG  
 Possible Action: IMPROVE, REMOVE, ADD
 
-|-------------|-------------|---------------|----------|
 | Description | Type-Action | Related Issue | Assignee |
+| ----------- | ----------- | ------------- | -------- |
 | Do not seek the perfect solution - implement the basic version and improve
 on that, eg use Gluster initially and then move to proper NFS | PROCESS-IMPROVE
 | | |
