@@ -1,0 +1,15 @@
+dependencies:
+  pre:
+    - pip install mkdocs
+general:
+  branches:
+    ignore:
+      - gh-pages
+test:
+  override:
+    - exit 0
+deployment:
+  production:
+    branch: master
+    commands:
+    - ./scripts/deploy.sh
