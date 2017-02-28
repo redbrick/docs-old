@@ -1,9 +1,6 @@
 # Redbrick system documentation
 
 The idea behind this wiki is to eventually properly document everything that any admin could ever possibly need to know about our setup, which can be a little nightmarish at times if you don't know where to look for things. Hopefully, things will also be kept up to date.
-Try to follow the [syntax guide](wiki/syntax), as it helps everything to remain pretty and orderly. You can test stuff in the [playground](playground/playground).
-
-To change dokuwiki settings or to create an account, login as root (password is in pwsafe). You'll need an account to edit pages.
 
 The search box actually **works** (I was amazed at this. Search isn't meant to work. Ever. For anything).
 
