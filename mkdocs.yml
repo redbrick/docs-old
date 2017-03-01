@@ -3,6 +3,11 @@ theme: readthedocs
 repo_url: https://github.com/redbrick/docs
 pages:
  - Home: index.md
+ - Services:
+   - hey: hey.md
+   - Mercurial: hg.md
+   - Git: git.md
+   - IRC: irc.md
  - 10.04-services-checklist: 10.04-services-checklist.md
  - 10.04move: 10.04move.md
  - 2011-to-do: 2011-to-do.md
@@ -39,14 +44,10 @@ pages:
  - exim: exim.md
  - exim_solaris: exim_solaris.md
  - faststorage: faststorage.md
- - git: git.md
  - gpgkeys: gpgkeys.md
  - gratuitousarp: gratuitousarp.md
- - hey: hey.md
- - hg: hg.md
  - icecast2: icecast2.md
  - imapupdatingcert: imapupdatingcert.md
- - irc: irc.md
  - irc_operator: irc_operator.md
  - ircproxy: ircproxy.md
  - jabber: jabber.md
