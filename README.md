@@ -7,5 +7,10 @@ Migrated from [dokuwiki](https://docs.redbrick.dcu.ie) to [readthedocs](http://r
 # Setup
 Run `pip install --user mkdocs`
 then clone the repo locally to make changes
+
+# Testing locally
+When you do a change make sure it works by building it locally.
+Run `mkdocs serve` to start a local server.
+
 # Deployment
 Docs are auto deployed to readthedocs.io on commit to master
