@@ -3,27 +3,33 @@ theme: readthedocs
 repo_url: https://github.com/redbrick/docs
 pages:
  - Home: index.md
+ - Legacy:
+   - Machines:
+     - Murphy: legacy/machines/murphy.md
+     - Ceilingcat: legacy/machines/ceilingcat.md
+     - Carbon: carbon.md
+   - Procedures:
+     - 10.04-services-checklist: legacy/procedures/10.04-services-checklist.md
+     - 10.04move: legacy/procedures/10.04move.md
+     - Apache on Deathray: legacy/procedures/apacheondeathray.md
+     - Apache on Murphy: legacy/procedures/apacheonmurphy.md
+     - Apache Solaris: legacy/procedures/apachesolaris.md
+   - Services:
+     - Git: legacy/services/git.md
  - Services:
-   - hey: hey.md
-   - Mercurial: hg.md
-   - Git: git.md
-   - IRC: irc.md
- - 10.04-services-checklist: 10.04-services-checklist.md
- - 10.04move: 10.04move.md
+   - hey: services/hey.md
+   - Mercurial: services/hg.md
+   - IRC: services/irc.md
+   - Anyterm: services/anyterm.md
+   - exim: services/exim.md
  - 2011-to-do: 2011-to-do.md
- - abuse: abuse.md
+ - Abuse: abuse.md
  - addldap: addldap.md
- - anyterm: anyterm.md
  - apachemodules: apachemodules.md
- - apacheondeathray: apacheondeathray.md
- - apacheonmurphy: apacheonmurphy.md
- - apachesolaris: apachesolaris.md
  - backport-packages: backport-packages.md
  - bitlbee: bitlbee.md
- - carbon: carbon.md
  - carbonanddeathray: carbonanddeathray.md
  - carbonrebootwarning: carbonrebootwarning.md
- - ceilingcat: ceilingcat.md
  - ciscoios: ciscoios.md
  - committeechangeover: committeechangeover.md
  - compilingxen: compilingxen.md
@@ -41,7 +47,6 @@ pages:
  - docs_mirror_script: docs_mirror_script.md
  - dovecot: dovecot.md
  - dracaccess: dracaccess.md
- - exim: exim.md
  - exim_solaris: exim_solaris.md
  - faststorage: faststorage.md
  - gpgkeys: gpgkeys.md
@@ -69,7 +74,6 @@ pages:
  - murphy-install-log: murphy-install-log.md
  - murphy-jumpstart: murphy-jumpstart.md
  - murphy-zones: murphy-zones.md
- - murphy: murphy.md
  - murphyalomaccess: murphyalomaccess.md
  - murphyliveupgrade: murphyliveupgrade.md
  - murphymysqlclientbug: murphymysqlclientbug.md
