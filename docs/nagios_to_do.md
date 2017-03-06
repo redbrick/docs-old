@@ -15,6 +15,6 @@
 
 *  pf on b4/severus
 
-*  ~~ daniel ~~ - done
+*  <del> daniel </del> - done
 
 *  hadron & Enzyme
