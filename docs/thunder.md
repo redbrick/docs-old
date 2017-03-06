@@ -37,4 +37,4 @@ Thunder is a mysql replication slave. The replication user is called replication
 
 *  It doesn't like talking to USB keyboards.
 
-*  `<del>`One of the older disks (disk 2), may be dodgy.`</del>` They were both dodgy. They died. I cried.
+*  ~~One of the older disks (disk 2), may be dodgy.~~ They were both dodgy. They died. I cried.

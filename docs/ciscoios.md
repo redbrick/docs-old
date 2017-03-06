@@ -1,6 +1,6 @@
 # Cisco IOS
 
-IOS is the OS running on the Cisco switches. It can be terrifying, because one wrong move and you've kicked `<del>`redbrick`</del>` DCU off the internet. It's also very different to anything running on any of the servers.
+IOS is the OS running on the Cisco switches. It can be terrifying, because one wrong move and you've kicked ~~redbrick~~ DCU off the internet. It's also very different to anything running on any of the servers.
 
 ## A Quick Walkthrough
 
