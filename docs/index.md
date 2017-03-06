@@ -47,9 +47,9 @@ New admins, read:
 
 *  [IRC](irc)
 
-*  `<del>`[jabber](jabber)`</del>`
+*  ~~[jabber](jabber)~~
 
-*  `<del>`[peepd](peepd)`</del>`
+*  ~~[peepd](peepd)~~
 
 *  [Webchat (qwebirc)](webchat)
 #### Ldap
@@ -61,7 +61,7 @@ New admins, read:
 
 *  [Current NFS setup](nfs)
 
-*  `<del>`[Fast storage space for users](faststorage)`</del>`
+*  ~~[Fast storage space for users](faststorage)~~
 #### Mail
 
 *  [Exim email setup](exim)
@@ -89,7 +89,7 @@ New admins, read:
 
 *  [tunnel.redbrick.dcu.ie](tunnel.redbrick.dcu.ie)
 
-*  `<del>`[VPN to Severus](severus_vpn)`</del>`
+*  ~~[VPN to Severus](severus_vpn)~~
 
 *  [Switch Setup](Switch)
 
@@ -146,7 +146,7 @@ New admins, read:
 
 *  [Pygmalion](pyg)
 
-*  `<del>`[Carbon](carbon)`</del>`
+*  ~~[Carbon](carbon)~~
 ### Web
 
 #### Murphy
@@ -224,7 +224,7 @@ Stuff from the Ubuntu 6.06 days
 
 *  [basementcat ](basementcat)
 
-*  `<del>` [ceilingcat](ceilingcat)`</del>`
+*  ~~ [ceilingcat](ceilingcat)~~
 ## Hardware
 
 ### Switches
@@ -233,7 +233,7 @@ Stuff from the Ubuntu 6.06 days
 
 *  [hadron](hadron)
 
-*  `<del>`[enzyme](enzyme)`</del>`
+*  ~~[enzyme](enzyme)~~
 
 *  [JunOS](junos) 
 
@@ -249,7 +249,7 @@ Stuff from the Ubuntu 6.06 days
 
 *  [Pike (IP-KVM)](pike)
 
-* `<del>` [Munger (Printer)](munger)`</del>`
+* ~~ [Munger (Printer)](munger)~~
 
 ## Software
 
@@ -332,9 +332,9 @@ This stuff doesn't reflect the current setup, but may be useful sometime.
 
 #### Old Hardware
 
-*  `<del>`[Minerva general setup info](minerva)`</del>`
+*  ~~[Minerva general setup info](minerva)~~
 
-*  `<del>`[Minerva storage setup and performance issues/solutions](minervastorage)`</del>`
+*  ~~[Minerva storage setup and performance issues/solutions](minervastorage)~~
 
 
 # Useful Links
