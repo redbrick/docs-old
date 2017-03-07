@@ -2,7 +2,7 @@
 
 The motd is now part of the [redbrick-motd](redbrick-apt) package. The package includes a cron script to reset it via cron.daily, and an init script to reset it on boot. It also includes the /etc/motd.* files needed for the motd, and /usr/bin/update_motd. /etc/motd.footer and /etc/motd.dat are marked as conffiles in the package, and won't be overwritten, for obvious reasons.
 
-#  Future Suggestions 
+#  Future Suggestions
 
 I planned to do this sometime, but never quite got around to it :(
 
@@ -12,7 +12,7 @@ Anyway, what i'd do is to keep all the current stuff, but to put up a php/mysql 
 
 ## May 2008 - July 2009
 
-As of July 2008 there is no unified motd setup. 
+As of July 2008 there is no unified motd setup.
 
 The "redbrick" motd is only setup on carbon/minerva. On these machines it is updated nightly from /etc/cron.daily/000motd
 
@@ -36,4 +36,3 @@ update_mord_global runs from chair's crontab on minerva
 #### hacks
 
 Note: This is a horrible hack. The motd system will be changed when i have time to write one.
-

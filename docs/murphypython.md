@@ -6,7 +6,7 @@ There are three copies of Python on Murphy:
 
 *  Python 2.5, from the CSW (Blastwave) packages. Under /opt/csw. This is a bit shit, not a lot works. Blastwave is generally shit.
 
-*  Python 2.6, from RSPM (redbrick packages). Under /usr/redbrick/python26. This is the "primary" instance, if you type python at the command prompt it's what will run. /bin/python is symlinked to /usr/redbrick/python26/bin/python. 
+*  Python 2.6, from RSPM (redbrick packages). Under /usr/redbrick/python26. This is the "primary" instance, if you type python at the command prompt it's what will run. /bin/python is symlinked to /usr/redbrick/python26/bin/python.
 
 To install a python package/addon, do one of the following things:
 
@@ -39,4 +39,3 @@ This is a common problem when you install a module that required a library to co
 This happened once or twice to me. It turned out to be a permissions problem. Check that the package installation (located under /usr/redbrick/python26/lib/python2.6/site-packages) has the correct permissions (world readable, etc).
 
 -werdz
-

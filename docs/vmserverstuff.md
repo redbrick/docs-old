@@ -40,4 +40,3 @@ http://www.redbrick.dcu.ie/~werdz/xenshell.png
 http://www.xen-tools.org/software/xen-shell/ <-- opensource management tool that looks like it does lots of lovely things
 
 We tried Xen for a while, and it was nice, but a world of pain to keep up to date.
-

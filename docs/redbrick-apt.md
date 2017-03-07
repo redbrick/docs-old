@@ -11,7 +11,7 @@ The passphrase for the gpg key to sign the release is needed whenever it is upda
 
 ### Easy Way
 
-	
+
 	su rbpkg
 	add_package /path/to/package.deb
 
@@ -25,7 +25,7 @@ The scripts to add packages will use lintian(1) to check the packages. If an err
 
 ### Hard Way
 
-	
+
 	su rbpkg
 	cd ~/public_html/apt
 	reprepro --ask-passphrase -C main -Vb . includedeb stable /path/to/package.deb
@@ -34,7 +34,7 @@ The scripts to add packages will use lintian(1) to check the packages. If an err
 
 This will break permissions on the files :(
 
-	
+
 	chmod 755 `find /webtree/r/rbpkg/apt/dists/ -type d`
 	chmod 644 `find /webtree/r/rbpkg/apt/dists/ -type f`
 	chmod 755 `find /webtree/r/rbpkg/apt/pool/ -type d`
@@ -45,7 +45,7 @@ The add_packages script should be used in preference of adding packages manually
 
 ## Building Packages
 
-http://www.tldp.org/HOWTO/Debian-Binary-Package-Building-HOWTO/ was the simplest guide I could find. 
+http://www.tldp.org/HOWTO/Debian-Binary-Package-Building-HOWTO/ was the simplest guide I could find.
 Most were setup for building big things, which doesn't really apply to us. Most things also focused on building source packages first, which doesn't really apply either.
 
 ### Dummy's Guide to Building New Packages
@@ -79,7 +79,7 @@ Most were setup for building big things, which doesn't really apply to us. Most 
 
 ## Sources.list
 
-	
+
 	deb http://packages.redbrick.dcu.ie/ stable main
 
 
@@ -89,7 +89,7 @@ The keyring can be installed with the redbrick-keyring package, or downloaded fr
 
 In some cases it might be appropriate to package unstable/testing builds for testing environments. The repo contains two components - redbrick and redbrick-test. Packages add with the 'add_testing' script will go into redbrick-test. Users should consider redbrick-test to be unstable-rawhide-development-testing-which-may-eat-your-babies.
 
-	
+
 	deb http://packages.redbrick.dcu.ie/ unstable main
 
 
@@ -136,7 +136,7 @@ Note, the meta dependences included below are mostly provided as an example of w
 *  **redbrick-shell-env**: shell/mutt/slrn/irssi config files. This package contains config files for various things, and as such "Replaces" the config files owned by the original package. This package should only contain config files and should be the only package that "replaces" another for this purpose. The only dependencies of this package should be shells it configures - bash, zsh and packages which /etc/shell_cmd requires to exist - rbquota and redbrick-help. It should "recommend" any other packages which it has config files for.
 
 *  **[peepd-irssi](peepd)**: Irssi scripts to use with peepd.
-    
+
 ## System
 
 
@@ -146,7 +146,7 @@ Note, the meta dependences included below are mostly provided as an example of w
 
 *  **redbrick-logwatch**: Depends logwatch-apt, logwatch-chkrootkit. Moves the log mail time to 12.30pm by default, and mails system-reports. Replaces /etc/cron.daily/00logwatch.
 
-*  **redbrick-root-env**: root shell environment. 
+*  **redbrick-root-env**: root shell environment.
 
 *  **redbrick-nagios-nrpe**: replaces /etc/nagios/nrpe.cfg with global redbrick version. Depends: nagios-nrpe-server, nagios-plugins.
 
@@ -167,7 +167,7 @@ These packages are designed to keep the [backup systems](dirvish) on [thunder](t
 
 *  **redbrick-dirvish**: Contains all the configuration for the dirvish system. Also patches /usr/sbin/dirvish to stop it complaining about error 24.
 
-*  **redbrick-backup-dir**: Contains the directories that need to be created for the Redbrick backup system. 
+*  **redbrick-backup-dir**: Contains the directories that need to be created for the Redbrick backup system.
 
 *  **redbrick-mysqlslave**: Scripts for making backups of slave mysql servers with dirvish.
 
@@ -182,7 +182,7 @@ These packages are designed to keep the [backup systems](dirvish) on [thunder](t
 
 See the list of packages [backported](backport-packages) to hardy from other debian/ubuntu releases.
 
-#  Man Pages 
+#  Man Pages
 
 Everything packaged into /usr/(s)bin should have a corresponding manpage. Not everything has man pages yet, but, I'm adding them as things are upgraded.
 
@@ -197,13 +197,13 @@ The name and directory will depend on the category..
  8.  System administration commands (usually only for root)
  9.  Kernel routines [Non standard]
 
-Generally, RedBrick man pages will be in category 1 or 8. 
+Generally, RedBrick man pages will be in category 1 or 8.
 
 An example script in category 1 would be located in usr/share/man/man1/example-script.1
 
-This is a sample man page you can edit. 
+This is a sample man page you can edit.
 
-	
+
 	.TH script-name 8  "August 2009" "version 0.2" "REDBRICK SYSTEM DOCUMENTATION"
 	.SH NAME
 	script-name \- 1 line description of what I do
@@ -220,7 +220,7 @@ This is a sample man page you can edit.
 	.SH AUTHOR
 	Your Name `<you@redbrick.dcu.ie>`
 	.SH PACKAGING
-	This script is part of the \fBredbrick-example\fR package. This, and other 
+	This script is part of the \fBredbrick-example\fR package. This, and other
 	RedBrick packages are maintained by the RedBrick System Administrators
 	`<adm1ns@redbrick.dcu.ie>`
 

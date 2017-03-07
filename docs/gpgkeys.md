@@ -3,10 +3,10 @@
 These should be put in hard copy somewhere secure (like the Redbrick room), for verification.
 
 werdz, valid until 2011-01-26:
-    
+
  1. ----BEGIN PGP PUBLIC KEY BLOCK-----
     Version: GnuPG v1.4.10 (Darwin)
-    
+
     mQINBEtk/jYBEADO+/xVohRjmhdq6Qz99ip8VgCDgleNn1mObvges26qlgyocQds
     7yqnl7U9TGi5HsjeHhBwu4dSv+P9yrJNvhP+VOv1kTdm5or2NtbrSN5shaaVBIzq
     30nQgXdC1uGkVyrAaBe2bACL2WL4mk16qhk5KjO0xb/WDHcv6H7OarRTZr1x3Yo2

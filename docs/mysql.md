@@ -82,7 +82,7 @@ Since we have multiple slave servers it's possible to use a snapshot of one to s
 
 *  stop the mysql slave server
 
-*  untar this into /var/lib/mysql 
+*  untar this into /var/lib/mysql
 
 *  plan how your going to hurt robin as his 2gb table holds you up AGAIN
 
@@ -107,7 +107,7 @@ Since we have multiple slave servers it's possible to use a snapshot of one to s
 
 *  ` mysql> show slave status\G `
 
-*  Hopefully the status output will look normal. If it doesn't, cry. 
+*  Hopefully the status output will look normal. If it doesn't, cry.
 
 
 ### Step 4: Backup user
@@ -132,7 +132,6 @@ Since we have multiple slave servers it's possible to use a snapshot of one to s
 
 #### mysql-20140308.tar
 
-	
+
 	File: mysql-bin.001721
 	Position: 88417402
-

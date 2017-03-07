@@ -7,7 +7,7 @@ IRCD runs on ircd-hybrid build from the apt source package. It needs to be compi
 Most of the stuff in ircd.conf is fairly obvious. For adding new external users etc. just copy and change one of the existing blocks. After changes are made to the file /rehash as an oper, don't restart it with the init script.
 
 Peers: It's important that autoconn is set to no, apparently due to endian issues or something.
- 
+
 
 * The limit on the network is 9 character nicks, allowing our server to do more than this will result in our server letting people set long nicks, but they'll immediately be kicked off the network. This gets old pretty quick.
 
@@ -39,13 +39,10 @@ OPME is no fun if you can't use it to take over any channel you want, patch cont
 	chan_is_opless(const struct Channel *const chptr)
 	{
 	  const dlink_node *ptr = NULL;
-	
+
 	  DLINK_FOREACH(ptr, chptr->members.head)
 	    if (((struct Membership *)ptr->data)->flags & CHFL_CHANOP)
 	      return(1);
-	
+
 	  return(1);
 	}
-
-
-

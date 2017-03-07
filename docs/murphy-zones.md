@@ -2,12 +2,12 @@
 
 #### ldap pool
 
-	
+
 	[root@murphy ~]# poolcfg -c 'create pset ldap-pset (uint pset.min=4; uint pset.max=4)'
 
 The cpus here refer to vCPUs, of which murphy has 32 (8/4)
 
-	
+
 	[root@murphy ~]# poolcfg -c 'create pool ldap-pool'
 	[root@murphy ~]# poolcfg -c 'associate pool ldap-pool (pset ldap-pset)'
 	[root@murphy ~]# pooladm -c
@@ -16,11 +16,11 @@ The cpus here refer to vCPUs, of which murphy has 32 (8/4)
 
 #### web/db pool
 
-	
+
 	[root@murphy /local/zones]# poolcfg -c 'create pool webdb-pool'
 	[root@murphy /local/zones]# poolcfg -c 'create pset webdb-pset (uint pset.min=4; uint pset.max=4)' 
-	[root@murphy /local/zones]# poolcfg -c 'associate pool webdb-pool (pset webdb-pset)' 
-	[root@murphy /local/zones]# poolcfg -c 'modify pool webdb-pool (string pool.scheduler="FSS")' 
+	[root@murphy /local/zones]# poolcfg -c 'associate pool webdb-pool (pset webdb-pset)'
+	[root@murphy /local/zones]# poolcfg -c 'modify pool webdb-pool (string pool.scheduler="FSS")'
 	[root@murphy ~]# pooladm -c
 
 
@@ -34,7 +34,7 @@ The cpus here refer to vCPUs, of which murphy has 32 (8/4)
 
 #### web zone
 
-	
+
 	[root@murphy /local/zones]# zonecfg -z webhost
 	webhost: No such zone configured
 	Use 'create' to begin configuring a new zone.
@@ -48,7 +48,7 @@ The cpus here refer to vCPUs, of which murphy has 32 (8/4)
 
 Repeat the last 4 lines for each address to be assigned
 
-	
+
 	zonecfg:webhost> set pool=webdb-pool
 	zonecfg:webhost> add rctl
 	zonecfg:webhost:rctl> set name=zone.cpu-shares
@@ -71,7 +71,7 @@ Repeat the last 4 lines for each address to be assigned
 
 #### db zone
 
-	
+
 	[root@murphy ~]# zonecfg -z dbhost
 	dbhost: No such zone configured
 	Use 'create' to begin configuring a new zone.
@@ -93,13 +93,13 @@ Repeat the last 4 lines for each address to be assigned
 	zonecfg:dbhost:fs> set type=lofs
 	zonecfg:dbhost:fs> end
 	zonecfg:dbhost> verify
-	zonecfg:dbhost> commit 
+	zonecfg:dbhost> commit
 	zonecfg:dbhost> exit
 
 
 #### ldap zone
 
-	
+
 	zonecfg:ldaphost> create
 	zonecfg:ldaphost> set zonepath=/local/zones/ldaphost
 	zonecfg:ldaphost> set autoboot=true
@@ -116,4 +116,3 @@ Repeat the last 4 lines for each address to be assigned
 	zonecfg:ldaphost> verify
 	zonecfg:ldaphost> commit
 	zonecfg:ldaphost> exit
-

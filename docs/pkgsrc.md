@@ -54,7 +54,7 @@ Use pkg_chk to install all updates (from source).
 
 ## Updating a single package
 
-First, update the ports tree as above. Make sure HTTP_PROXY is set right. Then update the port. 
+First, update the ports tree as above. Make sure HTTP_PROXY is set right. Then update the port.
 
 In this example, we'll update vim.
 

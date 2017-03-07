@@ -14,7 +14,7 @@
 
 #### Don't Bork my motd pls
 
-	
+
 	# DON'T TOUCH THE MOTD - PATCH BY RECEIVE MARCH 09
 	#if [ ! -f /etc/motd ]; then
 	#       install -c -o root -g wheel -m 664 /dev/null /etc/motd
@@ -30,7 +30,7 @@
 
 #### syslog-ng
 
-	
+
 	echo 'starting system logger (syslog-ng)'
 	#rm -f /dev/log
 	#if [ X"${named_flags}" != X"NO" ]; then
@@ -44,4 +44,3 @@
 	#fi
 	#syslogd ${syslogd_flags}
 	/usr/local/sbin/syslog-ng
-

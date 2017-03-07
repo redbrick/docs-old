@@ -21,5 +21,3 @@ Insert it into the database by doing a simple:
 ''sqlite> update user_table set password="llllooooonnnnngggggghhhhaaaaasssssshhhhhh" where username="username"''
 
 .quit and gtfo there.
-
-

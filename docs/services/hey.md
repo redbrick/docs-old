@@ -33,7 +33,5 @@ The group huh should be added to /etc/group. Syslog-ng will automatically make t
 
 The huh binary should then be setgid huh so that it can read the file.
 
-    [receive@minerva ~]% ls -ld /usr/bin/huh 
+    [receive@minerva ~]% ls -ld /usr/bin/huh
  1. rwx--s--x 1 root huh 26K 2008-12-18 22:33 /usr/bin/huh
-
-

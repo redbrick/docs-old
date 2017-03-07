@@ -5,7 +5,7 @@
 
 *  Set up auth (we want to use ident same user. Details of this are [here](http://www.postgresql.org/docs/8.3/interactive/auth-pg-hba-conf.html). We should need a rule something like
 
-	
+
 	host all all 136.206.15/24 ident sameuser
 
 

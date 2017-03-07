@@ -29,5 +29,3 @@ It might also be useful for clubs and socs days, if anyone is adventurous enough
 The machine is left on most of the time, and can be accessed via SSH at ceilingcat.redbrick.dcu.ie. Do not rely on being able to access it, though, as it tends to be rebooted far more often than, say, a server.
 
 If any root holders want an account on it, bug one of the current admins.
-
-

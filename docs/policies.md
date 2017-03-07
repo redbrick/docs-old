@@ -66,7 +66,7 @@ Couple of things to look out for:
 
 *  Elected admins should also be on the elected-admins list. This address is mainly used for mail to paypal and stuff.
 
-*  There is also a [redbrick-fallout](http://groups.google.ie/group/redbrick-fallout) list on google which admins should join, for like when shit happens :) 
+*  There is also a [redbrick-fallout](http://groups.google.ie/group/redbrick-fallout) list on google which admins should join, for like when shit happens :)
 
 ## Admin Account Responsibilities
 
@@ -112,6 +112,3 @@ Read up on past incidents (in the encyclopedia) namely:
 *  Pumpkin Incident, The
 
 *  Spike
-
-
-

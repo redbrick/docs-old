@@ -2,11 +2,11 @@
 
 # Current Ldap Setup
 
-Ldap is running on Morpheus. The secondary ldap should be setup on deathray as soon as it is re-installed, and setup as a slave. 
+Ldap is running on Morpheus. The secondary ldap should be setup on deathray as soon as it is re-installed, and setup as a slave.
 
 ## The ldap schema
 
-Our ldap schema isn't compatible with the current openldap schema. To get around this I tried to use the old ones from ubuntu 6.06 carbon, but this failed miserably. In the end we told ldap to run with our schema + it's default schema, started slapd in debug mode making changes (read: deleted bits) to the schema files until it would actually start. This took *ages*. 
+Our ldap schema isn't compatible with the current openldap schema. To get around this I tried to use the old ones from ubuntu 6.06 carbon, but this failed miserably. In the end we told ldap to run with our schema + it's default schema, started slapd in debug mode making changes (read: deleted bits) to the schema files until it would actually start. This took *ages*.
 
 The new modified schema files are in /etc/ldap/schema/redbrick. Common, system and userdb are redbrick written schema files. I've no idea where solaris.schema or DUAConfigProfile.schema came from, or if we even really need it. The rest are butchered versions of the ones supplied with openldap.
 
@@ -82,7 +82,7 @@ Dizer: Yes
 
 No, won't hurt, but didn't seem to really help either. I'm not sure what timeout it uses or how many times it retries, but the failover to secondary never worked, basically. Every single ldap request was attempted against the primary, then supposed it's supposed to failover to the secondary, but there was either too many requests coming in and the timeout was too large, or this feature is as badly broken as the rest of ldap...
 
-Ryaner: ldap's timout seem weird. If it connects but doesnt get a response it seems to just sit there waiting and waiting. I've yet to find a proper timeout anywhere in the configs which is a bit of a problem. But if the ldap host goes down, ldap *shouldnt* be able to connect and then pass to it's fallover. I think :) 
+Ryaner: ldap's timout seem weird. If it connects but doesnt get a response it seems to just sit there waiting and waiting. I've yet to find a proper timeout anywhere in the configs which is a bit of a problem. But if the ldap host goes down, ldap *shouldnt* be able to connect and then pass to it's fallover. I think :)
 
 Actually after looking though the two files you showed me above, there is idle timeouts it them so they might be an idea to enable them. Testing them
 would involved have the backup running and killing ldap on carbon which could be messy.
@@ -110,7 +110,7 @@ Again, this is why we need to upgrade to see if these issues have been fixed. If
 
 Ryaner: I've seen some of the issues with it. Nice corrupt db being talked about. I didnt however see the acl issue. All I have gotten was just a simple sitting there doing nothing or it spitting out that it was ignoring all the missing entries on prodigy. Thats why I'd thought of a reindex. Doing the reindex now shouldnt cause any issues should it? It'd allow ldap backup to be up for short term which *could* help thing. Although crash other day looked like nfs caused it.
 
-As for idea of central server above, the idea is that ldap would run on a central box that just does ldap and no login stuff. All queries go to that system and modification ONLY take place on that db. If it goes down, the machines fallback to their own local, readonly database (presuming a readonly one is possible?) and no changes can be made until the central server comes back online. With the central server, upgrades to ldap would be alot easier to do and there wouldnt be any really nasty issues with sync's (hopefully). 
+As for idea of central server above, the idea is that ldap would run on a central box that just does ldap and no login stuff. All queries go to that system and modification ONLY take place on that db. If it goes down, the machines fallback to their own local, readonly database (presuming a readonly one is possible?) and no changes can be made until the central server comes back online. With the central server, upgrades to ldap would be alot easier to do and there wouldnt be any really nasty issues with sync's (hopefully).
 
 Dizer: Yup. It's all been said before and it's a good idea. Only issues are that any tool that uses modifications needs one ldap.conf, anything that just reads needs another. This isn't as easy as you might think. That said, I'm sure there are ways around it, but it'd certainly need some work. I'd be all for having:
 
@@ -127,7 +127,7 @@ WRT the reindex of Prodigy now, I agree, it might help, but I think you're looki
 
 Ryaner: Well the idea on ldap would be to have it totally seperate from any login box. That way it wouldnt be down for any maintaince etc due to other packages needing upgrading. It wouldnt generate much load either so a lowish spec machine *should* do the job.
 
-###### 
+######
 
 Dizer: Well. It doesn't make much difference does it? Your dedicated LDAP box might crash too? If Deathray goes down, you lose the LDAP master, but you still have your slaves, no updates can happen. But if you lose your dedicated LDAP master, the same applies.. The added advantage of using Deathray is our LDAP master is on a machine with a guarantee and that has quality hardware. You don't want to put something this important on a piece of crap :)
 
@@ -135,7 +135,7 @@ Ryaner: That is a good point. The thought was that a dedicated machine would go 
 
 Dizer: Heh. Deathray should *never* go down. It's up to us to make that so :)
 
-###### 
+######
 
 In regards upgrades, if there is a central server, upgrades would only need to be applied to it to have a 'working' ldap setup. For slurpd to work we then bring back the other local db's one by one after their upgrades. Any problem with the master upgrade would be hidden / kinda. Prob no advantage over the setup you suggested above except that deathray wouldnt be used as the main server. Deathray does go down for upgrades etc at times so it would be better not to use it I think.
 
@@ -143,11 +143,11 @@ WRT? Dunno what that means :) And as for the index, it'd mainly be a temp soluti
 
 WRT = With regard to.
 
-###### 
+######
 
 Okay, makes some sense. I wouldn't invest too much time in it though, there's no reason the 'overhaul' can't happen semi-immediately as far as I'm concerned.
 
-###### 
+######
 
 Ryaner: Concern has been expressed that the other admins havent being told exactly whats happening with the whole thing. Maybe do up same little plan and mail the admins list with whats gonna happen that then once replies come just do the setup.
 
@@ -162,7 +162,7 @@ Timeouts
 Bind:   120
 query:  10              (low but each login is it's own query)
 
-###### 
+######
 
 NFS -> Oh yeah? What was the problem? Incompatible mount versions?
 

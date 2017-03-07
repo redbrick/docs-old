@@ -42,17 +42,15 @@ Upstart script /etc/init/webchat.conf
     #
     # Customised version of qwebirc powering Redbrick webchat
     # http://bitbucket.org/werdz/redbrick-qwebirc
-    
+
     #description     "webchat daemon"
     #author          "Andrew Martin `<werdz@redbrick.dcu.ie>`"
-    
+
     start on runlevel [2]
     stop on runlevel [16]
-    
+
     chdir /opt/redbrick-qwebirc
-    
+
     exec run.py -n -i 136.206.15.74
-    
+
     respawn
-
-

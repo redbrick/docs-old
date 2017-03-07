@@ -14,7 +14,7 @@ Each package will have it's own package section:
 (package info goes here)
 --- end package RBdummy ---`</file>`
 
-In this case, RBdummy is the package identifier. Identifiers must be unique throughout the packaging system. 
+In this case, RBdummy is the package identifier. Identifiers must be unique throughout the packaging system.
 
 Inside the package section, you can add single-line fields or multi-line fields. Single-line fields are in the following format:
 
@@ -79,13 +79,13 @@ The following **multi-line** fields are optional for a package:
 
 As soon as the chroot environment has been created, the package tarball downloaded from the vendor site is extracted to a directory under the chroot's /tmp. The chroot is then entered and the script changes to the directory containing the package's source code.
 
-This gives you an environment to run the usual configure, make and make install commands. For programs that use this process, it's usually appropriate to set --prefix=/usr/redbrick/[basedir] (as set in the basedir section) so that the software is installed cleanly to that location by make install. 
+This gives you an environment to run the usual configure, make and make install commands. For programs that use this process, it's usually appropriate to set --prefix=/usr/redbrick/[basedir] (as set in the basedir section) so that the software is installed cleanly to that location by make install.
 
 For programs that don't need to be compiled (or that use a different build process), make sure that by the time the build script has exited, the program exists in the chroot environment as it should be installed by pkgadd. This generally entails manually creating /usr/redbrick/[basedir], and copying any required files to it. You may also have to install any external configuration files to /etc, or similar.
 
 Once the build script successfully finishes, the chroot is exited and the prebuild (as in pre-package-build) script is run. You can use this to move any external /etc entries to the /usr/redbrick/[basedir] directory so that pkgmk will pick them up and include them with the distribution. **Yes, I know this puts the package in a bad (non-runnable) state. This can be fixed later.** If you don't have any external bits, you can mostly ignore this section. Please bear in mind that **the prebuild script is not run from inside the chroot!** It's run relative to the actual root. The current working directory for this script is inside the basedir within the chroot (but you're not locked in, you could cd to / and actually break things).
 
-Once this is done, the package is built from everything that's inside $location_of_chroot/usr/redbrick/[basedir]. 
+Once this is done, the package is built from everything that's inside $location_of_chroot/usr/redbrick/[basedir].
 The postinstall script specified in the postinstall section is also included. Pkgadd will run this after the installation has completed - this is where you get the chance to relocate any external files, such as /etc entries. I suggest doing tests to see if the file exists already, so that (for example) upgrading apache doesn't wipe out the existing configuration.
 
 More advanced postinstall scripts could also be written to write out a redbrick standard configuration for a package, if you wanted.
@@ -99,13 +99,13 @@ The process used by RSPM when checking the version of a new package is as follow
 
 *  Download the web page specified by **version_check_url**. Look for a version number using the regular expression specified in **version_check_regex**.
 
-*  Split the version number found (for example, 1.4.13a) into its constituent parts using **version_regex**. For an application that used the versioning scheme shown in this example, the version regex might be something like (\d+)\.(\d+)\.(\d+)([a-z]*). The important parts to bear in mind are the groupings. The order in which these are evaluated is significant - version 1.5.9 is obviously newer then 1.4.13a, even though the latter has a letter component, and 13 is greater then 9. The order in which components should be evaluated is specified in **version_rules**. 
+*  Split the version number found (for example, 1.4.13a) into its constituent parts using **version_regex**. For an application that used the versioning scheme shown in this example, the version regex might be something like (\d+)\.(\d+)\.(\d+)([a-z]*). The important parts to bear in mind are the groupings. The order in which these are evaluated is significant - version 1.5.9 is obviously newer then 1.4.13a, even though the latter has a letter component, and 13 is greater then 9. The order in which components should be evaluated is specified in **version_rules**.
 
 *  **version_rules** is specified as a set of integers. In the example given, the appropriate order would be simply "1 2 3 4". In most cases, this will be simply an ascending sequence of integers up until the number of regular expression groupings is reached. The algorithm for determining whether a version is greater or less than an existing version is as follows:
 
     new_groups = apply version_regex to new_version
     old_groups = apply version_regex to old_version
-    
+
     for each entry e in version_rules
      if new_groups[e] > old_groups[e] then
         new_version is newer, we're done.
@@ -113,7 +113,7 @@ The process used by RSPM when checking the version of a new package is as follow
         old_groups[e] is newer, we're done.
      end if
     end for
-    
+
     neither version appears to be newer, therefore they're the same.
 
 The comparisons shown will treat both sides as an integer if neither side contains any non-numerical characters, otherwise a lexical comparison is carried out.
@@ -132,7 +132,7 @@ The three numerical components go major-minor-subminor, so should be evaluated f
     version_regex (\d+)\.(\d+)\.(\d+)([a-zA-Z]*)
     version_rules 1 2 3 4
 
-The * operator in the regex means "zero or more", so the last component is optional. RSPM will ignore it if it's not there. 
+The * operator in the regex means "zero or more", so the last component is optional. RSPM will ignore it if it's not there.
 
 **A project where the version scheme is a date in the format MM-DD-YYYY-NN, where NN is the release number for a given day. (e.g. the second release on a given day will have NN set to 02).**
 

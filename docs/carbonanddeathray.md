@@ -16,5 +16,3 @@ Eventually, maybe the following service layout:
 *Note - Sec(ondary) web isn't a full fledged copy of what we're running on Murphy right now. Rather, it would be a place for the random little tidbits that really shouldn't go down when the important machines go down (ie. the kind of crap we're running on obelisk right now - these docs, anyterm, irc proxy, etc). Obelisk is a heap of junk compared to cynic.*
 
 Once the twins are done, we should look into the least painful way to upgrade minerva and severus (severus being the far easier one) to Hardy.
-
-

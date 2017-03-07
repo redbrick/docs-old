@@ -1,9 +1,9 @@
 ### murphy_config
 
-	
+
 	install_type    initial_install
 	system_type     server
-	
+
 	#
 	# Disk Partitions
 	#
@@ -16,7 +16,7 @@
 	filesys         c1t1d0s4        free    /solarisaids
 	metadb          c1t0d0s5        size 8192       count 2
 	metadb          c1t1d0s5        size 8192       count 2
-	
+
 	#
 	# Sun Packages
 	#
@@ -42,19 +42,19 @@
 	cluster         SUNWCxorglibs   delete
 	cluster         SUNWCxorgserver delete
 	cluster         SUNWCxscreensaver       delete
-	
+
 
 
 ### rules.ok
 
-	
+
 	any - -    murphy_profile  -
 	# version=2 checksum=2254
 
 
 ### sysidcfg
 
-	
+
 	system_locale=en_IE.UTF-8
 	install_locale=en_IE.UTF-8
 	timezone=Eire
@@ -66,15 +66,15 @@
 	                        netmask=255.255.255.0
 	                        protocol_ipv6=no
 	                        default_route=136.206.15.254 }
-	
+
 
 
 
 
 ### installer output
 
-	
-	
+
+
 	System identification complete.
 	Starting Solaris installation program...
 	Searching for JumpStart directory...
@@ -91,7 +91,7 @@
 	Begin script install_begin execution completed.
 	Processing default locales
 	        - Specifying default locale (en_IE.UTF-8)
-	
+
 	Processing profile
 	        - Selecting cluster (SUNWCall)
 	        - Deselecting cluster (SUNWCapache)
@@ -124,7 +124,7 @@
 	        - Selecting locale (en_IE.UTF-8)
 	WARNING: SUNWtltk depends on SUNWdtdmr, which is not selected
 	WARNING: SUNWtltkd depends on SUNWdtbas, which is not selected
-	
+
 	WARNING: SUNWtsg depends on SUNWdtbas, which is not selected
 	WARNING: SUNWmcc depends on SUNWdtbas, which is not selected
 	WARNING: SUNWmcon depends on SUNWtcatu, which is not selected
@@ -190,20 +190,20 @@
 	        - Configuring swap (c1t1d0s3)
 	        - Configuring /fuckingpos (c1t0d0s4)
 	        - Configuring /solarisaids (c1t1d0s4)
-	
+
 	Verifying disk configuration
-	
+
 	Verifying space allocation
 	        - Total software size:  2681.96 Mbytes
-	
+
 	Preparing system for Solaris install
-	
+
 	Configuring disk (c1t0d0)
 	        - Creating Solaris disk label (VTOC)
-	
+
 	Configuring disk (c1t1d0)
 	        - Creating Solaris disk label (VTOC)
-	
+
 	Creating and checking UFS file systems
 	        - Creating / (c1t0d0s0)
 	        - Creating /local (c1t0d0s2)
@@ -211,7 +211,7 @@
 	        - Creating  (c1t1d0s0)
 	        - Creating  (c1t1d0s2)
 	        - Creating /solarisaids (c1t1d0s4)
-	
+
 	Creating SVM Meta Devices. Please wait ...
 	        - Creating SVM State Replica on disk c1t0d0s5
 	        - metadb: murphy: network/rpc/meta:default: failed to enable/disable SVM service
@@ -219,72 +219,72 @@
 	        - metadb: waiting on /etc/lvm/lock
 	        - Creating SVM Mirror Volume d10 (/)
 	        - Creating SVM Mirror Volume d20 (/local)
-	
+
 	Beginning Solaris software installation
-	
+
 	Starting software installation
-	
+
 	 [ snip lots of stuff ]
-	
+
 	Completed software installation
-	
+
 	Solaris 10 software installation succeeded
-	
+
 	Customizing system files
 	        - Mount points table (/etc/vfstab)
 	        - Network host addresses (/etc/hosts)
 	        - Environment variables (/etc/default/init)
-	
+
 	Cleaning devices
-	
+
 	Customizing system devices
 	        - Physical devices (/devices)
 	        - Logical devices (/dev)
-	
+
 	Installing boot information
 	        - Installing boot blocks (c1t0d0s0)
 	        - Installing boot blocks (/dev/rdsk/c1t0d0s0)
 	        - Installing boot blocks (/dev/rdsk/c1t1d0s0)
-	
+
 	Installation log location
 	        - /a/var/sadm/system/logs/install_log (before reboot)
 	        - /var/sadm/system/logs/install_log (after reboot)
-	
+
 	Installation complete
 	        - Making SVM Mirror Volume as boot device (/dev/md/dsk/d10)
 	Executing SolStart postinstall phase...
 	Executing finish script "patch_finish"...
-	
-	
+
+
 	Finish script patch_finish execution completed.
 	Executing JumpStart postinstall phase...
-	
+
 	The begin script log 'begin.log'
 	is located in /var/sadm/system/logs after reboot.
-	
+
 	The finish script log 'finish.log'
 	is located in /var/sadm/system/logs after reboot.
-	
-	
-	
+
+
+
 
 
 
 ### big shit we should get rid of
 
-	
-	SUNWmlib         mediaLib shared libraries 
-	SUNWacroread     Acrobat Reader for PDF files 
+
+	SUNWmlib         mediaLib shared libraries
+	SUNWacroread     Acrobat Reader for PDF files
 
 
 
 ### monday install-1
 
-	
-	
+
+
 	Processing default locales
 		- Specifying default locale (en_IE.UTF-8)
-	
+
 	Processing profile
 		- Selecting cluster (SUNWCall)
 		- Deselecting cluster (SUNWCapache)
@@ -439,6 +439,3 @@
 		- Configuring swap (c1t1d0s3)
 		- Configuring /fuckingpos (c1t0d0s4)
 		- Configuring /solarisaids (c1t1d0s4)
-	
-
-

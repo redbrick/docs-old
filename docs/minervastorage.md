@@ -24,7 +24,7 @@ echo 60 > /proc/sys/vm/dirty_ratio\\
 blockdev --setra 16384 /dev/sda
 ''
 
-These increased performance a little, but not hugely. 
+These increased performance a little, but not hugely.
 
 We contacted encom, but they just directed us to the 3ware KB article.
 

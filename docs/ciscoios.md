@@ -10,17 +10,17 @@ When you log in first, you might have a prompt looking something like "hadron>".
     hadron>enable
     Password:
     hadron#
-Wowsers, your shell prompt has changed. The # indicates root, like on a Unix system. You can also break things from this point on. So again, please don't break anything. 
+Wowsers, your shell prompt has changed. The # indicates root, like on a Unix system. You can also break things from this point on. So again, please don't break anything.
 
 Let's look at some information about the switch. Type "sh ver":
-    
+
     hadron#sh ver
     Cisco IOS Software, C3560 Software (C3560-IPSERVICESK9-M), Version 12.2(50)SE3, RELEASE SOFTWARE (fc1)
     Technical Support: http://www.cisco.com/techsupport
     Copyright (c) 1986-2009 by Cisco Systems, Inc.
     Compiled Wed 22-Jul-09 06:41 by prod_rel_team
     Image text-base: 0x01000000, data-base: 0x02D00000
-    
+
     (...lots more information...)
     hadron#
 
@@ -32,9 +32,9 @@ Now examine the running config. Type "sh running":
     service timestamps debug uptime
     service timestamps log uptime
     service password-encryption
-    
+
     (...lots more information, until you get to...)
-    
+
     interface GigabitEthernet0/1
    description link to enzyme
    switchport access vlan 122
@@ -79,5 +79,3 @@ Tada! Type "disable" if you want to drop to user mode (no, it won't disable the 
 
 http://eirik.sier.no/cisco-ios-cheat-sheet/ - Where I learned everything I know about IOS. Which isn't a lot.\\
 http://www.pantz.org/software/ios/ioscommands.html - Some IOS commands.
-
-

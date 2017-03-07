@@ -33,7 +33,7 @@ How to modify something in LDAP, like, oh, say, disusering somebody.
 
 Create a file with something similar to this:
 
-	
+
 	dn: uid=username,ou=accounts,o=redbrick
 	changetype: modify
 	replace: loginShell
@@ -56,7 +56,7 @@ Occasionally you'll need to add people or things to ldap manually, such as a use
 
 Put the information you would like to add into a file, or if its short or one entry you can use stdin, in the case of adding a reserved name the file should look something like this, replacing both instances of redbrick with the reserved name you would like to add:
 
-	
+
 	$cat update.reservered
 	dn: uid=redbrick,ou=reserved,o=redbrick
 	uid: redbrick
@@ -96,7 +96,7 @@ Done, if you opted to use stdin, leave the -f off the end of the command, paste 
 *  Edit /etc/defaults/slapd to set hostname to ldap://Server.internal.ip.address:389/
 
 *  Sacrifice lamb - start slapd
- 
+
 Check contents of ldap directory using: ldapsearch -xLLL -D cn=root,ou=ldap,o=redbrick -y /etc/ldap.secret -h Server.internal.ip.address | less
 ### Setting Up a Secondary Server - Replication
 
@@ -110,48 +110,48 @@ For detailed information on all this see  http://www.openldap.org/doc/admin24/re
 
 ACL's:
 
-	
+
 	access to dn.children="ou=2002,ou=accounts,o=redbrick"
 	            by dn.regex="cn=root,ou=ldap,o=redbrick" write
 	            by dn.regex="cn=slurpd,ou=ldap,o=redbrick" read
 	            by * none
-	
+
 	access to dn.children="ou=accounts,o=redbrick" attrs=cn
 	        by dn.regex="cn=root,ou=ldap,o=redbrick" write
 	        by dn.regex="cn=slurpd,ou=ldap,o=redbrick" read
 	            by self read
 	            by * none
-	
+
 	access to attrs=yearsPaid,year,course,id,newbie,altmail
 	        by dn.regex="cn=root,ou=ldap,o=redbrick" write
 	        by dn.regex="cn=slurpd,ou=ldap,o=redbrick" read
 	        by self read
 	        by * none
-	
+
 	access to attrs=userPassword
 	        by dn.regex="cn=root,ou=ldap,o=redbrick" write continue
 	        by dn.regex="cn=slurpd,ou=ldap,o=redbrick" read
 	        by self write
 	            by anonymous auth
 	            by * none
-	
+
 	access to attrs=gecos,loginShell
 	        by dn.regex="cn=root,ou=ldap,o=redbrick" write continue
 	        by dn.regex="cn=slurpd,ou=ldap,o=redbrick" read
 	            by self write
 	            by * read
-	
+
 	# Default ACL
 	access to *
 	         by * read
-	
+
 	overlay syncprov
 	syncprov-checkpoint 100 10
 
 
 * The following needs to be added to the slaves slapd.conf, to configure it as a slave, this assumes you've copied the primary's config, but removed the last 2 lines above and all above references to the slurpd user.
 
-	
+
 	syncrepl rid=000
 	        provider=ldap://192.168.0.2:389
 	        type=refreshAndPersist
@@ -171,7 +171,7 @@ ACL's:
 
 ## Re-syncing Secondary LDAP Servers
 
-In the event a secondary server becomes out of sync with the master, it can be synced by stopping the server, deleting its database files, Currently: 
+In the event a secondary server becomes out of sync with the master, it can be synced by stopping the server, deleting its database files, Currently:
 `root@secondaryldapserver#: rm -rf /var/lib/ldap/*`
 And then restarting the server, provided its configured as above this triggers a dump of the current state of the master
 

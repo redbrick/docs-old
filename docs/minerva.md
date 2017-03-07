@@ -68,7 +68,7 @@ Swap isn't in RAID 1 like the rest of them as the OS will stripe it by default i
 
 ## Network
 
-Connected to internal and external LANs via the integrated Intel ethernet controller. 
+Connected to internal and external LANs via the integrated Intel ethernet controller.
 
 
 ## Things to be aware of
@@ -83,10 +83,9 @@ Read [this page](minervastorage).
 
 ## IMAP
 
-imap.redbrick.dcu.ie is currently ran from minerva, with courier. It is planned to replace courier. 
+imap.redbrick.dcu.ie is currently ran from minerva, with courier. It is planned to replace courier.
 
 
 ## IRC
 
 Ircd is on minerva. This will move once services are re-organised following a re-install of deathray in 2009
-

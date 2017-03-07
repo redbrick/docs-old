@@ -1,6 +1,6 @@
 # Fast storage space for users
 
-We decided to offer users a small amount of space on deathray's disk array, as it's far faster than minerva's. This is useful for people who, for example, use redbrick email extensively, and don't want to wait an epoch for mutt to load. 
+We decided to offer users a small amount of space on deathray's disk array, as it's far faster than minerva's. This is useful for people who, for example, use redbrick email extensively, and don't want to wait an epoch for mutt to load.
 
 It's mounted as /fast-storage on all machines, and we're starting off by offering 300MB per user (of course they can ask if they want more).
 
@@ -14,6 +14,3 @@ The user directory will be created in /fast-storage/users/u/username, and will b
 ## TODO
 
 Set up backups for this array. <- Done - lil_cain
-
-
-

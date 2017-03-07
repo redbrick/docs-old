@@ -4,7 +4,7 @@ Pike is an 8 port IP-KVM purchased by johan from startech.com in 2009. As of May
 
 The machines are:
     1. Morpheus
-    2. 
+    2.
     3. Minerva
     4. Thunder
     5. Deathray
@@ -33,7 +33,7 @@ The web control interface is on https (port 443). You will need to open an ssh t
 
 The web interface allows configuring settings. It also has some kind of java vnc thing I think, but I wouldn't bother with that.
 
-###  VNC access 
+###  VNC access
 
 Also, requires an ssh tunnel....
 

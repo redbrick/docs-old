@@ -4,7 +4,7 @@ The point of this page is to dump ideas which could be cool/useful/interesting, 
 
 Most of these projects don't require being an admin to work on, in any case, you can drop a message to whoever suggested the project to talk about it. If you would like to suggest a project, but don't have a docs account, just message one of the admins.
 
-##  Small Scripts 
+##  Small Scripts
 
 
 *  You've just installed a new machine. However, redbrick's ldap groups (member, associat, and so on) are on gids already used by stupid ubuntu system ids. Script something to go through the groups in ldap, and make sure there's no conflicts. If there are, you need to change the gid of the group in /etc/group, and then chown all the files owned by that group to the new gid. for extra credit, you should then insert the ldap groups into /etc/group, and sort it by gid.  --- //[Eoghan Cotter](johan@redbrick.dcu.ie) 2009/05/16 16:28// Working on this, see /srv/admin/scripts/check_fix_gids.sh
@@ -63,6 +63,5 @@ Most of these projects don't require being an admin to work on, in any case, you
        * you could mount them rw on a mount point that was chmoded 700, and then remount them somewhere else ro that users can actually read. Hack, but it'll work.
      * Mount and offer to members as slow-storage for large files
 
-*  Post Install Script for ubuntu to automaticaly fix security and other bugs, may also automatically install certain packages see [ New Installs Page](newinstalls) for list of common bugs to be fixed 
+*  Post Install Script for ubuntu to automaticaly fix security and other bugs, may also automatically install certain packages see [ New Installs Page](newinstalls) for list of common bugs to be fixed
  1. -something like 'apt-get install redbrick-server'? The only thing this doesn't do, iirc, is change the config on sshd to prevent root logins
-    

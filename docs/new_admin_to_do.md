@@ -1,11 +1,11 @@
 ## Deathray
 
-*  Secondary Mail 
+*  Secondary Mail
 
 *  Secondary Boards
 ## Murphy
 
-*  Sort out tomcat 
+*  Sort out tomcat
 
 *  Set up rails/passenger
 
@@ -19,13 +19,13 @@
 *  Get a Cable to connect warmstart to secondary PDU
 
 
-##  Halfpint 
+##  Halfpint
 
 *  Set up MRTG
 
 *  Finish setting up RANCID
 
-*  [nagios_to_do](nagios_to_do) 
+*  [nagios_to_do](nagios_to_do)
 
 
 ##  daniel

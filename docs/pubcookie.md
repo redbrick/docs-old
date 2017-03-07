@@ -8,13 +8,13 @@ This page document's [murphy](murphy)'s pubcookie setup. This has changed a litt
 RSPM manages the pubcookie build. This is the build script:
 
     #!/bin/bash
-    
+
     # Fix configure script
     sed 's/ln -sf/ln -s/' configure > configure.solaris
     mv configure configure.gnuln
     mv configure.solaris configure
     chmod 755 configure
-    
+
     ./configure \
    --prefix=/usr/redbrick/pubcookie \
    --enable-login \
@@ -23,10 +23,10 @@ RSPM manages the pubcookie build. This is the build script:
    --enable-apache \
    --with-apxs=/usr/redbrick/apache2/bin/apxs \
    --with-ssl=/usr/sfw
-    
+
     make
     make install
-    
+
     cp -Prp /usr/redbrick/apache2/modules/mod_pubcookie.so /usr/redbrick/pubcookie/
 
 
@@ -61,5 +61,3 @@ Then run:
 The SMF thingy should then be created.
 
 Documentation for the exact format of inetd.conf is at http://docs.sun.com/app/docs/doc/816-5174/inetd.conf-4?l=en&a=view&q=inetd.conf+solaris+10
-
-

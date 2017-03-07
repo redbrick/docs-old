@@ -60,7 +60,7 @@
 
 19:22 `< tbolt>` koffee: What's going on? Anything I can help with?
 
-19:25 `< koffee>` check the email it gives a tl;dr but need to see why the initramfs or initrd despite explicitly 
+19:25 `< koffee>` check the email it gives a tl;dr but need to see why the initramfs or initrd despite explicitly
 telling grub where the bootloader and root partition is
 
 19:25 `< tbolt>` Did this work before? When was the last time we rebooted?
@@ -72,4 +72,3 @@ telling grub where the bootloader and root partition is
 19:26 `< koffee>` the fstab is intact and pointing at the correct UUID
 
 19:34 `< tbolt>` ah okay
-

@@ -1,6 +1,6 @@
 ### sysidcfg
 
-	
+
 	system_locale=en_IE.UTF-8
 	install_locale=en_IE.UTF-8
 	timezone=Eire
@@ -12,13 +12,13 @@
 	                        netmask=255.255.255.0
 	                        protocol_ipv6=no
 	                        default_route=136.206.15.254 }
-	
-	
+
+
 
 
 ### rules.ok
 
-	
+
 	any - -    murphy_profile  -
 	# version=2 checksum=2254
 
@@ -26,10 +26,10 @@
 
 ### murphy_profile
 
-	
+
 	install_type    initial_install
 	system_type     server
-	
+
 	#
 	# Disk Partitions
 	#
@@ -38,12 +38,12 @@
 	filesys         mirror:d20      c1t0d0s1        c1t1d0s1        56000   /local
 	filesys         c1t0d0s2        4000    swap
 	filesys         c1t1d0s2        4000    swap
-	
+
 	filesys         c1t0d0s3        1500    /local/zones/noraid/webhost/vartmp
 	filesys         c1t0d0s4        free    /tmp
 	filesys         c1t0d0s5        500     /var/tmp
-	
-	
+
+
 	filesys         c1t1d0s3        500     /local/zones/noraid/webhost/tmp
 	filesys         c1t1d0s4        free    /local/zones/noraid/webhost/cache
 	filesys         c1t1d0s5        500     /local/zones/noraid/dbbhost/vartmp
@@ -55,10 +55,10 @@ For the mad looking mounts, i just wanted to create the partitions during the in
 They've all been deleted, and the devices are added directly to the zone
 
 
-	
+
 	metadb          c1t0d0s6        size 8192       count 2
 	metadb          c1t1d0s7        size 8192       count 2
-	
+
 	#
 	# Sun Packages
 	#
@@ -101,14 +101,14 @@ They've all been deleted, and the devices are added directly to the zone
 	cluster         SUNWCmozplugins delete
 	cluster         SUNWCgna11y     delete  
 	cluster         SUNWCgna11ydev  delete  
-	
+
 	# adding stuff
 	package         SUNWPython-share add
 	package         SUNWPython      add
-	
+
 	# adding for dependencies
 	#package                SUNWdtdmr       add
-	
+
 	# removing for dependencies
 	package         SUNWpgadmin3    delete
 	package         SUNWxvnc        delete
@@ -154,5 +154,3 @@ They've all been deleted, and the devices are added directly to the zone
 	package         SUNWxwfa delete
 	package         SUNWxwdem delete
 	package         SUNWxorg-client-programs delete
-
-

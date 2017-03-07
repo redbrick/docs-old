@@ -8,7 +8,7 @@ Packaged as [rbquota](redbrick-apt) on packages.redbrick.dcu.ie
 
 ## no(help|permwarn|forward)
 
-Shell scripts for user dot-files. 
+Shell scripts for user dot-files.
 
 Packaged as [redbrick-noscripts](redbrick-apt) on packages.redbrick.dcu.ie
 
@@ -20,7 +20,7 @@ Packaged as [redbrick-help](redbrick-apt) on packages.redbrick.dcu.ie
 
 ## news/usenet
 
-These setup dot-files for slrn if they don't already exist. Users that run slrn without ever running news will get horrible errors. 
+These setup dot-files for slrn if they don't already exist. Users that run slrn without ever running news will get horrible errors.
 
 Packaged as [redbrick-news](redbrick-apt) on packages.redbrick.dcu.ie
 
@@ -42,4 +42,3 @@ Things which are just aliases
 
     [receive@minerva ~]% which rbmysql
     rbmysql: aliased to /usr/bin/mysql -h mysql.internal -u receive -p receive
-

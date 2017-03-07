@@ -14,7 +14,7 @@ ask atlas/phaxx
 	--- 0.58-orig/CONFIG.C	2005-04-05 20:37:51.000000000 +0100
 	+++ 0.58-phaxx/CONFIG.C	2007-01-26 17:34:18.000000000 +0000
 	@@ -277,7 +277,7 @@
-	 
+
 	 struct sessionsaver_data {
 	     union control *editbox, *listbox, *loadbutton, *savebutton, *delbutton;
 	-    union control *okbutton, *cancelbutton;
@@ -25,7 +25,7 @@ ask atlas/phaxx
 	@@ -321,6 +321,18 @@
 	 	(struct sessionsaver_data *)ctrl->generic.context.p;
 	     char *savedsession;
-	 
+
 	+   if(event == EVENT_ACTION && (ctrl == ssd->redbrickbutton || ctrl == ssd->camacbutton))
 	+   {
 	+      strcpy(cfg->host, ( ctrl == ssd->redbrickbutton ? "login.redbrick.dcu.ie" : "camac.dcu.ie") );
@@ -55,18 +55,18 @@ ask atlas/phaxx
 	     /* We carefully don't close the 5-column part, so that platform-
 
 	      * specific add-ons can put extra buttons alongside Open and Cancel. */
-	 
+
 	diff -Nru 0.58-orig/VERSION.C 0.58-phaxx/VERSION.C
 	--- 0.58-orig/VERSION.C	2005-04-05 20:37:51.000000000 +0100
 	+++ 0.58-phaxx/VERSION.C	2007-01-26 17:25:00.000000000 +0000
 	@@ -17,7 +17,7 @@
-	 
+
 	 #else
-	 
+
 	-char ver[] = "Unidentified build, " __DATE__ " " __TIME__;
 	+char ver[] = "PuTTY 0.58-redbrick-phaxx, " __DATE__ " " __TIME__;
 	 char sshver[] = "PuTTY-Local: " __DATE__ " " __TIME__;
-	 
+
 	 #endif
 	diff -Nru 0.58-orig/WINDOWS/WINCFG.C 0.58-phaxx/WINDOWS/WINCFG.C
 	--- 0.58-orig/WINDOWS/WINCFG.C	2005-04-05 20:37:38.000000000 +0100
@@ -85,7 +85,7 @@ ask atlas/phaxx
 	-	}
 	+	}*/
 	     }
-	 
+
 	     /*
 	diff -Nru 0.58-orig/WINDOWS/WINNET.C 0.58-phaxx/WINDOWS/WINNET.C
 	--- 0.58-orig/WINDOWS/WINNET.C	2005-04-05 20:37:38.000000000 +0100
@@ -95,7 +95,7 @@ ask atlas/phaxx
 	 #include "network.h"
 	 #include "tree234.h"
 	+#define NO_IPV6
-	 
+
 	 #include `<ws2tcpip.h>`
 
 
@@ -107,16 +107,16 @@ The change i was working on was to remove the switch statement from winucs.c whe
 
 I tried messing about with the ordering in the menu and stuff, but that didn't work. The change we want is definatly here.
 
-	
+
 	winucs.c:1008
-	
+
 	int decode_codepage(char *cp_name)
 	{
 	    char *s, *d;
 	    const struct cp_list_item *cpi;
 	    int codepage = -1;
 	    CPINFO cpinfo;
-	
+
 	    if (!*cp_name) {
 	    /*
 
@@ -130,12 +130,12 @@ I tried messing about with the ordering in the menu and stuff, but that didn't w
 	     * does something Unixy or VMSy and hence standards-
 	     * compliant than that they're connecting back to a Windows
 	     * box using horrible nonstandard charsets.
-	     * 
+	     *
 	     * Accordingly, Robert de Bath suggests a method for
 	     * picking a default character set that runs as follows:
 	     * first call GetACP to get the system's ANSI code page
 	     * identifier, and translate as follows:
-	     * 
+	     *
 	     * 1250 -> ISO 8859-2
 	     * 1251 -> KOI8-U
 	     * 1252 -> ISO 8859-1
@@ -144,7 +144,7 @@ I tried messing about with the ordering in the menu and stuff, but that didn't w
 	     * 1255 -> ISO 8859-8
 	     * 1256 -> ISO 8859-6
 	     * 1257 -> ISO 8859-13 (changed from 8859-4 on advice of a Lithuanian)
-	     * 
+	     *
 	     * and for anything else, choose direct-to-font.
 	     */
 	    int cp = GetACP();
@@ -157,13 +157,13 @@ I tried messing about with the ordering in the menu and stuff, but that didn't w
 	      case 1255: cp_name = "ISO-8859-8"; break;
 	      case 1256: cp_name = "ISO-8859-6"; break;
 	      case 1257: cp_name = "ISO-8859-13"; break;
-	        default: leave it blank, which will select -1, direct->font 
+	        default: leave it blank, which will select -1, direct->font
 	    }*/
-	
+
 	    cp_name = "UTF-8";
-	
+
 	    }
-	
+
 	    if (cp_name && *cp_name)
 	    for (cpi = cp_list; cpi->name; cpi++) {
 	        s = cp_name;
@@ -183,7 +183,7 @@ I tried messing about with the ordering in the menu and stuff, but that didn't w
 	            codepage = 65536 + (cpi - cp_list);
 	            goto break_break;
 	            }
-	
+
 	            if (GetCPInfo(codepage, &cpinfo) != 0)
 	            goto break_break;
 	        }
@@ -191,7 +191,7 @@ I tried messing about with the ordering in the menu and stuff, but that didn't w
 	            break;
 	        }
 	    }
-	
+
 	    if (cp_name && *cp_name) {
 	    d = cp_name;
 	    if (tolower(d[0]) == 'c' && tolower(d[1]) == 'p')
@@ -202,7 +202,7 @@ I tried messing about with the ordering in the menu and stuff, but that didn't w
 	    for (s = d; *s >= '0' && *s <= '9'; s++);
 	    if (*s == 0 && s != d)
 	        codepage = atoi(d);        /* CP999 or IBM999 */
-	
+
 	    if (codepage == CP_ACP)
 	        codepage = GetACP();
 	    if (codepage == CP_OEMCP)
@@ -210,7 +210,7 @@ I tried messing about with the ordering in the menu and stuff, but that didn't w
 	    if (codepage > 65535)
 	        codepage = -2;
 	    }
-	
+
 	  break_break:;
 	    if (codepage != -1) {
 	    if (codepage != CP_UTF8 && codepage < 65536) {
@@ -224,5 +224,3 @@ I tried messing about with the ordering in the menu and stuff, but that didn't w
 	    codepage = -2;
 	    return codepage;
 	}
-	
-

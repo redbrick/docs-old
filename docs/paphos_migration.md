@@ -6,4 +6,3 @@
 
 > paphos% id
 > uid=101089(werdz) gid=107**(mlocate)** groups=107**(mlocate)**,0(root)
-

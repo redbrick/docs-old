@@ -13,7 +13,7 @@ Eventually in your special assignment as RedBrick System Administrator you will 
 
 # Debian/Ubuntu
 
-###  Partioning 
+###  Partioning
 
 Everything that !root can write to should be on its own partition. For a user machine, this is /var, and /tmp. You probably want /var/tmp on its own partition too. These should all be mounted *at least* no suid.
 
@@ -44,7 +44,7 @@ This is configured by the package install (redbrick-nagios-nrpe), and shouldn't 
 
 Add it as a host to /usr/local/etc/nagios/servers/hosts.cfg (with it's internal IP address), and add it to the relevant hostgroup (by OS) in /usr/local/etc/nagios/servers/host_groups.cfg. You'll also have to add something like this to get it to check the external interface as well.
 
-	
+
 	define service{
 	        use                             redbrick-service                ; Name of service template to use   
 	        host_name                       `<New Machine Host Name>`
@@ -76,21 +76,21 @@ The dpkg set options are stored in /etc/update-exim4.conf.conf. You shouldn't ed
 
 ### Logwatch
 
-This is installed and configured by the redbrick-logwatch package. 
+This is installed and configured by the redbrick-logwatch package.
 
-You can add your own scripts etc. to logwatch. Just put them in /etc/logwatch/scripts/services and then put a config file in /etc/logwatch/conf/services (or add them to the package if they're to be deployed everywhere). If this is going to be on more than one machines then the existing logwatch packages can be easily used as templates to build a new one. 
+You can add your own scripts etc. to logwatch. Just put them in /etc/logwatch/scripts/services and then put a config file in /etc/logwatch/conf/services (or add them to the package if they're to be deployed everywhere). If this is going to be on more than one machines then the existing logwatch packages can be easily used as templates to build a new one.
 
-If this is a big login box you'll probably want to hack the users logging in via ssh out of the ssh script, or you'll get a load of crap you don't want. 
+If this is a big login box you'll probably want to hack the users logging in via ssh out of the ssh script, or you'll get a load of crap you don't want.
 
 
 ### fail2ban
 
 This will annoy anyone who tries to brute force ssh you. The defaults are fairly fine. Generally we whitelist redbrick ip addresses to stop one person accidentaly blocking access to a machine from a machine.
 
-	
-	[root@cn /etc/fail2ban]# cat jail.local 
+
+	[root@cn /etc/fail2ban]# cat jail.local
 	[DEFAULT]
-	
+
 	ignoreip = 136.206.15.0/24 192.168.0.0/24 127.0.0.1
 
 
@@ -111,17 +111,17 @@ Syslog-ng is installed by redbrick-server, but it doesn't lend itself well to ha
 
 To setup remote logging add this to the bottom of /etc/syslog-ng/syslog.ng.conf
 
-	
+
 	##################################################
 	############### LOG to remote host ###############
 	##################################################
 	destination loghost {
 	        tcp("log.internal" port(514));
 	};
-	
-	log { 
-	        source(s_src); 
-	        destination(loghost); 
+
+	log {
+	        source(s_src);
+	        destination(loghost);
 	};
 
 
@@ -131,7 +131,7 @@ You should also add log.internal to /etc/hosts
 
 Syslog-ng has settings to put cron stuff into it's own log, but these are commented out. You can use this to stop users cronjobs cluttering syslog.
 
-	
+
 	# this is commented out in the default syslog.conf
 	# cron.*                         /var/log/cron.log
 	#log {
@@ -145,7 +145,7 @@ Simple enough, uncomment this.
 
 Next you'll need to edit the syslog filter, or they'll just appear in both locations. Make your syslog filter look like this:
 
-	
+
 	# all messages except from the auth and authpriv & cron facilities
 	filter f_syslog { not facility(auth, authpriv, cron); };
 
@@ -154,9 +154,9 @@ Next you'll need to edit the syslog filter, or they'll just appear in both locat
 
 If the system is running snoopy then set it so that those logs are only sent to b4 and not kept locally.
 
-The use of the final flag means that **order matters**. The final flag is no good if you've already sent the data to a local file (authpriv, in this case at least) somewhere further up in the config. 
+The use of the final flag means that **order matters**. The final flag is no good if you've already sent the data to a local file (authpriv, in this case at least) somewhere further up in the config.
 
-	
+
 	filter f_snoopy {
 	        program("snoopy");
 	};
@@ -188,7 +188,7 @@ Root ssh should be disabled in /etc/ssh/sshd_config. You have to set this option
 
 ### Munin
 
-Set the host and allow lines in munin-node.conf. If this is a new machine it will need to be added to the munin server. 
+Set the host and allow lines in munin-node.conf. If this is a new machine it will need to be added to the munin server.
 
 
 # Other systems
@@ -224,27 +224,27 @@ On ubuntu, this is handled by redbrick-root-env.
 
 ### Exim
 
-   * Install Exim from somewhere. 
+   * Install Exim from somewhere.
    * Go through the config file and fill out primary_hostname & qualify_domain (should be redbrick.dcu.ie) along with whatever else takes your fancy.
    * Unless you know what you're doing don't touch the acl section.
-   * Delete the Routers & Transports section 
+   * Delete the Routers & Transports section
    * Put this in it's place:
 
-	
+
 	######################################################################
 	#                      ROUTERS CONFIGURATION                         #
 	#               Specifies how addresses are handled                  #
 	######################################################################
-	
+
 	begin routers
-	
+
 	send_to_gateway:
 	  driver = manualroute
 	  domains = !+local_domains
 	  transport = remote_smtp
 	  route_list = "* mailhost.ipv4.redbrick.dcu.ie "
-	  fallback_hosts =  mailhost2.ipv4.redbrick.dcu.ie : mailhost.ipv6.redbrick.dcu.ie : mailhost2.ipv6.redbrick.dcu.ie 
-	
+	  fallback_hosts =  mailhost2.ipv4.redbrick.dcu.ie : mailhost.ipv6.redbrick.dcu.ie : mailhost2.ipv6.redbrick.dcu.ie
+
 	#
 	# Just send all mail to a proper mailhost. Don't do any local delivery shite.
 	#
@@ -261,7 +261,7 @@ On ubuntu, this is handled by redbrick-root-env.
 	remote_smtp:
 	  driver = smtp
 
-    
+
 
     * Don't touch anything else, unless you want to ;)
     * If you're scripting this to run as a service the options you probably want are:
@@ -279,7 +279,7 @@ This has been fixed in debian/ubuntu, but still appears in freeBSD (py26-fail2ba
 
 If /usr/local/etc/rc.d/fail2ban on FREEBSD hangs after:
 
-	
+
 	2010-05-10 17:49:04,561 fail2ban.server : INFO   Starting in daemon mode
 
 
@@ -294,13 +294,13 @@ Below is the old fix for ubuntu/debian fail2ban init script
 	{
 	        #Add this at top of do_start
 	        do_status && return 1
-	
+
 	        # hack by receive, jul 08
 	        if [ ! -d /var/run/fail2ban ]
 	        then
 	                mkdir /var/run/fail2ban
 	        fi
-	        
+
 	        #Rest of the original do_start code should be kept as is
 	}
 
@@ -309,4 +309,3 @@ Below is the old fix for ubuntu/debian fail2ban init script
 ### Automated Mails
 
 All automated mail (logwatch equivelents etc.) should be sent to system-reports@, preferably around 12.30am
-

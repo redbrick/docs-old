@@ -12,4 +12,3 @@ The script for smf will automagically be copied to the exim bin directory if one
 When install has completed sucessfully run "svccfg import exim-smf.xml" to import it.
 
 This relies on the sendmail user existing as it does normally. Obviously you should disable sendmail.
-

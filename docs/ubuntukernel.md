@@ -40,4 +40,3 @@ In addition, this will produce kernels with debug symbols enabled, so the files 
 ## More information
 
 https://help.ubuntu.com/community/Kernel/Compile The Ubuntu kernel building guide. This contains a few options that will produce different results, but may be useful as a reference.
-

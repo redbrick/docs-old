@@ -7,4 +7,3 @@ You need to change a local password but passwd is giving you some bolix that loo
 //
  1.  change password
  2.  fix */etc/pam.d/common-password*
-

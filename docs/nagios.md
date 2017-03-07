@@ -10,7 +10,7 @@ nrpe is installed on all of the machines, and is checking load and hard disk spa
 All of the service checks are in /usr/local/etc/nagios/objects/Redbrick/services/services.cfg on halfpint. For things which have service ips, define a command to check the service ip (in /usr/local/etc/nagios/objects/Redbrick/commands/commands.cfg) and add it as a service under the host it runs on.
 
 
-#  Adding a new machine 
+#  Adding a new machine
 
 If you're adding a new machine, then add it to /etc/nagios/objects/Redbrick/machines/, and make it a member of redbrick-login, redbrick-routers or redbrick-services as appropriate. This will add ping, disk, and load checking (you'll need to set up disk and load checking with nrpe on the host side first of course). It won't set up ping checks on the external interface however, you'll have to do that seperately, as well as any services that the machine runs.
 

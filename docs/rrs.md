@@ -53,7 +53,7 @@ Join rb & dcu trees into one ldif file to add in one go as this will speed thing
 ''[rrs] cat slapcat.pre-rrs rb-dcu-tree.ldif > slapcat.pre-rrs-dcu''
 
 Always do a dry run before any major slapadd:
- 
+
 ''[rrs] slapadd -v -u -l slapcat.pre-rrs-dcu''
 
 Adding this for real will take a long time. Although there is a -q (quick) option for slapadd, it might be best not to use it.
@@ -102,7 +102,7 @@ Now add the new tree.
 
 ''[ldap-master] slapadd -v -l slapcat.rrs''
 
-Make master ldap r/w again, but restrict write access to root only by commenting out any "by self write" ACLs in slapd.conf as useradm sync needs to set passwords for the new users. 
+Make master ldap r/w again, but restrict write access to root only by commenting out any "by self write" ACLs in slapd.conf as useradm sync needs to set passwords for the new users.
 
 Start master slapd up again. Don't start slurpd.
 
@@ -157,18 +157,18 @@ Load slapcat.post-sync on ldap backup servers using similar procedure (redirect 
 
 A month or two after c&s day, unpaid accounts need to be disabled.
 
-	
+
 	[useradm] useradm unpaid_disable
 
 
-Also the unpaid accounts from last year (the "grace" accounts) need to be deleted. This is a good time to make a backup! And don't forget to log your session, so you have a record. 
+Also the unpaid accounts from last year (the "grace" accounts) need to be deleted. This is a good time to make a backup! And don't forget to log your session, so you have a record.
 
-	
-	[useradm] useradm list_unpaid_grace 
+
+	[useradm] useradm list_unpaid_grace
 
 These accounts will be **DELETED** permanently. Please **MAIL THIS LIST TO ADMINS@ BEFORE** running unpaid_delete so that it can be checked by everyone. After another few days these accounts can be deleted. You should check that the previous day's backup jobs have completed successfully before running a delete.
 
-	
+
 	[useradm] useradm unpaid_delete
 
 Usually people who haven't paid (yet) request their shell to be enabled again. Admins can find these fee-evaders:
@@ -178,5 +178,3 @@ Usually people who haven't paid (yet) request their shell to be enabled again. A
 ...and then crack down on them:
 
 ''[useradm] useradm unpaid_disable''
-
-

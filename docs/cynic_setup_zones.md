@@ -2,7 +2,7 @@
 
 #### sysidcfg
 
-	
+
 	system_locale=en_IE.UTF-8
 	install_locale=en_IE.UTF-8
 	timezone=Eire
@@ -10,13 +10,13 @@
 	terminal=vt100
 	name_service=none
 	security_policy=none
-	network_interface=qfe1 { 
+	network_interface=qfe1 {
 	            primary
 	            hostname=cynic
 	            netmask=255.255.255.0
 	            protocol_ipv6=no
 	            default_route=136.206.15.254 }
-	network_interface=qfe0 { 
+	network_interface=qfe0 {
 	            hostname=cynic-internal
 	            ip_address=192.168.0.23
 	            netmask=255.255.255.0
@@ -27,10 +27,10 @@ Specifing the internal network here did nothing, i still had to set it up manual
 
 #### install_profile
 
-	
+
 	install_type    initial_install
 	system_type     server
-	
+
 	#
 	# Disk Partitions
 	#
@@ -38,13 +38,13 @@ Specifing the internal network here did nothing, i still had to set it up manual
 	filesys         mirror:d10      c1t0d0s0        c1t1d0s0        30000   /
 	filesys         c1t0d0s1        2000    swap
 	filesys         c1t1d0s1        2000    swap
-	
+
 	filesys         c1t0d0s2        free    /home
 	filesys         c1t1d0s2        free    /var/tmp
-	
+
 	metadb          c1t0d0s3        size 8192       count 2
 	metadb          c1t1d0s3        size 8192       count 2
-	
+
 	#
 	# Sun Packages
 	#
@@ -70,8 +70,8 @@ Specifing the internal network here did nothing, i still had to set it up manual
 	cluster         SUNWCxorglibs   delete
 	cluster         SUNWCxorgserver delete
 	cluster         SUNWCxscreensaver delete
-	
-	
+
+
 	# extra stuff monday
 	cluster         SUNWCevo        delete
 	cluster         SUNWCevodev     delete
@@ -92,14 +92,14 @@ Specifing the internal network here did nothing, i still had to set it up manual
 	cluster         SUNWCmozplugins delete
 	cluster         SUNWCgna11y     delete  
 	cluster         SUNWCgna11ydev  delete  
-	
+
 	# adding stuff
 	package         SUNWPython-share add
 	package         SUNWPython      add
-	
+
 	# adding for dependencies
 	#package                SUNWdtdmr       add
-	
+
 	# removing for dependencies
 	package         SUNWpgadmin3    delete
 	package         SUNWxvnc        delete
@@ -154,7 +154,7 @@ Specifing the internal network here did nothing, i still had to set it up manual
 
 As cynic has only 2 cpus all zones are currently tied onto the default resource pool, but this has been modified to use the Fair Sharing whatever setup.
 
-	
+
 	[root@cynic-global /]# poolcfg -c 'modify pool pool_default (string pool.scheduler="FSS")'
 
 
@@ -164,7 +164,7 @@ The dns and ldap zones both have 5 shares. Any other zones that are created shou
 
 #### dnshost
 
-	
+
 	[root@cynic-global ~]# zonecfg -z dnshost
 	dnshost: No such zone configured
 	Use 'create' to begin configuring a new zone.
@@ -195,7 +195,7 @@ The dns and ldap zones both have 5 shares. Any other zones that are created shou
 
 #### ldaphost
 
-	
+
 	[root@cynic-global ~]# zonecfg -z ldaphost
 	ldaphost: No such zone configured
 	Use 'create' to begin configuring a new zone.
@@ -218,5 +218,3 @@ The dns and ldap zones both have 5 shares. Any other zones that are created shou
 	zonecfg:ldaphost> verify
 	zonecfg:ldaphost> commit
 	zonecfg:ldaphost> exit
-
-

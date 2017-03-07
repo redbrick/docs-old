@@ -18,7 +18,7 @@ This allows for the management of rbvm resources on Daniel.
 
 These include
 
-	
+
 	  -h, --help  show this help message and exit
 	  -l          List all users
 	  -u USER     list specified users vms
@@ -29,10 +29,10 @@ These include
 	  -free       List free vm IPs
 
 
-The Syntax for each command is as follows: 
+The Syntax for each command is as follows:
 
 `rbvm-delvm -l`
->Lists each user with an account on rbvm in the format 
+>Lists each user with an account on rbvm in the format
 >username - uid
 `rbvm-delvm -u USER`
 >Lists all VMs owned by a given USER (name assigned at rbvm-createuser) returns format
@@ -47,6 +47,3 @@ The Syntax for each command is as follows:
 >Removes the entry corresponding to this VM_ID from the Table of VMs
 `rbvm-delvm -free `
 >Lists all remaining available ip addresses in  the 136.206.16.0/24 subnet for allocation
-
-
-

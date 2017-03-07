@@ -53,7 +53,7 @@ This changes the gidNumber of the user in LDAP to 100 (the committee group). It 
 
 #### #rbcommittee
 
-Add each user to the #rbcommittee access list, with an access level of 40. 
+Add each user to the #rbcommittee access list, with an access level of 40.
 
     /msg chanserv access #rbcommittee add *!$new_committee_member@redbrick.dcu.ie 40
 
@@ -86,7 +86,7 @@ memberUid: $new_webmaster**\\
 modifying entry “cn=helpdesk,ou=groups,o=redbrick”\\
 ''
 \\
-(Bold text is what the user types.) 
+(Bold text is what the user types.)
 
 Add the webmaster to the webmaster mailing list (webmaster `<at>` lists.redbrick.dcu.ie) at http://lists.redbrick.dcu.ie/mailman/admin/webmaster/
 
@@ -109,7 +109,7 @@ modifying entry "cn=helpdesk,ou=groups,o=redbrick"''
 
 ### Admins
 
-The tricky ones... 
+The tricky ones...
 
 Add each member to the admin mailing lists (rb-admins and elected-admins).
 

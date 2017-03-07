@@ -34,7 +34,7 @@ The build script is as follows:
 
 ## Configuration files
 
-The configuration files in ''/etc/apache2'' have been replaced with the old deathray (debian layout) files, and ''apache2.conf'' was simply ''Include''d from ''httpd.conf''. We're still using the ''mods-available'' and ''sites-available'' system for enabling and disabling shared modules and vhosts. I used a quick and dirty perl script to fix path errors in the mods-available/*.load files. 
+The configuration files in ''/etc/apache2'' have been replaced with the old deathray (debian layout) files, and ''apache2.conf'' was simply ''Include''d from ''httpd.conf''. We're still using the ''mods-available'' and ''sites-available'' system for enabling and disabling shared modules and vhosts. I used a quick and dirty perl script to fix path errors in the mods-available/*.load files.
 
 Apache is running under the ''webservd'' user and group on Solaris.
 

@@ -6,7 +6,7 @@ You need to set up the disk to have similar sized partitions to the / and /var p
 
 Something like this:
 
- 
+
     ascii name  = `<SUN72G cyl 14087 alt 2 hd 24 sec 424>`
    pcyl        = 14089
    ncyl        = 14087
@@ -49,7 +49,7 @@ where /mnt is where you mounted the DVD
 
 ### In the event of boot meltdown
 
-In case of a failure while booting to the target BE, the following process 
+In case of a failure while booting to the target BE, the following process
 needs to be followed to fallback to the currently working boot environment:
 
 1. Enter the PROM monitor (ok prompt).
@@ -69,7 +69,7 @@ needs to be followed to fallback to the currently working boot environment:
 
 ldap breaks: Fix it using:
 
-	
+
 	# ldapclient -v manual \
 	  -a domainName=redbrick.dcu.ie \
 	  -a defaultSearchBase=o=redbrick \
@@ -101,7 +101,5 @@ ldap breaks: Fix it using:
 
 No one has told sun that it's the 21st century and we all use dns now. You need to edit /etc/nsswitch.conf so that the files line reads:
 
-	
+
 	hosts: files dns
-
-

@@ -1,8 +1,8 @@
-	
+
 	Gi0/1           				VLAN2
 	Gi0/2						VLAN2
 
-	
+
 	Gi0/3                 Clyde.external		VLAN2
 	Gi0/4 0006.5bfc.fb70 Carbon.external		VLAN2
 	Gi0/5 000d.5670.c857 Deathray.external	VLAN2
@@ -38,7 +38,7 @@
 	Gi0/32						VLAN3
 
 
-	
+
 	Gi0/33 000e.c500.698e Pike			VLAN4
 	Gi0/34						VLAN4
 	Gi0/35 000d.5671.ee01 Deathray.Management	VLAN4
@@ -55,6 +55,5 @@
 	Gi0/46						VLAN4
 	Gi0/47						VLAN4
 
-	
-	Gi0/48 CSD LINK					VLAN2
 
+	Gi0/48 CSD LINK					VLAN2

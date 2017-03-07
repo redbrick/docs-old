@@ -64,15 +64,14 @@ The Severus VPN is used as a means of connecting Severus to the internal network
 The VPN is hosted on halfpint with a packet forwarding enabled and a basic pf setup.
 
 
-##  Network diagram (2014) 
+##  Network diagram (2014)
 
 Colours represent the networks each server is connected to.
 
-Red: External VLAN\\ 
-Blue: Internal VLAN\\ 
-Yellow: Management VLAN\\ 
-Green: RBVM Subnet crossover\\ 
+Red: External VLAN\\
+Blue: Internal VLAN\\
+Yellow: Management VLAN\\
+Green: RBVM Subnet crossover\\
 
 
 {{:network-map.png|}}
-

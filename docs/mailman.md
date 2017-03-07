@@ -10,7 +10,7 @@ These are in /usr/lib/mailman/bin. In particular the newlist command is here. Mo
 
 Mailman is installed straight from apt. It should always be generally be installed on the primary mail server. Mail to mailing lists is sent to mailman from the exim conf.
 
-	
+
 	mailman:
 	  domains = lists.redbrick.dcu.ie
 	  driver = accept
@@ -27,23 +27,23 @@ All mailman installs should have those damn monthly reminders disabled. this can
 
 ## Mailman Apache Configuration
 
-Below is the apache conf for mailman. Getting this wrong will horribly break stuff like archives. This config is based pretty closely on the default one in the package. 
+Below is the apache conf for mailman. Getting this wrong will horribly break stuff like archives. This config is based pretty closely on the default one in the package.
 
-	
+
 	`<VirtualHost *>`
 	ServerName lists.redbrick.dcu.ie
 	DocumentRoot /var/www
-	
+
 	`<Directory /var/lib/mailman/archives/>`
 	    Options Indexes FollowSymLinks
 	    AllowOverride None
 	`</Directory>`
-	
+
 	RewriteEngine On
 	RewriteCond %{HTTP_HOST}   !^lists\.redbrick\.dcu\.ie [NC]
 	RewriteRule ^/(.*)         http://lists.redbrick.dcu.ie/mailman/listinfo [L,R]
-	
-	
+
+
 	Alias /pipermail/ /var/lib/mailman/archives/public/
 	Alias /images/mailman/ /usr/share/images/mailman/
 	ScriptAlias /admin /usr/lib/cgi-bin/mailman/admin
@@ -64,18 +64,18 @@ Below is the apache conf for mailman. Getting this wrong will horribly break stu
 
 Changes may need to be made to /etc/mailman/mm_cfg.py if the directory structure is changed. The options that match this apache config are:
 
-	
+
 	#-------------------------------------------------------------
 	# If you change these, you have to configure your http server
 	# accordingly (Alias and ScriptAlias directives in most httpds)
 	#DEFAULT_URL_PATTERN = 'http://%s/cgi-bin/mailman/'
 	DEFAULT_URL_PATTERN = 'http://%s/'
 	PRIVATE_ARCHIVE_URL = '/private'
-	
+
 	# Images - Put redbrick_icon.ico in /usr/share/mailman/images!
 	SHORTCUT_ICON = 'redbrick_icon.ico'
 	IMAGE_LOGOS         = '/images/mailman/'
-	
+
 	#-------------------------------------------------------------
 	# Default domain for email addresses of newly created MLs
 	DEFAULT_EMAIL_HOST = 'lists.redbrick.dcu.ie'
@@ -96,7 +96,7 @@ Eh, this is what I did:
 
 *  copy /var/lib/mailman and /etc/mailman from the old location
 
-*  copy /etc/apache2/sites-enabled/lists 
+*  copy /etc/apache2/sites-enabled/lists
 
 *  move the service ip
 

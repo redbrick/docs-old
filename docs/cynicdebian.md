@@ -8,7 +8,7 @@ You should read the [Release Notes](http://www.debian.org/releases/etch/sparc/re
 
    * Get the CD, and put in in the disk.
    * Break cynic to an ok prompt.
-   * setenv boot-device cdrom 
+   * setenv boot-device cdrom
    * Yes, i said cdrom, not dvd rom.
    * At this point, you're asking yourself why not just boot from the cd. You have to cold boot it, or it just doesn't work.
    * Use the LOM to poweroff the machine, wait at least 10 seconds, then poweron.
@@ -26,7 +26,7 @@ When it fails to find your disks you'll get a menu, take the go back option. You
 
 From the shell use ifconfig to get a network connection running.
 
-    ifconfig eth0 up 136.206.15.23 netmask 255.255.255.0 
+    ifconfig eth0 up 136.206.15.23 netmask 255.255.255.0
 
 should be enough.
 
@@ -72,7 +72,7 @@ Once you've installed the package exit the chroot and the shell. Then let the in
 ## OMG, it's booting the cd again!
 
 Well, of course it is. Break back to an ok prompt, then:
-    
+
     setenv boot-device disk
 
 It should then boot normally.
@@ -90,17 +90,16 @@ During one install very late in teh night I rebooted from the chroot and didn't 
 
 #### Why is eth4 going mad?
 
-eth4 is the dodgy onboard port. It'll go mad and spew crap all over the console. 
+eth4 is the dodgy onboard port. It'll go mad and spew crap all over the console.
 
 You can use these filters for syslog-ng to stop it filling messages & syslog aswell.
 
-	
+
 	filter f_syslog { not facility(auth, authpriv) and not match("eth4"); };
 
-	
+
 	filter f_messages {
 	        level(info,notice,warn)
 	            and not facility(auth,authpriv,cron,daemon,mail,news)
 	            and not match("eth4");
 	};
-

@@ -9,4 +9,3 @@ Dpkg on cynic
 *  touch /var/lib/dpkg/status
 
 *  touch /usr/local/var/dpkg/status
-

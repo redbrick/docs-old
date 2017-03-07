@@ -18,7 +18,7 @@ If apache is already broken, you have my permission to manually cp ~werdz/public
 *This is what I did. You'll need to use the source debs for my version if you're recompiling again.. or at least preserve the changelog entries and versioning). See "Before you begin" above.*
 
 Downloaded the old source debs (for the build scripts)
- 
+
     apt-get source libapache2-mod-suphp
 
 Installed build deps
@@ -45,7 +45,7 @@ Apply the multi docroot patch
     (enter src/Application.cpp)
 
 Edit src/apache2/mod_suphp.c to allow config directives in the apache configs. Find the line that looks like:
-    
+
     AP_INIT_ITERATE("suPHP_AddHandler", suphp_handle_cmd_add_handler, NULL, ACCESS_CONF, "Tells mod_suphp to handle these MIME-types"),
 
 And change ACCESS_CONF to ACCESS_CONF | RSRC_CONF.

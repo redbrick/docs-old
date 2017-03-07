@@ -4,13 +4,13 @@ Sprout runs OpenBSD. We like OpenBSD. Sprout is the new fap, welmar & obelisk al
 
 Other things you should know about sprout:
 
-*  It's a dual Xeon poweredge 1600 with 1gb of ram. 
+*  It's a dual Xeon poweredge 1600 with 1gb of ram.
 
 *  We bought it for €200 on adverts.ie
 
 *  It's scsi controller seems botched, it uses two ide disks that used to be in fap.
 
-*  It has two CD drives, one works, and the other is to fill up the blank space. 
+*  It has two CD drives, one works, and the other is to fill up the blank space.
 
 *  The floppy drive would work, but johan disconnected the cable.
 
@@ -24,7 +24,7 @@ Sprout is the loghost. /var/log is an entire 200gb ide disk. It is expected that
 
 ### Docs.redbrick
 
-Runs on sprout apache. Doesn't use any databases. 
+Runs on sprout apache. Doesn't use any databases.
 
 ### Nagios
 

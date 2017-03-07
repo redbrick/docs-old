@@ -2,10 +2,10 @@
 
 ## 1->29 Boxen
 
-	
-	
+
+
 	carbon                          136.206.15.1
-	morpheus                        136.206.15.2 
+	morpheus                        136.206.15.2
 	deathray                        136.206.15.3
 	                                136.206.15.4
 	                                136.206.15.5 # this used to be ns.redbrick.dcu.ie
@@ -29,16 +29,16 @@
 	cynic                           136.206.15.23
 
 
-## 30 -> 39 
+## 30 -> 39
 
-	
+
 	Reserved for future Service VMs.
 
 
 
 ## 40 -> 49 Other
 
-	
+
 	blinky                          136.206.15.40
 	clyde                           136.206.15.41
 
@@ -49,7 +49,7 @@
 
 ## 50 -> 89 Primary Services
 
-	
+
 	login                           136.206.15.50  (redbrick.dcu.ie also points here)
 	                                136.206.15.51  (was once used for news. news.rb is now a cname carbon.internal)
 	irc                             136.206.15.52   
@@ -71,7 +71,7 @@
 	mysql                           192.168.0.76  
 	                                136.206.15.77  (reserved, databases)
 	                                136.206.15.78  (reserved, databases)
-	twitter.internal                192.168.0.79 
+	twitter.internal                192.168.0.79
 	radio.redbrick.dcu.ie           136.206.15.80
 
 
@@ -79,7 +79,7 @@
 
 Where possible, these should correspond to the primary service ip.
 
-	
+
 	dns2                            136.206.15.93                  
 
 
@@ -98,21 +98,20 @@ This range will possibly be used in future for other VMs etc.
 
 ## 250 -> 254 Routing & Infrastructure
 
-	
+
 	munger                          136.206.15.250 (this is a printer)
 	enzyme                          136.206.15.251
 	hadron                          136.206.15.252
 	electrode (UPS)                 192.168.1.253
 
-##  Network diagram (2014) 
+##  Network diagram (2014)
 
 Colours represent the networks each server is connected to.
 
-Red: External VLAN\\ 
-Blue: Internal VLAN\\ 
-Yellow: Management VLAN\\ 
-Green: RBVM Subnet crossover\\ 
+Red: External VLAN\\
+Blue: Internal VLAN\\
+Yellow: Management VLAN\\
+Green: RBVM Subnet crossover\\
 
 
 {{:network-map.png|}}
-

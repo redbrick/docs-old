@@ -1,4 +1,4 @@
-There are various versions of this floating around. 
+There are various versions of this floating around.
 
 There's source for it in /srv/admin/src, but someone somewhere could possibly have a more recent version
 

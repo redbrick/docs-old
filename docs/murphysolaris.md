@@ -15,7 +15,7 @@
 *  Updating the operating system and Sun-supplied software will be awkward at best, requiring about half an hour of downtime every few months.
 
 *  Keeping non-sun packages (in our case, this will probably be the majority) will be an even bigger pain in the ass.
-    * werdz suggests (I hate talking in the third person) putting together some scripts to keep things *somewhat* automated. It wouldn't exactly be apt, but something like a vastly simplified version of emerge. You create a description file which describes how to check for an update and how to compile updates, then the script checks for updates, downloads and compiles any updates it finds, emails the admins going HEY! Package x has updates that are ready to be installed. Here's the changelogs. Log into murphy and type installupdate x if you're ok with proceeding. I think this could be done relatively easily. 
+    * werdz suggests (I hate talking in the third person) putting together some scripts to keep things *somewhat* automated. It wouldn't exactly be apt, but something like a vastly simplified version of emerge. You create a description file which describes how to check for an update and how to compile updates, then the script checks for updates, downloads and compiles any updates it finds, emails the admins going HEY! Package x has updates that are ready to be installed. Here's the changelogs. Log into murphy and type installupdate x if you're ok with proceeding. I think this could be done relatively easily.
     * This is even more viable when you consider that we, in fact, have two production solaris machines
     * Having said all that, it could be a lot of work for no real benefit. We'll see.
 
@@ -23,7 +23,7 @@
 
 ## Current steps
 
-We're installing Solaris on murphy for the moment to see how it goes. Murphy is, for the time being, a testing/figureoutwhatthefucktodowithit machine, so we have a chance to test/play around with it, and find what works. 
+We're installing Solaris on murphy for the moment to see how it goes. Murphy is, for the time being, a testing/figureoutwhatthefucktodowithit machine, so we have a chance to test/play around with it, and find what works.
 
 If it turns out to be disasterous/we break down crying half way/etc, we can always just go back to Ubuntu or try out other Linux distros (although, as outlined above, we're fairly convinced that they'll all be as dodgy as Ubuntu was, if not worse). Or even NetBSD or something.
 
@@ -36,7 +36,7 @@ Once murphy has a new OS, there are a few things to be done
 
 *  We need to look into how apache is generally maintained on a system like this. As in, kept up to date. Is it just like it was on deathray before, or would it be a candidate for that update script thing that was mentioned earlier?
 
-*  We need to figure out LDAP integration. There is talk, with good reason behind it, of moving our LDAP server to OpenDS, but that's an argument for another wiki page. 
+*  We need to figure out LDAP integration. There is talk, with good reason behind it, of moving our LDAP server to OpenDS, but that's an argument for another wiki page.
 
 *  We need to figure out how user shells are going to work, since many people's .bashrc files will cause a Solaris shell to crap out or generally act stupid (missing switches on things, aliases setting ls=ls --color, etc)
 

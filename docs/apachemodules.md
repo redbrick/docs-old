@@ -7,7 +7,7 @@ First, modify mod_suphp.c to allow certain configuration directives from within 
 A usenet post (http://lists.marsching.com/pipermail/suphp/2005-June/000876.html) explains:
 
     Edit src/apache/mod_suphp.c and change line 252 so it reads "RSRC_CONF|ACCESS_CONF" instead of just "ACCESS_CONF".
-    
+
     You may also want to edit line 254 in the same way.
 
 We're using apache2, so you need to edit ''src/apache2/mod_suphp.c'', and the line numbers as of version 0.6.3 are 324 and 325.
@@ -34,4 +34,3 @@ Log files go to /var/log/apache2/suphp_log.
 ### Note
 
 *  suPHP seems to dislike threaded MPMs. At this point (v0.6.3), prefork is the only one that seems to work.
-

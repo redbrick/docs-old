@@ -35,7 +35,7 @@ This will generate a random password and mail it to the user.
 To add a new VM on behalf of a user:
     # rbvm-createvm -u username -i 136.206.16.101
 This will create a VM with default settings and the IP address specified, there is currently no automatic assignment of IPs.
-This will complain loudly if that IP has already been assigned to a VM. There's currently no support for "reserved" IPs, so make sure you don't assign .254 or .1. IP assignment is done on the basis of trust - we trust them to use the IP they've been given. If a user goes and intentionally breaks stuff by setting their VM's IP to 136.206.16.254, they lose any access to the VM system. 
+This will complain loudly if that IP has already been assigned to a VM. There's currently no support for "reserved" IPs, so make sure you don't assign .254 or .1. IP assignment is done on the basis of trust - we trust them to use the IP they've been given. If a user goes and intentionally breaks stuff by setting their VM's IP to 136.206.16.254, they lose any access to the VM system.
     # rbvm-createvm -u username -i 136.206.16.101 -m 512 -d 16000
 This will create a vm with 512MB RAM and a 16000MB disk image.
 
@@ -47,7 +47,7 @@ rbvmwebd is the script that runs the CherryPy HTTP server containing the VM inte
 
 The mercurial repository for the rbvm software is at http://hg.redbrick.dcu.ie/rbvm. Read-only access is free. Ask an admin for write access if you want to help.
 
-##  Known Bugs 
+##  Known Bugs
 
 The software is only new, so it has some bugs. The bug list is hosted [here](http://wiki.redbrick.dcu.ie/mw/RBVM_Bugs) on the main Redbrick wiki to allow members to add or comment on bugs.
 

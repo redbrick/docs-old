@@ -66,7 +66,7 @@ New admins, read:
 
 *  [Exim email setup](exim)
 
-*  [Dovecot IMAP](dovecot) Dovecot 
+*  [Dovecot IMAP](dovecot) Dovecot
 
 *  [Mailman](Mailman) Redbrick Mailing Lists
 #### NNTP
@@ -118,7 +118,7 @@ New admins, read:
 
 *  [DNS](bind9)
 
-    
+
 #### Metharme - Web Applications
 
 *  [Web Server](apache24)
@@ -229,13 +229,13 @@ Stuff from the Ubuntu 6.06 days
 
 ### Switches
 
-*  [Cisco IOS](ciscoios) 
+*  [Cisco IOS](ciscoios)
 
 *  [hadron](hadron)
 
 *  <del>[enzyme](enzyme)</del>
 
-*  [JunOS](junos) 
+*  [JunOS](junos)
 
 *  [Higgs](higgs)
 ### UPS
@@ -319,7 +319,7 @@ This stuff doesn't reflect the current setup, but may be useful sometime.
 
 *  [Open Ports](openports)
 
-*  [IRC proxy](ircproxy) 
+*  [IRC proxy](ircproxy)
 
 *  [Apache configuration on Solaris 10](apachesolaris)
 
@@ -349,9 +349,9 @@ This stuff doesn't reflect the current setup, but may be useful sometime.
 
 # System Documentation Redundancy
 
-If sprout goes down, it'd be nice to have access to documentation, in case we need said documentation to bring it back up :). 
+If sprout goes down, it'd be nice to have access to documentation, in case we need said documentation to bring it back up :).
 
-There are three separate systems for docs redundancy 
+There are three separate systems for docs redundancy
 
 ### docs(2|3).redbrick.dcu.ie
 
@@ -361,7 +361,7 @@ This functionality is provided by the [redbrick-docs2 package](redbrick-apt)
 
 ### docs(4|5).redbrick.dcu.ie
 
-Docs4 and docs5 are on showboat.theinternets.be and anubis.nowai.org, and mirrored with a [cronjob running on the mirror](docs_mirror_script). These sites are just static html files. They're useful if the main sites aren't available, but images etc. won't work properly, and there may be other issues. The script to generate these mirrors is also a [giant ball of hacks](http://www.laputan.org/mud/mud.html#BigBallOfMud), in particular, only pages linked from this start page will be mirrored. 
+Docs4 and docs5 are on showboat.theinternets.be and anubis.nowai.org, and mirrored with a [cronjob running on the mirror](docs_mirror_script). These sites are just static html files. They're useful if the main sites aren't available, but images etc. won't work properly, and there may be other issues. The script to generate these mirrors is also a [giant ball of hacks](http://www.laputan.org/mud/mud.html#BigBallOfMud), in particular, only pages linked from this start page will be mirrored.
 
 ### CeilingCat, Lightning & Coke
 

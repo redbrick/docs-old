@@ -77,12 +77,12 @@ Dirvish will mount whatever filesystems it thinks it needs for a particular back
 
 This means you shouldn't need (or ever ever consider) having nfs dirs mounted by default. They should all be left unmounted, and specified in /etc/fstab with noauto.
 
-	
+
 	# /etc/fstab: static file system information.
 	#
 	# Note, for the linux boxes the root export is specified with crossmnt, so other
 	# mounts within the root are accessible, usually /usr etc.
-	# 
+	#
 	# For the bsd boxes where this is not an option each mount must be specified individually
 	# Scripts will assume the root mount is specified first in this file.
 	#
@@ -137,9 +137,9 @@ Note: the config files & scripts are here for discussion. They may not be exactl
 
 ### Back to that master.conf
 
-Here's the master.conf, with comments thrown around. 
+Here's the master.conf, with comments thrown around.
 
-	
+
 	#
 	# Redbrick dirvish conf
 	#
@@ -147,14 +147,14 @@ Here's the master.conf, with comments thrown around.
 	# Changes made here will not be preserved as this file
 	# represents the global RedBrick backup configuration
 	#
-	# Local details, such as which vaults are currently 
+	# Local details, such as which vaults are currently
 	# enabled should be set in daily.conf
 	#
 
 
 The master.conf contains options that should always be set globally, so for this reason it's not marked as a conffile, and will be overwritten by package upgrades.
 
-	
+
 	# where all the backups are stored
 	bank:
 	        /backup
@@ -164,13 +164,13 @@ Dirvish uses a madly complicated system of branches, vaults, banks and god only 
 
 Anyway, the bank is the place we keep all the backups. This will probably always be /backup
 
-	
+
 	#
-	# List of directories to exclude globally. We try to 
-	# catch large directories we don't need here. This 
+	# List of directories to exclude globally. We try to
+	# catch large directories we don't need here. This
 	# can be further refined at a per vault level.
 	#
-	
+
 	exclude:
 	        lost+found/
 	        /var/log/
@@ -213,22 +213,22 @@ Anyway, the bank is the place we keep all the backups. This will probably always
 
 These are a list of files/directories to be ignored. These paths are relative to the source directory. This isn't really documented in anything on dirvish. If you need to know more about this find some docs on rsync.
 
-	
+
 	#
 	# Expire Rules: We keep the first of the week for one month,
 	# and the first of the month for one year. Else, we keep it
 	# for just 7 days.
 	#
-	
+
 	expire-default: +7 days
-	
+
 	expire-rule:
 	#       MIN HR    DOM MON       DOW  STRFTIME_FMT
 
 	        *   *     *   *         1    +1 months
 	        *   *     1   *         *    +1 year
 
-These rules specify how long we keep the data for, which I told you about at the start. With these rules we shouldn't be running out of disk space anytime soon. If we are, and that's why you're reading this then change them. 
+These rules specify how long we keep the data for, which I told you about at the start. With these rules we shouldn't be running out of disk space anytime soon. If we are, and that's why you're reading this then change them.
 
     whole-file: 1
 
@@ -252,15 +252,15 @@ $DIRVISH_SRC is also what it sounds like :) It's used to actually mount the thin
 
 ### daily.conf
 
-	
+
 	#
 	# Vaults listed here will be backed up daily.
 	#
 	# This file is provided by redbrick-dirvish, but local changes
-	# will be preserved as this file should be made here for 
+	# will be preserved as this file should be made here for
 	# valuts currently setup on this machine.
 	#
-	
+
 	Runall:
 	#       storage         00:00
 	#       fast-storage    00:00
@@ -290,7 +290,7 @@ The sequence is important - backups are ran in the order they're listed in this 
 Each of your vaults has it's own default.conf, in the dirvish directory. This has similar options to master.conf, you can add to or override the master options here.
 
     client: severus
- 
+
 Since we use nfs, the client will always be the local hostname. In the package, clients should be specified as CLIENT, and the postinst script will automatically replace this with the actual machine hostname.
 
     tree: /machines/carbon
@@ -309,7 +309,7 @@ Having read this much documentation on dirvish you're now an expert, so you know
 
     image-default: %Y%m%d
 
-This sets the default filename for images, in YYYYMMDD format. This will usually be fine. You can put times and shit in there, but I wasn't bothered. 
+This sets the default filename for images, in YYYYMMDD format. This will usually be fine. You can put times and shit in there, but I wasn't bothered.
 
 Note: Scripts may rely on being able to guess these directories just based on the date. Don't change this unless you know what you're doing.
 
@@ -350,15 +350,15 @@ The backup boxes are setup as mysql slaves so that this can be copied nightly by
 
 Fairly obvious, use ldapsearch to dump ldap into a file.
 
-	
+
 	severustest=`echo $1 | grep -c thunder`
 	if [ $severustest -eq 0 ]; then
 	        mountpoints=`cat /etc/fstab | awk '{print $2}' | grep $2`
 	        for mountpoint in $mountpoints; do
-	                
+
 	                #see if it's already mounted
 	                mountstatus=`grep -ic $mountpoint /etc/mtab`
-	                
+
 	                if [ $mountstatus -gt 0 ]; then
 	                        #if it's already mounted give an error message, but don't stop the script.
 	                        echo "Error: $mountpoint is already mounted. I was not expecting this."
@@ -380,7 +380,7 @@ If the file system is already mounted then this will fail.
     #
     exit
 
-As per comments it exits with the return code of the last command. This means that if the mount fails the vault will not run (if this script doesn't exit with 0 dirvish will exit). 
+As per comments it exits with the return code of the last command. This means that if the mount fails the vault will not run (if this script doesn't exit with 0 dirvish will exit).
 
 ### dirvish-postbackup
 
@@ -404,7 +404,7 @@ Pre_server stops the mysql server for the mysql vault so that a clean copy of /v
     # unmounting that would be bad.
     #
 
-	
+
 	hostname=`hostname`
 	severustest=`echo $1 | grep -c $hostname`
 	if [ $severustest -eq 0 ]; then
@@ -448,7 +448,7 @@ The current symlink is used so that the most recent complete successful backup c
 
 The current_log symlink is for logwatch. It finds all the current_logs, processes them, and then removes the symlink so that they won't be reported again.
 
-	
+
 	#
 	# If this is sprout then update docs2.rb
 	#
@@ -566,7 +566,7 @@ This gets called by dirvish-postbackup if the vault is sprout.
 
 # Copy the dokuwiki from current backup to local
 
-cp -pruv /backup/sprout/current/var/www/htdocs/docs /var/www 
+cp -pruv /backup/sprout/current/var/www/htdocs/docs /var/www
 chown -R www-data:root /var/www/docs
 
 # Replace the template file with the read-only message
@@ -584,28 +584,28 @@ This is so changes can't be made to the this copy, cause they'll be lost. dokuwi
 
 ### dirvish-mysqldump
 
-	
+
 	#!/bin/bash
-	
+
 	if [ ! -f /etc/mysql/backup.conf ]; then
 	        echo "WARNING: The file /etc/mysql/backup.conf file is missing."
 	        echo "This file is provided by redbrick-mysqlslave and is"
 	        echo "required in order for the backup system to operate normally"
 	        exit 1
 	fi
-	
+
 	PASSWORD=`grep -i password /etc/mysql/backup.conf | awk '{print $2}'`
 	USER=`grep -i user /etc/mysql/backup.conf | awk '{print $2}'`
 	auth="-u $USER -p$PASSWORD"
 
 The backup user needs to be setup as per the [mysql](mysql) docs to have access and a password for this.
 
-	
+
 	databases=`find /var/lib/mysql/ -maxdepth 1 -type d -printf "%P \n"`
 	umask 066
 	mysql="mysqldump --create-options --force --lock-all-tables --skip-comments "
 
-Not sure why I picked all those options to mysqldump, was ages ago. 
+Not sure why I picked all those options to mysqldump, was ages ago.
 
     for database in $databases; do
         if [ $database != "dumps" ]; then
@@ -613,20 +613,20 @@ Not sure why I picked all those options to mysqldump, was ages ago.
         fi
     done
 
-Since the dumps directory is inside /var/lib/mysql it'll get caught in that find command to list all the databases, so we make sure we're not trying to take a dump of it. 
+Since the dumps directory is inside /var/lib/mysql it'll get caught in that find command to list all the databases, so we make sure we're not trying to take a dump of it.
 
 ### Logwatch Mysql Script
 
-	
+
 	#!/bin/bash
-	
+
 	if [ ! -f /etc/mysql/backup.conf ]; then
 	        echo "WARNING: The file /etc/mysql/backup.conf file is missing."
 	        echo "This file is provided by redbrick-mysqlslave and is"
 	        echo "required in order for the backup system to operate normally"
 	        exit 1
 	fi
-	
+
 	PASSWORD=`grep -iw password: /etc/mysql/backup.conf | awk '{print $2}'`
 	USER=`grep -iw user: /etc/mysql/backup.conf | awk '{print $2}'`
 	auth="-u $USER -p$PASSWORD"
@@ -638,29 +638,29 @@ The .sql file just contains "show slave status\G". We egrep out some of the usel
 
 If this continues to fail for a longer period of time than the master server is keeping logs (usually only a few days) you'll basically be setting it up from scratch, which will be a fucking pain.
 
-    /etc/init.d/mysql status | egrep '(Uptime|Threads)' 
+    /etc/init.d/mysql status | egrep '(Uptime|Threads)'
 
 Can't remember why I wanted this stuff in here, guess I had a reason though.
 
 ### Dirvish Logwatch Script
 
-	
+
 	#!/bin/bash
-	
+
 	#
 	# Script to cat logs of the last dirvish run to logwatch
 	#
-	
-	
+
+
 	backupdirs=`find /backup -mindepth 1 -maxdepth 1 -type d | grep -v "lost+found"`
-	
+
 	for backupdir in $backupdirs; do
-	
+
 	        logfile=$backupdir/current_log
 
 Find all the /backup/$vault/current_log, and print them in a nice readable format. Delete the symlink after so they're not printed again.
 
-	
+
 	        if [ -f $logfile ]; then
 	                echo
 	                vaultname=`grep vault $logfile|awk '{print $2}'`
@@ -674,7 +674,7 @@ Find all the /backup/$vault/current_log, and print them in a nice readable forma
 
 If the logfile doesn't report success then show a warning, and print more detail.
 
-	
+
 	                fi
 	                egrep '(Backup-begin:|Backup-complete:|Status:)' $logfile
 	                echo
@@ -693,18 +693,18 @@ If the logfile doesn't report success then show a warning, and print more detail
 	                        last="NEVER"
 	                fi
 	                echo "             (last backup: $last)"
-	        
+
 	        fi
 	done
 
 
 If there's no log for today, then warn.
 
-	
+
 	cronfiles=`find /backup/dirvish/ -type f -name "*.log*"`
-	
+
 	for cronlog in $cronfiles; do
-	
+
 	        if [ -f $cronlog ]; then
 	                if [ -s $cronlog ]; then
 	                        echo
@@ -727,13 +727,13 @@ Once the logs get printed with logwatch they're deleted. Empty logs don't get pr
 
 Version 3 of rsync introduced a new feature whereby it could begin copying before it had completed building the file list. This makes our backup times much better. Rsync 3 is in hardy-backports, and the repo should be enabled and pinned for it.
 
-	
-	
+
+
 	#/etc/apt/preferences  
 	Package: rsync
 	Pin: release a=hardy-backports
 	Pin-Priority: 800
-	
+
 	Package: *
 	Pin: release a=hardy-backports
 	Pin-Priority: 400
@@ -743,6 +743,5 @@ Version 3 of rsync introduced a new feature whereby it could begin copying befor
 
 The read performance with linux clients on v3 is [fucking terrible](http://wtf.hijacked.us/wiki/index.php/OpenBSD_NFS_Server_with_Linux_Clients). Like, seriously terrible. Force these to use v2 in /etc/fstab
 
-	
-	192.168.0.17:/                  /machines/puffy nfs noauto,nosuid,nodev,soft,intr,ro,noquota,vers=2   0  2
 
+	192.168.0.17:/                  /machines/puffy nfs noauto,nosuid,nodev,soft,intr,ro,noquota,vers=2   0  2

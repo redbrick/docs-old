@@ -12,7 +12,7 @@ Page for discussing the pending move of /storage from minerva to worf on 6th/7th
 
 ### During Down Time
 
-*  Before turning off minerva, comment out the /storage lines in /etc/fstab. When minerva comes up with the controller, the new array may be sda by default, we don't know. 
+*  Before turning off minerva, comment out the /storage lines in /etc/fstab. When minerva comes up with the controller, the new array may be sda by default, we don't know.
 
 *  Install Dell Controller into Minerva
 
@@ -29,7 +29,7 @@ Page for discussing the pending move of /storage from minerva to worf on 6th/7th
 ### Quota migration script
 
 This needs to do the same as we did for the carbon/deathray -> minerva move (slightly less complicated, last time we were coming from two separate arrays, this time we've only got one to worry about)
-    
+
     new_quota = 2GB (or something)
     for each user:
      old_quota = (use quota command to find their quotas)
@@ -37,4 +37,3 @@ This needs to do the same as we did for the carbon/deathray -> minerva move (sli
          use setquota on worf to set the user's quota to new_quota
      else:
          use setquota on worf to set the user's quota to old_quota
-

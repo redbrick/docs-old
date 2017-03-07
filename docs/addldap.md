@@ -18,4 +18,3 @@ Then run the following command:
     ldapadd -D cn=root,ou=ldap,o=redbrick -y /etc/ldap.secret -x -f update.resevered
 
 Done, if you opted to use stdin, leave the -f off the end of the command, paste the data into your terminal after running the command and finish with a ctrl-d
-
