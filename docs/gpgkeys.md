@@ -1,6 +1,7 @@
 # Rootholder Public Keys
 
-These should be put in hard copy somewhere secure (like the Redbrick room), for verification.
+These should be put in hard copy somewhere secure (like the Redbrick room),
+for verification.
 
 werdz, valid until 2011-01-26:
 
