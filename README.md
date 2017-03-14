@@ -13,4 +13,5 @@ When you do a change make sure it works by building it locally.
 Run `mkdocs serve` to start a local server.
 
 # Deployment
-Docs are auto deployed to readthedocs.io on commit to master
+Docs are auto deployed to https://readthedocs.io on commit to the `latest`
+branch.
