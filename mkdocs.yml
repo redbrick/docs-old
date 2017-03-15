@@ -3,6 +3,9 @@ theme: readthedocs
 repo_url: https://github.com/redbrick/docs
 pages:
  - Home: index.md
+ - WWW:
+   - website: www/website.md
+   - techweek: www/techweek.md
  - Legacy:
    - Machines:
      - Murphy: legacy/machines/murphy.md
