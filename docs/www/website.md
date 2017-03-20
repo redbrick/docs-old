@@ -17,6 +17,8 @@ You will also need to create three files:
   - `.env` by copying `.env.example` and **modifying values (*important*)**
 
 `mailing_list` and `email_update_log` can be left blank, though updates for every post in history will be sent if no previous send date is specified.
+Add the `docker-compose.yml` from [github](https://github.com/redbrick/static-site/blob/master/docker-compose.yml) to `/etc/docker-compose/services/website`
+Set the log and output folder and all Enviroment variables
 
 Add a service for website to `/etc/systemd/system/website.service`
 ```
@@ -24,15 +26,10 @@ Add a service for website to `/etc/systemd/system/website.service`
 Description=Redbrick Website
 After=network.target
 [Service]
-ExecStart=/webtree/redbrick/static-site/bin/www
-Restart=always
+ExecStart=/usr/local/bin/docker-compose up -d
 User=root
 Group=webgroup
-Environment=PATH=/usr/bin:/usr/local/bin
-Environment=NODE_ENV=production
-Environment=SECRET_API_TOKEN=somethingThatMustChange
-Environment=RECAPTCHA_SECRET_KEY=secretkey
-WorkingDirectory=/webtree/redbrick/static-site
+WorkingDirectory=/etc/docker-compose/services/website
 [Install]
 WantedBy=multi-user.target
 ```
