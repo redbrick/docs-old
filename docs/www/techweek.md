@@ -31,7 +31,7 @@ Description=Update Techweek site off git build it
 [Service]
 Type=oneshot
 WorkingDirectory=/webtree/t/techwk
-ExecStart=/bin/sh -c '/usr/bin/git pull && /usr/bin/node /webtree/t/techwk/node_modules/gulp/bin/gulp.js'
+ExecStart=/bin/sh -c '/usr/bin/git pull && /usr/bin/docker run -it --rm --name techweek -v /webtree/t/techwk:/usr/src/app -w /usr/src/app node:boron npm install --unsafe-perm'
 ```
 and a Timer set to do this every hour at `/etc/systemd/system/techweek.timer`
 ```
