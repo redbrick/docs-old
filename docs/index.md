@@ -97,7 +97,7 @@ New admins, read:
 ## Machines
 
 ### Services
-#### Pahpos - Primary Services
+#### Paphos - Primary Services
 
 * [User Management](useradm)
 * [DNS](bind9)
