@@ -277,38 +277,3 @@ This stuff doesn't reflect the current setup, but may be useful sometime.
 * [Solaris Hell Conversion Guide](http://www.cuddletech.com/blog/pivot/entry.php?id=562) -
 	This (and some other posts on that blog) are helpful for trying to deal with
 	solaris.
-
-
-# System Documentation Redundancy
-If sprout goes down, it'd be nice to have access to documentation, in case we
-need said documentation to bring it back up :). There are three separate systems
-for docs redundancy.
-
-### docs(2|3).redbrick.dcu.ie
-There are extra, read-only docs websites `docs2.redbrick.dcu.ie` and
-`docs3.redbrick.dcu.ie` on severus and thunder, generated nightly as part of
-dirvish. This is a full copy of the php and source files on sprout. Users can
-login, put to prevent things going out of sync the content text files are
-`chown`'d by the script to stop accidental editing. Page revisions and other
-features work normally. This behaviour could easily be changed if either mirror
-needed to take over as the primary site.
-
-This functionality is provided by the [redbrick-docs2 package](redbrick-apt)
-
-### docs(4|5).redbrick.dcu.ie
-Docs4 and docs5 are on `showboat.theinternets.be` and `anubis.nowai.org`, and
-mirrored with a [cronjob running on the mirror](docs_mirror_script). These sites
-are just static html files. They're useful if the main sites aren't available,
-but images etc. won't work properly, and there may be other issues. The script
-to generate these mirrors is also a
-[giant ball of hacks](http://www.laputan.org/mud/mud.html#BigBallOfMud),
-in particular, only pages linked from this start page will be mirrored.
-
-### CeilingCat, Lightning & Coke
-In case of network failure or other act of god the pages are copied directly
-from sprout to ceilingcat, lightning & coke as part of `/etc/daily.local`.
-There are ssh keys set up so `root@sprout` can `scp` to `docs@$machine` without
-a password.
-
-There's no http server on these machines, but the docs are fairly readable in
-plain text.
