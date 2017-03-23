@@ -79,7 +79,7 @@ Every now and then, on reboot, minerva's initramfs refuses to recognise the root
 
 ### RAID performance
 
-Read [this page](minervastorage).
+Read [this page](/legacy/procedures/minervastorage).
 
 ## IMAP
 

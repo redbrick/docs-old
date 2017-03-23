@@ -3,11 +3,11 @@
 A list of things that should be done/checked immediately after a power cut:
 
 
-*  Check [KVM](pike), hit ctrl+D on minerva to make sure it boots.
+*  Check [KVM](/network/pike), hit ctrl+D on minerva to make sure it boots.
 
-*  Check [KVM](pike), hit F1 on sprout to make sure it boots
+*  Check [KVM](/network/pike), hit F1 on sprout to make sure it boots
 
-*  Check [KVM](pike), sometimes you need to press F1 on carbon for it to boot
+*  Check [KVM](/network/pike), sometimes you need to press F1 on carbon for it to boot
 
 *  Stop Exim on the mail server (Morpheus) until minerva (NFS) is online.
 

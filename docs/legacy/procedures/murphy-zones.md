@@ -18,7 +18,7 @@ The cpus here refer to vCPUs, of which murphy has 32 (8/4)
 
 
 	[root@murphy /local/zones]# poolcfg -c 'create pool webdb-pool'
-	[root@murphy /local/zones]# poolcfg -c 'create pset webdb-pset (uint pset.min=4; uint pset.max=4)' 
+	[root@murphy /local/zones]# poolcfg -c 'create pset webdb-pset (uint pset.min=4; uint pset.max=4)'
 	[root@murphy /local/zones]# poolcfg -c 'associate pool webdb-pool (pset webdb-pset)'
 	[root@murphy /local/zones]# poolcfg -c 'modify pool webdb-pool (string pool.scheduler="FSS")'
 	[root@murphy ~]# pooladm -c

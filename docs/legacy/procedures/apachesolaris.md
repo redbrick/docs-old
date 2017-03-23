@@ -43,4 +43,4 @@ dirty perl script to fix path errors in the `mods-available/*.load` files.
 
 Apache is running under the `webservd` user and group on Solaris.
 
-> [RedBrick Admin Team](admins@redbrick.dcu.ie) 2009/06/05 02:13
+[RedBrick Admin Team](mailto:admins@redbrick.dcu.ie) 2009/06/05 02:13

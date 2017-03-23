@@ -14,4 +14,4 @@ being awkward.), or just type help. It has fuck all commands anyway. Mostly
 you'll just want to poweroff/poweron from it.
 
 The console on the RSC seems permanently broken. You'll have to use the
-[serial](sprout-serial) connection to get a console.
+[serial](/legacy/procedures/sprout-serial) connection to get a console.

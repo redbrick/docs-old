@@ -1,6 +1,6 @@
 # Pubcookie
 
-This page document's [murphy](murphy)'s pubcookie setup. This has changed a little since RSPM took over.
+This page document's [murphy](/legacy/machines/murphy)'s pubcookie setup. This has changed a little since RSPM took over.
 
 
 ## How it was compiled

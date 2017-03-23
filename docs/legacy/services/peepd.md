@@ -2,7 +2,7 @@
 
 [Peepd](http://code.google.com/p/peepd/) is a twitter/irc gateway (like bitlbee) written and maintained by atlas.
 
-It runs on [morpheus](morpheus) and listens on peepd.internal. Since port 6667 is open to the internet this shouldn't be ran on the external network.
+It runs on [morpheus](/legacy/machines/morpheus) and listens on peepd.internal. Since port 6667 is open to the internet this shouldn't be ran on the external network.
 
 
 	[receive@minerva ~]% host twitter
@@ -24,7 +24,7 @@ The listen address is set via /etc/default/peepd
 	DAEMON_ARGS=" -a 192.168.0.79  "
 
 
-The [peepd package](redbrick-apt) is in packages.redbrick, and maintained by receive.
+The [peepd package](/legacy/procedures/redbrick-apt) is in packages.redbrick, and maintained by receive.
 
 ## Dependencies
 

@@ -7,7 +7,7 @@ Most of these projects don't require being an admin to work on, in any case, you
 ##  Small Scripts
 
 
-*  You've just installed a new machine. However, redbrick's ldap groups (member, associat, and so on) are on gids already used by stupid ubuntu system ids. Script something to go through the groups in ldap, and make sure there's no conflicts. If there are, you need to change the gid of the group in /etc/group, and then chown all the files owned by that group to the new gid. for extra credit, you should then insert the ldap groups into /etc/group, and sort it by gid.  --- //[Eoghan Cotter](johan@redbrick.dcu.ie) 2009/05/16 16:28// Working on this, see /srv/admin/scripts/check_fix_gids.sh
+*  You've just installed a new machine. However, redbrick's ldap groups (member, associat, and so on) are on gids already used by stupid ubuntu system ids. Script something to go through the groups in ldap, and make sure there's no conflicts. If there are, you need to change the gid of the group in /etc/group, and then chown all the files owned by that group to the new gid. for extra credit, you should then insert the ldap groups into /etc/group, and sort it by gid.  --- //[Eoghan Cotter](mailto:johan@redbrick.dcu.ie) 2009/05/16 16:28// Working on this, see /srv/admin/scripts/check_fix_gids.sh
 ## Larger Projects
 
 *  Web hey/huh interface

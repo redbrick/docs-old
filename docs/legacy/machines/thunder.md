@@ -24,11 +24,11 @@
 
 ## Backup Setup
 
-Read [dirvish](dirvish)
+Read [dirvish](/legacy/procedures/dirvish)
 
 ## Mysql
 
-Thunder is a mysql replication slave. The replication user is called replication, the password for this is in pwsafe. The [mysql docs](http://dev.mysql.com/doc/refman/5.0/en/replication-howto.html) on how to set this up are fairly good. The procedure for resyncing this with the master is documented on the [mysql](mysql) page.
+Thunder is a mysql replication slave. The replication user is called replication, the password for this is in pwsafe. The [mysql docs](http://dev.mysql.com/doc/refman/5.0/en/replication-howto.html) on how to set this up are fairly good. The procedure for resyncing this with the master is documented on the [mysql](/services/mysql) page.
 
 ## Known Issues
 

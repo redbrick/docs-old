@@ -19,7 +19,7 @@
 
 *  ESXi: Does A, C, D, E
 
-*  KVM: [rbvm](rbvm) does B, C, D and E \o/ Might do A, not sure.
+*  KVM: [rbvm](/legacy/services/rbvm) does B, C, D and E \o/ Might do A, not sure.
 
 *  xVM : Xen with nicer front end
 
@@ -30,7 +30,7 @@
 
 # KVM
 
-**Updated**: We've built the entire VM stack on KVM. See [rbvm](rbvm) for details on our homemade enterprise cloud management suite.
+**Updated**: We've built the entire VM stack on KVM. See [rbvm](/legacy/services/rbvm) for details on our homemade enterprise cloud management suite.
 
 Open source, which is nice. It also has decent enough processor performance. Used to have crappy disk IO, but that seems alright in modern versions.
 

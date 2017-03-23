@@ -12,8 +12,8 @@ remember.
 We only use imaps, on port 993. This is set in dovecot.conf
 
 ### ssl
-Dovecot uses the same [ssl](ssl) certs as apache, but keeps it's own copy in
-`/etc/dovecot`
+Dovecot uses the same [ssl](/procedures/ssl) certs as apache, but keeps it's own
+copy in `/etc/dovecot`.
 
 ### indexes
 

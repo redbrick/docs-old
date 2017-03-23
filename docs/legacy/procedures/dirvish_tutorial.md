@@ -6,8 +6,8 @@ Some of the sections here aren't really relevant to our setup, in particular:
 
 * We've installed from apt
 * He talks about ssh, we use nfs for all our transfers
-* Status 24: we've had to hack around this, see the [dirvish](dirvish) docs for
-	more on this.
+* Status 24: we've had to hack around this, see the
+  [dirvish](/legacy/procedures/dirvish) docs for more on this.
 * The syntax for expire rules here is different, not sure if they've changed
 	since this was written.
 

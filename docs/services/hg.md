@@ -13,7 +13,7 @@
 	which is protected by mod_authnz_ldap (Pubcookie + hg is a world of             
 	pain). Each repository has it's own list of which authenticated users           
 	may push (write) to it.                                                         
-	                                                                                
+
 	If any users ask for a repository, running                                      
 	/srv/admin/scripts/add_hg_repo.sh on murphy will create it for you.             
 	Repositories are in /storage/hg and need to be owned by www-data to             

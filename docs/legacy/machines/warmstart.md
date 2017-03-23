@@ -22,7 +22,7 @@ Warmstart is named in honour of the old ups. When we got the management interfac
 	Date: 11/20/2008  
 	Time: 09:58:40
 	Code: 0x0002
-	                                                                                                                                                
+
 	Severe - System: Warmstart.    
 
 	_______________________________________________                                                                                                 

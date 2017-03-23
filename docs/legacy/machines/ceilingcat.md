@@ -17,8 +17,8 @@ even developing VM images before deploying them on a production machine.
 Rootholders have superuser access. Any committee members who want it also have
 accounts on it.
 
-[Munger](Munger) is set up in the GNOME printer configuration, so printing stuff
-is easy.
+[Munger](/legacy/machines/munger) is set up in the GNOME printer configuration,
+so printing stuff is easy.
 
 It might also be useful for clubs and socs days, if anyone is adventurous enough
 to bring it downstairs and expose it to the wilderness for a day.

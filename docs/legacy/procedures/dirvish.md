@@ -56,11 +56,11 @@ the "Runall" section, and that job won't be ran.
 All of the configuration data & scripts for dirvish is now in packages. If you
 need to reinstall a machine, then you'll need to do the following:
 
-* Install [redbrick-backup-server](redbrick-apt)
+* Install [redbrick-backup-server](/legacy/procedures/redbrick-apt)
 * Init all of the vaults, as described above (this has to be done manually the
 	first time for the cron job to run). This step takes fucking ages on severus
 	because its RAID is a pile of soggy dicks.
-* Re-sync the mysql slave, as per the [instructions](mysql)
+* Re-sync the mysql slave, as per the [instructions](/services/mysql)
 * Switch logwatch to run from /etc/cron.daily rather than /etc/cron.d so that it runs after dirvish
 
 ### Mounting Filesystems

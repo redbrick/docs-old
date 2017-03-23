@@ -28,11 +28,11 @@ Runs on sprout apache. Doesn't use any databases.
 
 ### Nagios
 
-Documented [here](nagios) (kinda)
+Documented [here](/services/nagios) (kinda)
 
 ### Console Server
 
-Documented [here](sprout-serial)
+Documented [here](/legacy/procedures/sprout-serial)
 
 ## In Progress
 

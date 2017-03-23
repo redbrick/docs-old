@@ -19,7 +19,7 @@
 	Gi0/16 0014.4fed.f88c Daniel.external	VLAN2
 
 
-	
+
 	Gi0/17 0015.1722.df58 Minerva.internal	VLAN3
 	Gi0/18						VLAN3
 	Gi0/19 0007.e91a.8712 Sprout.internal	VLAN3

@@ -17,7 +17,7 @@
 	ceilingcat                      136.206.15.11
 	                                136.206.15.12 # this used to be obelisk
 	                                136.206.15.13
-	murphy                          136.206.15.14 
+	murphy                          136.206.15.14
 	b4                              136.206.15.15
 	data                            136.206.15.16
 	(reserved)                      136.206.15.17 # b4-os.mgmt is on 192.168.1.17, so using this external address is iffy

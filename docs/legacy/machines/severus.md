@@ -22,7 +22,7 @@
 
 ## Backup Setup
 
-Read [dirvish](dirvish)
+Read [dirvish](/legacy/procedures/dirvish)
 
 ## Mysql
 

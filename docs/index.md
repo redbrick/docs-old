@@ -10,22 +10,22 @@ work. Ever. For anything).
 
 ## Current stuff
 
-* [Current to Do List](to_do_1502)
-* [Paphos to do list](paphos_migration)
-* [nagios to do list](nagios_to_do)
-* [Suggested Ideas for scripts/projects](project-ideas)
-* [To Do List For New Admins](new_admin_to_do)
-* [RBVM management tool](rbvm)
-* [March 2016 Downtime & Maintenance](post_mortem_mar16)
+* [Current to Do List](/procedures/to_do_1502)
+* [Paphos to do list](/procedures/paphos_migration)
+* [nagios to do list](/procedures/nagios_to_do)
+* [Suggested Ideas for scripts/projects](/procedures/project-ideas)
+* [To Do List For New Admins](/procedures/new_admin_to_do)
+* [RBVM management tool](/legacy/services/rbvm)
+* [March 2016 Downtime & Maintenance](/postmortems/post_mortem_mar16)
 
 ## New Admins
 New admins, read:
 
-* [policies](policies).
-* [Testing accounts](testing)
-* [Abuse@redbrick, and the committee stance on it](abuse)
-* [IRC Operator Guide](irc_operator)
-* [Mail setup for mutt](mail_setup)
+* [policies](/procedures/policies).
+* [Testing accounts](/procedures/testing)
+* [Abuse@redbrick, and the committee stance on it](/procedures/abuse)
+* [IRC Operator Guide](/procedures/irc_operator)
+* [Mail setup for mutt](/procedures/mail_setup)
 
 ---
 
@@ -33,66 +33,67 @@ New admins, read:
 
 ## Stuff on the Wall of the server room
 
-* [Changing a local Password](passwd)
+* [Changing a local Password](/procedures/passwd)
 
 ## Services
 
 #### Messaging
 
-* [News Server (the boards)](news)
-* [IRC](irc)
-* <del>[jabber](jabber)</del>
-* <del>[peepd](peepd)</del>
-* [Webchat (qwebirc)](webchat)
+* [News Server (the boards)](/services/news)
+* [IRC](/services/irc)
+* <del>[jabber](/legacy/services/jabber)</del>
+* <del>[peepd](/legacy/services/peepd)</del>
+* [Webchat (qwebirc)](/services/webchat)
 
 #### Ldap
 
-* [LDAP](ldap)
-* [RRS setup, how to not break stuff after clubs and socs day](rrs)
+* [LDAP](/services/ldap)
+* [RRS setup, how to not break stuff after clubs and socs day](/procedures/rrs)
 
 #### Storage
 
-* [Current NFS setup](nfs)
-* <del>[Fast storage space for users](faststorage)</del>
+* [Current NFS setup](/services/nfs)
+* <del>[Fast storage space for users](/legacy/services/faststorage)</del>
 
 #### Mail
 
-* [Exim email setup](exim)
-* [Dovecot IMAP](dovecot) Dovecot
-* [Mailman](Mailman) Redbrick Mailing Lists
+* [Exim email setup](/services/exim)
+* [Dovecot IMAP](/services/dovecot) Dovecot
+* [Mailman](/services/mailman) Redbrick Mailing Lists
 
 #### NNTP
 
-* [Setting up a new board](newboard)
+* [Setting up a new board](/procedures/newboard)
 
 #### Databases
 
-* [MySQL](mysql)
-* [postgres](postgres)
+* [MySQL](/services/mysql)
+* [postgres](/services/postgres)
+
 #### Network
 
-* [.15 Address Space](mainaddressspace)
-* [.16 Address Space](vmaddressspace)
-* [Network setup](networksetup) (internal LAN, external LAN, switches, cable
+* [.15 Address Space](/network/mainaddressspace)
+* [.16 Address Space](/legacy/network/vmaddressspace)
+* [Network setup](/network/networksetup) (internal LAN, external LAN, switches, cable
 	colours etc)
-* [redbrick.dcu.ie](redbrick.dcu.ie)
-* [tunnel.redbrick.dcu.ie](tunnel.redbrick.dcu.ie)
-* <del>[VPN to Severus](severus_vpn)</del>
-* [Switch Setup](Switch)
-* [Gratuitous ARP](gratuitousarp) (or, how to force update an IP address's
+* [redbrick.dcu.ie](/web/redbrick.dcu.ie)
+* [tunnel.redbrick.dcu.ie](/services/tunnel.redbrick.dcu.ie)
+* <del>[VPN to Severus](/legacy/procedures/severus_vpn)</del>
+* [Switch Setup](/procedures/switch)
+* [Gratuitous ARP](/procedures/gratuitousarp) (or, how to force update an IP address's
 	associated MAC on the router and other machines)
 
 #### WWW
 
-* [Redbrick SSL certs](ssl)
-* [Mercurial (hg) hosting](hg)
-* [Git hosting](git)
-* [Webchat (qwebirc)](webchat)
+* [Redbrick SSL certs](/procedures/ssl)
+* [Mercurial (hg) hosting](/services/hg)
+* [Git hosting](/legacy/services/git)
+* [Webchat (qwebirc)](/services/webchat)
 
 #### Backups
 
-* [Redbrick backups with dirvish](Dirvish)
-* [Dirvish Tutorial](dirvish_tutorial)
+* [Redbrick backups with dirvish](/legacy/procedures/dirvish)
+* [Dirvish Tutorial](/legacy/procedures/dirvish_tutorial)
 
 ## Machines
 
@@ -105,11 +106,11 @@ New admins, read:
 #### Metharme - Web Applications
 
 * [Web Server](apache24)
-* [IceCast](icecast)
+* [IceCast](/services/icecast2)
 
 #### halfpint - Admin Bastion
 
-* [DRAC Access](dracaccess)
+* [DRAC Access](/procedures/dracaccess)
 * [Password Safe](pwsafe)
 * [ DokuWiki](docs)
 * [ Kinda the new sprout](sprout)
@@ -124,7 +125,8 @@ New admins, read:
 
 * [DRAC Access](dracaccess)
 * [Pygmalion](pyg)
-* <del>[Carbon](carbon)</del>
+
+<del>[Carbon](/legacy/machines/carbon)</del>
 
 ### Web
 
@@ -134,52 +136,52 @@ New admins, read:
 but really there aren't many, it's a straight Lenny install with the usual
 redbrick linux packages.**
 
-* [Murphy ALOM Access](murphyalomaccess)
+* [Murphy ALOM Access](/legacy/procedures/murphyalomaccess)
 
 ##### Old
 Stuff from the dark ages (or, when we used Solaris 10)
 
 * [murphy-disabled services](murphy-disabled services) - probably worth doing
 	for all solaris boxes
-* [Murphy general setup info](murphy)
-* [OMG why does it have solaris](murphysolaris)
-* [Redbrick Solaris (rspm) Package Manager documentation](redbrick_solaris_package_manager)
-* [Live Upgrading Murphy](murphyliveupgrade)
-* [Python setup on Murphy](murphypython)
-* [lofiadm - Mounting ISOs on Solaris 10](lofiadm)
-* [pkgsrc - (Experimental) NetBSD package management on Solaris](pkgsrc)
+* [Murphy general setup info](/legacy/machines/murphy)
+* [OMG why does it have solaris](/legacy/procedures/murphysolaris)
+* [Redbrick Solaris (rspm) Package Manager documentation](/legacy/procedures/redbrick_solaris_package_manager)
+* [Live Upgrading Murphy](/legacy/procedures/murphyliveupgrade)
+* [Python setup on Murphy](/legacy/procedures/murphypython)
+* [lofiadm - Mounting ISOs on Solaris 10](/legacy/procedures/lofiadm)
+* [pkgsrc - (Experimental) NetBSD package management on Solaris](/legacy/procedures/pkgsrc)
 
 ##### Even Older
 Stuff from the Ubuntu 6.06 days
 
-* [Murphy Pubcookie](pubcookie), because the docs on the pubcookie site are
+* [Murphy Pubcookie](/services/pubcookie), because the docs on the pubcookie site are
 	shit, and our setup is..eh..special.
-* [Apache on Murphy](apacheonmurphy)
-* [Murphy suPHP setup](suphp)
+* [Apache on Murphy](/legacy/procedures/apacheonmurphy)
+* [Murphy suPHP setup](/services/suphp)
 
 ### VM Project
 
 #### Cynic - VM Firewall
 
-* [Cynic](cynic)
-* [Cynic RSC Access](cynicrscaccess)
-* [Installing Debian on Cynic](cynicdebian)
+* [Cynic](/legacy/machines/cynic)
+* [Cynic RSC Access](/legacy/procedures/cynicrscaccess)
+* [Installing Debian on Cynic](/legacy/procedures/cynicdebian)
 
 ####  Daniel - VM Host
 
-* [daniel](daniel)
-* [x4140 ILOM](x4140ilom)
-* [VM info and password resets](rbvmctl)
-* [Compiling Xen](compilingxen)
-* [RBVM management tool](rbvm)
-* [Keeping Track of VM Server Options and Work](vmserverstuff)
+* [daniel](/legacy/machines/daniel)
+* [x4140 ILOM](/legacy/procedures/x4140ilom)
+* [VM info and password resets](/legacy/services/rbvmctl)
+* [Compiling Xen](/legacy/procedures/compilingxen)
+* [RBVM management tool](/legacy/services/rbvm)
+* [Keeping Track of VM Server Options and Work](/legacy/procedures/vmserverstuff)
 
 ### Backups
 
 #### Severus - Offsite Backup
 
-* [Severus (backup server) general setup info](severus)
-* [Moving severus to CSD](severuscolocation)
+* [Severus (backup server) general setup info](/machines/severus)
+* [Moving severus to CSD](/procedures/severuscolocation)
 
 #### Thunder - Onsite Backup
 
@@ -189,81 +191,82 @@ Stuff from the Ubuntu 6.06 days
 
 #### Admin Desktop
 
-* [basementcat](basementcat)
-* <del>[ceilingcat](ceilingcat)</del>
+* [basementcat](/legacy/machines/basementcat)
+* <del>[ceilingcat](/legacy/machines/ceilingcat)</del>
 
 ## Hardware
 
 ### Switches
 
-* [Cisco IOS](ciscoios)
-* [hadron](hadron)
+* [Cisco IOS](/network/ciscoios)
+* [hadron](/network/hadron)
 * <del>[enzyme](enzyme)</del>
-* [JunOS](junos)
-* [Higgs](higgs)
+* [JunOS](/network/junos)
+* [Higgs](/network/higgs)
 
 ### UPS
 
-* [warmstart](warmstart)
-* [electro](electro)
-* [The PDUs](The PDUs)
+* [warmstart](/legacy/machines/warmstart)
+* [electro](/legacy/machines/electro)
+* [The PDUs](/machines/the_pdus)
 
 ### Other
 
-* [Pike (IP-KVM)](pike)
-* <del>[Munger (Printer)](munger)</del>
+* [Pike (IP-KVM)](/network/pike)
+* <del> [Munger (Printer)](/legacy/other/munger)</del>
 
 ## Software
 Software written by RedBrick, or with RedBrick customisations etc.
 
-* [RedBrick Apt Repo (work in progress)](redbrick-apt)
-* [Backported Packages](backport-packages)
-* [Hey (and huh)](hey)
-* [Rbusers](rbusers)
-* [Chfn & Chsh for ldap](ldapchshchfn)
-* [Small scripts](rbscripts)
-* [putty](putty)
-* [RedBrick MOTD setup](unifiedmotd)
-* [Redbrick VM management tool](rbvm)
-* [Icecast Streaming Service for DCUFM](icecast2)
+* [RedBrick Apt Repo (work in progress)](/legacy/procedures/redbrick-apt)
+* [Backported Packages](/procedures/backport-packages)
+* [Hey (and huh)](/services/hey)
+* [Rbusers](/procedures/rbusers)
+* [Chfn & Chsh for ldap](/procedures/ldapchshchfn)
+* [Small scripts](/procedures/rbscripts)
+* [putty](/services/putty)
+* [RedBrick MOTD setup](/services/unifiedmotd)
+* [Redbrick VM management tool](/legacy/services/rbvm)
+* [Icecast Streaming Service for DCUFM](/services/icecast2)
 
 ## Other
 
-* [Committee changeover procedure](committeechangeover)
-* [Installing new machines](newinstalls)
-* [Compiling a custom Ubuntu kernel](ubuntukernel)
-* [What to do immediately after a power cut](post_powercut)
+* [Committee changeover procedure](/procedures/committeechangeover)
+* [Installing new machines](/procedures/newinstalls)
+* [Compiling a custom Ubuntu kernel](/legacy/procedures/ubuntukernel)
+* [What to do immediately after a power cut](/procedures/post_powercut)
 
 ## Works In Progress
 
-* [Rootholder public keys](gpgkeys)
-* [Ticketing system](ticketing)
-* [Munin](munin)
-* [Nagios](nagios)
+* [Rootholder public keys](/legacy/procedures/gpgkeys)
+* [Ticketing system](/procedures/ticketing)
+* [Munin](/legacy/services/munin)
+* [Nagios](/services/nagios)
 
 ## Old Stuff
 This stuff doesn't reflect the current setup, but may be useful sometime.
 
-* [Murphy MySQL client bug](murphymysqlclientbug)
-* [Exim on Solaris](exim_solaris)
-* **[Carbon Reboot Warning](carbonrebootwarning)**
-* [UPS Stuff](ups)
-* [Murphy Zone Configuration](murphy-zones)
-* [Murphy Jumpstart Configuration](murphy-jumpstart)
-* [News Overview Fix](newsoverviewfix)
-* **[What to do with carbon and deathray](carbonanddeathray) (namely the
-	impending upgrade from sarge, and the now free storage space on them)**
-* [Open Ports](openports)
-* [IRC proxy](ircproxy)
-* [Apache configuration on Solaris 10](apachesolaris)
-* [PHP configuration on Solaris 10](phpsolaris)
-* [Apache modules (suphp, pubcookie)](apachemodules)
-* [Tomcat (and mod_jk)](tomcat-murphy)
+* [Murphy MySQL client bug](/legacy/procedures/murphymysqlclientbug)
+* [Exim on Solaris](/legacy/procedures/exim_solaris)
+* **[Carbon Reboot Warning](/legacy/procedures/carbonrebootwarning)**
+* [UPS Stuff](/legacy/machines/ups)
+* [Murphy Zone Configuration](/legacy/procedures/murphy-zones)
+* [Murphy Jumpstart Configuration](/legacy/procedures/murphy-jumpstart)
+* [News Overview Fix](/procedures/newsoverviewfix)
+* **[What to do with carbon and deathray](/legacy/procedures/carbonanddeathray)
+	(namely the impending upgrade from sarge, and the now free storage space on
+	them)**
+* [Open Ports](/legacy/procedures/openports)
+* [IRC proxy](/legacy/services/ircproxy)
+* [Apache configuration on Solaris 10](/legacy/procedures/apachesolaris)
+* [PHP configuration on Solaris 10](/legacy/procedures/phpsolaris)
+* [Apache modules (suphp, pubcookie)](/procedures/apachemodules)
+* [Tomcat (and mod_jk)](/legacy/procedures/tomcat-murphy)
 
 #### Old Hardware
 
-*  <del>[Minerva general setup info](minerva)</del>
-*  <del>[Minerva storage setup and performance issues/solutions](minervastorage)</del>
+*  <del>[Minerva general setup info](/legacy/machines/minerva)</del>
+*  <del>[Minerva storage setup and performance issues/solutions](/legacy/procedures/minervastorage)</del>
 
 # Useful Links
 

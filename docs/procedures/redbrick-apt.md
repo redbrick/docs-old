@@ -109,25 +109,25 @@ Note, the meta dependences included below are mostly provided as an example of w
 ## Userland
 
 
-*  **[c-hey](hey)**, for both i386 and amd64
+*  **[c-hey](/services/hey)**, for both i386 and amd64
 
-*  **[huh](hey)**, for amd64 only. The i386 hey doesn't support huh. This package still requires that you manually configure syslog.ng as per the docs. It also doesn't set up it's group and stuff, this should be changed in the next version of this package. The huh.i386 package is a dummy to satisfy the dependency of redbrick-login-server.
+*  **[huh](/services/hey)**, for amd64 only. The i386 hey doesn't support huh. This package still requires that you manually configure syslog.ng as per the docs. It also doesn't set up it's group and stuff, this should be changed in the next version of this package. The huh.i386 package is a dummy to satisfy the dependency of redbrick-login-server.
 
 *  **redbrick-news**: news, usenet, newsbeuter
 
-*  **[redbrick-noscripts](rbscripts)**: nohelp, noforward, nopermwarn
+*  **[redbrick-noscripts](/procedures/rbscripts)**: nohelp, noforward, nopermwarn
 
 *  **redbrick-mail**: mdfrm, mdmake, vcard.filter, octet-filter. Creates /usr/local/etc/mailcap, and pulls in all the dependencies for converting attachments.
 
-*  **[redbrick-motd](unifiedmotd)**: update_motd, init script to fix motd on boot, cron script to update nightly and /etc/motd.* files.
+*  **[redbrick-motd](/services/unifiedmotd)**: update_motd, init script to fix motd on boot, cron script to update nightly and /etc/motd.* files.
 
-*  **[redbrick-help](rbscripts)**: the help script, and the message shown on login.
+*  **[redbrick-help](/procedures/rbscripts)**: the help script, and the message shown on login.
 
-*  **[rbquota](rbscripts)**
+*  **[rbquota](/procedures/rbscripts)**
 
-*  **[rbusers](rbusers)**, for both i386 and amd64
+*  **[rbusers](/procedures/rbusers)**, for both i386 and amd64
 
-*  **[redbrick-local](ldapchshchfn)**: Redbrick specific scripts and stuff which need to go in /usr/local/bin to be higher on the path than the system defaults. Note: this package should not "replace" any ubuntu packages. Contains: chsh & chfn for ldap, and the screen wrapper script.
+*  **[redbrick-local](/procedures/ldapchshchfn)**: Redbrick specific scripts and stuff which need to go in /usr/local/bin to be higher on the path than the system defaults. Note: this package should not "replace" any ubuntu packages. Contains: chsh & chfn for ldap, and the screen wrapper script.
 
 *  **redbrick-shells**: Creates symlinks for /usr/local/shells. Depends on redbrick-shell-env, redbrick-shell-disabled, ksh, tcsh & csh
 
@@ -135,7 +135,7 @@ Note, the meta dependences included below are mostly provided as an example of w
 
 *  **redbrick-shell-env**: shell/mutt/slrn/irssi config files. This package contains config files for various things, and as such "Replaces" the config files owned by the original package. This package should only contain config files and should be the only package that "replaces" another for this purpose. The only dependencies of this package should be shells it configures - bash, zsh and packages which /etc/shell_cmd requires to exist - rbquota and redbrick-help. It should "recommend" any other packages which it has config files for.
 
-*  **[peepd-irssi](peepd)**: Irssi scripts to use with peepd.
+*  **[peepd-irssi](/services/peepd)**: Irssi scripts to use with peepd.
 
 ## System
 
@@ -152,7 +152,7 @@ Note, the meta dependences included below are mostly provided as an example of w
 
 *  **redbrick-cron-scripts**: Standalone cron scripts. Currently the only script is 'dpkglist', which saves the output of 'dpkg -l' to /var/backups nightly.
 
-*  **[peepd](peepd)**: atlas' twitter irc gateway
+*  **[peepd](/services/peepd)**: atlas' twitter irc gateway
 
 *  **mail2nntp** - this is needed on the mailhosts to post mailing lists to boards via aliases.
 
@@ -180,7 +180,7 @@ These packages are designed to keep the [backup systems](dirvish) on [thunder](t
 
 ## Backport Packages
 
-See the list of packages [backported](backport-packages) to hardy from other debian/ubuntu releases.
+See the list of packages [backported](/procedures/backport-packages) to hardy from other debian/ubuntu releases.
 
 #  Man Pages
 

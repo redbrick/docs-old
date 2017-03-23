@@ -2,7 +2,7 @@
 
 **Please try to keep this up-to-date!**
 
-[Azazel](azazel) is the main storage server.
+[Azazel](/machines/azazel) is the main storage server.
 
 Carbon, morpheus and murphy mount /storage over NFS. On each machine, /home and /webtree is then symlinked to /storage/home and /storage/webtree, respectively. This allows us to have unified quotas, without breaking things.
 

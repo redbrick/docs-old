@@ -22,7 +22,7 @@ The aliases are stored in /etc/mail.
 * user_disusered_aliases
 * user_rename_aliases - put aliases in here when you rename users.
 * lists_aliases - aliases that forward mail from mailing lists to the boards.
-  Depends on [mail2nntp](redbrick-apt)
+  Depends on [mail2nntp](/legacy/procedures/redbrick-apt)
 * virtuals
 
 All these files are under RCS. Be sure to check them in and out when editing.

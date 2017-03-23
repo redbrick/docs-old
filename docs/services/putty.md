@@ -9,7 +9,7 @@ ask atlas/phaxx
 
 ### rbputty-0.58 patch
 
-	
+
 	diff -Nru 0.58-orig/CONFIG.C 0.58-phaxx/CONFIG.C
 	--- 0.58-orig/CONFIG.C	2005-04-05 20:37:51.000000000 +0100
 	+++ 0.58-phaxx/CONFIG.C	2007-01-26 17:34:18.000000000 +0000

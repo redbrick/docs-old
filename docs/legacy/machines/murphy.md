@@ -22,7 +22,8 @@ warned.
 * Solaris 10
 
 ## Installation
-Read up the [jumpstart](murphy-jumpstart) notes for more about this.
+Read up the [jumpstart](/legacy/procedures/murphy-jumpstart) notes for more
+about this.
 
 ## Packages
 Packages on murphy fall into three broad categories:
@@ -31,7 +32,7 @@ Packages on murphy fall into three broad categories:
 * [Blastwave](http://www.blastwave.org/) packaged stuff. This place is good for
 	userland utilities mostly. It comes with a program called `pkgutil` to manage
 	itself. Blastwave stuff is in `/opt/csw`
-* [Redbrick Packages](redbrick_solaris_package_manager).
+* [Redbrick Packages](/legacy/procedures/redbrick_solaris_package_manager)
 
 ## Exim
 This is installed from blastwave, and managed by solaris `svcadm`.

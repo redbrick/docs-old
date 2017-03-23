@@ -1,6 +1,6 @@
 There are some packages backported to hardy from later debian/ubuntu because
 there wasn't one available or suitable in hardy. These packages are generally
-available from the [apt repo](redbrick-apt).
+available from the [apt repo](/legacy/procedures/redbrick-apt).
 
 ## bitlbee
 
