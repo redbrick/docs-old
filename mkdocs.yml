@@ -66,8 +66,8 @@ pages:
     - PubCookie: web/pubcookie.md
     - suPHP: web/suphp.md
     - webchat: web/webchat.md
-    - Website: www/website.md
-    - TechWeek: www/techweek.md
+    - Website: web/website.md
+    - TechWeek: web/techweek.md
   - Scripts:
     - rbscripts: procedures/rbscripts.md
     - rbusers: procedures/rbusers.md

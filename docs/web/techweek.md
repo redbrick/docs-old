@@ -1,5 +1,5 @@
 # TechWeek Website
-The repository containing the Techweek website is on Github [here](https://github.com/redbrick/TechWeek)
+The repository containing the Techweek website is in Github [redbrick/techweek](https://github.com/redbrick/TechWeek) repository.
 The website was written to have the Google Material Design look and feel. MaterializeCSS was used to speed up the process.
 
 ## Deployment
@@ -19,7 +19,8 @@ This blob says what template to use.
 Each page is a markdown file with a json blob at the beginning with all the details about that years talks.
 The Json is used to fill a mustache template since all the pages are the same format and layout and output to dist.
 
-The `main.js` file is responsible for displaying the countdown and loading the video feed. Also, it changes colour of the header and individual days, depending on the amount of times you have visited the page. It also handles the #Day so a specific day can be linked to.
+The `main.js` file is responsible for displaying the countdown and loading the video feed. Also, it changes colour of the header and individual days,
+depending on the amount of times you have visited the page. It also handles the #Day so a specific day can be linked to.
 Gulp concats this with materilize and minifies it to `dist/js`
 
 ## Updating
