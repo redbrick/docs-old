@@ -1,0 +1,23 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: ubuntu:16.04
+    working_directory: ~/docs
+    steps:
+      - checkout
+      - run:
+        name: Install Dependencies
+        command: pip install mkdocs
+      - run: command: gem install html-proofer
+      - run:
+        name: Test Build
+        command: mkdocs build
+      - run:
+        name: Test Internal Links
+        command: htmlproofer site --allow-hash-href --check-html --empty-alt-ignore --disable-external | tee $CIRCLE_ARTIFACTS/htmlproofer-results.txt; exit ${PIPESTATUS[0]}
+      - deploy:
+        command: |
+          if [ "${CIRCLE_BRANCH}" == "master" ]; then
+            mkdocs gh-deploy
+          fi
