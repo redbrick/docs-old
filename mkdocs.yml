@@ -3,7 +3,9 @@ theme: readthedocs
 repo_url: https://github.com/redbrick/docs
 pages:
   - Home: index.md
-  - Project Ideas: project-ideas.md
+  - Plans:
+    - TODO-2017: plans/TODO-2017.md
+    - Project Ideas: project-ideas.md
   - Services:
     - Bitlbee: services/bitlbee.md
     - Dovecot: services/dovecot.md
