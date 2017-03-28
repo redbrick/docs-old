@@ -5,19 +5,23 @@ jobs:
       - image: ubuntu:16.04
     working_directory: ~/docs
     steps:
+      - run:
+          name: update container
+          command: apt-get -qq update; apt-get -y install git python-pip python-dev build-essential zlib1g-dev ruby-dev libcurl4-openssl-dev
       - checkout
       - run:
-        name: Install Dependencies
-        command: pip install mkdocs
-      - run: command: gem install html-proofer
+          name: Install Dependencies
+          command: pip install mkdocs
+      - run: gem install html-proofer
       - run:
-        name: Test Build
-        command: mkdocs build
+          name: Test Build
+          command: mkdocs build
       - run:
-        name: Test Internal Links
-        command: htmlproofer site --allow-hash-href --check-html --empty-alt-ignore --disable-external | tee $CIRCLE_ARTIFACTS/htmlproofer-results.txt; exit ${PIPESTATUS[0]}
+          name: Test Internal Links
+          command: htmlproofer site --allow-hash-href --check-html --empty-alt-ignore --disable-external
       - deploy:
-        command: |
-          if [ "${CIRCLE_BRANCH}" == "master" ]; then
-            mkdocs gh-deploy
-          fi
+          name: github-pages
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              mkdocs gh-deploy
+            fi
