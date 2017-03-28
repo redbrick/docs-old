@@ -19,7 +19,7 @@ custom setup.
 All the apache modules (bar pubcookie) also come from apt.
 
 ## Pubcookie
-Now [works](pubcookie)!
+Now [works](/web/pubcookie)!
 
 ## suExec
 Set up the same as before for deathray. `docroot` is compiled as `/var/www`, so

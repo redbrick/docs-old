@@ -9,8 +9,8 @@ work. Ever. For anything).
 
 ## Current stuff
 
-* [Current TODO list](todo)
-* [Suggested Ideas](project-ideas)
+* [Current TODO list](/plans/TODO-2017)
+* [Suggested Ideas](/plans/project-ideas)
 
 ---
 
@@ -44,7 +44,7 @@ Day to day running of things.
 
 * [Exim email setup](/services/exim)
 * [Dovecot IMAP](/services/dovecot)
-* [Mailing Lists (Mailman)](/services/Mailman)
+* [Mailing Lists (Mailman)](/services/mailman)
 * [Mail setup for mutt](/procedures/mail_setup)
 
 #### NNTP
@@ -80,7 +80,6 @@ Day to day running of things.
 TODO: Add more details as this is definatelly not complete.
 Moved to BackupPC
 
-* [Severus (backup server) general setup info](/machines/severus)
 * [Moving severus to CSD](/procedures/severuscolocation)
 
 ---
@@ -96,8 +95,8 @@ After each emergency remember to write a postmortem!
 ### Services
 #### Paphos - Primary Services
 
-* [User Management](useradm)
-* [DNS](bind9)
+* [User Management](/procedures/useradm)
+* [DNS](/network/bind9)
 
 #### Zeus - Secondary Services and New web
 
@@ -106,13 +105,13 @@ After each emergency remember to write a postmortem!
 
 #### Metharme - Web Applications
 
-* [Web Server](apache24)
+* [Web Server](/web/apache24)
 * [IceCast](/services/icecast2)
 
 #### halfpint - Admin Bastion
 
 * [DRAC Access](/procedures/dracaccess)
-* [Password Safe](pwsafe)
+* [Password Safe](/procedures/pwsafe)
 
 ### User Login
 
@@ -120,20 +119,18 @@ After each emergency remember to write a postmortem!
 
 #### Pygmalion - User Development
 
-* [DRAC Access](dracaccess)
-* [Pygmalion](pyg)
+* [DRAC Access](/procedures/dracaccess)
 
 ## Security
 
-* [Rootholder public keys](gpgkeys)
-
+* [Rootholder public keys](/procedures/gpgkeys)
 
 ## Hardware
 
 ### Switches
 
 * [Cisco IOS](/network/ciscoios)
-* [hadron](/network/hadron)
+* [Hadron](/network/hadron)
 * [JunOS](/network/junos)
 * [Higgs](/network/higgs)
 
@@ -154,7 +151,6 @@ Software written by RedBrick, or with RedBrick customisations etc.
 * [Rbusers](/procedures/rbusers)
 * [Chfn & Chsh for ldap](/procedures/ldapchshchfn)
 * [Small scripts](/procedures/rbscripts)
-* [putty](/services/putty)
 * [RedBrick MOTD setup](/services/unifiedmotd)
 * [Icecast Streaming Service for DCUFM](/services/icecast2)
 
@@ -163,9 +159,9 @@ Software written by RedBrick, or with RedBrick customisations etc.
 ## System Documentation Redundancy
 
 ### Github
-Github is where docs are stored. They are plain markdown but they 
+Github is where docs are stored. They are plain markdown but they
 are easily accessed and read from anywhere.
 
 ###  ReadTheDocs
-Docs are auto deployed to https://readthedocs.io on commit to the `latest` branch.
+Docs are auto deployed to (readthedocs)[https://readthedocs.io] on commit to the `latest` branch.
 They should always be up to date.

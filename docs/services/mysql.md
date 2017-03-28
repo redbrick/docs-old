@@ -3,7 +3,7 @@
 
 *  Main mysql runs on morpheus (mysql.internal, 192.168.0.76).
 
-*  There are mysql slaves on thunder and severus, which are [backed](dirvish) up nightly.
+*  There are mysql slaves on thunder and severus, which are [backed](/legacy/procedures/dirvish) up nightly.
 
 
 ## Moving Mysql

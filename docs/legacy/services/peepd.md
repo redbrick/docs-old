@@ -2,7 +2,7 @@
 
 [Peepd](http://code.google.com/p/peepd/) is a twitter/irc gateway (like bitlbee) written and maintained by atlas.
 
-It runs on [morpheus](/legacy/machines/morpheus) and listens on peepd.internal. Since port 6667 is open to the internet this shouldn't be ran on the external network.
+It runs on morpheus and listens on peepd.internal. Since port 6667 is open to the internet this shouldn't be ran on the external network.
 
 
 	[receive@minerva ~]% host twitter
@@ -24,7 +24,7 @@ The listen address is set via /etc/default/peepd
 	DAEMON_ARGS=" -a 192.168.0.79  "
 
 
-The [peepd package](/legacy/procedures/redbrick-apt) is in packages.redbrick, and maintained by receive.
+The [peepd package](/procedures/redbrick-apt) is in packages.redbrick, and maintained by receive.
 
 ## Dependencies
 
@@ -55,7 +55,7 @@ Peepd depends on python-twitter v0.6. Currently no version of python-twitter is 
 
 This is actually version 0.6, which has been rebuilt from the karmic source package. I had to break the build dependencies to do this, but it seems to work just fine. The version number is set to 5.999 so that any release of 0.6 will be used in preference to this package.
 
-I have [requested a backport](https///bugs.launchpad.net/hardy-backports/+bug/403791) of python-twitter for hardy.
+I have [requested a backport](https://bugs.launchpad.net/hardy-backports/+bug/403791) of python-twitter for hardy.
 
 
 	Package: peepd

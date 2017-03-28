@@ -1,0 +1,21 @@
+version: "2"
+services:
+  build-docs:
+    image: redbrick/docs
+    container_name: docs-build
+    command: mkdocs build
+    volumes:
+      -  $PWD:/usr/src/app
+
+  server:
+    image: redbrick/docs
+    container_name: docs-server
+    volumes:
+      -  $PWD:/usr/src/app
+
+  test:
+    image: 18fgsa/html-proofer
+    container_name: docs-test
+    command: htmlproofer site --allow-hash-href --check-html --empty-alt-ignore --disable-external
+    volumes:
+      -  $PWD/site:/site

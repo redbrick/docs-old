@@ -4,7 +4,7 @@
 
 There exists a bug in the mysql client library distributed with ubuntu for SPARC platforms. It causes a bus error if you specify the server name by a hostname that must be resolved.
 
-Launchpad bug report is available at [https://bugs.launchpad.net/ubuntu/+source/mysql-dfsg-5.0/+bug/179905](https///bugs.launchpad.net/ubuntu/+source/mysql-dfsg-5.0/+bug/179905).
+Launchpad bug report is available at [https://bugs.launchpad.net/ubuntu/+source/mysql-dfsg-5.0/+bug/179905](https://bugs.launchpad.net/ubuntu/+source/mysql-dfsg-5.0/+bug/179905).
 
 ## Solution
 

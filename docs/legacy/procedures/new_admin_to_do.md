@@ -44,4 +44,4 @@
 
 ## Ideas for projects
 
-[project-ideas](/procedures/project-ideas)
+[project-ideas](/plans/project-ideas)

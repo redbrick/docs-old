@@ -1,4 +1,4 @@
-# Docs [![Documentation Status](https://readthedocs.org/projects/redbrick/badge/?version=latest)](http://redbrick.readthedocs.io/en/latest/?badge=latest)[![CircleCI](https://circleci.com/gh/redbrick/docs.svg?style=svg)](https://circleci.com/gh/redbrick/docs)
+# Docs [![Documentation Status](https://readthedocs.org/projects/redbrick/badge/?version=latest)](http://redbrick.readthedocs.io/en/latest/?badge=latest) [![CircleCI](https://circleci.com/gh/redbrick/docs.svg?style=svg)](https://circleci.com/gh/redbrick/docs)
 
 Documentation for [Redbrick](https://redbrick.dcu.ie)
 

@@ -43,7 +43,7 @@ the "Runall" section, and that job won't be ran.
 * Copy a default.conf from one of the other backup locations, and put it in
 	`debian/backup/$name/dirvish/`
 * In the default.conf change the source location to what you want to backup.
-* Build the package, as per the [package instructions](redbrick-apt)
+* Build the package, as per the [package instructions](/procedures/redbrick-apt)
 
 #### On the servers
 
@@ -56,7 +56,7 @@ the "Runall" section, and that job won't be ran.
 All of the configuration data & scripts for dirvish is now in packages. If you
 need to reinstall a machine, then you'll need to do the following:
 
-* Install [redbrick-backup-server](/legacy/procedures/redbrick-apt)
+* Install [redbrick-backup-server](/procedures/redbrick-apt)
 * Init all of the vaults, as described above (this has to be done manually the
 	first time for the cron job to run). This step takes fucking ages on severus
 	because its RAID is a pile of soggy dicks.
@@ -119,7 +119,7 @@ The comment in /usr/sbin/dirvish that this code is only marked as a warning,
 and not an error would lead you to believe that they've fixed the problem...
 well they haven't.
 
-This patch is in the [redbrick-dirvish package](redbrick-apt). The last stable
+This patch is in the [redbrick-dirvish package](/procedures/redbrick-apt). The last stable
 release of dirvish was May 19th 2005, so I wouldn't be expecting a new release
 anytime soon.
 
@@ -719,7 +719,7 @@ USER=`grep -i user /etc/mysql/backup.conf | awk '{print $2}'`
 auth="-u $USER -p$PASSWORD"
 ```
 
-The backup user needs to be setup as per the [mysql](mysql) docs to have access
+The backup user needs to be setup as per the [mysql](/services/mysql) docs to have access
 and a password for this.
 
 ```

@@ -1,6 +1,6 @@
 ## Building Tomcat
 
-Tomcat is build with [rspm](rspm). If there is an /etc/tomcat the config will be preserved, else /etc/tomcat will be created with with defaults.
+Tomcat is build with rspm. If there is an /etc/tomcat the config will be preserved, else /etc/tomcat will be created with with defaults.
 
 ### SVCADM
 

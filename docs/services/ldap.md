@@ -200,6 +200,6 @@ a dump of the current state of the master
 
 ## Legacy Situation
 If you would like to see some history of ldap on redbrick, including a
-discussion between dizer and ryaner, check out this page [ldapsetup](ldapsetup).
+discussion between dizer and ryaner, check out this page [ldapsetup](/procedures/ldapsetup).
 
 **__NB__ Nothing on the history page is accurate**

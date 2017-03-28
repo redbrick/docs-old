@@ -2,7 +2,7 @@
 
 The aim of this is to make setting up machines and pushing out updates easier. May also facilitate other people using our packages if anyone actually wanted to. It runs as the rbpkg user, from it's home directory.
 
-I followed [ this tutorial](http://www.debian-administration.org/article/Setting_up_your_own_APT_repository_with_upload_support) to set it up. Well, kinda. Ours doesn't do automated importing or anything like that. [This manual](http://alioth.debian.org/scm/viewvc.php/*checkout*/mirrorer/docs/manual.html?revision=HEAD&root=mirrorer) is about the best thing I've found on reprepro.
+I followed [this tutorial](http://www.debian-administration.org/article/Setting_up_your_own_APT_repository_with_upload_support) to set it up. Well, kinda. Ours doesn't do automated importing or anything like that. [This manual](http://alioth.debian.org/scm/viewvc.php/*checkout*/mirrorer/docs/manual.html?revision=HEAD&root=mirrorer) is about the best thing I've found on reprepro.
 
 
 ## Adding Packages
@@ -135,7 +135,7 @@ Note, the meta dependences included below are mostly provided as an example of w
 
 *  **redbrick-shell-env**: shell/mutt/slrn/irssi config files. This package contains config files for various things, and as such "Replaces" the config files owned by the original package. This package should only contain config files and should be the only package that "replaces" another for this purpose. The only dependencies of this package should be shells it configures - bash, zsh and packages which /etc/shell_cmd requires to exist - rbquota and redbrick-help. It should "recommend" any other packages which it has config files for.
 
-*  **[peepd-irssi](/services/peepd)**: Irssi scripts to use with peepd.
+*  **[peepd-irssi](/legacy/services/peepd)**: Irssi scripts to use with peepd.
 
 ## System
 
@@ -152,7 +152,7 @@ Note, the meta dependences included below are mostly provided as an example of w
 
 *  **redbrick-cron-scripts**: Standalone cron scripts. Currently the only script is 'dpkglist', which saves the output of 'dpkg -l' to /var/backups nightly.
 
-*  **[peepd](/services/peepd)**: atlas' twitter irc gateway
+*  **[peepd](/legacy/services/peepd)**: atlas' twitter irc gateway
 
 *  **mail2nntp** - this is needed on the mailhosts to post mailing lists to boards via aliases.
 
@@ -162,7 +162,7 @@ Note, the meta dependences included below are mostly provided as an example of w
 
 ## Backup System
 
-These packages are designed to keep the [backup systems](dirvish) on [thunder](thunder) and [severus](severus) in sync, and also to allow backup servers to be quickly redeployed when necessary.
+These packages are designed to keep the [backup systems](/legacy/procedures/dirvish) on [thunder](/legacy/machines/thunder) and [severus](/legacy/machines/severus) in sync, and also to allow backup servers to be quickly redeployed when necessary.
 
 
 *  **redbrick-dirvish**: Contains all the configuration for the dirvish system. Also patches /usr/sbin/dirvish to stop it complaining about error 24.

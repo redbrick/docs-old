@@ -119,7 +119,7 @@ repo awesomeproject
 ```
 
 There's lots more detail on the format of this file at the
-[gitolite github page](https///github.com/sitaramc/gitolite).
+[gitolite github page](https://github.com/sitaramc/gitolite).
 
 This means that machines with the private keys corresponding to the three SSH
 public keys in keydir (`awesomeuser1.pub`, `awesomeuser2.pub` and

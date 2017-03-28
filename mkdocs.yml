@@ -1,11 +1,12 @@
 site_name: Redbrick Docs
 theme: readthedocs
 repo_url: https://github.com/redbrick/docs
+strict: True
 pages:
   - Home: index.md
   - Plans:
     - TODO-2017: plans/TODO-2017.md
-    - Project Ideas: project-ideas.md
+    - Project Ideas: plans/project-ideas.md
   - Services:
     - Bitlbee: services/bitlbee.md
     - Dovecot: services/dovecot.md
@@ -22,9 +23,9 @@ pages:
     - nfs: services/nfs.md
     - ossec: services/ossec.md
     - Postgres: services/postgres.md
-    - Putty: services/putty.md
     - Unified MOTD: services/unifiedmotd.md
     - tunnel.redbrick.dcu.ie: services/tunnel.redbrick.dcu.ie.md
+    - Webchat: services/webchat.md
   - Procedures:
     - Abuse: procedures/abuse.md
     - Add to LDAP: procedures/addldap.md
@@ -32,6 +33,7 @@ pages:
     - Committee Changeover: procedures/committeechangeover.md
     - DRAC Access: procedures/dracaccess.md
     - Gratuitous ARP: procedures/gratuitousarp.md
+    - GPGKeys: procedures/gpgkeys.md
     - IRC Operations: procedures/irc_operator.md
     - LDAP Setup: procedures/ldapsetup.md
     - ldapchshchfn: procedures/ldapchshchfn.md
@@ -39,9 +41,11 @@ pages:
     - Mail Setup: procedures/mail_setup.md
     - Modifying LDAP: procedures/modifyingldap.md
     - Nagios TODO: procedures/nagios_to_do.md
+    - New board: procedures/newboard.md
     - New Installs: procedures/newinstalls.md
     - News Overview Fix: procedures/newsoverviewfix.md
     - passwd: procedures/passwd.md
+    - pwsafe: procedures/pwsafe.md
     - Policies: procedures/policies.md
     - Post-Powercut: procedures/post_powercut.md
     - rrs: procedures/rrs.md
@@ -52,10 +56,20 @@ pages:
     - Switch: procedures/switch.md
     - LDAP Testing: procedures/testing.md
     - Ticketing: procedures/ticketing.md
+    - UserADM: procedures/useradm.md
   - Machines:
+    - Azazel: machines/azazel.md
+    - Paphos: machines/paphos.md
+    - Pygmalion: machines/pygmalion.md
     - PDUs: machines/the_pdus.md
+    - Metharme: machines/metharme.md
+    - Zeus: machines/zeus.md
   - Network:
+    - Bind9: network/bind9.md
     - Cisco iOS: network/ciscoios.md
+    - Hadron: network/hadron.md
+    - Higgs: network/higgs.md
+    - Junos: network/junos.md
     - Main Address Space: network/mainaddressspace.md
     - Network Setup: network/networksetup.md
     - Pike: network/pike.md
@@ -64,6 +78,7 @@ pages:
   - Web:
     - Anyterm: web/anyterm.md
     - Apache Modules: web/apachemodules.md
+    - Apache: web/apache24.md
     - Redbrick.dcu.ie: web/redbrick.dcu.ie.md
     - PubCookie: web/pubcookie.md
     - suPHP: web/suphp.md
@@ -126,7 +141,6 @@ pages:
       - Murphy Python: legacy/procedures/murphypython.md
       - Murphy Solaris: legacy/procedures/murphysolaris.md
       - New Admin TODO: legacy/procedures/new_admin_to_do.md
-      - Newboard: legacy/procedures/newboard.md
       - Open Ports: legacy/procedures/openports.md
       - Orphan Pages: legacy/procedures/orphan_pages.md
       - RBVM Password Change: legacy/procedures/pass-change.md
@@ -149,5 +163,6 @@ pages:
       - jabber: legacy/services/jabber.md
       - Munin: legacy/services/munin.md
       - peepd: legacy/services/peepd.md
+      - Putty: legacy/services/putty.md
       - rbvm: legacy/services/rbvm.md
       - rbvmctl: legacy/services/rbvmctl.md

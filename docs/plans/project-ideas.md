@@ -6,7 +6,6 @@ Most of these projects don't require being an admin to work on, in any case, you
 
 ##  Small Scripts
 
-
 *  You've just installed a new machine. However, redbrick's ldap groups (member, associat, and so on) are on gids already used by stupid ubuntu system ids. Script something to go through the groups in ldap, and make sure there's no conflicts. If there are, you need to change the gid of the group in /etc/group, and then chown all the files owned by that group to the new gid. for extra credit, you should then insert the ldap groups into /etc/group, and sort it by gid.  --- //[Eoghan Cotter](mailto:johan@redbrick.dcu.ie) 2009/05/16 16:28// Working on this, see /srv/admin/scripts/check_fix_gids.sh
 ## Larger Projects
 
@@ -17,8 +16,8 @@ Most of these projects don't require being an admin to work on, in any case, you
 
 *  Improvement of web boards interface to appeal to newbies (David)
      *//If you're doing this, you should hang around boards through one of the old fashioned interface for a while first (slrn/tin/thunderbird/whatever. An actual client). A lot of the stuff that's different from normal forum systems is to do with nntp being fundamentally different from web forums, stuff that if you change, you may as well just move to real web forums, and leave INN2 running in the background. Also, isn't this primarly a webmaster hing? Anyway, just my 2c.- Cian//
-     * *web-news (someone put a link here, I can't find it) is lovely, and extremely easy to expand/integrate with pubcookie. It would need a good security poking-around though. --- *[Andrew Martin](werdz@redbrick.dcu.ie) 2009/09/08 00:00// //
-     * // http://web-news.sourceforge.net/ <--link. Should we be worried that it's written in a no longer supported version of php? [Cian](lil_cain@redbrick.dcu.ie)//
+     * *web-news (someone put a link here, I can't find it) is lovely, and extremely easy to expand/integrate with pubcookie. It would need a good security poking-around though. --- *[Andrew Martin](mailto:werdz@redbrick.dcu.ie) 2009/09/08 00:00// //
+     * // http://web-news.sourceforge.net/ <--link. Should we be worried that it's written in a no longer supported version of php? [Cian](mailto:lil_cain@redbrick.dcu.ie)//
 
 *  Motd system with database/web stuff so everyone can use it (receive)
 
@@ -29,7 +28,7 @@ Most of these projects don't require being an admin to work on, in any case, you
     * *I've been thinking about this for the last year and a half, have a few ideas on how to achieve it. If anyone wants to go down the write-your-own road, let me know so we can go through it. I'd still love to give it a try myself, but can't see it happening any time soon. -werdz*
       * *If someone has a suggestion over SquirrelMail, hooray. But given that it's GPLv2, would it not make sense for us to just make it better? - David*
          * // Using squirrel mail means you have to A: Learn the codebase and then B: write new code. If what we want to do is sufficiently different (and it probably is), than we can reasonably jut do B if we write from scratch, without B being a whole lot bigger. - Cian  //
-         * // I had a look at doing this (extending Squirrelmail) last year. The words "kill it with fire" jump to mind.  --- //[Andrew Martin](werdz@redbrick.dcu.ie) 2009/09/08 00:00// //
+         * // I had a look at doing this (extending Squirrelmail) last year. The words "kill it with fire" jump to mind.  --- //[Andrew Martin](mailto:werdz@redbrick.dcu.ie) 2009/09/08 00:00// //
 
 *  Jabber based hey (receive)
 
@@ -45,7 +44,7 @@ Most of these projects don't require being an admin to work on, in any case, you
      *//I know werdz is playing around with some custom code, but this may be worth looking at as well http://www.gnu.org/software/gnats/#introduction - Cian//
      *//we should just install bugzilla. It doesn't look that difficult.//
 
-*  meta dependencies - the [packages](redbrick-apt) system is pretty much setup, but the meta packages could do with a whole bunch more dependencies added. Involves someone working out what's installed where, and what should be installed in various locations by default.
+*  meta dependencies - the [packages](/procedures/redbrick-apt) system is pretty much setup, but the meta packages could do with a whole bunch more dependencies added. Involves someone working out what's installed where, and what should be installed in various locations by default.
 
 *  Write apparmor profiles for all the daemons we run (lil_cain)
        *//we can actually probably steal most of these from lucid//
@@ -63,5 +62,5 @@ Most of these projects don't require being an admin to work on, in any case, you
        * you could mount them rw on a mount point that was chmoded 700, and then remount them somewhere else ro that users can actually read. Hack, but it'll work.
      * Mount and offer to members as slow-storage for large files
 
-*  Post Install Script for ubuntu to automaticaly fix security and other bugs, may also automatically install certain packages see [ New Installs Page](newinstalls) for list of common bugs to be fixed
+*  Post Install Script for ubuntu to automaticaly fix security and other bugs, may also automatically install certain packages see [New Installs Page](/procedures/newinstalls) for list of common bugs to be fixed
  1. -something like 'apt-get install redbrick-server'? The only thing this doesn't do, iirc, is change the config on sshd to prevent root logins

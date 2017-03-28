@@ -14,7 +14,7 @@
 
 *  The ability to hard reset a VM. **Done**
 
-*  Installable/upgradable via apt, in the [Redbrick apt](redbrick-apt) repo. **Done**
+*  Installable/upgradable via apt, in the [Redbrick apt](/procedures/redbrick-apt) repo. **Done**
 
 In future releases, it would be nice if:
 

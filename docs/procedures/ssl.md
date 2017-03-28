@@ -81,6 +81,6 @@ Save these changes.
 Restart the Apache Server.
 
 Check that the Certificate Chain is intact via:
-[https://ssltools.websecurity.symantec.com/checker/views/certCheck.jsp](https///ssltools.websecurity.symantec.com/checker/views/certCheck.jsp)
+[https://ssltools.websecurity.symantec.com/checker/views/certCheck.jsp](https://ssltools.websecurity.symantec.com/checker/views/certCheck.jsp)
 
 If the apache server didn't restart cleanly restore the old files and repeat the above steps.

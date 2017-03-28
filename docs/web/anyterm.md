@@ -6,7 +6,7 @@ Install `libboost-dev` and `zlib1g-dev` from `apt`
 
 ## Building
 The latest `anyterm` is 1.1.29 which is built from source and lives in
-`/opt/anyterm`. To compile it needs a patch to [SmtpClient.cc](https///github.com/gentoo/gentoo-portage-rsync-mirror/blob/master/www-apache/anyterm/files/anyterm-1.1.29-gcc-4.4.patch),
+`/opt/anyterm`. To compile it needs a patch to [SmtpClient.cc](https://github.com/gentoo/gentoo-portage-rsync-mirror/blob/master/www-apache/anyterm/files/anyterm-1.1.29-gcc-4.4.patch),
 then
 
 ```

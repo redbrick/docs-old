@@ -38,4 +38,4 @@ Documented [here](/legacy/procedures/sprout-serial)
 
 *  Console server
 
-*  Runs an [OSSEC](OSSEC) [website here](http://www.ossec.net)server, that gets reports of log analysis and file integrity checking from all the machines.
+*  Runs an [OSSEC](/services/ossec) [website here](http://www.ossec.net)server, that gets reports of log analysis and file integrity checking from all the machines.

@@ -25,7 +25,7 @@ The default dynamically allocated GIDs overlap with the RedBrick ldap GIDs. You 
 
 2015-Ubuntu 14.04-These are now defunct.
 
-As of July 2009 most of the basic setup can be handled by the [redbrick packages](redbrick-apt). For login servers, install redbrick-login-server, otherwise just install redbrick-server.
+As of July 2009 most of the basic setup can be handled by the [redbrick packages](/procedures/redbrick-apt). For login servers, install redbrick-login-server, otherwise just install redbrick-server.
 
 ### MOTD Amusement
 
@@ -99,7 +99,7 @@ Fail2ban is automatically installed as a redbrick-server dependency.
 
 ### Backups
 
-Apparently these are important. Read the [dirvish](dirvish) docs for how to set this up.
+Apparently these are important. Read the [dirvish](/legacy/procedures/dirvish) docs for how to set this up.
 
 ### syslog-ng
 
