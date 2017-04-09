@@ -76,7 +76,7 @@ pages:
   - Postmortems:
     - March 2016: postmortems/post_mortem_mar16.md
   - Web:
-    - Anyterm: web/anyterm.md
+    - Webterm: web/term.md
     - Apache Modules: web/apachemodules.md
     - Apache: web/apache24.md
     - Redbrick.dcu.ie: web/redbrick.dcu.ie.md
