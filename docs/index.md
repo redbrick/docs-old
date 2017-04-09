@@ -1,7 +1,7 @@
 # Redbrick System Documentation
 
 The idea of Redbrick documention is to keep an up to date information about the
-technical infrastructure of Redbrick. This is mostly indended for admins, future
+technical infrastructure of Redbrick. This is mostly intended for admins, future
 admins, webmasters, and everybody else who is grumpy and has no life.
 
 The search box actually **works** (I was amazed at this. Search isn't meant to
@@ -157,6 +157,10 @@ Software written by RedBrick, or with RedBrick customisations etc.
 ---
 
 ## System Documentation Redundancy
+
+### docs.redbrick.dcu.ie
+This is a self hosted version running on halfpint. Its a cron job that pull from
+github once an hour and if it finds an update it rebuilds the site.
 
 ### Github
 Github is where docs are stored. They are plain markdown but they
