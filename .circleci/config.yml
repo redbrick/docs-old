@@ -23,5 +23,5 @@ jobs:
           name: github-pages
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              mkdocs gh-deploy
+            #mkdocs gh-deploy
             fi
