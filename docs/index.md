@@ -73,7 +73,7 @@ Day to day running of things.
 * [redbrick.dcu.ie](/web/redbrick.dcu.ie)
 * [Redbrick SSL certs](/procedures/ssl)
 * [Mercurial (hg) hosting](/services/hg)
-* [Webchat (qwebirc)](/services/webchat)
+* [Webchat (qwebirc)](/web/webchat)
 
 
 #### Backups

@@ -25,7 +25,6 @@ pages:
     - Postgres: services/postgres.md
     - Unified MOTD: services/unifiedmotd.md
     - tunnel.redbrick.dcu.ie: services/tunnel.redbrick.dcu.ie.md
-    - Webchat: services/webchat.md
   - Procedures:
     - Abuse: procedures/abuse.md
     - Add to LDAP: procedures/addldap.md
