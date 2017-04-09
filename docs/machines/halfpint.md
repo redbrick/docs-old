@@ -6,7 +6,7 @@
 * CPU: AMD Phenom(tm) 9650 Quad-Core Processor
 * RAM: 8GB
 * Storage: 456G (Samsung HD502IJ)
-* Network: 1x Ethernet
+* Network: 2x Ethernet
     * Intel 82571EB Gigabit Ethernet Controller 
 
 ## Where to find
