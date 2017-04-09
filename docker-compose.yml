@@ -10,6 +10,8 @@ services:
   server:
     image: redbrick/docs
     container_name: docs-server
+    ports:
+      - "8000:8000"
     volumes:
       -  $PWD:/usr/src/app
 
