@@ -63,6 +63,7 @@ pages:
     - PDUs: machines/the_pdus.md
     - Metharme: machines/metharme.md
     - Zeus: machines/zeus.md
+    - Halfpint: machines/halfpint.md
   - Network:
     - Bind9: network/bind9.md
     - Cisco iOS: network/ciscoios.md
