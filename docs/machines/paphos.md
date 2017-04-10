@@ -16,4 +16,7 @@
 ## Services
 
 * Mail Server 
+<<<<<<< HEAD
 * ldap
+=======
+>>>>>>> 256a798f4e1f5be7de2cfec1a45f8446ca7b77a0
