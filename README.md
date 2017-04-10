@@ -4,7 +4,7 @@
 
 Documentation for [Redbrick](https://redbrick.dcu.ie)
 
-Available at (docs.redbrick.dcu.ie)[https://docs.redbrick.dcu.ie] and at the (readthedocs mirror)[https://redbrick.readthedocs.io]
+Available at [docs.redbrick.dcu.ie](https://docs.redbrick.dcu.ie) and at the [readthedocs mirror](https://redbrick.readthedocs.io)
 
 The docs are built using mkdocs.
 To bring up a local server with a copy of the docs just run
