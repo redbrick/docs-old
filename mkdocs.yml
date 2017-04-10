@@ -8,6 +8,7 @@ pages:
     - TODO-2017: plans/TODO-2017.md
     - Project Ideas: plans/project-ideas.md
   - Services:
+    - Backuppc: services/backuppc.md
     - Bitlbee: services/bitlbee.md
     - Dovecot: services/dovecot.md
     - hey: services/hey.md
