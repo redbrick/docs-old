@@ -19,9 +19,3 @@ jobs:
       - run:
           name: Test Internal Links
           command: docker-compose up test
-      - deploy:
-          name: github-pages
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-            #mkdocs gh-deploy
-            fi
