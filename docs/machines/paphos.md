@@ -15,9 +15,12 @@
 
 ## Services
 
-* Mail Server 
-* ldap
-* dns
-* Mialing list
-* irc
-* bitlbee
+* Mail 
+    - [exim](/services/exim)
+    - dovecoat
+* [ldap](/services/ldap)
+* [dns](/services/bind9)
+* [irc](/services/irc)
+* [bitlbee](/services/bitlbee)
+* [icecast2](/services/icecast2)
+* [boards](/procedures/newboards) 
