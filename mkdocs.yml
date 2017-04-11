@@ -8,6 +8,7 @@ pages:
     - TODO-2017: plans/TODO-2017.md
     - Project Ideas: plans/project-ideas.md
   - Services:
+    - Backuppc: services/backuppc.md
     - Bitlbee: services/bitlbee.md
     - Bind9: services/bind9.md
     - Dovecot: services/dovecot.md
