@@ -1,8 +1,10 @@
-Backuppc is currently installed on albus and can be accessed from albus.redbrick.dcu.ie/backuppc login details are in the pw safe
+Backuppc is currently installed on albus and can be accessed from
+[albus.redbrick.dcu.ie/backuppc](http://albus.redbrick.dcu.ie/backuppc).
+Login details are in the pw safe
 
 Before a host will be backed up a few things need to be done
 
-- The machine tobe backed up needs to have its sshd config changed to the
+- The machine to be backed up needs to have its `sshd` config changed to the
   following `PermitRootLogin forced-commands-only`
 - Then the ssh key must been added to the the authorizedkey file in roots
   `.ssh` dir. The ssh key can be found in root's `.ssh` directory on albus.
@@ -13,7 +15,7 @@ Before a host will be backed up a few things need to be done
   --ignore-times . /",no-port-forwarding,no-x11-forwarding,no-agent-forwarding
   ```
   This may change depending on the location of rsync on the server.
-- You should test that you can ssh as root from albus to what ever server
+- You should test that you can ssh as root from albus to whatever server
   you are backing up.
 - Once this has been done the host must be addded from backuppc. Click on
   edit host and and add the hostname with the user of backuppc.
