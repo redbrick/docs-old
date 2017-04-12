@@ -96,7 +96,7 @@ After each emergency remember to write a postmortem!
 #### Paphos - Primary Services
 
 * [User Management](/procedures/useradm)
-* [DNS](/network/bind9)
+* [DNS](/services/bind9)
 
 #### Zeus - Secondary Services and New web
 
