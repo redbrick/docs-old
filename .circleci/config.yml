@@ -19,5 +19,5 @@ jobs:
       - run:
           name: Test Internal Links
           command: |
-            set -x
+            set -eo pipefail
             docker-compose up test
