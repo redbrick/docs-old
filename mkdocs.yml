@@ -58,14 +58,14 @@ pages:
     - LDAP Testing: procedures/testing.md
     - Ticketing: procedures/ticketing.md
     - UserADM: procedures/useradm.md
-  - Machines:
-    - Azazel: machines/azazel.md
-    - Paphos: machines/paphos.md
-    - Pygmalion: machines/pygmalion.md
-    - PDUs: machines/the_pdus.md
-    - Metharme: machines/metharme.md
-    - Zeus: machines/zeus.md
-    - Halfpint: machines/halfpint.md
+  - Hardware:
+    - Azazel: hardware/azazel.md
+    - Paphos: hardware/paphos.md
+    - Pygmalion: hardware/pygmalion.md
+    - PDUs: hardware/the_pdus.md
+    - Metharme: hardware/metharme.md
+    - Zeus: hardware/zeus.md
+    - Halfpint: hardware/halfpint.md
   - Network:
     - Cisco iOS: network/ciscoios.md
     - Hadron: network/hadron.md

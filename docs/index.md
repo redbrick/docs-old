@@ -136,7 +136,7 @@ After each emergency remember to write a postmortem!
 
 ### UPS
 
-* [The PDUs](/machines/the_pdus)
+* [The PDUs](/hardware/the_pdus)
 
 ### Other
 

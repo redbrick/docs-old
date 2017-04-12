@@ -1,4 +1,4 @@
-Icecast is a streaming server that we currently host on [paphos](/machines/paphos)
+Icecast is a streaming server that we currently host on [paphos](/hardware/paphos)
 
 We stream DCUFm's Broadcasts to their apps via a stream presented on
 `dcufm.redbrick.dcu.ie:80`
