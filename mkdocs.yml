@@ -10,6 +10,7 @@ pages:
   - Services:
     - Backuppc: services/backuppc.md
     - Bitlbee: services/bitlbee.md
+    - Bind9: services/bind9.md
     - Dovecot: services/dovecot.md
     - hey: services/hey.md
     - IRC: services/irc.md
@@ -66,7 +67,6 @@ pages:
     - Zeus: machines/zeus.md
     - Halfpint: machines/halfpint.md
   - Network:
-    - Bind9: network/bind9.md
     - Cisco iOS: network/ciscoios.md
     - Hadron: network/hadron.md
     - Higgs: network/higgs.md
