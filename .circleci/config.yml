@@ -20,4 +20,9 @@ jobs:
           name: Test Internal Links
           command: |
             set -eo pipefail
-            docker-compose up test
+            docker-compose up test | tee /results.txt; exit ${PIPESTATUS[0]}
+      - store_artifacts:
+          path: /results.txt
+          destination: reports
+      - store_test_results:
+          path: "/results.txt"
