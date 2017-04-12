@@ -18,4 +18,6 @@ jobs:
           command: docker-compose up build-docs
       - run:
           name: Test Internal Links
-          command: docker-compose up test
+          command: |
+            set -x
+            docker-compose up test
