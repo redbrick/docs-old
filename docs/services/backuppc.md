@@ -1,5 +1,5 @@
 Backuppc is currently installed on albus and can be accessed from
-[albus.redbrick.dcu.ie/backuppc](http://albus.redbrick.dcu.ie/backuppc).
+[albus.redbrick.dcu.ie/backuppc](https://albus.redbrick.dcu.ie/backuppc).
 Login details are in the pw safe
 
 Before a host will be backed up a few things need to be done
