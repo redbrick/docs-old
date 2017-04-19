@@ -5,6 +5,7 @@
 Documentation for [Redbrick](https://redbrick.dcu.ie)
 
 Available at [docs.redbrick.dcu.ie](https://docs.redbrick.dcu.ie) and at the [readthedocs mirror](https://redbrick.readthedocs.io)
+The readthedocs mirror is automatically deployed on commit to `master`
 
 The docs are built using mkdocs.
 To bring up a local server with a copy of the docs just run
@@ -24,6 +25,3 @@ docker-compose up build-docs
 docker-compose up test
 ```
 This will test the docs build and if there are any dead links in them
-
-## Deployment
-Docs are auto deployed to https://readthedocs.io on commit to the `latest` branch.
