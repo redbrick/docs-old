@@ -167,5 +167,5 @@ Github is where docs are stored. They are plain markdown but they
 are easily accessed and read from anywhere.
 
 ###  ReadTheDocs
-Docs are auto deployed to (readthedocs)[https://readthedocs.io] on commit to the `latest` branch.
+Docs are auto deployed to (readthedocs)[https://readthedocs.io] on commit to the `master` branch.
 They should always be up to date.
