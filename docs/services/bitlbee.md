@@ -66,7 +66,7 @@ build` and then `docker-compose up -d`
 
 ### Migration
 
-User details are stored in '/var/lib/bitlbee' as xml data. It should be possible
+User details are stored in `/var/lib/bitlbee` as xml data. It should be possible
 to migrate the user data just by copying the xml files.
 
 Run `docker-compose up -d` to build and start the container
