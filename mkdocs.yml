@@ -13,6 +13,7 @@ pages:
     - Bind9: services/bind9.md
     - Dovecot: services/dovecot.md
     - hey: services/hey.md
+    - Git: services/git.md
     - IRC: services/irc.md
     - exim: services/exim.md
     - Icecast2: services/icecast2.md
