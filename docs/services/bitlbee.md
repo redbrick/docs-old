@@ -55,8 +55,11 @@ services:
 ```
 [settings]
 HostName = bitlbee.redbrick.dcu.ie
-DaemonPort = 6667
+RunMode = ForkDaemon
+User = bitlbee
 DaemonInterface = 136.206.15.0
+DaemonPort = 6667
+MotdFile = /etc/bitlbee/motd.txt
 ```
 The rest of the conf will be generated after the container is built
 
