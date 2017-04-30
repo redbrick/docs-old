@@ -42,6 +42,7 @@ services:
   bitlbee:
     build: '.'
     container_name: 'bitlbee'
+    hostname: bitlbee.redbrick.dcu.ie
     restart: 'always'
     ports:
       - 6667:6667
