@@ -1,52 +1,72 @@
 ## Bitlbee on RedBrick
-This is set up on morpheus
+This is set up on zeus
 
-The ubuntu default is for it to run in fork daemon mode, but I moved back to the recommended inetd method when I installed it (I have no idea why I did this, it was AGES ago).
+bitlbee is run from a docker contaier we build locally on zeus. It mostly uses
+default bitlbee settings. Its settings can be found in
+`/etc/docker-compose/services/bitlbee`
 
-```
-[andrewj@obelisk ~]% cat /etc/init.d/bitlbee
-#!/bin/sh
+#### Dockerfile
 
-echo "Bitlbee runs from xinetd on this machine"
-exit 0
-```
+``` Dockerfile
+FROM debian:jessie
 
-```bash
-[andrewj@obelisk ~]% cat /etc/xinetd.d/bitlbee
-## xinetd file for BitlBee. Please check this file before using it, the
-## user, port and/or binary location might be wrong.
+ENV LANG en_US.UTF-8
+ENV LC_ALL C.UTF-8
+ENV LANGUAGE en_US.UTF-8
 
-service ircd
-{
-	socket_type     = stream
-	protocol        = tcp
-	wait            = no
+RUN echo 'deb http://code.bitlbee.org/debian/master/jessie/amd64/ ./' > /etc/apt/sources.list.d/bitlbee.list
+RUN echo 'deb http://download.opensuse.org/repositories/home:/jgeboski/Debian_8.0 ./' > /etc/apt/sources.list.d/jgeboski.list
 
-	## You most likely want to change these two
-	user            = bitlbee
-	server          = /usr/sbin/bitlbee
+RUN apt-key adv --fetch-keys http://code.bitlbee.org/debian/release.key
+RUN apt-key adv --fetch-keys http://jgeboski.github.io/obs.key
 
-	## You might want to limit access to localhost only:
-	bind            = 136.206.15.54
-	only_from       = 136.206.15.0
+RUN apt-get update
+RUN apt-get dist-upgrade -y
+RUN apt-get upgrade -y
+RUN apt-get install -y bitlbee bitlbee-facebook
 
+RUN apt-get clean
+RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-	## Thanks a lot to friedman@splode.com for telling us about the type
-	## argument, so now this file can be used without having to edit
-	## /etc/services too.
-	type            = UNLISTED
-	port            = 6667
-}
+COPY bitlbee.conf /etc/bitlbee/bitlbee.conf
+
+EXPOSE 6667
+VOLUME ["/var/lib/bitlbee/"]
+CMD ["/usr/sbin/bitlbee", "-D", "-n"]
 ```
 
-This lets us bind only to the service ip, and restrict access to the subnet
-(which might be why I did it).
+#### docker-compose.yml
+```yaml
+version: '3'
+services:
+  bitlbee:
+    build: '.'
+    container_name: 'bitlbee'
+    restart: 'always'
+    ports:
+      - 6667:6667
+    volumes:
+      - '/var/lib/bitlbee:/var/lib/bitlbee:rw'
+```
 
-`/etc/bitlbee/bitlbee.conf` is fairly standard, no authentication or anything.
+`bitlbee.conf` is fairly standard, no authentication or anything.
 
 ```
-Proxy = socks5://proxy3.dcu.ie:1080
+[settings]
+HostName = bitlbee.redbrick.dcu.ie
+DaemonPort = 6667
+DaemonInterface = 136.206.15.0
 ```
+The rest of the conf will be generated after the container is built
 
-User details are stored in /var/lib/bitlbee as xml data. It should be possible
+### Update
+
+To update the easiest way is to rebuild the container. Run `docker-compose
+build` and then `docker-compose up -d`
+
+### Migration
+
+User details are stored in '/var/lib/bitlbee' as xml data. It should be possible
 to migrate the user data just by copying the xml files.
+
+Run `docker-compose up -d` to build and start the container
