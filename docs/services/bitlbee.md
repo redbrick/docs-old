@@ -5,7 +5,7 @@ bitlbee is run from a docker contaier we build locally on zeus. It mostly uses
 default bitlbee settings. Its settings can be found in
 `/etc/docker-compose/services/bitlbee`
 
-#### Dockerfile
+Dockerfile
 
 ``` Dockerfile
 FROM debian:jessie
@@ -29,13 +29,14 @@ RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 COPY bitlbee.conf /etc/bitlbee/bitlbee.conf
+COPY motd.txt /etc/bitlbee/motd.txt
 
 EXPOSE 6667
 VOLUME ["/var/lib/bitlbee/"]
 CMD ["/usr/sbin/bitlbee", "-D", "-n"]
 ```
 
-#### docker-compose.yml
+docker-compose.yml
 ```yaml
 version: '3'
 services:
@@ -61,7 +62,25 @@ DaemonInterface = 136.206.15.0
 DaemonPort = 6667
 MotdFile = /etc/bitlbee/motd.txt
 ```
-The rest of the conf will be generated after the container is built
+motd.txt
+```
+ ____          _ ____       _      _
+|  _ \ ___  __| | __ ) _ __(_) ___| | __
+| |_) / _ \/ _` |  _ \| '__| |/ __| |/ /
+|  _ <  __/ (_| | |_) | |  | | (__|   <
+|_| \_\___|\__,_|____/|_|  |_|\___|_|\_\
+
+      ____  _ _   _ _
+     | __ )(_) |_| | |__   ___  ___
+     |  _ \| | __| | '_ \ / _ \/ _ \
+     | |_) | | |_| | |_) |  __/  __/
+     |____/|_|\__|_|_.__/ \___|\___|
+
+
+   bitlbee.redbrick.dcu.ie irc gateway
+
+for help see http://bitlbee.redbrick.dcu.ie
+```
 
 ### Update
 
