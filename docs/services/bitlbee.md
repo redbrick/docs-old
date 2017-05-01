@@ -85,7 +85,7 @@ for help see http://bitlbee.redbrick.dcu.ie
 ### Update
 
 To update the easiest way is to rebuild the container. Run `docker-compose
-build` and then `docker-compose up -d`
+build --no-cache` and then `docker-compose up -d`
 
 ### Migration
 
