@@ -59,6 +59,8 @@ random 404 on assets.
 ``` apacheconf
 <VirtualHost mastodon.redbrick.dcu.ie:80>
         ServerName  mastodon.redbrick.dcu.ie
+        ServerAlias social.redbrick.dcu.ie
+        ServerAlias toot.redbrick.dcu.ie
         ServerAdmin webmaster@redbrick.dcu.ie
         DocumentRoot /etc/docker-compose/services/mastodon/public/
         RewriteEngine On
@@ -69,6 +71,8 @@ random 404 on assets.
 <IfModule mod_ssl.c>
 <VirtualHost mastodon.redbrick.dcu.ie:443>
         ServerName  mastodon.redbrick.dcu.ie
+        ServerAlias social.redbrick.dcu.ie
+        ServerAlias toot.redbrick.dcu.ie
         ServerAdmin webmaster@redbrick.dcu.ie
 
         DocumentRoot /webtree/vhosts/mastodon/
