@@ -18,6 +18,7 @@ pages:
     - Icecast2: services/icecast2.md
     - LDAP: services/ldap.md
     - Mailman: services/mailman.md
+    - Mastodon: services/mastodon.md
     - Mercurial: services/hg.md
     - MySQL: services/mysql.md
     - Nagios: services/nagios.md
