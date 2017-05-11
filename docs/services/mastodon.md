@@ -114,6 +114,11 @@ from
 [Github](https://github.com/tootsuite/mastodon/blob/master/.env.production.sample)
 the smtp, federation and secrets all need to be change.
 
+### Admin
+
+To make a user an admin run `docker-compose run --rm web rails
+mastodon:make_admin USERNAME=alice`
+
 ## Updating
 1. To update first pull latest build by running `docker-compose pull`.
 2. `docker-compose run --rm web rake db:migrate` to perform database migrations. Does nothing if your database is up to date.
