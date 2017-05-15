@@ -1,0 +1,6 @@
+engines:
+  markdownlint:
+    enabled: true
+ratings:
+  paths:
+  - "**.md"
