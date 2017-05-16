@@ -40,7 +40,7 @@ and repo information.
 
 Gitea stores its main conf in `/var/git/gitea/app.ini`
 
-```
+``` toml
 APP_NAME = Redbrick
 RUN_USER = git
 RUN_MODE = prod
