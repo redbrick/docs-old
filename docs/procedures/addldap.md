@@ -1,4 +1,5 @@
-## Adding Data to LDAP
+# Adding Data to LDAP
+
 Occasionally you'll need to add people or things to ldap manually, such as a
 user you recreating from backups, or a reserved system name such as a new
 machine.
@@ -8,7 +9,7 @@ entry you can use stdin, in the case of adding a reserved name the file should
 look something like this, replacing both instances of redbrick with the reserved
 name you would like to add:
 
-```
+``` bash
 $ cat update.reservered
 dn: uid=redbrick,ou=reserved,o=redbrick
 uid: redbrick
@@ -19,7 +20,7 @@ objectClass: top
 
 Then run the following command:
 
-```
+``` bash
 ldapadd -D cn=root,ou=ldap,o=redbrick -y /etc/ldap.secret -x -f update.resevered
 ```
 
