@@ -1,4 +1,4 @@
-## Bitlbee on RedBrick
+# Bitlbee on RedBrick
 
 This is set up on zeus
 
@@ -38,6 +38,7 @@ CMD ["/usr/sbin/bitlbee", "-D", "-n"]
 ```
 
 docker-compose.yml
+
 ```yaml
 version: '3'
 services:
@@ -63,7 +64,9 @@ DaemonInterface = 136.206.15.0
 DaemonPort = 6667
 MotdFile = /etc/bitlbee/motd.txt
 ```
+
 motd.txt
+
 ``` text
  ____          _ ____       _      _
 |  _ \ ___  __| | __ ) _ __(_) ___| | __
