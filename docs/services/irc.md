@@ -1,4 +1,5 @@
 # RedBrick IRCd
+
 This runs on paphos, irc.redbrick has it's own service address for this.
 
 IRCd runs on ircd-hybrid build from the apt source package. It needs to be
@@ -37,6 +38,7 @@ $ /etc/init.d/ircd-hybrid (re)start
 ```
 
 #### Admin tools
+
 1. Go to `/usr/lib/ircd-hybrid/modules`
 2. Copy `m_force.so` (forcejoin and forcepart) `m_ojoin.so` (OJOIN) and
    `m_opme.so`(OPME) to `autoload/`
@@ -44,6 +46,7 @@ $ /etc/init.d/ircd-hybrid (re)start
    readable to `ircd`
 
 ##### m_opme
+
 OPME is no fun if you can't use it to take over any channel you want, patch
 `contrib/m_opme.c` before compiling to make the function `chan_is_opless`
 always `return 1`:
@@ -61,6 +64,7 @@ chan_is_opless(const struct Channel *const chptr) {
 ```
 
 # Redbrick Inspircd
+
 In 2016/2017 we began work to move to inspircd. This was due to the the
 complications in ircd-hybrid and how old it was. These complications stopped new
 netsocs joinging us so we all agreeded to move irc.
@@ -68,7 +72,9 @@ We run inspircd on zeus inside docker. We build the container ourself locally,
 the container pulls from git to build version 2.0.23.
 
 # Installation
+
 Dockerfile is as follows
+
 ``` Dockerfile
 FROM ubuntu:16.04
 
@@ -99,7 +105,9 @@ VOLUME ["/inspircd/conf"]
 ENTRYPOINT ["/inspircd/bin/inspircd"]
 CMD ["--runasroot", "--nofork"]
 ```
+
 and the `docker-compose.yml` is as follows
+
 ``` yaml
 version: '3'
 services:
@@ -117,7 +125,9 @@ services:
 ```
 
 ## Configuration
+
 `inspircd.conf` passwords and keys have been left blank.
+
 ``` xml
 <config format="xml">
 <define name="bindip" value="1.2.2.3">
@@ -150,6 +160,7 @@ services:
 <insane hostmasks="no" ipmasks="no" nickmasks="no" trigger="95.5">
 <include file="/inspircd/conf/modules.conf">
 ```
+
 `opers.conf` is standard the only modification will be the addition of each oper
 account.
 
