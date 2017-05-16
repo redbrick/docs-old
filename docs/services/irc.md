@@ -1,4 +1,5 @@
-# RedBrick IRCd
+# IRC
+## RedBrick IRCd
 
 This runs on paphos, irc.redbrick has it's own service address for this.
 
@@ -63,7 +64,7 @@ chan_is_opless(const struct Channel *const chptr) {
 }
 ```
 
-# Redbrick Inspircd
+## Redbrick Inspircd
 
 In 2016/2017 we began work to move to inspircd. This was due to the the
 complications in ircd-hybrid and how old it was. These complications stopped new
@@ -71,7 +72,7 @@ netsocs joinging us so we all agreeded to move irc.
 We run inspircd on zeus inside docker. We build the container ourself locally,
 the container pulls from git to build version 2.0.23.
 
-# Installation
+### Installation
 
 Dockerfile is as follows
 
@@ -124,7 +125,7 @@ services:
       - '/etc/apache2/ssl:/ssl
 ```
 
-## Configuration
+### Configuration
 
 `inspircd.conf` passwords and keys have been left blank.
 
