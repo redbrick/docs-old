@@ -1,4 +1,5 @@
 ## Bitlbee on RedBrick
+
 This is set up on zeus
 
 bitlbee is run from a docker contaier we build locally on zeus. It mostly uses
@@ -53,7 +54,7 @@ services:
 
 `bitlbee.conf` is fairly standard, no authentication or anything.
 
-```
+``` text
 [settings]
 HostName = bitlbee.redbrick.dcu.ie
 RunMode = ForkDaemon
@@ -63,7 +64,7 @@ DaemonPort = 6667
 MotdFile = /etc/bitlbee/motd.txt
 ```
 motd.txt
-```
+``` text
  ____          _ ____       _      _
 |  _ \ ___  __| | __ ) _ __(_) ___| | __
 | |_) / _ \/ _` |  _ \| '__| |/ __| |/ /
