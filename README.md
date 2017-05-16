@@ -1,4 +1,5 @@
 # Docs
+
 [![Documentation Status](https://readthedocs.org/projects/redbrick/badge/?version=latest)](http://redbrick.readthedocs.io/en/latest/?badge=latest)
 [![CircleCI](https://circleci.com/gh/redbrick/docs.svg?style=svg)](https://circleci.com/gh/redbrick/docs)
 
@@ -11,19 +12,25 @@ build` once an hour to up date the docs.
 
 The docs are built using mkdocs.
 To bring up a local server with a copy of the docs just run
-```
+
+``` bash
 docker-compose up server
 ```
+
 To build the docs just run
-```
+
+``` bash
 docker-compose up build-docs
 ```
 
 ## Testing locally
+
 When you do a change make sure it works by building it locally.
 Run
-```
+
+``` yaml
 docker-compose up build-docs
 docker-compose up test
 ```
+
 This will test the docs build and if there are any dead links in them
