@@ -1,4 +1,5 @@
 # IRC
+
 ## RedBrick IRCd
 
 This runs on paphos, irc.redbrick has it's own service address for this.
@@ -18,7 +19,7 @@ issues or something.
 
 * The limit on the network is 9 character nicks, allowing our server to do more
   than this will result in our server letting people set long nicks, but they'll
-	immediately be kicked off the network. This gets old pretty quick.
+  immediately be kicked off the network. This gets old pretty quick.
 
 #### Compiling
 
