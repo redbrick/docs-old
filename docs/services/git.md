@@ -9,6 +9,7 @@ Redbrick uses [Gitea](https://gitea.io/en-US/) a community driven fork of
 # Gitea
 
 We run Gitea in Docker on zeus. The `docker-compose.yml` is as follows
+
 ```yaml
 version: '3'
 services:
@@ -38,6 +39,7 @@ We run a postgres database in a second container for storage of users
 and repo information.
 
 Gitea stores its main conf in `/var/git/gitea/app.ini`
+
 ```
 APP_NAME = Redbrick
 RUN_USER = git
