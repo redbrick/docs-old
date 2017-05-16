@@ -3,10 +3,10 @@
 Redbrick uses [Gitea](https://gitea.io/en-US/) a community driven fork of
 [Gogs](https://gogs.io/) for Git hosting.
 
- - [Gitea docs](https://docs.gitea.io/en-us/)
- - [Gogs docs](https://gogs.io/docs) - though you shouldn't need these
+- [Gitea docs](https://docs.gitea.io/en-us/)
+- [Gogs docs](https://gogs.io/docs) - though you shouldn't need these
 
-# Gitea
+## Gitea
 
 We run Gitea in Docker on zeus. The `docker-compose.yml` is as follows
 
@@ -115,7 +115,7 @@ SSH is set to port `10022` due to ssh on zeus using port `22`.
 We disable openid login and user registration to stop none redbrick users
 joining.
 
-# LDAP Login
+### LDAP Login
 
 We use ldap auth to login to gitea, the settings are as follows,
 ![Gitea ldap settings](/img/gitea-ldap.png)
