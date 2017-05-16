@@ -167,6 +167,7 @@ account.
 `links.conf` this is for peering and not yet set until we peer.
 
 `modules.conf` needs to be the same across all peered server.
+
 ``` xml
 <module name="m_sha256.so">
 <alias text="NICKSERV" replace="PRIVMSG NickServ :$2-" requires="NickServ" uline="yes">
