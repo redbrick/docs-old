@@ -1,0 +1,10 @@
+engines:
+  markdownlint:
+    enabled: true
+  fixme:
+    enabled: false
+ratings:
+  paths:
+  - "**.md"
+exclude_paths:
+  - "docs/legacy"

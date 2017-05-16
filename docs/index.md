@@ -15,6 +15,7 @@ work. Ever. For anything).
 ---
 
 ## New Admins
+
 You will regret this decision. But if you are sure make sure you are familiar
 with the following:
 
@@ -24,6 +25,7 @@ with the following:
 ---
 
 ## Operations
+
 Day to day running of things.
 
 * [IRC Operator Guide](/procedures/irc_operator)
@@ -61,11 +63,11 @@ Day to day running of things.
 * [.15 Address Space](/network/mainaddressspace)
 * [.16 Address Space](/legacy/network/vmaddressspace)
 * [Network setup](/network/networksetup) (internal LAN, external LAN, switches, cable
-	colours etc)
+  colours etc)
 * [tunnel.redbrick.dcu.ie](/services/tunnel.redbrick.dcu.ie)
 * [Switch Setup](/procedures/switch)
 * [Gratuitous ARP](/procedures/gratuitousarp) (or, how to force update an IP address's
-	associated MAC on the router and other machines)
+  associated MAC on the router and other machines)
 * [JunOS Configuration](/network/junos)
 
 #### WWW
@@ -75,15 +77,15 @@ Day to day running of things.
 * [Mercurial (hg) hosting](/services/hg)
 * [Webchat (qwebirc)](/web/webchat)
 
-
 #### Backups
-TODO: Add more details as this is definatelly not complete.
-Moved to BackupPC
 
+* [BackupPC](/services/backuppc)
 * [Moving severus to CSD](/procedures/severuscolocation)
 
 ---
+
 ## Emergencies
+
 After each emergency remember to write a postmortem!
 
 * [What to do immediately after a power cut](/procedures/post_powercut)
@@ -93,6 +95,7 @@ After each emergency remember to write a postmortem!
 ## Machines
 
 ### Services
+
 #### Paphos - Primary Services
 
 * [User Management](/procedures/useradm)
@@ -143,6 +146,7 @@ After each emergency remember to write a postmortem!
 * [Pike (IP-KVM)](/network/pike)
 
 ## Software
+
 Software written by RedBrick, or with RedBrick customisations etc.
 
 * [RedBrick Apt Repo (work in progress)](/procedures/redbrick-apt)
@@ -159,13 +163,16 @@ Software written by RedBrick, or with RedBrick customisations etc.
 ## System Documentation Redundancy
 
 ### docs.redbrick.dcu.ie
+
 This is a self hosted version running on halfpint. Its a cron job that pull from
 github once an hour and if it finds an update it rebuilds the site.
 
 ### Github
+
 Github is where docs are stored. They are plain markdown but they
 are easily accessed and read from anywhere.
 
-###  ReadTheDocs
-Docs are auto deployed to (readthedocs)[https://readthedocs.io] on commit to the `latest` branch.
+### ReadTheDocs
+
+Docs are auto deployed to [readthedocs](https://readthedocs.io) on commit to the `master` branch.
 They should always be up to date.
