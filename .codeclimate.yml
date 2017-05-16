@@ -4,3 +4,4 @@ engines:
 ratings:
   paths:
   - "**.md"
+exclude_paths: [".docs/legacy"]
