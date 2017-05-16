@@ -1,4 +1,4 @@
-### New board
+# New board
 
 Sup dawg, so I herd you like boards?
 
