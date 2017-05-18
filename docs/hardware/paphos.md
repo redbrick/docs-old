@@ -16,11 +16,10 @@
 ## Services
 
 * Mail
-    - [exim](/services/exim)
-    - [dovecoat](/services/dovecot)
+  * [exim](/services/exim)
+  * [dovecoat](/services/dovecot)
 * [ldap](/services/ldap)
 * [dns](/services/bind9)
 * [irc](/services/irc)
-* [bitlbee](/services/bitlbee)
 * [icecast2](/services/icecast2)
 * [boards](/procedures/newboard)
