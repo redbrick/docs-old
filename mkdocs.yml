@@ -38,7 +38,7 @@ pages:
     - Gratuitous ARP: procedures/gratuitousarp.md
     - IRC Operations: procedures/irc_operator.md
     - LDAP Setup: procedures/ldapsetup.md
-    - LDAP Testing: procedures/testing.md
+    - LDAP Testing: procedures/ldaptesting.md
     - LDAP chsh chfn: procedures/ldapchshchfn.md
     - Library Migration: procedures/library_migration.md
     - Mail Setup: procedures/mail_setup.md
