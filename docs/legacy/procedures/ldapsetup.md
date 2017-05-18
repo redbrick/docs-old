@@ -1,6 +1,7 @@
 # NB THIS IS A LEGACY PAGE KEPT FOR POSTERITY. THIS IS NOT AN ACCURATE REPRESENTATION OF THE Current Ldap Setup
 
 # Current Ldap Setup
+
 Ldap is running on Morpheus. The secondary ldap should be setup on deathray as
 soon as it is re-installed, and setup as a slave.
 
