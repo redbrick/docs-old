@@ -108,7 +108,7 @@ After each emergency remember to write a postmortem!
 
 #### Metharme - Web Applications
 
-* [Web Server](/web/apache24)
+* [Web Server](/web/apache)
 * [IceCast](/services/icecast2)
 
 #### halfpint - Admin Bastion

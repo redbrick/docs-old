@@ -20,8 +20,8 @@ If apache is already broken, you have my permission to manually
 
 ## Compiling
 
-**This is what I did. You'll need to use the source debs for my version if you're recompiling again..
-or at least preserve the changelog entries and versioning). See "Before you begin" above.**
+T**his is what I did.* You'll need to use the source debs for my version if you're recompiling again..
+or at least preserve the changelog entries and versioning). See "Before you begin" above.
 
 Downloaded the old source debs (for the build scripts)
 

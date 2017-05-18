@@ -10,7 +10,7 @@ The following packages need to be installed
 
 - python
 - python-twisted
-- sun-java6-jdk or sun-java6-jdr (some java interpreter)  
+- sun-java6-jdk or sun-java6-jdr (some java interpreter)
 
 ### Qwebirc user
 
