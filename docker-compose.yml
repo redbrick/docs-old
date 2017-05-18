@@ -1,15 +1,16 @@
 version: "2"
 services:
   build-docs:
-    build: .
+    image: python:3-onbuild
     container_name: docs-build
     command: mkdocs build
     volumes:
-      -  $PWD/site:/usr/src/app/site
+      -  $PWD:/usr/src/app
 
   server:
-    image: redbrick/docs
+    image: python:3-onbuild
     container_name: docs-server
+    command: 'mkdocs serve -a 0.0.0.0:8000'
     ports:
       - "8000:8000"
     volumes:
