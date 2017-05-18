@@ -33,8 +33,8 @@ YYYY-MM-DD (if spanned to another day)
 
 * __HH:MM: EVENT OVER__
 
-*If the event spanned a month or more there is no need to specify the specific times, 
-replace HH:MM with YYYY-MM-DD ot just YYYY-MM*
+(If the event spanned a month or more there is no need to specify the specific times,
+replace HH:MM with YYYY-MM-DD to just YYYY-MM)
 
 ---
 
