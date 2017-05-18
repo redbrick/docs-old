@@ -5,28 +5,30 @@
 * Primary LDAP Runs on Morpheus.internal
 * Secondary LDAP Runs on Deathray.internal, slaving Morpheus
 * Linux User machines (Minerva, Morpheus, Carbon, Murphy) Configured to try
-	both Servers
+  both Servers
 
 ## Useful Methods for manipulating ldap
+
 For more information on these commands see there man pages, but heres a how do
 I do something quickly with ldap overview.
 
 ### ldapsearch
+
 Dump out the database in ldif form (piping to less can be useful)
 
-```
-   ldapsearch -D cn=root,ou=ldap,o=redbrick -y /etc/ldap.secret -xLLL
+``` bash
+ldapsearch -D cn=root,ou=ldap,o=redbrick -y /etc/ldap.secret -xLLL
 ```
 
 Search for something in particular (In this case all users updated by johan)
 
-```
+``` bash
 ldapsearch -D cn=root,ou=ldap,o=redbrick -y /etc/ldap.secret -xLLL "(updatedby=johan)"
 ```
 
 Here it gets interesting, all members who were updated by johan:
 
-```
+``` bash
 ldapsearch -D cn=root,ou=ldap,o=redbrick -y /etc/ldap.secret -xLLL "(&(updatedby=johan)(objectClass=member))"
 ```
 
@@ -35,18 +37,19 @@ if you are ownly looking for secific data, such as there uid, alternate email
 and home directory location you can abend these variables to the search query
 to only return this information, ie:
 
-```
+``` bash
 ldapsearch -D cn=root,ou=ldap,o=redbrick -y /etc/ldap.secret -xLLL "(updatedby=johan)" altmail homeDirectory
 ```
 
 (The dn which contains the uid will always be printed anyway :)
 
 ### ldapmodify
+
 How to modify something in LDAP, like, oh, say, disusering somebody.
 
 Create a file with something similar to this:
 
-```
+``` ldif
 dn: uid=username,ou=accounts,o=redbrick
 changetype: modify
 replace: loginShell
@@ -55,19 +58,19 @@ loginShell: /usr/local/shells/disusered
 
 Where: username is who you're editing
 
-> `loginShell` is the attribute
-
-> `/usr/l...` is the value
+* `loginShell` is the attribute
+* `/usr/l...` is the value
 
 Then run ldapmodify like this:
 
-```
-root@redbrick# ldapmodify -x -D cn=root,ou=ldap,o=redbrick -y /etc/ldap.secret -f modifyfile
+``` bash
+ldapmodify -x -D cn=root,ou=ldap,o=redbrick -y /etc/ldap.secret -f modifyfile
 ```
 
 Where `modifyfile` is what you created above.
 
 ### ldapadd
+
 Occasionally you'll need to add people or things to ldap manually, such as a
 user you recreating from backups, or a reserved system name such as a new
 machine.
@@ -77,8 +80,8 @@ entry you can use stdin, in the case of adding a reserved name the file should
 look something like this, replacing both instances of redbrick with the reserved
 name you would like to add:
 
-```
-$cat update.reservered
+``` bash
+$ cat update.reservered
 dn: uid=redbrick,ou=reserved,o=redbrick
 uid: redbrick
 description: DNS entry
@@ -88,7 +91,7 @@ objectClass: top
 
 Then run the following command:
 
-```
+``` bash
 ldapadd -D cn=root,ou=ldap,o=redbrick -y /etc/ldap.secret -x -f update.resevered
 ```
 
@@ -111,23 +114,23 @@ the data into your terminal after running the command and finish with a `ctrl-d`
 * Sacrifice lamb - start `slapd`
 * Check contents of ldap directory using:
 
-```
+``` bash
 ldapsearch -xLLL -D cn=root,ou=ldap,o=redbrick -y /etc/ldap.secret -h Server.internal.ip.address | less
 ```
 
 ### Setting Up a Secondary Server - Replication
-For detailed information on all this see
-http://www.openldap.org/doc/admin24/replication.html
+
+For detailed information on all this see [Open LDAP Docs](http://www.openldap.org/doc/admin24/replication.html)
 
 * Install openldap as above, assuming a ubuntu server, otherwise hf.
 * The following ACLs (Access Control Lists) may need to be modified on the
-	*primary* server to allow the replication user read the database, the last
-	2 lines are not ACL's, they set up the server to act as a provider, so just as
-	important:
+  *primary* server to allow the replication user read the database, the last
+  2 lines are not ACL's, they set up the server to act as a provider, so just as
+  important:
 
 ACL's:
 
-```
+``` ldif
 access to dn.children="ou=2002,ou=accounts,o=redbrick"
             by dn.regex="cn=root,ou=ldap,o=redbrick" write
             by dn.regex="cn=slurpd,ou=ldap,o=redbrick" read
@@ -167,10 +170,10 @@ syncprov-checkpoint 100 10
 ```
 
 * The following needs to be added to the slaves `slapd.conf`, to configure it
-as a slave, this assumes you've copied the primary's config, but removed the
-last 2 lines above and all above references to the slurpd user.
+  as a slave, this assumes you've copied the primary's config, but removed the
+  last 2 lines above and all above references to the slurpd user.
 
-```
+``` text
 syncrepl rid=000
         provider=ldap://192.168.0.2:389
         type=refreshAndPersist
@@ -182,16 +185,16 @@ syncrepl rid=000
         searchbase="o=redbrick"
 ```
 
-*  You can use this on any secondary server to have it function in a method
-similar to the old slapd - slurpd configuration, for more possible configs see
-the above link, the rid must be a unique identifier for the slave server, so
-increment it if your adding additional slaves.
-
+* You can use this on any secondary server to have it function in a method
+  similar to the old slapd - slurpd configuration, for more possible configs see
+  the above link, the rid must be a unique identifier for the slave server, so
+  increment it if your adding additional slaves.
 * Starting the secondary server triggers an update and will transfer all the
-	data
+  data
 * UPDATE USER machines to auth off new ldap
 
 ## Re-syncing Secondary LDAP Servers
+
 In the event a secondary server becomes out of sync with the master, it can be
 synced by stopping the server, deleting its database files, Currently:
 `root@secondaryldapserver#: rm -rf /var/lib/ldap/*`
@@ -199,7 +202,8 @@ And then restarting the server, provided its configured as above this triggers
 a dump of the current state of the master
 
 ## Legacy Situation
+
 If you would like to see some history of ldap on redbrick, including a
 discussion between dizer and ryaner, check out this page [ldapsetup](/procedures/ldapsetup).
 
-**__NB__ Nothing on the history page is accurate**
+**__NB__** Nothing on the history page is accurate
