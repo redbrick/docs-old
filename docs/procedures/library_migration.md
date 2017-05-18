@@ -1,4 +1,6 @@
-**Minimun number of servers needed**
+# Library Migration
+
+## Minimun number of servers needed
 
  | Server    | U size | OS           | Service                                            |
  | ------    | ------ | --           | -------                                            |
@@ -9,8 +11,7 @@
  | halfpint  | 1 1/2S | FreeBSD 9.3  | Admin box                                          |
  | Worf      | 2      | N/a          | /home                                              |
 
-
-**Things we need to do**
+## Things we need to do
 
  1. investigate statuspage
  2. Lists
@@ -18,7 +19,6 @@
  4. AWS account for IRC.
  5. replace/fix useradm
  6. Migrate Redbrick package
-
 
 Dependency Chain:
 WebAuth (LDAP linked) -> Apache2.2 -> 16.04

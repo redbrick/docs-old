@@ -33,7 +33,6 @@ pages:
     - Abuse: procedures/abuse.md
     - Add to LDAP: procedures/addldap.md
     - Backporting Packages: procedures/backport-packages.md
-    - Before New Server Purchase: procedures/stuff_that_needs_doing_before_we_can_buy_new_servers.md
     - Committee Changeover: procedures/committeechangeover.md
     - DRAC Access: procedures/dracaccess.md
     - GPGKeys: procedures/gpgkeys.md
@@ -45,7 +44,6 @@ pages:
     - Library Migration: procedures/library_migration.md
     - Mail Setup: procedures/mail_setup.md
     - Modifying LDAP: procedures/modifyingldap.md
-    - Nagios TODO: procedures/nagios_to_do.md
     - New Installs: procedures/newinstalls.md
     - New board: procedures/newboard.md
     - News Overview Fix: procedures/newsoverviewfix.md
