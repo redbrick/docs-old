@@ -1,15 +1,15 @@
 version: "2"
 services:
   build-docs:
-    build: .
-    container_name: docs-build
-    command: mkdocs build
+    image: python:3
+    command: ls -al && pip install -r requirements.txt
+    working_dir: /usr/src/app
     volumes:
-      -  $PWD/site:/usr/src/app/site
+      -  $PWD:/usr/src/app
 
   server:
-    image: redbrick/docs
-    container_name: docs-server
+    image: python:3-onbuild
+    command: 'pip install -r requirements.txt && mkdocs serve -a 0.0.0.0:8000'
     ports:
       - "8000:8000"
     volumes:
@@ -17,7 +17,6 @@ services:
 
   test:
     image: 18fgsa/html-proofer
-    container_name: docs-test
     command: site --allow-hash-href --check-html --empty-alt-ignore --disable-external
     volumes:
       -  $PWD/site:/site
