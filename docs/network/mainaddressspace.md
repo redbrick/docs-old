@@ -103,4 +103,4 @@ Blue: Internal VLAN
 Yellow: Management VLAN
 Green: RBVM Subnet crossover
 
-![Network Map](/img/network-map.png)
+![Network Diagram](/img/network-diagram20171904.png)

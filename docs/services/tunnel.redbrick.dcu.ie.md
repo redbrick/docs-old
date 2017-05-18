@@ -1,4 +1,4 @@
-## tunnel.redbrick.dcu.ie
+# tunnel.redbrick.dcu.ie
 
 * All traffic that goes to tunnel on any port is forwarded to port 22
 * Tunnel is a service ip (73), that's on azazel
