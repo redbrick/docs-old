@@ -14,6 +14,7 @@ pages:
     - Dovecot: services/dovecot.md
     - Exim: services/exim.md
     - Hey: services/hey.md
+    - Git: services/git.md
     - IRC: services/irc.md
     - Icecast2: services/icecast2.md
     - LDAP: services/ldap.md
