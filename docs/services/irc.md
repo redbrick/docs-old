@@ -1,4 +1,5 @@
 # RedBrick IRCd
+
 This runs on morpheus, irc.redbrick has it's own service address for this.
 
 IRCD runs on ircd-hybrid build from the apt source package. It needs to be
@@ -15,7 +16,7 @@ Peers: It's important that autoconn is set to no, apparently due to endian issue
 
 * The limit on the network is 9 character nicks, allowing our server to do more
   than this will result in our server letting people set long nicks, but they'll
-	immediately be kicked off the network. This gets old pretty quick.
+  immediately be kicked off the network. This gets old pretty quick.
 
 #### Compiling
 
@@ -23,7 +24,7 @@ Peers: It's important that autoconn is set to no, apparently due to endian issue
 $ cd /tmp; mkdir build; cd build
 
 # may want to delete the other files that you get with it for clarity
-$ apt-get source ircd-hybrid 					
+$ apt-get source ircd-hybrid
 $ cd ircd-hybrid-7.2.2.dfsg.2
 # edit debian/rules and add export USE_OPENSSL=1 and change nicklen=9
 # (Optional)Patch m_opme.c to allow it to always give you ops, see below
@@ -36,6 +37,7 @@ $ /etc/init.d/ircd-hybrid (re)start
 ```
 
 #### Admin tools
+
 1. Go to `/usr/lib/ircd-hybrid/modules`
 2. Copy `m_force.so` (forcejoin and forcepart) `m_ojoin.so` (OJOIN) and
    `m_opme.so`(OPME) to `autoload/`
@@ -43,13 +45,13 @@ $ /etc/init.d/ircd-hybrid (re)start
    readable to `ircd`
 
 ##### m_opme
+
 OPME is no fun if you can't use it to take over any channel you want, patch
 `contrib/m_opme.c` before compiling to make the function `chan_is_opless`
 always `return 1`:
 
 ```c
-chan_is_opless(const struct Channel *const chptr)
-{
+chan_is_opless(const struct Channel *const chptr) {
   const dlink_node *ptr = NULL;
 
   DLINK_FOREACH(ptr, chptr->members.head)

@@ -38,7 +38,6 @@ pages:
     - GPGKeys: procedures/gpgkeys.md
     - Gratuitous ARP: procedures/gratuitousarp.md
     - IRC Operations: procedures/irc_operator.md
-    - LDAP Setup: procedures/ldapsetup.md
     - LDAP Testing: procedures/ldaptesting.md
     - LDAP chsh chfn: procedures/ldapchshchfn.md
     - Library Migration: procedures/library_migration.md
@@ -130,6 +129,7 @@ pages:
       - Docs Mirror Script: legacy/procedures/docs_mirror_script.md
       - GPG Keys: legacy/procedures/gpgkeys.md
       - Kernel Module Blacklist: legacy/procedures/kernel-module-blacklist.md
+      - LDAP Setup: legacy/procedures/ldapsetup.md
       - Lofiadm: legacy/procedures/lofiadm.md
       - Minerva Storage: legacy/procedures/minervastorage.md
       - Murphy ALOM Access: legacy/procedures/murphyalomaccess.md
