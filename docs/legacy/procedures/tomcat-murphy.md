@@ -1,6 +1,6 @@
 ## Building Tomcat
 
-Tomcat is build with rspm. If there is an /etc/tomcat the config will be preserved, else /etc/tomcat will be created with with defaults.
+Tomcat is build with [rspm](rspm). If there is an /etc/tomcat the config will be preserved, else /etc/tomcat will be created with with defaults.
 
 ### SVCADM
 
@@ -17,7 +17,7 @@ For obvious reasons the package will not go near these files.
 
 	TOMCAT_HOME=/usr/redbrick/tomcat
 	TOMCAT_USER=tomcat
-
+	
 	case "$1" in
 	start)
 	        su - ${TOMCAT_USER} -c "${TOMCAT_HOME}/bin/startup.sh"

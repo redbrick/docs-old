@@ -9,7 +9,7 @@ machine.
 You can force all machines on the network to update their ARP caches using the
 following command on the machine that just received the new IP:
 
-```
+``` bash
 arping -U -I eth0 136.206.15.XXX
 ```
 
