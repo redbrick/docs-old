@@ -8,7 +8,7 @@ The hastebin instance is run in docker on zeus.
 
 The `Dockerfile` is as follows
 
-```
+```Dockerfile
 FROM node:boron
 
 RUN git clone https://github.com/seejohnrun/haste-server.git /opt/haste
@@ -92,6 +92,7 @@ its contents are
 ```
 
 The important things to note from these files are
- - Redis runs in a separate container (as in the docker-compose)
- - The port used is 5484
+
+* Redis runs in a separate container (as in the docker-compose)
+* The port used is 5484
 
