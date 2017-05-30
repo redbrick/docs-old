@@ -27,6 +27,7 @@ pages:
     - NFS: services/nfs.md
     - Ossec: services/ossec.md
     - Postgres: services/postgres.md
+		- Pastebin: services/paste.md
     - Tunnel.redbrick.dcu.ie: services/tunnel.redbrick.dcu.ie.md
     - Unified MOTD: services/unifiedmotd.md
   - Procedures:
