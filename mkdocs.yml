@@ -13,8 +13,9 @@ pages:
     - Bitlbee: services/bitlbee.md
     - Dovecot: services/dovecot.md
     - Exim: services/exim.md
-    - Hey: services/hey.md
     - Git: services/git.md
+    - Hackmd: services/hackmd.md
+    - Hey: services/hey.md
     - IRC: services/irc.md
     - Icecast2: services/icecast2.md
     - LDAP: services/ldap.md
@@ -22,9 +23,9 @@ pages:
     - Mastodon: services/mastodon.md
     - Mercurial: services/hg.md
     - MySQL: services/mysql.md
+    - NFS: services/nfs.md
     - Nagios: services/nagios.md
     - News: services/news.md
-    - NFS: services/nfs.md
     - Ossec: services/ossec.md
     - Postgres: services/postgres.md
     - Pastebin: services/paste.md
@@ -51,8 +52,8 @@ pages:
     - Policies: procedures/policies.md
     - Post-Powercut: procedures/post_powercut.md
     - Pwsafe: procedures/pwsafe.md
-    - Redbrick-apt: procedures/redbrick-apt.md
     - RRS: procedures/rrs.md
+    - Redbrick-apt: procedures/redbrick-apt.md
     - SSL: procedures/ssl.md
     - Severus Colocation: procedures/severuscolocation.md
     - Switch: procedures/switch.md
