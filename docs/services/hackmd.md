@@ -2,7 +2,7 @@
 
 Hackmd lives at [md.rb](https://md.redbrick.dcu.ie) on zeus
 
-Hackmd is build locally and is based on
+Hackmd is built locally and is based on
 [hackmd-docker](https://github.com/hackmdio/docker-hackmd)
 
 Clone the repo and modify `.sequlize`, `Dockerfile` and `config.json` so
