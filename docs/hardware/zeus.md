@@ -13,3 +13,4 @@
 * [bitlbee](/services/bitlbee)
 * [git](/services/git)
 * [mastodon](/services/mastodon)
+* [hackmd](/services/hsckmd)
