@@ -2,14 +2,14 @@ version: "2"
 services:
   build-docs:
     image: python:3-alpine
-    command: bin/build.sh
+    command: ls -alR /usr/src/app && cat /usr/src/app/bin/build.sh
     working_dir: /usr/src/app
     volumes:
       -  $PWD:/usr/src/app
 
   server:
     image: python:3-alpine
-    command: bin/server.sh
+    command: /usr/src/app/bin/server.sh
     working_dir: /usr/src/app
     ports:
       - "8000:8000"
