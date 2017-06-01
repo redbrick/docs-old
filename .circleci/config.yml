@@ -13,14 +13,15 @@ jobs:
             set -x
             curl -L https://github.com/docker/compose/releases/download/1.11.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
             chmod +x /usr/local/bin/docker-compose
+      - run: ls -al bin
       - run:
           name: Test Build
-          command: docker-compose up build-docs
+          command: docker-compose run --rm build-docs
       - run:
           name: Test Internal Links
           command: |
             set -eo pipefail
-            docker-compose up test | tee /results.txt; exit ${PIPESTATUS[0]}
+            docker-compose run --rm test | tee /results.txt; exit ${PIPESTATUS[0]}
       - store_artifacts:
           path: /results.txt
           destination: reports

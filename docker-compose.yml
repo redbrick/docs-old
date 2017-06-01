@@ -1,15 +1,16 @@
 version: "2"
 services:
   build-docs:
-    image: python:3
-    command: ls -al && pip install -r requirements.txt
+    image: python:3-alpine
+    command: bin/build.sh
     working_dir: /usr/src/app
     volumes:
       -  $PWD:/usr/src/app
 
   server:
-    image: python:3-onbuild
-    command: 'pip install -r requirements.txt && mkdocs serve -a 0.0.0.0:8000'
+    image: python:3-alpine
+    command: bin/server.sh
+    working_dir: /usr/src/app
     ports:
       - "8000:8000"
     volumes:

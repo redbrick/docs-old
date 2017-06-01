@@ -15,7 +15,7 @@ The docs are built using mkdocs.
 To bring up a local server with a copy of the docs just run
 
 ``` bash
-docker-compose run --rm server
+docker-compose up server
 ```
 
 To build the docs just run
