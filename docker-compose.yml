@@ -1,21 +1,12 @@
-version: "2"
+version: "3"
 services:
-  build-docs:
-    image: python:3-alpine
-    command: ls -alR /usr/src/app && cat /usr/src/app/bin/build.sh
-    working_dir: /usr/src/app
-    volumes:
-      -  $PWD:/usr/src/app
-
-  server:
-    image: python:3-alpine
-    command: /usr/src/app/bin/server.sh
-    working_dir: /usr/src/app
+  docs:
+    build: .
+    image: redbrick/docs
     ports:
       - "8000:8000"
     volumes:
       -  $PWD:/usr/src/app
-
   test:
     image: 18fgsa/html-proofer
     command: site --allow-hash-href --check-html --empty-alt-ignore --disable-external

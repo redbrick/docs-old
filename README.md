@@ -15,13 +15,13 @@ The docs are built using mkdocs.
 To bring up a local server with a copy of the docs just run
 
 ``` bash
-docker-compose up server
+docker-compose up docs
 ```
 
 To build the docs just run
 
 ``` bash
-docker-compose run --rm build-docs
+docker-compose run --rm docs mkdocs build
 ```
 
 ## Testing locally
@@ -29,8 +29,8 @@ docker-compose run --rm build-docs
 When you do a change make sure it works by building it locally.
 Run
 
-``` yaml
-docker-compose run --rm build-docs
+```bash
+docker-compose run --rm docs mkdocs build
 docker-compose run --rm test
 ```
 
