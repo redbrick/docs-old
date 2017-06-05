@@ -3,27 +3,25 @@ version: 2
 jobs:
   build:
     docker:
-      - image: golang:1.8.0
+      - image: python:3
+        environment:
+          ENV: CI
     working_directory: ~/docs
     steps:
       - checkout
-      - setup_remote_docker
       - run:
-          name: Install Docker Compose
+          name: Setup dep
           command: |
             set -x
-            curl -L https://github.com/docker/compose/releases/download/1.13.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
-            chmod +x /usr/local/bin/docker-compose
+            pip install -r requirements.txt
       - run:
           name: Test Build
-          command: docker-compose run --rm docs mkdocs build
+          command: mkdocs build -v
+      - setup_remote_docker
       - run:
           name: Test Internal Links
           command: |
             set -eo pipefail
-            docker-compose run --rm test | tee /results.txt; exit ${PIPESTATUS[0]}
-      - store_artifacts:
-          path: /results.txt
-          destination: reports
+            docker run -v /root/docs/site:/site 18fgsa/html-proofer /site | /results.txt
       - store_test_results:
           path: "/results.txt"
