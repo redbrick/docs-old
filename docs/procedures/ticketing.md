@@ -17,7 +17,7 @@ place that doesn't do half of these things, ignore it :)
   tickets in this category. If any found, user can add their name to this. Else user can open a new
   ticket. Choose severity, choose security issue (true/false), enter description. User is subscribed
   to incident, so all replies are forwarded to them.
-  * Optional - User may reply to posts via email (to, for example, bug+12345@redbrick.dcu.ie).
+    * Optional - User may reply to posts via email (to, for example, bug+12345@redbrick.dcu.ie).
 * Admins mailed all new bugs, and subscribed to all bug threads.
 * Optional - Some sort of nagios integration.. perhaps unnecessary, nagios already whines enough
   without having the bug tracker do it too. (I think this'd be nice, simply so that if something

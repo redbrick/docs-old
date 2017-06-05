@@ -6,10 +6,10 @@ these damn machines)
 
 ## Starter For 10
 
-* Have you installed Ubuntu?
-  * Excellent, now for gods sake fix the gids for Redbrick groups before you do anything else
-* Have you installed OpenBSD?
-  * If not why not?
+- Have you installed Ubuntu?
+    - Excellent, now for gods sake fix the gids for Redbrick groups before you do anything else
+- Have you installed OpenBSD?
+    - If not why not?
 
 ## Debian/Ubuntu
 
@@ -17,7 +17,7 @@ these damn machines)
 
 Everything that !root can write to should be on its own partition. For a user machine, this is
 `/var`, and `/tmp`. You probably want `/var/tmp` on its own partition too. These should all be
-mounted *at least* no suid.
+mounted -at least- no suid.
 
 ### GIDs
 
@@ -163,7 +163,7 @@ use this to stop users cronjobs cluttering syslog.
 
 ``` text
   # this is commented out in the default syslog.conf
-  # cron.*                         /var/log/cron.log
+  # cron.-                         /var/log/cron.log
   #log {
   #        source(s_all);
   #        filter(f_cron);
@@ -186,7 +186,7 @@ filter f_syslog { not facility(auth, authpriv, cron); };
 If the system is running snoopy then set it so that those logs are only sent to b4 and not kept
 locally.
 
-The use of the final flag means that **order matters**. The final flag is no good if you've already
+The use of the final flag means that --order matters--. The final flag is no good if you've already
 sent the data to a local file (authpriv, in this case at least) somewhere further up in the config.
 
 ``` text
@@ -215,8 +215,8 @@ need to install libpam_ldap, libnss_ldap and ldap-utils. Go through DPKG configu
 the local admin, set the base dn to `o=redbrick` and the root dn to `cn=root,ou=ldap,o=redbrick`.
 Once you've got this done, edit `/etc/ldap/ldap.conf` to add the correct ldap server, ensure
 `/etc/ldap/ldap.conf` has similar ldap servers, and edit `/etc/nsswitch.conf` to add ldap to group,
-shadow and passwd. Also, add the ldap root password in `/etc/ldap.secret`, and **check it's chmoded
-so no one but root can read it**
+shadow and passwd. Also, add the ldap root password in `/etc/ldap.secret`, and --check it's chmoded
+so no one but root can read it--
 
 Ensure that "pam_password exop" is set in `/etc/ldap.conf` (or `/etc/pam_ldap.conf` on debian) or bad
 things will happen when people change their password. You should also set pam_min_uid to 1. in the
@@ -264,12 +264,12 @@ On ubuntu, this is handled by redbrick-root-env.
 
 ### Exim
 
-* Install Exim from somewhere.
-* Go through the config file and fill out primary_hostname & qualify_domain
+- Install Exim from somewhere.
+- Go through the config file and fill out primary_hostname & qualify_domain
   (should be redbrick.dcu.ie) along with whatever else takes your fancy.
-* Unless you know what you're doing don't touch the acl section.
-* Delete the Routers & Transports section
-* Put this in it's place:
+- Unless you know what you're doing don't touch the acl section.
+- Delete the Routers & Transports section
+- Put this in it's place:
 
 ``` text
   ######################################################################
@@ -283,7 +283,7 @@ On ubuntu, this is handled by redbrick-root-env.
     driver = manualroute
     domains = !+local_domains
     transport = remote_smtp
-    route_list = "* mailhost.ipv4.redbrick.dcu.ie "
+    route_list = "- mailhost.ipv4.redbrick.dcu.ie "
     fallback_hosts =  mailhost2.ipv4.redbrick.dcu.ie : mailhost.ipv6.redbrick.dcu.ie : mailhost2.ipv6.redbrick.dcu.ie
 
   #
@@ -303,8 +303,8 @@ On ubuntu, this is handled by redbrick-root-env.
     driver = smtp
 ```
 
-* Don't touch anything else, unless you want to ;)
-* If you're scripting this to run as a service the options you probably want are:
+- Don't touch anything else, unless you want to ;)
+- If you're scripting this to run as a service the options you probably want are:
   `/path/to/exim -bd -q10m`
 
 On OpenBSD it's nicely packaged, on Solaris it's not. You can get one from blastwave (it's in use on
