@@ -1,4 +1,8 @@
 .graphviz svg {
   width: 100%;
-  height: auto;
+  height: 512px;
+}
+
+.wy-side-nav-search {
+  background-color: #AA0202;
 }

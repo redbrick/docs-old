@@ -27,16 +27,17 @@ crap.
 ## DRAC network diagram
 
 ```graphviz
-  digraph hierarchy {
+  digraph DRAC {
     nodesep=1.0
-    node [color=Red,fontname=Courier,shape=box]
+    rankdir=LR
+    node [color=Red,fontname=Courier,shape=Mrecord]
     edge [color=Blue, style=dashed]
-    sprout [label="sprout .8"]
-    carbon [label="carbon DRAC .1"]
-    deathray [label="deathray DRAC .3"]
-    murphy [label="murphy ALOM .14"]
-    cynic [label="cynic RSC .23"]
-    pike [label="pike IP-KVM .123"]
+    sprout [label="{sprout|.8}"]
+    carbon [label="{carbon | DRAC | .1}"]
+    deathray [label="{deathray | DRAC | .3}"]
+    murphy [label="{murphy | ALOM | .14}"]
+    cynic [label="{cynic | RSC | .23}"]
+    pike [label="{pike | IP-KVM | .123}"]
     sprout->hub
     hub->{carbon deathray murphy cynic pike}
   }
