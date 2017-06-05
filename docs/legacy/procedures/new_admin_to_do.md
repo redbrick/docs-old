@@ -25,7 +25,7 @@
 
 *  Finish setting up RANCID
 
-*  [nagios_to_do](/procedures/nagios_to_do)
+*  [nagios_to_do](#)
 
 
 ##  daniel

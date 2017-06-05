@@ -1,5 +1,7 @@
 # Redbrick Apt
 
+## Parts of these docs our out of date including links
+
 The aim of this is to make setting up machines and pushing out updates easier. May also facilitate
 other people using our packages if anyone actually wanted to. It runs as the rbpkg user, from it's
 home directory.
@@ -174,8 +176,8 @@ packages. Use apt-cache to check the full list of current dependencies for these
 
 ### Backup System
 
-These packages are designed to keep the [backup systems](/legacy/procedures/dirvish) on [thunder](/legacy/machines/thunder)
-and [severus](/legacy/machines/severus) in sync, and also to allow backup servers to be quickly redeployed
+These packages are designed to keep the [backup systems](/legacy/procedures/dirvish) on [thunder](#)
+and [severus](#) in sync, and also to allow backup servers to be quickly redeployed
 when necessary.
 
 * **redbrick-dirvish**: Contains all the configuration for the dirvish system. Also patches `/usr/sbin/dirvish`
