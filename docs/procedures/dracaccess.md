@@ -26,7 +26,7 @@ crap.
 
 ## DRAC network diagram
 
-<img src='https://g.gravizo.com/svg?
+```graphviz
   digraph hierarchy {
     nodesep=1.0
     node [color=Red,fontname=Courier,shape=box]
@@ -40,7 +40,7 @@ crap.
     sprout->hub
     hub->{carbon deathray murphy cynic pike}
   }
-'/>
+```
 
 To access the DRAC on either machine, you'll need to do some ssh port forwarding
 via sprout.
