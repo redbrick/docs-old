@@ -3,25 +3,21 @@ version: 2
 jobs:
   build:
     docker:
-      - image: python:3
+      - image: 18fgsa/html-proofer
         environment:
           ENV: CI
     working_directory: ~/docs
     steps:
+      - run: apk add --no-cache --virtual build-dependencies python py-pip git
       - checkout
-      - run:
-          name: Setup dep
-          command: |
-            set -x
-            pip install -r requirements.txt
+      - run: pip install -r requirements.txt
       - run:
           name: Test Build
           command: mkdocs build -v
-      - setup_remote_docker
       - run:
           name: Test Internal Links
           command: |
             set -eo pipefail
-            docker run -v /root/docs/site:/site 18fgsa/html-proofer /site | /results.txt
+            htmlproofer --allow-hash-href --check-html --empty-alt-ignore --disable-external ~/docs/site
       - store_test_results:
           path: "/results.txt"
