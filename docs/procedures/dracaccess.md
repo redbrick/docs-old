@@ -26,42 +26,21 @@ crap.
 
 ## DRAC network diagram
 
-![Alt text](https://g.gravizo.com/svg?
+<img src='https://g.gravizo.com/svg?
   digraph hierarchy {
     nodesep=1.0
     node [color=Red,fontname=Courier,shape=box]
     edge [color=Blue, style=dashed]
     sprout [label="sprout .8"]
+    carbon [label="carbon DRAC .1"]
     deathray [label="deathray DRAC .3"]
     murphy [label="murphy ALOM .14"]
     cynic [label="cynic RSC .23"]
     pike [label="pike IP-KVM .123"]
     sprout->hub
-    hub->{carbon deathray murphy cycnic pike}
+    hub->{carbon deathray murphy cynic pike}
   }
-)
-
-``` text
-  |                                             .2    ______________
-__|______                        -------------------=| carbon DRAC  |
-|       |  .8               _____|_                   ~~~~~~~~~~~~~~
-|sprout |=-----------------|  hub  |
-|_______|                   ~~~~~|~             .3    _______________
-                                 -------------------=| deathray DRAC |
-                                 |                    ~~~~~~~~~~~~~~~
-                                 |
-                                 |              .14   _______________
-                                 -------------------=|  murphy ALOM  |
-                                 |                    ~~~~~~~~~~~~~~~
-                                 |
-                                 |              .23   _______________
-                                 -------------------=|   cynic RSC   |
-                                 |                    ~~~~~~~~~~~~~~~
-                                 |
-                                 |              .123  _______________
-                                 -------------------=| pike (IP-KVM) |
-                                                      ~~~~~~~~~~~~~~~
-```
+'/>
 
 To access the DRAC on either machine, you'll need to do some ssh port forwarding
 via sprout.
