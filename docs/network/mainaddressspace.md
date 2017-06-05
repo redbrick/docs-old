@@ -159,4 +159,5 @@ digraph redbrick {
     {rank=same; azazel paphos albus clyde meth pyg zeus halfpint };
 }
 ```
+
 ![Network Diagram](/img/network-diagram20171904.png)

@@ -4,14 +4,14 @@ Redbrick's network comprises three VLANs all of which are present on Hadron.
 
 The three VLANs are:
 
-* Internal
-* External
-* Management
+- Internal
+- External
+- Management
 
 Other notible networks in Redbrick are:
 
-* RBVM Subnet
-* Severus VPN
+- RBVM Subnet
+- Severus VPN
 
 ## Internal VLAN
 
@@ -126,4 +126,5 @@ digraph redbrick {
     {rank=same; azazel paphos albus clyde meth pyg zeus halfpint };
 }
 ```
+
 ![Network Diagram](/img/network-diagram20171904.png)
