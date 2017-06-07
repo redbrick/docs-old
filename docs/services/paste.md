@@ -9,7 +9,10 @@ The hastebin instance is run in docker on zeus.
 The `Dockerfile` is as follows
 
 ```Dockerfile
-FROM node:boron
+FROM node:boron-alpine
+
+RUN apk update && apk upgrade && \
+apk add --no-cache bash git openssh
 
 RUN git clone https://github.com/seejohnrun/haste-server.git /opt/haste
 WORKDIR /opt/haste
@@ -26,14 +29,14 @@ the `docker-compose.yml` is
 ```yaml
 version: '2'
 services:
-  redis:
+  hastebinredis:
     image: "redis:alpine"
   haste:
     build: .
     ports:
      - "5484:7777"
     depends_on:
-     - redis
+     - hastebinredis
 ```
 
 and its configuration file is the `config.js` file found in
@@ -78,7 +81,7 @@ its contents are
 
   "storage": {
     "type": "redis",
-    "host": "redis",
+    "host": "hastebinredis",
     "port": 6379,
     "db": 2,
     "expire": 2592000
