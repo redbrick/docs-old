@@ -1,6 +1,6 @@
 # Numbers
 
-## 1->29 Boxs
+## 1->29 Boxes
 
 | machine    | ip            | info                                                                  |
 | ---        | :---:         | ---:                                                                  |
