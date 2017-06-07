@@ -44,7 +44,7 @@ Possible Types: PROCESS, CODE, CONFIG
 
 Possible Actions: IMPROVE, REMOVE, ADD
 
-| Description | TYPE-ACTON | Related Issue | Assignee |
-| ----------- | ---------- | ------------- | -------- |
-| What should be done to avoid the thing happening again | PROCESS-IMPROVE | #123 | LDAP |
-| What should be added to stop this happening again | CODE-ADD | #456 | LDAP |
+| Description                                            | TYPE-ACTON      | Related Issue | Assignee |
+| -----------                                            | ----------      | ------------- | -------- |
+| What should be done to avoid the thing happening again | PROCESS-IMPROVE | #123          | LDAP     |
+| What should be added to stop this happening again      | CODE-ADD        | #456          | LDAP     |
