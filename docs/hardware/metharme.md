@@ -20,5 +20,5 @@
 
 ## Services
 
-- [Acts as a web server](/web/apache24)
+- [Acts as a web server](/web/apache)
 - [Has MySql server](/services/mysql)

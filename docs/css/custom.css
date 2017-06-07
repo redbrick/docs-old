@@ -7,7 +7,7 @@
 }
 
 .task-list-item {
-  list-style-type: none;
+  list-style-type: none !important;
 }
 
 .task-list-item input {
