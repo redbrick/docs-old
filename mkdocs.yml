@@ -59,6 +59,7 @@ pages:
       - Ticketing: procedures/ticketing.md
       - UserADM: procedures/useradm.md
   - Hardware:
+      - Albus: hardware/albus.md
       - Azazel: hardware/azazel.md
       - Halfpint: hardware/halfpint.md
       - Metharme: hardware/metharme.md

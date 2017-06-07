@@ -1,8 +1,5 @@
 # Pubcookie
 
-This page document's [murphy](/legacy/machines/murphy)'s pubcookie setup. This has changed a little
-since RSPM took over.
-
 ## How it was compiled
 
 RSPM manages the pubcookie build. This is the build script:

@@ -2,7 +2,7 @@
 
 ## Disk Layout
 
-See [this page](/legacy/machines/minerva) for full partition layout.
+See [minerva](#) for full partition layout.
 
 ## Performance
 
@@ -32,7 +32,7 @@ We contacted encom, but they just directed us to the 3ware KB article.
 
 Another separate, but related issue is NFS. File access seems to be even slower from other machines, so we increased the rsize and wsize in the mount options on carbon, deathray and murphy to 64K (rsize=65536,wsizr=65536). This significantly improved performance over NFS. I think it's due to the NFS block size now matching the file system block size, causing less fragmentation. In addition, the internal switch was upgraded from an unmanaged 100M switch to an unmanaged 1000M switch.
 
-Eventually we'd like to connect to murphy via a crossover cable. This would allow us to use a GigE link that supported jumbo frames (we can't afford a switch that supports them), which should increase performance even more. We're choosing murphy as it's currently primary login and will become our web server. See [here](/legacy/machines/minerva) for more on this.
+Eventually we'd like to connect to murphy via a crossover cable. This would allow us to use a GigE link that supported jumbo frames (we can't afford a switch that supports them), which should increase performance even more. We're choosing murphy as it's currently primary login and will become our web server. See [minerva](#) for more on this.
 
 -werdz
 23/Dec/2007
