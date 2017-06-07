@@ -1,7 +1,17 @@
+---
 site_name: Redbrick Docs
 theme: readthedocs
 repo_url: https://github.com/redbrick/docs
 strict: True
+markdown_extensions:
+  - del_ins
+  - pymdownx.tasklist
+extra_javascript:
+  - js/github.js
+  - js/viz-lite.js
+  - js/graphviz.js
+extra_css:
+  - css/custom.css
 pages:
   - Home: index.md
   - Plans:

@@ -1,0 +1,16 @@
+.wy-side-nav-search {
+  background-color: #AA0202;
+}
+
+.wy-side-nav-search input[type=text] {
+  border-color: #AA0202;
+}
+
+.task-list-item {
+  list-style-type: none !important;
+}
+
+.task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}

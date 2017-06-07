@@ -1,1 +1,3 @@
 mkdocs
+git+git://github.com/aleray/mdx_del_ins.git
+pymdown-extensions

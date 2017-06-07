@@ -4,8 +4,17 @@ engines:
     enabled: true
   fixme:
     enabled: false
+  csslint:
+    enabled: true
+    checks:
+      important:
+        enabled: false
+  eslint:
+    enabled: true
 ratings:
   paths:
     - "**.md"
+    - "**.css"
+    - "**.js"
 exclude_paths:
-  - "docs/legacy"
+  - docs/legacy
