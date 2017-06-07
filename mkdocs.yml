@@ -5,167 +5,168 @@ strict: True
 pages:
   - Home: index.md
   - Plans:
-    - Project Ideas: plans/project-ideas.md
-    - TODO-2017: plans/TODO-2017.md
+      - Project Ideas: plans/project-ideas.md
+      - TODO-2017: plans/TODO-2017.md
   - Services:
-    - Backuppc: services/backuppc.md
-    - Bind9: services/bind9.md
-    - Bitlbee: services/bitlbee.md
-    - Dovecot: services/dovecot.md
-    - Exim: services/exim.md
-    - Git: services/git.md
-    - Hackmd: services/hackmd.md
-    - Hey: services/hey.md
-    - IRC: services/irc.md
-    - Icecast2: services/icecast2.md
-    - LDAP: services/ldap.md
-    - Mailman: services/mailman.md
-    - Mastodon: services/mastodon.md
-    - Mercurial: services/hg.md
-    - MySQL: services/mysql.md
-    - NFS: services/nfs.md
-    - Nagios: services/nagios.md
-    - News: services/news.md
-    - Ossec: services/ossec.md
-    - Postgres: services/postgres.md
-    - Pastebin: services/paste.md
-    - Tunnel.redbrick.dcu.ie: services/tunnel.redbrick.dcu.ie.md
-    - Unified MOTD: services/unifiedmotd.md
+      - Backuppc: services/backuppc.md
+      - Bind9: services/bind9.md
+      - Bitlbee: services/bitlbee.md
+      - Dovecot: services/dovecot.md
+      - Exim: services/exim.md
+      - Git: services/git.md
+      - Hackmd: services/hackmd.md
+      - Hey: services/hey.md
+      - IRC: services/irc.md
+      - Icecast2: services/icecast2.md
+      - LDAP: services/ldap.md
+      - Mailman: services/mailman.md
+      - Mastodon: services/mastodon.md
+      - Mercurial: services/hg.md
+      - MySQL: services/mysql.md
+      - NFS: services/nfs.md
+      - Nagios: services/nagios.md
+      - News: services/news.md
+      - Ossec: services/ossec.md
+      - Pastebin: services/paste.md
+      - Postgres: services/postgres.md
+      - Tunnel.redbrick.dcu.ie: services/tunnel.redbrick.dcu.ie.md
+      - Unified MOTD: services/unifiedmotd.md
   - Procedures:
-    - Abuse: procedures/abuse.md
-    - Add to LDAP: procedures/addldap.md
-    - Backporting Packages: procedures/backport-packages.md
-    - Committee Changeover: procedures/committeechangeover.md
-    - DRAC Access: procedures/dracaccess.md
-    - GPGKeys: procedures/gpgkeys.md
-    - Gratuitous ARP: procedures/gratuitousarp.md
-    - IRC Operations: procedures/irc_operator.md
-    - LDAP Testing: procedures/ldaptesting.md
-    - LDAP chsh chfn: procedures/ldapchshchfn.md
-    - Library Migration: procedures/library_migration.md
-    - Mail Setup: procedures/mail_setup.md
-    - Modifying LDAP: procedures/modifyingldap.md
-    - New Installs: procedures/newinstalls.md
-    - New board: procedures/newboard.md
-    - News Overview Fix: procedures/newsoverviewfix.md
-    - Passwd: procedures/passwd.md
-    - Policies: procedures/policies.md
-    - Post-Powercut: procedures/post_powercut.md
-    - Pwsafe: procedures/pwsafe.md
-    - RRS: procedures/rrs.md
-    - Redbrick-apt: procedures/redbrick-apt.md
-    - SSL: procedures/ssl.md
-    - Severus Colocation: procedures/severuscolocation.md
-    - Switch: procedures/switch.md
-    - Ticketing: procedures/ticketing.md
-    - UserADM: procedures/useradm.md
+      - Abuse: procedures/abuse.md
+      - Add to LDAP: procedures/addldap.md
+      - Backporting Packages: procedures/backport-packages.md
+      - Committee Changeover: procedures/committeechangeover.md
+      - DRAC Access: procedures/dracaccess.md
+      - GPGKeys: procedures/gpgkeys.md
+      - Gratuitous ARP: procedures/gratuitousarp.md
+      - IRC Operations: procedures/irc_operator.md
+      - LDAP Testing: procedures/ldaptesting.md
+      - LDAP chsh chfn: procedures/ldapchshchfn.md
+      - Library Migration: procedures/library_migration.md
+      - Mail Setup: procedures/mail_setup.md
+      - Modifying LDAP: procedures/modifyingldap.md
+      - New Installs: procedures/newinstalls.md
+      - New board: procedures/newboard.md
+      - News Overview Fix: procedures/newsoverviewfix.md
+      - Passwd: procedures/passwd.md
+      - Policies: procedures/policies.md
+      - Post-Powercut: procedures/post_powercut.md
+      - Pwsafe: procedures/pwsafe.md
+      - RRS: procedures/rrs.md
+      - Redbrick-apt: procedures/redbrick-apt.md
+      - SSL: procedures/ssl.md
+      - Severus Colocation: procedures/severuscolocation.md
+      - Switch: procedures/switch.md
+      - Ticketing: procedures/ticketing.md
+      - UserADM: procedures/useradm.md
   - Hardware:
-    - Azazel: hardware/azazel.md
-    - Halfpint: hardware/halfpint.md
-    - Metharme: hardware/metharme.md
-    - PDUs: hardware/the_pdus.md
-    - Paphos: hardware/paphos.md
-    - Pygmalion: hardware/pygmalion.md
-    - Zeus: hardware/zeus.md
+      - Albus: hardware/albus.md
+      - Azazel: hardware/azazel.md
+      - Halfpint: hardware/halfpint.md
+      - Metharme: hardware/metharme.md
+      - PDUs: hardware/the_pdus.md
+      - Paphos: hardware/paphos.md
+      - Pygmalion: hardware/pygmalion.md
+      - Zeus: hardware/zeus.md
   - Network:
-    - Cisco iOS: network/ciscoios.md
-    - Hadron: network/hadron.md
-    - Higgs: network/higgs.md
-    - Junos: network/junos.md
-    - Main Address Space: network/mainaddressspace.md
-    - Network Setup: network/networksetup.md
-    - Pike: network/pike.md
+      - Cisco iOS: network/ciscoios.md
+      - Hadron: network/hadron.md
+      - Higgs: network/higgs.md
+      - Junos: network/junos.md
+      - Main Address Space: network/mainaddressspace.md
+      - Network Setup: network/networksetup.md
+      - Pike: network/pike.md
   - Postmortems:
-    - March 2016: postmortems/post_mortem_mar16.md
+      - March 2016: postmortems/post_mortem_mar16.md
   - Web:
-    - Apache Modules: web/apachemodules.md
-    - Apache: web/apache.md
-    - PubCookie: web/pubcookie.md
-    - Redbrick.dcu.ie: web/redbrick.dcu.ie.md
-    - SuPHP: web/suphp.md
-    - TechWeek: web/techweek.md
-    - Webchat: web/webchat.md
-    - Website: web/website.md
-    - Webterm: web/term.md
+      - Apache Modules: web/apachemodules.md
+      - Apache: web/apache.md
+      - PubCookie: web/pubcookie.md
+      - Redbrick.dcu.ie: web/redbrick.dcu.ie.md
+      - SuPHP: web/suphp.md
+      - TechWeek: web/techweek.md
+      - Webchat: web/webchat.md
+      - Website: web/website.md
+      - Webterm: web/term.md
   - Scripts:
-    - Rbscripts: procedures/rbscripts.md
-    - Rbusers: procedures/rbusers.md
+      - Rbscripts: procedures/rbscripts.md
+      - Rbusers: procedures/rbusers.md
   - Legacy:
-    - Harware:
-      - Carbon: legacy/hardware/carbon.md
-      - Ceilingcat: legacy/hardware/ceilingcat.md
-      - Cynic: legacy/hardware/cynic.md
-      - Daniel: legacy/hardware/daniel.md
-      - Deathray: legacy/hardware/deathray.md
-      - Minerva: legacy/hardware/minerva.md
-      - Munger: legacy/hardware/munger.md
-      - Murphy: legacy/hardware/murphy.md
-      - Obelisk: legacy/hardware/obeliskstuff.md
-      - Severus: legacy/hardware/severus.md
-      - Sprout: legacy/hardware/sprout.md
-      - Thunder: legacy/hardware/thunder.md
-      - UPSes: legacy/hardware/ups.md
-      - Warmstart: legacy/hardware/warmstart.md
-    - Network:
-      - dnsaddressspace: legacy/network/dnsaddressspace.md
-      - vmaddressspace: legacy/network/vmaddressspace.md
-    - Procedures:
-      - 10.04-services-checklist: legacy/procedures/10.04-services-checklist.md
-      - 10.04move: legacy/procedures/10.04move.md
-      - 2011 TODO: legacy/procedures/2011-to-do.md
-      - 2015-02 TODO: legacy/procedures/to_do_1502.md
-      - Apache Solaris: legacy/procedures/apachesolaris.md
-      - Apache on Deathray: legacy/procedures/apacheondeathray.md
-      - Apache on Murphy: legacy/procedures/apacheonmurphy.md
-      - CTYI: legacy/procedures/ctyi.md
-      - Carbon Reboot Warning: legacy/procedures/carbonrebootwarning.md
-      - Carbon and Deathray: legacy/procedures/carbonanddeathray.md
-      - Compiling Ubuntu Kernel: legacy/procedures/ubuntukernel.md
-      - Compiling Xen: legacy/procedures/compilingxen.md
-      - Cynic Debian: legacy/procedures/cynicdebian.md
-      - Cynic RSC Access: legacy/procedures/cynicrscaccess.md
-      - Cynic Setup Zones: legacy/procedures/cynic_setup_zones.md
-      - Cynic dpkg: legacy/procedures/cynic_dpkg.md
-      - Dirvish Tutorial: legacy/procedures/dirvish_tutorial.md
-      - Dirvish: legacy/procedures/dirvish.md
-      - Docs Mirror Script: legacy/procedures/docs_mirror_script.md
-      - GPG Keys: legacy/procedures/gpgkeys.md
-      - Kernel Module Blacklist: legacy/procedures/kernel-module-blacklist.md
-      - LDAP Setup: legacy/procedures/ldapsetup.md
-      - Lofiadm: legacy/procedures/lofiadm.md
-      - Minerva Storage: legacy/procedures/minervastorage.md
-      - Murphy ALOM Access: legacy/procedures/murphyalomaccess.md
-      - Murphy Disabled Services: legacy/procedures/murphy-disabled_services.md
-      - Murphy Install Log: legacy/procedures/murphy-install-log.md
-      - Murphy Jumpstart: legacy/procedures/murphy-jumpstart.md
-      - Murphy Live Upgrade: legacy/procedures/murphyliveupgrade.md
-      - Murphy MySQL Client bug: legacy/procedures/murphymysqlclientbug.md
-      - Murphy Python: legacy/procedures/murphypython.md
-      - Murphy Solaris: legacy/procedures/murphysolaris.md
-      - Murphy Zones: legacy/procedures/murphy-zones.md
-      - New Admin TODO: legacy/procedures/new_admin_to_do.md
-      - Open Ports: legacy/procedures/openports.md
-      - Orphan Pages: legacy/procedures/orphan_pages.md
-      - PHP Solaris: legacy/procedures/phpsolaris.md
-      - Paphos Migration: legacy/procedures/paphos_migration.md
-      - Pkgsrc: legacy/procedures/pkgsrc.md
-      - RBVM Password Change: legacy/procedures/pass-change.md
-      - Redbrick Solaris Package Manager: legacy/procedures/redbrick_solaris_package_manager.md
-      - Severus VPN: legacy/procedures/severus_vpn.md
-      - Sprout-serial: legacy/procedures/sprout-serial.md
-      - Tomcat Murphy: legacy/procedures/tomcat-murphy.md
-      - Updating IMAP Cert: legacy/procedures/imapupdatingcert.md
-      - VM Server Stuff: legacy/procedures/vmserverstuff.md
-      - Worf Plan: legacy/procedures/worf_plan.md
-      - X4140ilom: legacy/procedures/x4140ilom.md
-    - Services:
-      - EXIM Solaris: legacy/services/exim_solaris.md
-      - Fast Storage: legacy/services/faststorage.md
-      - Git: legacy/services/git.md
-      - IRCProxy: legacy/services/ircproxy.md
-      - Jabber: legacy/services/jabber.md
-      - Munin: legacy/services/munin.md
-      - Peepd: legacy/services/peepd.md
-      - Putty: legacy/services/putty.md
-      - Rbvm: legacy/services/rbvm.md
-      - Rbvmctl: legacy/services/rbvmctl.md
+      - Harware:
+          - Carbon: legacy/hardware/carbon.md
+          - Ceilingcat: legacy/hardware/ceilingcat.md
+          - Cynic: legacy/hardware/cynic.md
+          - Daniel: legacy/hardware/daniel.md
+          - Deathray: legacy/hardware/deathray.md
+          - Minerva: legacy/hardware/minerva.md
+          - Munger: legacy/hardware/munger.md
+          - Murphy: legacy/hardware/murphy.md
+          - Obelisk: legacy/hardware/obeliskstuff.md
+          - Severus: legacy/hardware/severus.md
+          - Sprout: legacy/hardware/sprout.md
+          - Thunder: legacy/hardware/thunder.md
+          - UPSes: legacy/hardware/ups.md
+          - Warmstart: legacy/hardware/warmstart.md
+      - Network:
+          - dnsaddressspace: legacy/network/dnsaddressspace.md
+          - vmaddressspace: legacy/network/vmaddressspace.md
+      - Procedures:
+          - 10.04-services-checklist: legacy/procedures/10.04-services-checklist.md
+          - 10.04move: legacy/procedures/10.04move.md
+          - 2011 TODO: legacy/procedures/2011-to-do.md
+          - 2015-02 TODO: legacy/procedures/to_do_1502.md
+          - Apache Solaris: legacy/procedures/apachesolaris.md
+          - Apache on Deathray: legacy/procedures/apacheondeathray.md
+          - Apache on Murphy: legacy/procedures/apacheonmurphy.md
+          - CTYI: legacy/procedures/ctyi.md
+          - Carbon Reboot Warning: legacy/procedures/carbonrebootwarning.md
+          - Carbon and Deathray: legacy/procedures/carbonanddeathray.md
+          - Compiling Ubuntu Kernel: legacy/procedures/ubuntukernel.md
+          - Compiling Xen: legacy/procedures/compilingxen.md
+          - Cynic Debian: legacy/procedures/cynicdebian.md
+          - Cynic RSC Access: legacy/procedures/cynicrscaccess.md
+          - Cynic Setup Zones: legacy/procedures/cynic_setup_zones.md
+          - Cynic dpkg: legacy/procedures/cynic_dpkg.md
+          - Dirvish Tutorial: legacy/procedures/dirvish_tutorial.md
+          - Dirvish: legacy/procedures/dirvish.md
+          - Docs Mirror Script: legacy/procedures/docs_mirror_script.md
+          - GPG Keys: legacy/procedures/gpgkeys.md
+          - Kernel Module Blacklist: legacy/procedures/kernel-module-blacklist.md
+          - LDAP Setup: legacy/procedures/ldapsetup.md
+          - Lofiadm: legacy/procedures/lofiadm.md
+          - Minerva Storage: legacy/procedures/minervastorage.md
+          - Murphy ALOM Access: legacy/procedures/murphyalomaccess.md
+          - Murphy Disabled Services: legacy/procedures/murphy-disabled_services.md
+          - Murphy Install Log: legacy/procedures/murphy-install-log.md
+          - Murphy Jumpstart: legacy/procedures/murphy-jumpstart.md
+          - Murphy Live Upgrade: legacy/procedures/murphyliveupgrade.md
+          - Murphy MySQL Client bug: legacy/procedures/murphymysqlclientbug.md
+          - Murphy Python: legacy/procedures/murphypython.md
+          - Murphy Solaris: legacy/procedures/murphysolaris.md
+          - Murphy Zones: legacy/procedures/murphy-zones.md
+          - New Admin TODO: legacy/procedures/new_admin_to_do.md
+          - Open Ports: legacy/procedures/openports.md
+          - Orphan Pages: legacy/procedures/orphan_pages.md
+          - PHP Solaris: legacy/procedures/phpsolaris.md
+          - Paphos Migration: legacy/procedures/paphos_migration.md
+          - Pkgsrc: legacy/procedures/pkgsrc.md
+          - RBVM Password Change: legacy/procedures/pass-change.md
+          - Redbrick Solaris Package Manager: legacy/procedures/redbrick_solaris_package_manager.md
+          - Severus VPN: legacy/procedures/severus_vpn.md
+          - Sprout-serial: legacy/procedures/sprout-serial.md
+          - Tomcat Murphy: legacy/procedures/tomcat-murphy.md
+          - Updating IMAP Cert: legacy/procedures/imapupdatingcert.md
+          - VM Server Stuff: legacy/procedures/vmserverstuff.md
+          - Worf Plan: legacy/procedures/worf_plan.md
+          - X4140ilom: legacy/procedures/x4140ilom.md
+      - Services:
+          - EXIM Solaris: legacy/services/exim_solaris.md
+          - Fast Storage: legacy/services/faststorage.md
+          - Git: legacy/services/git.md
+          - IRCProxy: legacy/services/ircproxy.md
+          - Jabber: legacy/services/jabber.md
+          - Munin: legacy/services/munin.md
+          - Peepd: legacy/services/peepd.md
+          - Putty: legacy/services/putty.md
+          - Rbvm: legacy/services/rbvm.md
+          - Rbvmctl: legacy/services/rbvmctl.md
