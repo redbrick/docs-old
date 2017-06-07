@@ -1,5 +1,7 @@
 # Redbrick Apt
 
+## Parts of these docs our out of date including links
+
 The aim of this is to make setting up machines and pushing out updates easier. May also facilitate
 other people using our packages if anyone actually wanted to. It runs as the rbpkg user, from it's
 home directory.
@@ -101,24 +103,24 @@ packages. Use apt-cache to check the full list of current dependencies for these
 ### Meta
 
 * **redbrick-server** -  pulls in things that are needed on all servers, not just login servers:
-  * logwatch-apt
-  * logwatch-chkrootkit
-  * redbrick-nagios-nrpe
-  * nfs-kernel-server
-  * openssh-server
-  * syslog-ng
-  * redbrick-root-env
-  * fail2ban
-  * exim4-daemon-light
-  * openntpd|ntp
+    * logwatch-apt
+    * logwatch-chkrootkit
+    * redbrick-nagios-nrpe
+    * nfs-kernel-server
+    * openssh-server
+    * syslog-ng
+    * redbrick-root-env
+    * fail2ban
+    * exim4-daemon-light
+    * openntpd|ntp
 * **redbrick-login-server** - this pulls in almost everything in the redbrick repo to create a
   login.redbrick environment. Also depends on:
-  * sl
-  * vim
-  * pwsafe
-  * weechat-curses
-  * irssi
-  * etc.
+    * sl
+    * vim
+    * pwsafe
+    * weechat-curses
+    * irssi
+    * etc.
 * **redbrick-backup-server** - Depends on redbrick-server, ldap-utils, and all the backup system
   packages. Conflicts with mlocate, cause this seems to run for ages and use loads of disk space on
   these machines.
@@ -127,9 +129,9 @@ packages. Use apt-cache to check the full list of current dependencies for these
 
 * **[c-hey](/services/hey)**, for both i386 and amd64
 * **[huh](/services/hey)**, for amd64 only. The i386 hey doesn't support huh. This package still
-   requires that you manually configure syslog.ng as per the docs. It also doesn't set up it's
-   group and stuff, this should be changed in the next version of this package. The huh.i386
-   package is a dummy to satisfy the dependency of redbrick-login-server.
+  requires that you manually configure syslog.ng as per the docs. It also doesn't set up it's
+  group and stuff, this should be changed in the next version of this package. The huh.i386
+  package is a dummy to satisfy the dependency of redbrick-login-server.
 * **redbrick-news**: news, usenet, newsbeuter
 * **[redbrick-noscripts](/procedures/rbscripts)**: nohelp, noforward, nopermwarn
 * **redbrick-mail**: mdfrm, mdmake, vcard.filter, octet-filter. Creates `/usr/local/etc/mailcap`,
@@ -174,8 +176,8 @@ packages. Use apt-cache to check the full list of current dependencies for these
 
 ### Backup System
 
-These packages are designed to keep the [backup systems](/legacy/procedures/dirvish) on [thunder](/legacy/machines/thunder)
-and [severus](/legacy/machines/severus) in sync, and also to allow backup servers to be quickly redeployed
+These packages are designed to keep the [backup systems](/legacy/procedures/dirvish) on [thunder](#)
+and [severus](#) in sync, and also to allow backup servers to be quickly redeployed
 when necessary.
 
 * **redbrick-dirvish**: Contains all the configuration for the dirvish system. Also patches `/usr/sbin/dirvish`
