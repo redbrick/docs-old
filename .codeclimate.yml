@@ -1,3 +1,4 @@
+---
 engines:
   markdownlint:
     enabled: true
@@ -5,6 +6,6 @@ engines:
     enabled: false
 ratings:
   paths:
-  - "**.md"
+    - "**.md"
 exclude_paths:
   - "docs/legacy"
