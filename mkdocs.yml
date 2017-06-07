@@ -27,6 +27,7 @@ pages:
       - Nagios: services/nagios.md
       - News: services/news.md
       - Ossec: services/ossec.md
+      - Pastebin: services/paste.md
       - Postgres: services/postgres.md
       - Tunnel.redbrick.dcu.ie: services/tunnel.redbrick.dcu.ie.md
       - Unified MOTD: services/unifiedmotd.md
