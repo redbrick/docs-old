@@ -11,28 +11,27 @@ The `Dockerfile` is as follows
 ```Dockerfile
 FROM node:boron-alpine
 
-RUN apk update && apk upgrade && \
-apk add --no-cache bash git openssh
-
-RUN git clone https://github.com/seejohnrun/haste-server.git /opt/haste
 WORKDIR /opt/haste
-RUN npm install
+RUN apk add --no-cache git &&\
+    git clone https://github.com/seejohnrun/haste-server.git /opt/haste && \
+    yarn
 
 ADD ./config.js /opt/haste/config.js
 
 EXPOSE 7777
-CMD [ "npm", "start" ]
+CMD [ "yarn", "start" ]
 ```
 
 the `docker-compose.yml` is
 
 ```yaml
-version: '2'
+version: '3'
 services:
   hastebinredis:
     image: "redis:alpine"
   haste:
     build: .
+    image: "redbrick/paste"
     ports:
      - "5484:7777"
     depends_on:
