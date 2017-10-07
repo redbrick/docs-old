@@ -12,10 +12,10 @@ Prometheus scrapes collectd, grafana gets it's metrics from prometheus. These ar
 
 - [x] CPU Usage 
 - [x] Memory Usage
-- [ ] Storage Used
+- [x] Storage Used
 - [x] Number of users logged into the box
 - [x] Processes Running
-- [x] The data transmitted and recived from the box
+- [x] Interface Traffic
 
 ## Half Pint
 
@@ -27,8 +27,9 @@ Prometheus scrapes collectd, grafana gets it's metrics from prometheus. These ar
 
 - [x] CPU Usage 
 - [x] Memory Usage
-- [ ] Storage used
-- [ ] Apache
+- [x] Storage used
+- [x] Apache
+- [x] Interface Traffic
 - [ ] LDAP
 - [ ] Mail
 - [ ] Bind9
@@ -36,7 +37,7 @@ Prometheus scrapes collectd, grafana gets it's metrics from prometheus. These ar
 
 ## Pygmailion
 
-- [ ] Storage Used 
+- [x] Storage Used 
 - [x] CPU Usage 
 - [x] Memory Usage
 - [x] Proccesses
@@ -44,7 +45,7 @@ Prometheus scrapes collectd, grafana gets it's metrics from prometheus. These ar
 
 ## Metharme
 
-- [ ] Storage Used 
+- [x] Storage Used 
 - [x] CPU Usage 
 - [x] Memory Usage
 - [x] Apache
@@ -52,6 +53,7 @@ Prometheus scrapes collectd, grafana gets it's metrics from prometheus. These ar
 
 ## Zeus
 
-- [ ] Storage Used 
+- [x] Storage Used 
 - [x] CPU Usage 
 - [x] Memory Usage
+- [x] Interface Traffic
