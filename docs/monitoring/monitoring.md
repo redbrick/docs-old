@@ -4,13 +4,13 @@ Prometheus scrapes collectd, grafana gets it's metrics from prometheus. These ar
 
 ## Albus
 
-- [ ] CPU Usage 
+- [ ] CPU Usage
 - [ ] Memory Usage
 - [ ] Storage Used
 
 ## Azazel
 
-- [x] CPU Usage 
+- [x] CPU Usage
 - [x] Memory Usage
 - [x] Storage Used
 - [x] Number of users logged into the box
@@ -19,13 +19,13 @@ Prometheus scrapes collectd, grafana gets it's metrics from prometheus. These ar
 
 ## Half Pint
 
-- [ ] CPU Usage 
+- [ ] CPU Usage
 - [ ] Memory Usage
 - [ ] Storage used
 
 ## Paphos
 
-- [x] CPU Usage 
+- [x] CPU Usage
 - [x] Memory Usage
 - [x] Storage used
 - [x] Apache
@@ -37,23 +37,23 @@ Prometheus scrapes collectd, grafana gets it's metrics from prometheus. These ar
 
 ## Pygmailion
 
-- [x] Storage Used 
-- [x] CPU Usage 
+- [x] Storage Used
+- [x] CPU Usage
 - [x] Memory Usage
 - [x] Proccesses
 - [x] Number of users logged on
 
 ## Metharme
 
-- [x] Storage Used 
-- [x] CPU Usage 
+- [x] Storage Used
+- [x] CPU Usage
 - [x] Memory Usage
 - [x] Apache
 - [ ] MySql
 
 ## Zeus
 
-- [x] Storage Used 
-- [x] CPU Usage 
+- [x] Storage Used
+- [x] CPU Usage
 - [x] Memory Usage
 - [x] Interface Traffic

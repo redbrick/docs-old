@@ -3,29 +3,36 @@
 * Full man page for collectd with full descriptions and configs:
     * https://collectd.org/documentation/manpages/collectd.conf.5.shtml
 
-## How to install collectd 
+## How to install collectd
 
 ### Ubuntu Systems
-``` 
+
+```
 $ apt-get install collectd
 ```
 
 ### FreeBSD Port
+
 ```
-# pkg_add -r collectd
+$ pkg_add -r collectd
 ```
 
 ##### To install the port (source package):
+
 ```
-# cd /usr/ports/net-mgmt/collectd
-# make clean install
+$ cd /usr/ports/net-mgmt/collectd
+$ make clean install
+
 ```
 
 ## How to configure collectd
+
 * Config lies in `/etc/collectd/collectd.conf`
 
 ### Load Plugins
+
 #### Plugins that Redbrick currently use
+
 | Plugin Name | Type | Description |
 |:-----------:|:----:|:------------------:|
 | CPU         | input| Collects CPU usage |
@@ -43,29 +50,33 @@ $ apt-get install collectd
 
 ## How configure the collectd apache plugin correctly
 
-### Configure that apache webserver 
+### Configure that apache webserver
+
 * We need the plugin mod_status enabled
 * ExtendedStatus directive needs to be enabled
 * This goes in the apache config
-   ```
-   ExtendedStatus on
-   <IfModule mod_status.c>
-    <Location /mod_status>
-      SetHandler server-status
-    </Location>
-   </IfModule>
-  ```
 
-* We also need to add this to the /etc/apache2/ports.conf 
+```
+ExtendedStatus on
+<IfModule mod_status.c>
+<Location /mod_status>
+  SetHandler server-status
+</Location>
+</IfModule>
+```
+
+* We also need to add this to the /etc/apache2/ports.conf
     * <b> This may break things in /etc/apache2/sites-enabled/ </b>
-   ```
-    # mod_status
-    NameVirtualHost 127.0.0.1
-    Listen 127.0.0.1:8081
-    Listen 127.0.0.1:80
-   ```
 
-* In /etc/collectd/collectd.conf we need to configure the apache module as so  
+```
+# mod_status
+NameVirtualHost 127.0.0.1
+Listen 127.0.0.1:8081
+Listen 127.0.0.1:80
+```
+
+* In /etc/collectd/collectd.conf we need to configure the apache module as so
+
 ```
 <Plugin apache>
     <Instance "Machine_Name">
@@ -73,10 +84,10 @@ $ apt-get install collectd
         Server "apache"
     </Instance>
 </Plugin>
-
 ```
 
 ### Trouble shooting apache
+
 * Try curl from the machine you are on
 * Try curl from the machine doing the scraping
 * If that works then looks like apache is working right
