@@ -10,11 +10,12 @@ to record all such information for current and future administrators.
 
 ## Admin Account Priviliges
 
-By default, all admin accounts will be placed in the root group for su access
-and the log group for read access to system logs. Accounts should not be
-placed into any other 'system' or priviliged accounts (e.g. pgsql, mail, news,
-etc.) but by all accounts (hah, bad pun!) can be placed into useful groups
-(e.g. cvs, webgroup, helpdesk etc.)
+By default, all admin accounts will remain the same as the rest of the committee.
+Each admin will recieve a local account on each machine that will be in the root
+group. This allows you to log on if ldap goes down. Accounts should not be placed 
+into any other 'system' or priviliged accounts (e.g. pgsql, mail, news, etc.) but 
+by all accounts (hah, bad pun!) can be placed into useful groups (e.g. cvs, 
+webgroup, helpdesk etc.)
 
 ## Root account
 
@@ -72,7 +73,7 @@ Couple of things to look out for:
 
 ## Admin Account Responsibilities
 
-As an adminisitrator, your normal user account has extra priviliges (namely being in the root group).
+As an adminisitrator, your new local account has extra priviliges (namely being in the root group).
 For this reason, you should not run *any* untrusted or unknown programs or scripts. If you must,
 and source code is available you should check it before running it. Compile your own versions of
 other user's programs you use regularly. It is far too easy for other users to trojan your account
