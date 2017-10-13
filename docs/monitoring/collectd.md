@@ -1,7 +1,7 @@
 # Collectd
 
 * Full man page for collectd with full descriptions and configs:
-    * https://collectd.org/documentation/manpages/collectd.conf.5.shtml
+  * https://collectd.org/documentation/manpages/collectd.conf.5.shtml
 
 ## How to install collectd
 
@@ -22,7 +22,6 @@ $ pkg_add -r collectd
 ```
 $ cd /usr/ports/net-mgmt/collectd
 $ make clean install
-
 ```
 
 ## How to configure collectd
@@ -66,7 +65,7 @@ ExtendedStatus on
 ```
 
 * We also need to add this to the /etc/apache2/ports.conf
-    * <b> This may break things in /etc/apache2/sites-enabled/ </b>
+  * <b> This may break things in /etc/apache2/sites-enabled/ </b>
 
 ```
 # mod_status
