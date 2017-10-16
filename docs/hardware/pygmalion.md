@@ -2,7 +2,11 @@
 
 ## Details
 
+* Type: Intel(R) Xeon (R)
 * OS: Ubuntu 16.04
+* CPU: Intel (R) Xeon (R) E5620 2.46GHz
+* RAM: 16GB
+* Network: QLogic bnx2 Gigabit Ethernet Driver v2.2.6
 
 ## Where to find
 
