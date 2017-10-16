@@ -2,7 +2,7 @@
 
 ## Details
 
-* Type: Intel(R) Xeon (R)
+* Type: Dell PowerEdge R710
 * OS: Ubuntu 16.04
 * CPU: Intel (R) Xeon (R) E5620 2.46GHz
 * RAM: 16GB
