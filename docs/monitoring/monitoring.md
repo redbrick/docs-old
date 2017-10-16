@@ -1,16 +1,17 @@
 # Monitoring
 
-Prometheus scrapes collectd, grafana gets it's metrics from prometheus. These are what we currently and hope to monitor in the future.
+Prometheus scrapes collectd, grafana gets it's metrics from prometheus.
+These are what we currently and hope to monitor in the future.
 
 ## Albus
 
-- [ ] CPU Usage 
+- [ ] CPU Usage
 - [ ] Memory Usage
 - [ ] Storage Used
 
 ## Azazel
 
-- [x] CPU Usage 
+- [x] CPU Usage
 - [x] Memory Usage
 - [x] Storage Used
 - [x] Number of users logged into the box
@@ -19,13 +20,13 @@ Prometheus scrapes collectd, grafana gets it's metrics from prometheus. These ar
 
 ## Half Pint
 
-- [ ] CPU Usage 
+- [ ] CPU Usage
 - [ ] Memory Usage
 - [ ] Storage used
 
 ## Paphos
 
-- [x] CPU Usage 
+- [x] CPU Usage
 - [x] Memory Usage
 - [x] Storage used
 - [x] Apache
@@ -34,26 +35,25 @@ Prometheus scrapes collectd, grafana gets it's metrics from prometheus. These ar
 - [ ] Mail
 - [ ] Bind9
 
-
 ## Pygmailion
 
-- [x] Storage Used 
-- [x] CPU Usage 
+- [x] Storage Used
+- [x] CPU Usage
 - [x] Memory Usage
 - [x] Proccesses
 - [x] Number of users logged on
 
 ## Metharme
 
-- [x] Storage Used 
-- [x] CPU Usage 
+- [x] Storage Used
+- [x] CPU Usage
 - [x] Memory Usage
 - [x] Apache
-- [ ] MySql
+- [x] MySql
 
 ## Zeus
 
-- [x] Storage Used 
-- [x] CPU Usage 
+- [x] Storage Used
+- [x] CPU Usage
 - [x] Memory Usage
 - [x] Interface Traffic
