@@ -1,6 +1,7 @@
 # Monitoring
 
-Prometheus scrapes collectd, grafana gets it's metrics from prometheus. These are what we currently and hope to monitor in the future.
+Prometheus scrapes collectd, grafana gets it's metrics from prometheus.
+These are what we currently and hope to monitor in the future.
 
 ## Albus
 
@@ -34,7 +35,6 @@ Prometheus scrapes collectd, grafana gets it's metrics from prometheus. These ar
 - [ ] Mail
 - [ ] Bind9
 
-
 ## Pygmailion
 
 - [x] Storage Used
@@ -49,7 +49,7 @@ Prometheus scrapes collectd, grafana gets it's metrics from prometheus. These ar
 - [x] CPU Usage
 - [x] Memory Usage
 - [x] Apache
-- [ ] MySql
+- [x] MySql
 
 ## Zeus
 

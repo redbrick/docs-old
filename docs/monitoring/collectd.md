@@ -1,25 +1,25 @@
 # Collectd
 
 * Full man page for collectd with full descriptions and configs:
-  * https://collectd.org/documentation/manpages/collectd.conf.5.shtml
+  - ![Collectd.conf(5)](https://collectd.org/documentation/manpages/collectd.conf.5.shtml)
 
 ## How to install collectd
 
 ### Ubuntu Systems
 
-```
+```shell
 $ apt-get install collectd
 ```
 
 ### FreeBSD Port
 
-```
+```shell
 $ pkg_add -r collectd
 ```
 
-##### To install the port (source package):
+##### To install the port (source package)
 
-```
+```shell
 $ cd /usr/ports/net-mgmt/collectd
 $ make clean install
 ```
@@ -55,7 +55,7 @@ $ make clean install
 * ExtendedStatus directive needs to be enabled
 * This goes in the apache config
 
-```
+```config
 ExtendedStatus on
 <IfModule mod_status.c>
 <Location /mod_status>
@@ -65,9 +65,9 @@ ExtendedStatus on
 ```
 
 * We also need to add this to the /etc/apache2/ports.conf
-  * <b> This may break things in /etc/apache2/sites-enabled/ </b>
+  * **This may break things in /etc/apache2/sites-enabled/**
 
-```
+```config
 # mod_status
 NameVirtualHost 127.0.0.1
 Listen 127.0.0.1:8081
@@ -76,7 +76,7 @@ Listen 127.0.0.1:80
 
 * In /etc/collectd/collectd.conf we need to configure the apache module as so
 
-```
+```config
 <Plugin apache>
     <Instance "Machine_Name">
         URL "http://localhost/server-status/?auto"
