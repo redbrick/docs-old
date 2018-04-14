@@ -3,7 +3,7 @@
 - Don't really know what this was so just wrapping in code block table may be
   better -butlerx
 
-``` text
+```text
   Gi0/1                   VLAN2
   Gi0/2           VLAN2
 

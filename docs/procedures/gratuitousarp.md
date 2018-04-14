@@ -9,7 +9,7 @@ machine.
 You can force all machines on the network to update their ARP caches using the
 following command on the machine that just received the new IP:
 
-``` bash
+```bash
 arping -U -I eth0 136.206.15.XXX
 ```
 
@@ -19,8 +19,8 @@ This works by having the recipient machine send ARP requests for its own IP
 address.
 
 There is another method using `send_arp` (a tool included with various HA Linux
-packages), but it doesn't seem to work for external connections, possibly due
-to security settings on ISS's router.
+packages), but it doesn't seem to work for external connections, possibly due to
+security settings on ISS's router.
 
-This version of arping is in the `iputils-arping` package, not the
-`arping` package.
+This version of arping is in the `iputils-arping` package, not the `arping`
+package.

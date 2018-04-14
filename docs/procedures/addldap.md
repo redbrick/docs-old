@@ -9,7 +9,7 @@ entry you can use stdin, in the case of adding a reserved name the file should
 look something like this, replacing both instances of redbrick with the reserved
 name you would like to add:
 
-``` bash
+```bash
 $ cat update.reservered
 dn: uid=redbrick,ou=reserved,o=redbrick
 uid: redbrick
@@ -20,7 +20,7 @@ objectClass: top
 
 Then run the following command:
 
-``` bash
+```bash
 ldapadd -D cn=root,ou=ldap,o=redbrick -y /etc/ldap.secret -x -f update.resevered
 ```
 

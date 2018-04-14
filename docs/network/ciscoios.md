@@ -1,8 +1,8 @@
 # Cisco IOS
 
 IOS is the OS running on the Cisco switches. It can be terrifying, because one
-wrong move and you've kicked ~~redbrick~~ DCU off the internet. It's also
-very different to anything running on any of the servers.
+wrong move and you've kicked ~~redbrick~~ DCU off the internet. It's also very
+different to anything running on any of the servers.
 
 ## A Quick Walkthrough
 
@@ -25,7 +25,7 @@ break anything.
 
 Let's look at some information about the switch. Type `sh ver`:
 
-``` text
+```text
 hadron#sh ver
 Cisco IOS Software, C3560 Software (C3560-IPSERVICESK9-M), Version 12.2(50)SE3, RELEASE SOFTWARE (fc1)
 Technical Support: http://www.cisco.com/techsupport
@@ -39,7 +39,7 @@ hadron#
 
 Now examine the running config. Type `sh running`:
 
-``` text
+```text
 Current configuration : 6889 bytes
 !
 version 12.2
@@ -78,18 +78,17 @@ Now let's change something. Something I had to do today was to change the
 description on port 45, because I'd plugged something new in. Go into config
 mode with `conf t`:
 
-``` text
+```text
 hadron#conf t
 hadron(config)#
 ```
 
 Your prompt has changed! You're now in config mode. Now you can **really** fuck
 things up. You want to configure an interface, so type `interface` followed by
-the name of the interface you want to feck with. The full name is shown when
-you do that `sh running` thing you did earlier - in our case,
-`GigabitEthernet0/45`:
+the name of the interface you want to feck with. The full name is shown when you
+do that `sh running` thing you did earlier - in our case, `GigabitEthernet0/45`:
 
-``` text
+```text
 hadron(config)#interface GigabitEthernet0/45
 hadron(config-if)#
 ```
@@ -100,7 +99,7 @@ one interface. Probably. Maybe. Unless it's the uplink port, in which case,
 please please please be careful. So, we wanted to change the description. Fairly
 simple. Just type "description" followed by the new description.
 
-``` text
+```text
 hadron(config-if)#description b4 mgmt
 ```
 
@@ -110,16 +109,16 @@ book, and/or take a course in advanced networking, and/or sacrifice a goat for
 good luck. You still need to get out of config mode and save your config. Type
 `end` (your prompt will change) followed by `write` to save your changes.
 
-``` text
+```text
 hadron(config-if)#end
 hadron#write
 ```
 
-Tada! Type `disable` if you want to drop to user mode (no, it won't disable
-the switch...I think). Type `logout` to get back to the sane world and close
-your IOS SSH session completely.
+Tada! Type `disable` if you want to drop to user mode (no, it won't disable the
+switch...I think). Type `logout` to get back to the sane world and close your
+IOS SSH session completely.
 
-``` text
+```text
 hadron#logout
 Connection to hadron.mgmt closed.
 werdz@sprout:~$
@@ -127,6 +126,6 @@ werdz@sprout:~$
 
 ## Resources
 
-* [Where I learned everything I know about IOS](http://eirik.sier.no/cisco-ios-cheat-sheet/).
+- [Where I learned everything I know about IOS](http://eirik.sier.no/cisco-ios-cheat-sheet/).
   Which isn't a lot.
-* [Some IOS commands](http://www.pantz.org/software/ios/ioscommands.html).
+- [Some IOS commands](http://www.pantz.org/software/ios/ioscommands.html).

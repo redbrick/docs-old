@@ -19,10 +19,11 @@ Install `libboost-dev` and `zlib1g-dev` from `apt`
 ### Building
 
 The latest `anyterm` is 1.1.29 which is built from source and lives in
-`/opt/anyterm`. To compile it needs a patch to [SmtpClient.cc](https://github.com/gentoo/gentoo-portage-rsync-mirror/blob/master/www-apache/anyterm/files/anyterm-1.1.29-gcc-4.4.patch),
+`/opt/anyterm`. To compile it needs a patch to
+[SmtpClient.cc](https://github.com/gentoo/gentoo-portage-rsync-mirror/blob/master/www-apache/anyterm/files/anyterm-1.1.29-gcc-4.4.patch),
 then
 
-``` bash
+```bash
 make
 make install
 ```
@@ -44,7 +45,7 @@ Running at [ajaxterm.redbrick.dcu.ie](https://ajaxterm.redbrick.dcu.ie)
 
 ### Ajaxterm Apache config
 
-``` apache
+```apache
 <VirtualHost *:443>`
   ServerName ajaxterm.redbrick.dcu.ie
   SSLEngine On
@@ -84,7 +85,7 @@ Running at [ajaxterm.redbrick.dcu.ie](https://ajaxterm.redbrick.dcu.ie)
 
 Modify the init script. Change:
 
-``` bash
+```bash
 start-stop-daemon --start --group=$AJAXTERM_GID --pidfile $PIDFILE --exec $DAEMON -- --daemon --port=$PORT --serverport=$SERVERPORT \
                                 --uid=$AJAXTERM_UID >/dev/null
 ```
@@ -100,7 +101,7 @@ start-stop-daemon --start --group=$AJAXTERM_GID --pidfile $PIDFILE --exec $DAEMO
 
 Is a hack python script.
 
-``` python
+```python
 #!/usr/bin/python
 
 something = raw_input( "Username: " )
@@ -131,9 +132,10 @@ His fork is on [github](https://github.com/butlerx/wetty)
 
 ### Setup
 
-Specify the host to ssh to and the port to run on in the docker-compose file then just run
+Specify the host to ssh to and the port to run on in the docker-compose file
+then just run
 
-``` bash
+```bash
 docker-compose up -d
 ```
 

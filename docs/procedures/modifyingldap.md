@@ -11,8 +11,7 @@ replace: loginShell
 loginShell: /usr/local/shells/disusered
 ```
 
-Where: username is who you're editing
-loginShell is the attribute
+Where: username is who you're editing loginShell is the attribute
 /usr/local/shells/disusered is the value
 
 Then run ldapmodify like this:

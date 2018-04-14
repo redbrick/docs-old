@@ -2,15 +2,16 @@
 
 ## Overview
 
-Our two poweredges have a DRAC, an embedded 'Dell Remote Access Controller' This allows us to:
+Our two poweredges have a DRAC, an embedded 'Dell Remote Access Controller' This
+allows us to:
 
-* Perform remote reboots, shutdown, power up.
-* View the actual VGA console, and even use it, but incredibly slowly.
-* View all sorts of sensor information.
+- Perform remote reboots, shutdown, power up.
+- View the actual VGA console, and even use it, but incredibly slowly.
+- View all sorts of sensor information.
 
 These embedded systems are running a few services like ftp, https, vnc, but
-we're only interested in https, the others aren't really useful on their own
-and should be ignored.
+we're only interested in https, the others aren't really useful on their own and
+should be ignored.
 
 They are protected by ssl and a username/password, but since we don't want them
 being fucked with, they're physically seperated from our other networks.
@@ -50,9 +51,9 @@ Forward local port 443 to 192.168.1.3 via fap.
 
 `ssh -L 443:192.168.1.3:443 username@b4.redbrick.dcu.ie`
 
-Open [https://localhost](https://localhost:443/) in your browser and you should have the requested
-machine's DRAC login page there. Eventually. They're slow fuckers. You can get
-the login details from pwsafe.
+Open [https://localhost](https://localhost:443/) in your browser and you should
+have the requested machine's DRAC login page there. Eventually. They're slow
+fuckers. You can get the login details from pwsafe.
 
 ## Quirks
 

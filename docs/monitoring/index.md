@@ -1,7 +1,7 @@
 # Monitoring
 
-Prometheus scrapes collectd, grafana gets it's metrics from prometheus.
-These are what we currently and hope to monitor in the future.
+Prometheus scrapes collectd, grafana gets it's metrics from prometheus. These
+are what we currently and hope to monitor in the future.
 
 ## Albus
 
@@ -57,3 +57,5 @@ These are what we currently and hope to monitor in the future.
 - [x] CPU Usage
 - [x] Memory Usage
 - [x] Interface Traffic
+- [x] Docker Serivces
+- [x] traefik

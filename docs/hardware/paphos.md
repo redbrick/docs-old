@@ -16,8 +16,8 @@
 ## Services
 
 - Mail
-    - [exim](/services/exim)
-    - [dovecoat](/services/dovecot)
+  - [exim](/services/exim)
+  - [dovecoat](/services/dovecot)
 - [ldap](/services/ldap)
 - [dns](/services/bind9)
 - [irc](/services/irc)

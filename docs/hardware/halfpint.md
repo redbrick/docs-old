@@ -7,7 +7,7 @@
 - RAM: 8GB
 - Storage: 456G (Samsung HD502IJ)
 - Network: 2x Ethernet
-    - Intel 82571EB Gigabit Ethernet Controller
+  - Intel 82571EB Gigabit Ethernet Controller
 
 ## Where to find
 

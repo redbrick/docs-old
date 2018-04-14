@@ -5,62 +5,16 @@ hub, if it ever has issues switch to the latest tagged release.
 
 ## Docker compose
 
-``` yaml
-version: '3'
-services:
-  db:
-    restart: always
-    image: postgres:alpine
-    volumes:
-      - ./postgres:/var/lib/postgresql/data
-  redis:
-    restart: always
-    image: redis:alpine
-    volumes:
-      - ./redis:/data
-  web:
-    image: gargron/mastodon
-    restart: always
-    env_file: .env.production
-    command: bundle exec rails s -p 3000 -b '0.0.0.0'
-    ports:
-      - "3002:3000"
-    depends_on:
-      - db
-      - redis
-    volumes:
-      - /webtree/vhosts/mastodon:/mastodon/public
-      - /webtree/vhosts/mastodon/assets:/mastodon/public/assets
-      - /webtree/vhosts/mastodon/packs:/mastodon/public/packs
-      - /webtree/vhosts/mastodon/system:/mastodon/public/system
-  streaming:
-    image: gargron/mastodon
-    restart: always
-    env_file: .env.production
-    command: npm run start
-    ports:
-      - "4000:4000"
-    depends_on:
-      - db
-      - redis
-  sidekiq:
-    image: gargron/mastodon
-    restart: always
-    env_file: .env.production
-    command: bundle exec sidekiq -q default -q mailers -q pull -q push
-    depends_on:
-      - db
-      - redis
-    volumes:
-      - /webtree/vhosts/mastodon/system:/mastodon/public/system
-```
+See
+[docker-sevices repo](https://github.com/redbrickCmt/docker-compose-services)
+for configs.
 
 ## Apache
 
 We Disable proxying for static assets to remove load from the server and avoid
 random 404 on assets.
 
-``` apacheconf
+```apacheconf
 <VirtualHost mastodon.redbrick.dcu.ie:80>
   ServerName  mastodon.redbrick.dcu.ie
   ServerAlias social.redbrick.dcu.ie
@@ -116,18 +70,21 @@ random 404 on assets.
 ## Configuration
 
 All configuration is done in the `.env.production`. Get the latest build env
-from [Github](https://github.com/tootsuite/mastodon/blob/master/.env.production.sample)
+from
+[Github](https://github.com/tootsuite/mastodon/blob/master/.env.production.sample)
 the smtp, federation and secrets all need to be change.
 
 ### Admin
 
-To make a user an admin run `docker-compose run --rm web rails
-mastodon:make_admin USERNAME=alice`
+To make a user an admin run
+`docker-compose run --rm web rails mastodon:make_admin USERNAME=alice`
 
 ## Updating
 
 1. To update first pull latest build by running `docker-compose pull`.
-2. `docker-compose run --rm web rake db:migrate` to perform database migrations. Does nothing if
-   your database is up to date.
-3. `docker-compose run --rm web rake assets:precompile` to compile new JS and CSS assets.
-4. `docker-compose up -d` to re-create (restart) containers and pick up the changes.
+2. `docker-compose run --rm web rake db:migrate` to perform database migrations.
+   Does nothing if your database is up to date.
+3. `docker-compose run --rm web rake assets:precompile` to compile new JS and
+   CSS assets.
+4. `docker-compose up -d` to re-create (restart) containers and pick up the
+   changes.

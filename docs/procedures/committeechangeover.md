@@ -59,7 +59,7 @@ each of the new committee members.
 
 Add each user to the `#rbcommittee` access list, with an access level of `40`.
 
-``` text
+```text
 /msg chanserv access #rbcommittee add *!$new_committee_member@redbrick.dcu.ie 40
 ```
 
@@ -68,7 +68,7 @@ Add each user to the `#rbcommittee` access list, with an access level of `40`.
 Add each user to the #lobby access list, with a level of `10` (or `40` for
 admins).
 
-``` text
+```text
 /msg chanserv access #lobby add *!$new_committee_member@redbrick.dcu.ie 10
 ```
 
@@ -95,7 +95,8 @@ $ ldapmodify -D cn=root,ou=ldap,o=redbrick -x -y /etc/ldap.secret
 ```
 
 Add the webmaster to the webmaster mailing list
-(webmaster@lists.redbrick.dcu.ie) on [lists](http://lists.redbrick.dcu.ie/mailman/admin/webmaster/)
+(webmaster@lists.redbrick.dcu.ie) on
+[lists](http://lists.redbrick.dcu.ie/mailman/admin/webmaster/)
 
 ### Helpdesk
 
@@ -118,8 +119,8 @@ $ ldapmodify -D cn=root,ou=ldap,o=redbrick -x -y /etc/ldap.secret
 
 The tricky ones...
 
-* Add each member to the admin mailing lists (rb-admins and elected-admins).
-* Add each member to the LDAP root group:
+- Add each member to the admin mailing lists (rb-admins and elected-admins).
+- Add each member to the LDAP root group:
 
 ```bash
 $ ldapmodify -D cn=root,ou=ldap,o=redbrick -x -y /etc/ldap.secret
@@ -132,6 +133,6 @@ $ ldapmodify -D cn=root,ou=ldap,o=redbrick -x -y /etc/ldap.secret
   modifying entry "cn=root,ou=groups,o=redbrick"
 ```
 
-* Give each new admin a local account (in `/etc/passwd`) on each machine
+- Give each new admin a local account (in `/etc/passwd`) on each machine
 
 -Atlas - 12 Apr 07

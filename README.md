@@ -6,22 +6,23 @@
 
 Documentation for [Redbrick](https://redbrick.dcu.ie)
 
-Available at [docs.redbrick.dcu.ie](https://docs.redbrick.dcu.ie) and at the [readthedocs mirror](https://redbrick.readthedocs.io).
+Available at [docs.redbrick.dcu.ie](https://docs.redbrick.dcu.ie) and at the
+[readthedocs mirror](https://redbrick.readthedocs.io).
 
-The readthedocs mirror is automatically deployed on commit to `master`.
-The docs site is a scheduled cron job on halfpint that `git pull && mkdics
-build` once an hour to up date the docs.
+The readthedocs mirror is automatically deployed on commit to `master`. The docs
+site is a scheduled cron job on halfpint that `git pull && mkdocs build` once an
+hour to up date the docs.
 
-The docs are built using mkdocs.
-To bring up a local server with a copy of the docs just run
+The docs are built using mkdocs. To bring up a local server with a copy of the
+docs just run
 
-``` bash
+```bash
 docker-compose up docs
 ```
 
 To build the docs just run
 
-``` bash
+```bash
 docker-compose up -d docs
 ```
 

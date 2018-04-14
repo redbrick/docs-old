@@ -1,6 +1,7 @@
 # Icecast
 
-Icecast is a streaming server that we currently host on [paphos](/hardware/paphos)
+Icecast is a streaming server that we currently host on
+[paphos](/hardware/paphos)
 
 We stream DCUFm's Broadcasts to their apps via a stream presented on
 `dcufm.redbrick.dcu.ie:80`
@@ -13,8 +14,7 @@ the `icecast2` user and binds to `8001`.
 
 ## Procedure
 
-Change
-Configure
+Change Configure
 
 `/etc/icecast2/icecast.xml`
 
@@ -33,7 +33,7 @@ Configure
 <bind-address>136.206.15.101</bind-address> <-- i.p. addr for dcufm.redbrick.dcu.ie A Record.
 ```
 
-After that you must configure the default behaviour for the icecast server to allow icecast2 to bind
-to port 80.
+After that you must configure the default behaviour for the icecast server to
+allow icecast2 to bind to port 80.
 
 Set `USERID` & `GROUPID` in `/etc/defaults/icecast2` to `root`

@@ -21,7 +21,7 @@ the amd64 version of hey. I have no plans to apply it on i386.
 
 For this to work the following additions are necessary to the syslog-ng.conf:
 
-``` c
+```c
 destination df_huh { file("/var/log/huh.log" group("huh")); };
 
 filter f_huh {
@@ -40,12 +40,12 @@ log {
 The order of the log statement is important, due to the flags(final) option.
 This log statement should be placed before any others in `syslog-ng.conf`.
 
-The group huh should be added to `/etc/group`. Syslog-ng will automatically
-make the log readable by this group.
+The group huh should be added to `/etc/group`. Syslog-ng will automatically make
+the log readable by this group.
 
 The huh binary should then be setgid huh so that it can read the file.
 
-``` bash
+```bash
 $ ls -ld /usr/bin/huh
 rwx--s--x 1 root huh 26K 2008-12-18 22:33 /usr/bin/huh
 ```

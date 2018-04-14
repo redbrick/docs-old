@@ -47,8 +47,9 @@ rb-ldap alert-unpaid
 
 ## Post C&S
 
-Once you've added all the new users using the `rb-ldap add` command you need to generate the uservhost config for apache.
-This is accomplished by running `rb-ldap generate` then moving the generated list of users vhosts to apache.
+Once you've added all the new users using the `rb-ldap add` command you need to
+generate the uservhost config for apache. This is accomplished by running
+`rb-ldap generate` then moving the generated list of users vhosts to apache.
 
 ## Later On
 

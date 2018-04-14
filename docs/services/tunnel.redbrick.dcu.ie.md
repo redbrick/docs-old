@@ -1,8 +1,8 @@
 # tunnel.redbrick.dcu.ie
 
-* All traffic that goes to tunnel on any port is forwarded to port 22
-* Tunnel is a service ip (73), that's on azazel
-* The magic is done with iptables, the rule is in `/etc/network/interfaces`
+- All traffic that goes to tunnel on any port is forwarded to port 22
+- Tunnel is a service ip (73), that's on azazel
+- The magic is done with iptables, the rule is in `/etc/network/interfaces`
 
 ```text
   #

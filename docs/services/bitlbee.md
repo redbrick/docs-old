@@ -4,92 +4,14 @@ This is set up on zeus
 
 bitlbee is run from a docker contaier we build locally on zeus. It mostly uses
 default bitlbee settings. Its settings can be found in
-`/etc/docker-compose/services/bitlbee`
-
-Dockerfile
-
-``` Dockerfile
-FROM debian:jessie
-
-ENV LANG en_US.UTF-8
-ENV LC_ALL C.UTF-8
-ENV LANGUAGE en_US.UTF-8
-
-RUN echo 'deb http://code.bitlbee.org/debian/master/jessie/amd64/ ./' > /etc/apt/sources.list.d/bitlbee.list
-RUN echo 'deb http://download.opensuse.org/repositories/home:/jgeboski/Debian_8.0 ./' > /etc/apt/sources.list.d/jgeboski.list
-
-RUN apt-key adv --fetch-keys http://code.bitlbee.org/debian/release.key
-RUN apt-key adv --fetch-keys http://jgeboski.github.io/obs.key
-
-RUN apt-get update
-RUN apt-get dist-upgrade -y
-RUN apt-get upgrade -y
-RUN apt-get install -y bitlbee bitlbee-facebook
-
-RUN apt-get clean
-RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-COPY bitlbee.conf /etc/bitlbee/bitlbee.conf
-COPY motd.txt /etc/bitlbee/motd.txt
-
-EXPOSE 6667
-VOLUME ["/var/lib/bitlbee/"]
-CMD ["/usr/sbin/bitlbee", "-D", "-n"]
-```
-
-docker-compose.yml
-
-```yaml
-version: '3'
-services:
-  bitlbee:
-    build: '.'
-    container_name: 'bitlbee'
-    hostname: bitlbee.redbrick.dcu.ie
-    restart: 'always'
-    ports:
-      - 6667:6667
-    volumes:
-      - '/var/lib/bitlbee:/var/lib/bitlbee:rw'
-```
-
-`bitlbee.conf` is fairly standard, no authentication or anything.
-
-``` text
-[settings]
-HostName = bitlbee.redbrick.dcu.ie
-RunMode = ForkDaemon
-User = bitlbee
-DaemonInterface = 136.206.15.0
-DaemonPort = 6667
-MotdFile = /etc/bitlbee/motd.txt
-```
-
-motd.txt
-
-``` text
- ____          _ ____       _      _
-|  _ \ ___  __| | __ ) _ __(_) ___| | __
-| |_) / _ \/ _` |  _ \| '__| |/ __| |/ /
-|  _ <  __/ (_| | |_) | |  | | (__|   <
-|_| \_\___|\__,_|____/|_|  |_|\___|_|\_\
-
-      ____  _ _   _ _
-     | __ )(_) |_| | |__   ___  ___
-     |  _ \| | __| | '_ \ / _ \/ _ \
-     | |_) | | |_| | |_) |  __/  __/
-     |____/|_|\__|_|_.__/ \___|\___|
-
-
-   bitlbee.redbrick.dcu.ie irc gateway
-
-for help see http://bitlbee.redbrick.dcu.ie
-```
+`/etc/docker-compose/services/bitlbee`, see
+[docker-sevices repo](https://github.com/redbrickCmt/docker-compose-services)
+for configs.
 
 ### Update
 
-To update the easiest way is to rebuild the container. Run `docker-compose
-build --no-cache` and then `docker-compose up -d`
+To update the easiest way is to rebuild the container. Run
+`docker-compose build --no-cache` and then `docker-compose up -d`
 
 ### Migration
 
