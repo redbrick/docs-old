@@ -1,5 +1,7 @@
 # Redbrick needs a ticketing system
 
+* **Note:** There is a temporary system on [gitea](https://git.redbrick.dcu.ie/rb-admins/AdminRequests/issues)
+
 This is a list of stuff that would be nice to have - if someone already has a ticket system half in
 place that doesn't do half of these things, ignore it :)
 
