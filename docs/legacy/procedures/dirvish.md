@@ -147,7 +147,7 @@ who understands perl may wish to try find a more elegant solution.
 
 # But I want to know more :(
 Ok, fine. But I'm only talking about the specifics of our setup. Use the google
-or read the [dirvish tutorial](dirvish_tutorial).
+or read the [dirvish tutorial](../dirvish_tutorial).
 
 Note: the config files & scripts are here for discussion. They may not be
 exactly the same as those currently in production.
