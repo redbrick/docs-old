@@ -4,7 +4,7 @@ Page for discussing the pending move of /storage from minerva to worf on 6th/7th
 
 ### Before Down Time
 
-*  <del>Announce Down time -- Lotta sending initial notice today or tomorrow, more information next week</del>
+*  ~~Announce Down time -- Lotta sending initial notice today or tomorrow, more information next week~~
 
 *  Rsync /storage to worf mounted on Ceiling Cat
 
