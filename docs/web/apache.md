@@ -1,14 +1,15 @@
 # Apache
 
-Metharme, Redbrick's web server, is still using apache2.2 due to pubcookie. All other machines use
-2.4.
-See [Apache Modules](/web/apachemodules) for modules.
+Metharme, Redbrick's web server, is still using apache 2.2 due to pubcookie. All
+other machines use 2.4. See [Apache Modules](/web/apachemodules) for modules.
 
 ## User Vhost
 
 We use a apache macro template for user vhosts.
 
-``` apache
+### Template
+
+```apache
 <Macro VHost $dir $user $group $vhost >
   <VirtualHost 136.206.15.61:80>
     ServerName $vhost.redbrick.dcu.ie
@@ -44,10 +45,18 @@ Use VHost /storage/webtree/c/club                       club            club    
 Use VHost /storage/webtree/e/events                     events          committe        events
 Use VHost /storage/webtree/s/soc                        soc             society         soc
 Use VHost /storage/webtree/d/dcu                        dcu             dcu             dcu
-Use VHost /storage/webtree/m/member                     mamber          member          member
+Use VHost /storage/webtree/m/member                     member          member          member
 ```
 
-The vhost doesnt have to be the same as the user name this allows clubs, societies or dcu site to
-have different vhosts to their username.
-The reason the dir is specified is someusers have multiple likes in their
-webspaces with different vhost.
+The vhost doesn't have to be the same as the user name this allows clubs,
+societies or DCU sites to have different vhosts to their username. The reason
+the dir is specified is some users have multiple sites in their webspaces with
+different vhost.
+
+### Generate
+
+To update the list of users in apache run
+[rb-ldap](https://github.com/redbrick/rb-ldap). It will query ldap for a list of
+all users, clubs and societies and create the conf apache will import.
+
+To run it call `rb-ldap generate --conf /etc/apache2/user_vhost_list.conf`
