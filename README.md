@@ -26,7 +26,7 @@ docker-compose run --rm docs mkdocs build
 
 ## Testing locally
 
-When you do a change make sure it works by building it locally.
+When you make a change make sure it works by building it locally.
 Run
 
 ```bash
