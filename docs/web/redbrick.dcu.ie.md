@@ -14,14 +14,10 @@ subdomain
 redirect 301 / https://www.redbrick.dcu.ie
 ```
 
-## Cert
+## SSL Oddity
 
-We have a wildcard cert from rapidssl to cover all out subdomains but this doesnt include
-redbrick.dcu.ie, so we've certbot set up on azazel to use LetsEncrypt for redbrick.dcu.ie and
-azazel.redbrick.dcu.ie.
+Because we want members to SSH to azazel but meth is the web server, Apache is set up on azazel
+with LetsEncrypt, and forwards connections to meth.
+
 certbot lives in `/local/usr/sbin` and has a cron set to run at 02:30 and 14:30 everyday. It logs to
 `/var/log/le-renew.log`
-
-### External docs
-
-[certbot](https://certbot.eff.org/#ubuntutrusty-apache)
