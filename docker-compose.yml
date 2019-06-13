@@ -2,13 +2,12 @@ version: "3"
 services:
   docs:
     build: .
-    image: redbrick/docs
     ports:
       - "8000:8000"
     volumes:
-      -  $PWD:/usr/src/app
+      - .:/usr/src/app
   test:
     image: 18fgsa/html-proofer
     command: site --allow-hash-href --check-html --empty-alt-ignore --disable-external
     volumes:
-      -  $PWD/site:/site
+      - /site:/site
