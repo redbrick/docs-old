@@ -67,7 +67,7 @@ nav:
       - Severus Colocation: procedures/severuscolocation.md
       - Switch: procedures/switch.md
       - Ticketing: procedures/ticketing.md
-      - UserADM: procedures/useradm.md
+      - rb-ldap: procedures/rb-ldap.md
   - Hardware:
       - Albus: hardware/albus.md
       - Azazel: hardware/azazel.md
