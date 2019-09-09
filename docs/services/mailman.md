@@ -4,15 +4,16 @@ Mailman runs on `mailhost.redbrick.dcu.ie`. Currently this is paphos
 
 ## Mailman Scripts
 
-These are in `/usr/lib/mailman/bin`. In particular the newlist command is here. Most other things
-can be done easily from the web interface.
+These are in `/usr/lib/mailman/bin`. In particular the newlist command is here.
+Most other things can be done easily from the web interface.
 
 ## Installing Mailman
 
-Mailman is installed straight from apt. It should always be generally be installed on the primary
-mail server. Mail to mailing lists is sent to mailman from the `exim conf`.
+Mailman is installed straight from apt. It should always be generally be
+installed on the primary mail server. Mail to mailing lists is sent to mailman
+from the `exim conf`.
 
-``` text
+```text
   mailman:
     domains = lists.redbrick.dcu.ie
     driver = accept
@@ -25,15 +26,16 @@ mail server. Mail to mailing lists is sent to mailman from the `exim conf`.
     no_more
 ```
 
-All mailman installs should have those damn monthly reminders disabled. This can only be done by
-commenting out the entry in `/etc/cron.d/mailman`
+All mailman installs should have those damn monthly reminders disabled. This can
+only be done by commenting out the entry in `/etc/cron.d/mailman`
 
 ## Mailman Apache Configuration
 
-Below is the apache conf for mailman. Getting this wrong will horribly break stuff like archives.
-This config is based pretty closely on the default one in the package.
+Below is the apache conf for mailman. Getting this wrong will horribly break
+stuff like archives. This config is based pretty closely on the default one in
+the package.
 
-``` apache
+```apache
 <VirtualHost 136.206.15.57:443>
   ServerName lists.redbrick.dcu.ie
   DocumentRoot /var/www
@@ -65,10 +67,10 @@ This config is based pretty closely on the default one in the package.
 </VirtualHost>
 ```
 
-Changes may need to be made to `/etc/mailman/mm_cfg.py` if the directory structure is changed. The
-options that match this apache config are:
+Changes may need to be made to `/etc/mailman/mm_cfg.py` if the directory
+structure is changed. The options that match this apache config are:
 
-``` text
+```text
   #-------------------------------------------------------------
   # If you change these, you have to configure your http server
   # accordingly (Alias and ScriptAlias directives in most httpds)
@@ -95,9 +97,9 @@ options that match this apache config are:
 
 Eh, this is what I did:
 
-* apt-get install mailman
-* copy `/var/lib/mailman` and `/etc/mailman` from the old location
-* copy `/etc/apache2/sites-enabled/lists`
-* move the service ip
-* disable the shitty monthly reminders in `/etc/cron.d/mailman`
-* put the redbrick favicon in `/usr/share/mailman/images`
+- apt-get install mailman
+- copy `/var/lib/mailman` and `/etc/mailman` from the old location
+- copy `/etc/apache2/sites-enabled/lists`
+- move the service ip
+- disable the shitty monthly reminders in `/etc/cron.d/mailman`
+- put the redbrick favicon in `/usr/share/mailman/images`

@@ -6,6 +6,6 @@ script as a base, and so rb-ldap was born.
 
 See:
 
-* [rb-ldap github](https://github.com/redbrick/rb-ldap)
-* [Useradm github](https://github.com/redbrick/useradm)
-* [rrs](/procedures/rrs)
+- [rb-ldap github](https://github.com/redbrick/rb-ldap)
+- [Useradm github](https://github.com/redbrick/useradm)
+- [rrs](/procedures/rrs)

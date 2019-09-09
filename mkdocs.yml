@@ -2,7 +2,7 @@
 site_name: Redbrick Docs
 theme: readthedocs
 repo_url: https://github.com/redbrick/docs
-strict: True
+strict: true
 markdown_extensions:
   - pymdownx.tasklist
 extra_javascript:
@@ -40,11 +40,16 @@ nav:
       - Postgres: services/postgres.md
       - Tunnel.redbrick.dcu.ie: services/tunnel.redbrick.dcu.ie.md
       - Unified MOTD: services/unifiedmotd.md
+  - Monitoring:
+      - Grafana & Prometheus: monitoring/index.md
+      - collectd: monitoring/collectd.md
+      - tick: monitoring/tick.md
   - Procedures:
       - Abuse: procedures/abuse.md
       - Add to LDAP: procedures/addldap.md
       - Backporting Packages: procedures/backport-packages.md
       - Committee Changeover: procedures/committeechangeover.md
+      - Docker Serivce: procedures/docker-service.md
       - DRAC Access: procedures/dracaccess.md
       - GPGKeys: procedures/gpgkeys.md
       - Gratuitous ARP: procedures/gratuitousarp.md
@@ -93,6 +98,7 @@ nav:
       - PubCookie: web/pubcookie.md
       - Redbrick.dcu.ie: web/redbrick.dcu.ie.md
       - SuPHP: web/suphp.md
+      - Traefik: web/traefik.md
       - TechWeek: web/techweek.md
       - Webchat: web/webchat.md
       - Website: web/website.md
@@ -100,82 +106,4 @@ nav:
   - Scripts:
       - Rbscripts: procedures/rbscripts.md
       - Rbusers: procedures/rbusers.md
-  - Legacy:
-      - Harware:
-          - Carbon: legacy/hardware/carbon.md
-          - Ceilingcat: legacy/hardware/ceilingcat.md
-          - Cynic: legacy/hardware/cynic.md
-          - Daniel: legacy/hardware/daniel.md
-          - Deathray: legacy/hardware/deathray.md
-          - Minerva: legacy/hardware/minerva.md
-          - Munger: legacy/hardware/munger.md
-          - Murphy: legacy/hardware/murphy.md
-          - Obelisk: legacy/hardware/obeliskstuff.md
-          - Severus: legacy/hardware/severus.md
-          - Sprout: legacy/hardware/sprout.md
-          - Thunder: legacy/hardware/thunder.md
-          - UPSes: legacy/hardware/ups.md
-          - Warmstart: legacy/hardware/warmstart.md
-      - Network:
-          - dnsaddressspace: legacy/network/dnsaddressspace.md
-          - vmaddressspace: legacy/network/vmaddressspace.md
-      - Procedures:
-          - 10.04-services-checklist: legacy/procedures/10.04-services-checklist.md
-          - 10.04move: legacy/procedures/10.04move.md
-          - 2011 TODO: legacy/procedures/2011-to-do.md
-          - 2015-02 TODO: legacy/procedures/to_do_1502.md
-          - Apache Solaris: legacy/procedures/apachesolaris.md
-          - Apache on Deathray: legacy/procedures/apacheondeathray.md
-          - Apache on Murphy: legacy/procedures/apacheonmurphy.md
-          - CTYI: legacy/procedures/ctyi.md
-          - Carbon Reboot Warning: legacy/procedures/carbonrebootwarning.md
-          - Carbon and Deathray: legacy/procedures/carbonanddeathray.md
-          - Compiling Ubuntu Kernel: legacy/procedures/ubuntukernel.md
-          - Compiling Xen: legacy/procedures/compilingxen.md
-          - Cynic Debian: legacy/procedures/cynicdebian.md
-          - Cynic RSC Access: legacy/procedures/cynicrscaccess.md
-          - Cynic Setup Zones: legacy/procedures/cynic_setup_zones.md
-          - Cynic dpkg: legacy/procedures/cynic_dpkg.md
-          - Dirvish Tutorial: legacy/procedures/dirvish_tutorial.md
-          - Dirvish: legacy/procedures/dirvish.md
-          - Docs Mirror Script: legacy/procedures/docs_mirror_script.md
-          - GPG Keys: legacy/procedures/gpgkeys.md
-          - Kernel Module Blacklist: legacy/procedures/kernel-module-blacklist.md
-          - LDAP Setup: legacy/procedures/ldapsetup.md
-          - Lofiadm: legacy/procedures/lofiadm.md
-          - Minerva Storage: legacy/procedures/minervastorage.md
-          - Murphy ALOM Access: legacy/procedures/murphyalomaccess.md
-          - Murphy Disabled Services: legacy/procedures/murphy-disabled_services.md
-          - Murphy Install Log: legacy/procedures/murphy-install-log.md
-          - Murphy Jumpstart: legacy/procedures/murphy-jumpstart.md
-          - Murphy Live Upgrade: legacy/procedures/murphyliveupgrade.md
-          - Murphy MySQL Client bug: legacy/procedures/murphymysqlclientbug.md
-          - Murphy Python: legacy/procedures/murphypython.md
-          - Murphy Solaris: legacy/procedures/murphysolaris.md
-          - Murphy Zones: legacy/procedures/murphy-zones.md
-          - New Admin TODO: legacy/procedures/new_admin_to_do.md
-          - Open Ports: legacy/procedures/openports.md
-          - Orphan Pages: legacy/procedures/orphan_pages.md
-          - PHP Solaris: legacy/procedures/phpsolaris.md
-          - Paphos Migration: legacy/procedures/paphos_migration.md
-          - Pkgsrc: legacy/procedures/pkgsrc.md
-          - RBVM Password Change: legacy/procedures/pass-change.md
-          - Redbrick Solaris Package Manager: legacy/procedures/redbrick_solaris_package_manager.md
-          - Severus VPN: legacy/procedures/severus_vpn.md
-          - Sprout-serial: legacy/procedures/sprout-serial.md
-          - Tomcat Murphy: legacy/procedures/tomcat-murphy.md
-          - Updating IMAP Cert: legacy/procedures/imapupdatingcert.md
-          - VM Server Stuff: legacy/procedures/vmserverstuff.md
-          - Worf Plan: legacy/procedures/worf_plan.md
-          - X4140ilom: legacy/procedures/x4140ilom.md
-      - Services:
-          - EXIM Solaris: legacy/services/exim_solaris.md
-          - Fast Storage: legacy/services/faststorage.md
-          - Git: legacy/services/git.md
-          - IRCProxy: legacy/services/ircproxy.md
-          - Jabber: legacy/services/jabber.md
-          - Munin: legacy/services/munin.md
-          - Peepd: legacy/services/peepd.md
-          - Putty: legacy/services/putty.md
-          - Rbvm: legacy/services/rbvm.md
-          - Rbvmctl: legacy/services/rbvmctl.md
+  - Legacy: legacy/index.md

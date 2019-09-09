@@ -2,10 +2,10 @@
 
 Redbrick Networking Society
 
-* Date: YYY-MM-DD
-* Author: LDAP, LDAP
-* Involved: LDAP
-* Time: YYYY-DD-MM - YYYY-MM-DD
+- Date: YYY-MM-DD
+- Author: LDAP, LDAP
+- Involved: LDAP
+- Time: YYYY-DD-MM - YYYY-MM-DD
 
 ---
 
@@ -25,16 +25,16 @@ Did the users feel the impact.
 
 YYYY-MM-DD (starting date)
 
-* HH:MM: What happened in chronological order.
-* HH:MM: Who responded
-* HH:MM: etc...
+- HH:MM: What happened in chronological order.
+- HH:MM: Who responded
+- HH:MM: etc...
 
 YYYY-MM-DD (if spanned to another day)
 
-* __HH:MM: EVENT OVER__
+- **HH:MM: EVENT OVER**
 
-(If the event spanned a month or more there is no need to specify the specific times,
-replace HH:MM with YYYY-MM-DD to just YYYY-MM)
+(If the event spanned a month or more there is no need to specify the specific
+times, replace HH:MM with YYYY-MM-DD to just YYYY-MM)
 
 ---
 
@@ -45,6 +45,6 @@ Possible Types: PROCESS, CODE, CONFIG
 Possible Actions: IMPROVE, REMOVE, ADD
 
 | Description                                            | TYPE-ACTON      | Related Issue | Assignee |
-| -----------                                            | ----------      | ------------- | -------- |
+| ------------------------------------------------------ | --------------- | ------------- | -------- |
 | What should be done to avoid the thing happening again | PROCESS-IMPROVE | #123          | LDAP     |
 | What should be added to stop this happening again      | CODE-ADD        | #456          | LDAP     |

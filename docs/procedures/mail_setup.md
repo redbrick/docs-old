@@ -1,16 +1,17 @@
 # Mail Setup
 
-Hi there, fresh-faced young redbrick admin. I expect you've noticed that since you became an admin
-you've been getting a lot more mail from members wanting accounts renewed/logwatch telling you the
-status of the machines/Nigerian princes offering you vast sums of money. This comes with the
-territory, unfortunately. The following are config files that will allow you to manage admin emails
-within mutt.
+Hi there, fresh-faced young redbrick admin. I expect you've noticed that since
+you became an admin you've been getting a lot more mail from members wanting
+accounts renewed/logwatch telling you the status of the machines/Nigerian
+princes offering you vast sums of money. This comes with the territory,
+unfortunately. The following are config files that will allow you to manage
+admin emails within mutt.
 
-To make these configs work, you need to go to your `~/Maildir` and run `mdmake <mailbox_name>`,
-where mailbox_name is the name of each mailbox in the mailboxes line of the below `.muttrc`.
-e.g. `mdmake committee`
+To make these configs work, you need to go to your `~/Maildir` and run
+`mdmake <mailbox_name>`, where mailbox_name is the name of each mailbox in the
+mailboxes line of the below `.muttrc`. e.g. `mdmake committee`
 
-``` bash
+```bash
 $ cat .muttrc
   alias ealist Elected-Admins `<elected-admins@redbrick.dcu.ie>`
   alias rbcmte Redbrick Committee `<committee@redbrick.dcu.ie>`
@@ -26,7 +27,7 @@ $ cat .muttrc
   set record=+.sent
 ```
 
-``` bash
+```bash
 $ cat .procmailrc
   # Fecked this config off of haus.
 
@@ -136,5 +137,6 @@ $ cat .procmailrc
     .inbox/
 ```
 
-Refer to [The rbwiki article on mutt](http://wiki.redbrick.dcu.ie/mw/Mutt) if you have trouble or PM
-me (no idea who me is but its not the person git says it is_).
+Refer to [The rbwiki article on mutt](http://wiki.redbrick.dcu.ie/mw/Mutt) if
+you have trouble or PM me (no idea who me is but its not the person git says it
+is\_).

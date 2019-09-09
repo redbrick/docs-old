@@ -2,7 +2,7 @@
 
 Logs from admins discussing issue
 
-``` text
+```text
 14:32 <koffee> anyone able to shed any light?
 14:35 <vadimck> is it mounted now?
 14:35 <vadimck> this is /storage right?

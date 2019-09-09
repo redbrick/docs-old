@@ -4,7 +4,7 @@
 
 RSPM manages the pubcookie build. This is the build script:
 
-``` bash
+```bash
 #!/bin/bash
 
 # Fix configure script
@@ -30,10 +30,10 @@ cp -Prp /usr/redbrick/apache2/modules/mod_pubcookie.so /usr/redbrick/pubcookie/
 
 Things to note:
 
-* We use LDAP libraries (also managed by RSPM) to auth users. LDAP settings are configured under the
-  pubcookie config file.
+- We use LDAP libraries (also managed by RSPM) to auth users. LDAP settings are
+  configured under the pubcookie config file.
 
 ## Configuration
 
-Pubcookie requires its own SSL cert for the authentication server (the thing triggered by inetd
-running on port 2222). We use a self-signed cert for this.
+Pubcookie requires its own SSL cert for the authentication server (the thing
+triggered by inetd running on port 2222). We use a self-signed cert for this.

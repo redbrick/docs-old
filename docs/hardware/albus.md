@@ -2,8 +2,8 @@
 
 ## Details
 
-* OS: Ubuntu 16.04
+- OS: Ubuntu 16.04
 
 ## Services
 
-* [Backups](/services/backuppc)
+- [Backups](/services/backuppc)
