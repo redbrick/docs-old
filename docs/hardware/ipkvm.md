@@ -20,7 +20,7 @@ You can only inspect things from the web console, you can't view any servers.
 
 ## Connecting remotely
 
-You need a propietary tool from Dell to connect remotely. There are two versions available.
+You need a proprietary tool from Dell to connect remotely. There are two versions available.
 
 - The latest version (v4) uses HTTP to connect to the remote screen. It works on Linux but has an iffy
 Java based viewer. Download it [here](http://downloads.dell.com/RACK%20SOLUTIONS/DELL_MULTI-DEVICE_A02_R270943.exe).
@@ -28,7 +28,7 @@ Java based viewer. Download it [here](http://downloads.dell.com/RACK%20SOLUTIONS
 but works absolutely fine in Wine, which can be easier than the Linux install. Download it [here](http://downloads.dell.com/RACK%20SOLUTIONS/R132099.EXE)
 
 Installation depends on the version you download. For v4, download + extract it, and
-run the linux/setup.bin file. Install somewhere like ~/.local/dell. To run it,
+run the Linux/setup.bin file. Install somewhere like ~/.local/dell. To run it,
 execute `Dell_Remote_Console_Switch_Software` from the install directory.
 
 For v3, set up a Wine prefix (using Lutris or DIY if you know how), and run the installer like you usually would.
