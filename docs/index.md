@@ -143,7 +143,7 @@ After each emergency remember to write a postmortem!
 
 ### Other
 
-- [Pike (IP-KVM)](/network/pike)
+- [Dell IP-KVM](/hardware/ipkvm)
 
 ## Software
 
