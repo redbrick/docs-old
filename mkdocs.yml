@@ -89,7 +89,6 @@ nav:
       - Junos: network/junos.md
       - Main Address Space: network/mainaddressspace.md
       - Network Setup: network/networksetup.md
-      - Pike: network/pike.md
   - Postmortems:
       - March 2016: postmortems/post_mortem_mar16.md
   - Web:
