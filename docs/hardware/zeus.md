@@ -3,7 +3,7 @@
 ## Details
 
 - Type: Dell PowerEdge R410
-- OS: Ubuntu 16.04
+- OS: Ubuntu 18.04
 - CPU: 2x Intel(R) Xeon (R) x5570 @ 2.93 GHz
 - RAM: 32GB
 - Network: 2x NetXtreme II BCM5716 Gigabit Ethernet
