@@ -1,6 +1,7 @@
 # Pastebin
 
 Redbrick uses [hastebin](https://github.com/seejohnrun/haste-server) for pastes
+- [Redbrick deployment](https://paste.redbrick.dcu.ie)
 
 ## Hastebin
 
