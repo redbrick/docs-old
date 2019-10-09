@@ -2,10 +2,7 @@
 
 ## Current Situation
 
-- Primary LDAP Runs on Morpheus.internal
-- Secondary LDAP Runs on Deathray.internal, slaving Morpheus
-- Linux User machines (Minerva, Morpheus, Carbon, Murphy) Configured to try both
-  Servers
+- Primary LDAP Runs on daedalus.internal
 
 ## Useful Methods for manipulating ldap
 
