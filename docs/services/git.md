@@ -5,7 +5,7 @@ Redbrick uses [Gitea](https://gitea.io/en-US/) a community driven fork of
 
 - [Gitea docs](https://docs.gitea.io/en-us/)
 - [Gogs docs](https://gogs.io/docs) - though you shouldn't need these
-
+- [Redbrick Deployment](https://git.redbrick.dcu.ie)
 ## Gitea
 
 We run Gitea in Docker on zeus. We run a postgres database in a second container
