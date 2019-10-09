@@ -101,8 +101,8 @@ and activities, but basic system security is paramount! Keep uptodate with
 bugtraq/securityfocus etc. Check system logs regularly, process listings,
 network connections, disk usage, etc.
 
-RCS is used extensively throughout the system for all configuration files and
-documentation. The RCS commands you'll use most are probably co -l (checkout)
+Git is used extensively throughout the system for all configuration files and
+documentation. The Git commands you'll use most are probably co -l (checkout)
 and ci -u (check in). Don't forget to check out **before** editing the file.
 
 ## Downtime
