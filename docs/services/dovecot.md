@@ -1,12 +1,8 @@
 # Dovecot
 
-As of July 2009 dovecot replaced the old courier imap system on RedBrick.
-Dovecot runs on morpheus, and has a service address of .58 for imap. Dovecot is
+Dovecot runs on Paphos, and has a service address of .58 for IMAP. Dovecot is
 better than courier cause of it's indexing abilities. Webmail relies on this
-imap server to, like, work.
-
-These docs are incomplete, but I've tried to update them with what I can
-remember.
+IMAP server to, like, work.
 
 ### IMAP
 
@@ -33,6 +29,6 @@ drwxrwsrwt 58 root mail 4.0K 2009-07-28 14:11 /var/mail/indexes
 
 ### LDAP
 
-Originally when it was in testing on deathray dovecot talked to ldap for
+Originally when it was in testing on deathray dovecot talked to LDAP for
 usernames/passwords, but this seemed to break on the morpheus migration, so it
 is currently (at least, as far as I can remember) set to use pam instead.
