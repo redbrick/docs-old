@@ -99,6 +99,7 @@ After each emergency remember to write a postmortem!
 #### Daedalus + Icarus - LDAP + Distributed storage
 
 - [LDAP](/services/ldap)
+- NFS, (a.k.a /storage) from Icarus
 
 #### Paphos - Primary Services
 

@@ -17,6 +17,7 @@ set up in "shared" mode.
 ## Services
 
 - [LDAP](/services/ldap)
+- NFS, (a.k.a /storage) from Icarus
 - GlusterFS, eventually, or some other distributed storage to replace NFS
 
 ## Disk Management
