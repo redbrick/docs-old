@@ -1,24 +1,29 @@
 # News
 
-When I re-installed the boards I had some nice document written on how to
-install it and stuff. Something crashed though, and I never had time to rewrite
-it.
-
-Boards runs on a piece of software called inn (InterNetNews) version
-2.something. It's in repos as 3inn2. The google turned up
+Boards runs on a piece of software called inn2 (InterNetNews). Google turned up
 [this document](http://www.eyrie.org/~eagle/faqs/inn.html) about it. You
 shouldn't really need to touch it anyway.
 
 ## Reinstalling news
 
-I don't remember exactly what was involved, but here's what I do remember:
+These steps may require validation
 
-- Install inn2 from repos (not inn, which gives you version 1, which is
-  completly different)
-- Copy `/etc/news/`, `/var/spool/news` & `/var/lib/news` (and possibly something
-  else) to the new machine
-- You have to rebuild the history or something before it'll work, there's a
-  command that I can't remember.
+- Install inn2 from apt repos (not inn, which gives you version 1, which is completly different)
+- Copy the following : `/etc/news`, `/var/spool/news`, `/var/lib/news` to the
+  relevant parts of the new machine.
+- Run `makehistory -0`
+- cd to `/var/lib/news` and run `makedbz -s $(wc -l < history) -o`
+- Reconfigure slrn to use this copy of Inn and check everything's there.
+- Change the ip for news.
+
+## Moving news
+
+- Install inn2 (obviously enough)
+- Follow the instructions here
+  [here](http://www.eyrie.org/~eagle/faqs/inn.html#S6.4)
+- Note that you do not _need_ anything in `passwd.nntp`, as I was led to
+  believe, we seemed to hit upon some sort of weird bug, as long as the old
+  server is listed in `incoming.conf`.
 
 ## Mailing list boards
 
@@ -45,16 +50,6 @@ mailman
 
 Link looks after this.
 
-## Checklist for INN2 reinstall
-
-- Install INN2 from apt.
-- Copy the following : `/etc/news`, `/var/spool/news`, `/var/lib/news` to the
-  relevant parts of the new machine.
-- Run `makehistory -0`
-- cd to `/var/lib/news` and run `makedbz -s $(wc -l < history) -o`
-- Reconfigure slrn to use this copy of Inn and check everything's there.
-- Change the ip for news.
-
 ## Stopping annoying daily mail
 
 ```bash
@@ -66,12 +61,3 @@ PATH=/usr/lib/news/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 15 4    * * *   news    test -x /usr/lib/news/bin/news.daily && news.daily expireover lowmark delayrm nomail > /dev/null
 ```
-
-## Moving news
-
-- Install inn2 (obviously enough)
-- Follow the instructions here
-  [here](http://www.eyrie.org/~eagle/faqs/inn.html#S6.4)
-- Note that you do not _need_ anything in `passwd.nntp`, as I was led to
-  believe, we seemed to hit upon some sort of weird bug, as long as the old
-  server is listed in `incoming.conf`.
