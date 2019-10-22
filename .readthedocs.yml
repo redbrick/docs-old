@@ -4,9 +4,9 @@
 version: 2
 build:
   image: latest
-  fail_on_warning: false
 mkdocs:
   configuration: mkdocs.yml
+  fail_on_warning: false
 formats: all
 python:
   version: 3.7
