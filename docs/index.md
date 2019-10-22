@@ -61,7 +61,6 @@ Day to day running of things.
 #### Network
 
 - [.15 Address Space](/network/mainaddressspace)
-- [.16 Address Space](/legacy/network/vmaddressspace)
 - [Network setup](/network/networksetup) (internal LAN, external LAN, switches,
   cable colours etc)
 - [tunnel.redbrick.dcu.ie](/services/tunnel.redbrick.dcu.ie)

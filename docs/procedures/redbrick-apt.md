@@ -171,7 +171,7 @@ of current dependencies for these packages.
   zsh and packages which `/etc/shell_cmd` requires to exist - rbquota and
   redbrick-help. It should "recommend" any other packages which it has config
   files for.
-- **[peepd-irssi](/legacy/services/peepd)**: Irssi scripts to use with peepd.
+- **peepd-irssi**: Irssi scripts to use with peepd.
 
 ## System
 
@@ -185,7 +185,7 @@ of current dependencies for these packages.
   version. Depends: nagios-nrpe-server, nagios-plugins.
 - **redbrick-cron-scripts**: Standalone cron scripts. Currently the only script
   is 'dpkglist', which saves the output of `dpkg -l` to `/var/backups nightly`.
-- **[peepd](/legacy/services/peepd)**: atlas' twitter irc gateway
+- **peepd**: atlas' twitter irc gateway
 - **mail2nntp** - this is needed on the mailhosts to post mailing lists to
   boards via aliases.
 - **apt-wtfdidichange** - script to show changes to text files provided by
@@ -197,7 +197,7 @@ of current dependencies for these packages.
 ### Backup System
 
 These packages are designed to keep the
-[backup systems](/legacy/procedures/dirvish) on [thunder](#) and [severus](#) in
+backup systems on [thunder](#) and [severus](#) in
 sync, and also to allow backup servers to be quickly redeployed when necessary.
 
 - **redbrick-dirvish**: Contains all the configuration for the dirvish system.

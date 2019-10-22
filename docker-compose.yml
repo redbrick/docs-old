@@ -12,4 +12,4 @@ services:
     command:
       site --allow-hash-href --check-html --empty-alt-ignore --disable-external
     volumes:
-      - /site:/site
+      - ./site:/site
