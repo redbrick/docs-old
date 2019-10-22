@@ -5,7 +5,7 @@ which in turn serves `/home`, `/webtree`, and some other critical folders.
 
 ## Deployment
 
-- NFS is deployed with Nix on [Icarus](/hardware/icarus)
+- NFS is deployed with Nix on [Icarus](/hardware/daedalus_icarus)
 - It is backed onto the Powervault MD1200, with all its disk passed through
 single-drive RAID 0's to allow for the setup of ZFS:
     - 1 mirror of 2x 500gb drives
