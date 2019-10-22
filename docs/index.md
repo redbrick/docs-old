@@ -96,9 +96,13 @@ After each emergency remember to write a postmortem!
 
 ### Services
 
+#### Daedalus + Icarus - LDAP + Distributed storage
+
+- [LDAP](/services/ldap)
+- NFS, (a.k.a /storage) from Icarus
+
 #### Paphos - Primary Services
 
-- [User Management](/procedures/useradm)
 - [DNS](/services/bind9)
 
 #### Zeus - Secondary Services and New web
