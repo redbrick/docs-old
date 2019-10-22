@@ -1,2 +1,2 @@
-mkdocs
-pymdown-extensions
+mkdocs>=1.0.4
+pymdown-extensions>=6.1
