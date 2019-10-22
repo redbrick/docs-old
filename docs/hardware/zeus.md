@@ -23,4 +23,3 @@
 - [pastebin](/services/paste)
 - [hackmd](/services/hackmd)
 - [monitoring](/monitoring)
-- [elastic](/monitoring/elastic)
