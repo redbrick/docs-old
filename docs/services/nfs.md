@@ -59,7 +59,7 @@ zpool get userquota@m1cr0man zbackup
 zpool get userused@m1cr0man zbackup
 
 # Delete a quota from ZFS (useful if a user is deleted)
-zpool set userquota@m1cr0man=none zbackup
+zpool set userquota@123456=none zbackup
 
 # Resync quotas (this command will not return until it is finished)
 systemctl start zfsquota
