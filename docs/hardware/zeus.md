@@ -23,3 +23,9 @@
 - [pastebin](/services/paste)
 - [hackmd](/services/hackmd)
 - [monitoring](/monitoring)
+- compose-status
+- docs
+- email generator 
+- rb-ldap
+- wetty
+- netbooter
