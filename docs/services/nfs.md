@@ -61,6 +61,9 @@ zpool get userused@m1cr0man zbackup
 # Delete a quota from ZFS (useful if a user is deleted)
 zpool set userquota@123456=none zbackup
 
+# Get all user quota usage, and sort it by usage
+zfs userspace -o used,name zbackup | sort -h | tee used_space.txt
+
 # Resync quotas (this command will not return until it is finished)
 systemctl start zfsquota
 
