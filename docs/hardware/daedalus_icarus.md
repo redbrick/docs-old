@@ -4,9 +4,9 @@ These 2 PowerEdge servers are twins, and thus share documentation too.
 
 ## Details
 
-- Type: Dell PowerEdge R410
+- Type: Dell PowerEdge 2950
 - OS: NixOS
-- CPU: 2 x Intel Xeon X5570 @ 2.93GHz
+- CPU: 2 x Intel Xeon L5335 @ 2.00GHz
 - RAM: 32GB (Daedalus), 16GB (Icarus)
 - Storage: Dell Perc 6/i Integrated RAID controller
 - Disks: 2 x 73GB SAS disks in RAID 1 (hardware)
