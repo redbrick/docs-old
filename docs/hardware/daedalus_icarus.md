@@ -1,18 +1,21 @@
 # Deadalus and Icarus
 
-These 2 poweredge servers are twins, and thus share documentation too.
+These 2 PowerEdge servers are twins, and thus share documentation too.
 
-## Quick Facts
+## Details
 
-- Both are dual socket Poweredge 2950, DDR2
-- Both run NixOS
-- Daedalus has 32gb RAM, Icarus has 16gb because 1 DIMM died
+- Type: Dell PowerEdge R410
+- OS: NixOS
+- CPU: 2 x Intel Xeon X5570 @ 2.93GHz
+- RAM: 32GB (Daedalus), 16GB (Icarus)
+- Storage: Dell Perc 6/i Integrated RAID controller
+- Disks: 2 x 73GB SAS disks in RAID 1 (hardware)
+         3 x 600GB SAS disks in passthrough (3x RAID 0)
+- Drives: Internal SATA DVD+/-RW
+- Network: 2x Onboard Ethernet, 802.3ad bonding
+- iDRAC NIC: Shared on port 1
 - Daedalus' IP is `0.50`, Icarus' is `0.150`
 - Their iDRAC IPs are `1.50` and `1.150` respectively
-- Both run 802.3ad bonding on NICs 1 and 2, and have their iDRACs
-set up in "shared" mode.
-- Both boot from a 2x68gb SAS Hardware RAID1 pair, and also have
-3x600gb SAS used for ZFS + in the future Gluster.
 
 ## Services
 
