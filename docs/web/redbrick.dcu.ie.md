@@ -16,6 +16,14 @@ redirects all traffic to www subdomain
 redirect 301 / https://www.redbrick.dcu.ie
 ```
 
+## Apache Config 
+
+The config file for www.redbrick.dcu.ie can be found on Metharme.
+
+```
+/etc/apache2/sites-enabled/000-ssl
+```
+
 ## SSL Oddity
 
 Because we want members to SSH to azazel but meth is the web server, Apache is
