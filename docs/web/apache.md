@@ -7,6 +7,15 @@ other machines use 2.4. See [Apache Modules](/web/apachemodules) for modules.
 
 We use a apache macro template for user vhosts.
 
+## www.redbrick.dcu.ie
+
+The config file for www.redbrick.dcu.ie can be found on Metharme.
+
+`
+/etc/apache2/sites-enabled/000-ssl
+`
+
+
 ### Template
 
 ```apache
