@@ -1,77 +1,72 @@
-# Static-Site
+# Redbrick Site 
 
 The Code is hosted on github in the
-[redbrick/static-site](https://github.com/redbrick/static-site) repository
+[redbrick/react-site](https://github.com/redbrick/react-site) repository
 
-The site is Statically generated with [hexo](https://hexo.io/) using a theme
-based off [icarus](https://github.com/redbrick/hexo-theme-icarus)
+The site is comprised of static files generated using the ReactJS framework. 
 
-## Requirements
+## Google Sheet 
 
-1. **Node** : v6.9(LTS) Download [Node](https://nodejs.org/download/)
+The google sheet controlling the information can be found [here](https://docs.google.com/spreadsheets/d/15pFYVzuFPK4HFOpnnFHuoTNh3L3iThBCpoVMQzT5RlM/edit?usp=sharing).
 
-## Setup
+## Data Endpoint 
 
-To set up run:
+The events, images, and slides get pulled from the root directory of 'fraz'. This file gets updated every 24 hours at 00:00 from the google sheet. The google sheet can only be edited by cmt members. 
 
-- `yarn` this will install all the dependencies
+### Requirements 
+-  **Node** : Download [Node](https://nodejs.org/download/)
+- Slight insanity 
+- general understanding of ReactJS
 
-You will also need to create three files:
+## Deployment 
 
-- `mailing_list` a newline-separated list of email addresses
-- `email_update_log` a newline-separated reverse-chronological list of times
-  email updates were sent
-- `.env` by copying `.env.example` and **modifying values (_important_)**
+1. git clone the repo.
+2. run npm install.
+3. ensure the "homepage" in package.json is set correctly.
+4. ensure this.dataURL is set to pull information from the correct JSON file. 
+5. run npm build.
+6. ensure there are no errors in the output.
+7. copy &amp; paste the .htaccess file located in the apache folder into the build folder.
+6. copy &amp; paste the static files in the build folder that has been created. This is your site now :) 
 
-`mailing_list` and `email_update_log` can be left blank, though updates for
-every post in history will be sent if no previous send date is specified. Add
-the `docker-compose.yml` from
-[github](https://github.com/redbrick/static-site/blob/master/docker-compose.yml)
-to `/etc/docker-compose/services/website` Set the log and output folder and all
-Enviroment variables
+- Ensure the JSON file this.dataURL is set to pull from is being regularly updated (~ once day)
 
-Add a service for website to `/etc/systemd/system/website.service`
+- As of 19/11/2019, the release of this site, the data.json file can be pulled from fraz.redbrick.dcu.ie/data.json 
+    - This file is updated by a cron job running at 00:00 everyday. :) 
 
-```text
-[Unit]
-Description=Redbrick Website
-After=network.target
-[Service]
-ExecStart=/usr/local/bin/docker-compose up -d
-User=root
-Group=webgroup
-WorkingDirectory=/etc/docker-compose/services/website
-[Install]
-WantedBy=multi-user.target
+## I want to make changes 
+
+So you want to make changes? okay. 
+
+### Installation 
+
+1. git clone the repo
+2. run npm install in the root directory 
+3. start a hotreload server with npm start 
+4. make changes and watch the magical hot reload take action live! 
+
+Note: the main code is located in /src
+
+## Common Deployment Issues 
+
+### .htaccess 
+
+- Since react uses a virtual router all requests to the site should redirect to the index.
+- The easiest way of doing this if running apache is to drop a .htaccess file into the root folder.
+- Ensure the permissions of this is readable. 
+
+```.htaccess
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteRule . /index.html [L]
+</IfModule>
 ```
 
-## Generate
+## Old Site 
 
-- To start the site run `systemctl start website`. This will generate the site
-  and store the files in `/webtree/redbrick/htdocs` which are served by apache
-
-It also creates a server that runs on localhost:3000. This Service dynamic pages
-such as the contact form and the api and is proxied by apache
-
-## Regenerate via API
-
-- While the server is live, a visit to
-  `http://[sitehost]/api/regenerate?token=your_secret_token` will pull the most
-  up todate version and run `hexo generate` and send emails for any new posts so
-  long as that process is not already underway.
-
-### CSS and Templates
-
-- You can edit the css for the theme in themes/redbrick-theme/source/css
-- You can edit the templates in themes/redbrick-theme/layout
-
-This should be done through github, _NEVER modify the production copy_
-
-### Google analytics
-
-Analytics can be enabled by adding your analytics key to `_config.yaml` as
-
-```yaml
-plugins:
-  google_analytics: $key
-```
+The old redbrick static site is still available on github under [redbrick/static-site](https://github.com/redbrick/static-site)
