@@ -1,6 +1,8 @@
 # Apache
 
-Metharme, Redbrick's web server, is still using apache 2.2 due to pubcookie. All
+hardcase, Redbrick's web server, serves or proxies all http requests.
+See `services/httpd` in nixos for current configuration
+
 other machines use 2.4. See [Apache Modules](/web/apachemodules) for modules.
 
 ## User Vhost
@@ -11,10 +13,7 @@ We use a apache macro template for user vhosts.
 
 The config file for www.redbrick.dcu.ie can be found on Metharme.
 
-`
-/etc/apache2/sites-enabled/000-ssl
-`
-
+`/etc/apache2/sites-enabled/000-ssl`
 
 ### Template
 
