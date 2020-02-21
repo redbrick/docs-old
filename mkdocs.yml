@@ -89,9 +89,7 @@ nav:
   - Postmortems:
       - March 2016: postmortems/post_mortem_mar16.md
   - Web:
-      - Apache Modules: web/apachemodules.md
       - Apache: web/apache.md
-      - PubCookie: web/pubcookie.md
       - SuPHP: web/suphp.md
       - Traefik: web/traefik.md
       - TechWeek: web/techweek.md
