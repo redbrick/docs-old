@@ -22,5 +22,4 @@
 
 - Serves `/storage` over [NFS](/services/nfs).
 - Primary login machine.
-- [redbrick.dcu.ie](/web/redbrick.dcu.ie)
 - [tunnel.redbrick.dcu.ie](/services/tunnel.redbrick.dcu.ie)

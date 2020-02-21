@@ -30,10 +30,8 @@ nav:
       - LDAP: services/ldap.md
       - Mailman: services/mailman.md
       - Mastodon: services/mastodon.md
-      - Mercurial: services/hg.md
       - MySQL: services/mysql.md
       - NFS: services/nfs.md
-      - Nagios: services/nagios.md
       - News: services/news.md
       - Pastebin: services/paste.md
       - Postgres: services/postgres.md
@@ -94,7 +92,6 @@ nav:
       - Apache Modules: web/apachemodules.md
       - Apache: web/apache.md
       - PubCookie: web/pubcookie.md
-      - Redbrick.dcu.ie: web/redbrick.dcu.ie.md
       - SuPHP: web/suphp.md
       - Traefik: web/traefik.md
       - TechWeek: web/techweek.md
