@@ -56,17 +56,15 @@ serve it from any subdomain of zeus or add a cname to bind to point to zeus and
 
 ### Logging
 
-Redbrick Uses tick for collecting logs. Thankfully docker makes it very easy to
-add a logging provider. To use tick as a provider add the following to each
+Redbrick Uses Loki for collecting logs. Thankfully docker makes it very easy to
+add a logging provider. To use Loki as a provider add the following to each
 service
 
 ```yaml
 logging:
-  driver: syslog
+  driver: loki
   options:
-    syslog-address: 'udp://172.27.0.251:6514'
-    syslog-format: rfc5424micro
-    tag: $SERVICE_NAME
+    loki-url: 'http://log.internal:3100/loki/api/v1/push'
 ```
 
 ### Volumes
@@ -91,11 +89,9 @@ services:
     volumes:
       - redis:/data
     logging:
-      driver: syslog
+      driver: loki
       options:
-        syslog-address: 'udp://172.27.0.251:6514'
-        syslog-format: rfc5424micro
-        tag: haste_redis
+        loki-url: 'http://log.internal:3100/loki/api/v1/push'
 
   haste:
     build: .
@@ -113,11 +109,9 @@ services:
       - 'traefik.enable=true'
       - 'traefik.port=7777'
     logging:
-      driver: syslog
+      driver: loki
       options:
-        syslog-address: 'udp://172.27.0.251:6514'
-        syslog-format: rfc5424micro
-        tag: haste_server
+        loki-url: 'http://log.internal:3100/loki/api/v1/push'
 
 networks:
   web:
