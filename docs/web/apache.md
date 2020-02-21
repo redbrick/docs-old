@@ -54,4 +54,3 @@ cd /var/lib/acme
 for cert in *; do journalctl -fu acme-$cert.service & systemctl start acme-$cert.service && kill $!; done
 systemctl reload httpd
 ```
->>>>>>> fa7cb241c57a62e3e355766049cf3a6150328d2e
