@@ -1,61 +1,56 @@
 # Monitoring
 
-Prometheus scrapes collectd, grafana gets it's metrics from prometheus. These
-are what we currently and hope to monitor in the future.
+## Tools Used
 
-## Albus
+- [`node-exporter`](#node-exporter)
+- [`prometheus`](#prometheus)
+- [`fluentd`](#fluentd)
+- [`loki`](#loki)
+- [`grafana`](#grafana)
 
-- [ ] CPU Usage
-- [ ] Memory Usage
-- [ ] Storage Used
+### [node-exporter](https://prometheus.io/docs/guides/node-exporter/)
 
-## Azazel
+Currently all nixos boxes are installed with node-exporter to expose system
+metrics on port 9100. node-exporter is installed with various plugins to gather
+system metrics.
 
-- [x] CPU Usage
-- [x] Memory Usage
-- [x] Storage Used
-- [x] Number of users logged into the box
-- [x] Processes Running
-- [x] Interface Traffic
+node-exporter is configured by nixos
+[here](https://github.com/redbrick/nix-configs/blob/master/common/sysconfig.nix)
 
-## Half Pint
+### [Prometheus](https://prometheus.io/docs/introduction/overview/)
 
-- [ ] CPU Usage
-- [ ] Memory Usage
-- [ ] Storage used
+Prometheus is configured to scrape metrics from various sources. Prometheus is
+currently deployed with static scrape configs pointing to DNS entries of
+servers.
 
-## Paphos
+All servers need to be added
+[here](https://github.com/redbrick/nix-configs/blob/master/services/prometheus.nix)
+to ensure they are scraped by prometheus for metrics.
 
-- [x] CPU Usage
-- [x] Memory Usage
-- [x] Storage used
-- [x] Apache
-- [x] Interface Traffic
-- [ ] LDAP
-- [ ] Mail
-- [ ] Bind9
+By default prometheus scrapes every `15s`, this may need to be reduced to `30s`
+or `1m` later on. All data is retained for 15 days by default. Redbrick
+currently has no use cases for long term data. But if required an influx or
+graphite database should be used as a remote_write for Prometheus.
 
-## Pygmailion
+### [fluentd](https://docs.fluentd.org/)
 
-- [x] Storage Used
-- [x] CPU Usage
-- [x] Memory Usage
-- [x] Proccesses
-- [x] Number of users logged on
+Fluentd is used as a syslog endpoint. `log.internal:514` is the logs endpoint.
+Fluentd can be configured to parse and tag logs. Manual parsing of should be
+avoided in fluentd in favour of Loki and fluentd plugins.
 
-## Metharme
+Fluentd is configured to send logs to Loki on the same host it is running on.
 
-- [x] Storage Used
-- [x] CPU Usage
-- [x] Memory Usage
-- [x] Apache
-- [x] MySql
+### [Loki](https://github.com/grafana/loki/tree/master/docs)
 
-## Zeus
+Loki is grafana's logging solution. Loki is query able in grafana. All Logs
+should be configured to send to it. Loki supports multiple ways to receive logs,
+redbrick uses fluentd and docker logging driver.
 
-- [x] Storage Used
-- [x] CPU Usage
-- [x] Memory Usage
-- [x] Interface Traffic
-- [x] Docker Serivces
-- [x] traefik
+To send logs to Loki using a Loki client point logs to `log.internal:3100`
+
+### [Grafana](https://grafana.com/docs/grafana/latest/)
+
+Grafana is a graphing front end. Grafana has a large number of dashboards for
+reviewing metrics and logs from every node. Alerts should be configured in
+grafana to alert admins and root holders when events occur based on the metrics
+or log events.

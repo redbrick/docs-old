@@ -1,71 +1,56 @@
 # Apache
 
-Metharme, Redbrick's web server, is still using apache 2.2 due to pubcookie. All
-other machines use 2.4. See [Apache Modules](/web/apachemodules) for modules.
-
-## User Vhost
-
-We use a apache macro template for user vhosts.
+hardcase, Redbrick's web server, serves or proxies all http requests. See
+[`services/httpd`](https://github.com/redbrick/nix-configs/tree/master/services/httpd)
+in nixos for current configuration
 
 ## www.redbrick.dcu.ie
 
-The config file for www.redbrick.dcu.ie can be found on Metharme.
+[Redbrick vhost](https://github.com/redbrick/nix-configs/blob/master/services/httpd/default.nix#L27)
+This is responsible for Rewriting legacy user dir addresses
+`redbrick.dcu.ie/~username` too `username.redbrick.dcu.ie`
 
-`
-/etc/apache2/sites-enabled/000-ssl
-`
+This vhost is configured to send all traffic to index.html as the current site
+relies on react to decide on page loads
 
+## Vhosts
 
-### Template
+We use a nix function to template out user
+[vhosts](https://github.com/redbrick/nix-configs/blob/master/services/httpd/shared.nix)
 
-```apache
-<Macro VHost $dir $user $group $vhost >
-  <VirtualHost 136.206.15.61:80>
-    ServerName $vhost.redbrick.dcu.ie
-    ServerAlias www.$vhost.redbrick.dcu.ie
-    RewriteEngine on
-    RewriteCond %{SERVER_NAME} =$vhost.redbrick.dcu.ie [OR]
-    RewriteCond %{SERVER_NAME} =www.$vhost.redbrick.dcu.ie
-    RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [L,QSA,R=permanent]
-  </VirtualHost>
-  <VirtualHost 136.206.15.61:443>
-    DocumentRoot $dir
-    ServerName $vhost.redbrick.dcu.ie
-    ServerAlias www.$vhost.redbrick.dcu.ie
-    AddHandler cgi-script .cgi
-    AddHandler cgi-script .py
-    AddHandler cgi-script .sh
-    AddHandler cgi-script .pl
-    AddHandler x-httpd-php .php
-    AddHandler x-httpd-php .php3
-    SuExecUserGroup $user  $group
-    AddType text/html .shtml
-    AddHandler server-parsed .shtml
-    AddHandler server-parsed .html
-    # include the SSL settings for a user vhost
-    Include /etc/apache2/user_vhost_ssl.conf
-  </VirtualHost>
-</Macro>
-
-# Custom subdomains
-#         dir                                           user            group           vhost
-Use VHost /storage/webtree/a/associat                   associat        associat        asscociat
-Use VHost /storage/webtree/c/club                       club            club            club
-Use VHost /storage/webtree/e/events                     events          committe        events
-Use VHost /storage/webtree/s/soc                        soc             society         soc
-Use VHost /storage/webtree/d/dcu                        dcu             dcu             dcu
-Use VHost /storage/webtree/m/member                     member          member          member
-```
+All Vhosts are declared in
+[vhost.nix](https://github.com/redbrick/nix-configs/blob/master/services/httpd/vhosts.nix).
+These vhost can be used to explicitly overwrite user vhosts.
 
 The vhost doesn't have to be the same as the user name this allows clubs,
 societies or DCU sites to have different vhosts to their username. The reason
 the dir is specified is some users have multiple sites in their webspaces with
 different vhost.
 
-### Generate
+### User vhosts Generation
 
-To update the list of users in apache run
-[rb-ldap](https://github.com/redbrick/rb-ldap). It will query ldap for a list of
-all users, clubs and societies and create the conf apache will import.
+To update the list of users in apache ssh to the apache server and run
 
-To run it call `rb-ldap generate --conf /etc/apache2/user_vhost_list.conf`
+```bash
+cd services/httpd
+ldapsearch -b o=redbrick -h ldap.internal -xLLL objectClass=posixAccount uid homeDirectory gidNumber | python3 ldap2nix.py /storage/webtree/ > users.nix
+```
+
+It will query ldap for a list of all users, clubs and societies and create the
+users.nix that will be used in nixos rebuild.
+
+Then generate the preliminary certs for every domain so that httpd can start:
+
+```bash
+# List all acme-selfsigned-* services and put them in a txt file. Do this with `systemctl status acme-selfsigned-<tab>`
+cat selfsigned-svcs.txt | xargs systemctl start
+```
+
+Now apache will start. Generate the real certs for each domain, one at a time as
+to not get rate limited
+
+```bash
+cd /var/lib/acme
+for cert in *; do journalctl -fu acme-$cert.service & systemctl start acme-$cert.service && kill $!; done
+systemctl reload httpd
+```

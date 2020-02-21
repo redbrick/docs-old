@@ -8,9 +8,9 @@ jobs:
           ENV: CI
     working_directory: ~/docs
     steps:
-      - run: apk add --no-cache --virtual build-dependencies python py-pip git
+      - run: apk add --no-cache --virtual build-dependencies python3-dev git
       - checkout
-      - run: pip install -r requirements.txt
+      - run: python3 -m pip install -r requirements.txt
       - run:
           name: Test Build
           command: mkdocs build -v
@@ -18,6 +18,11 @@ jobs:
           name: Test Internal Links
           command: |
             set -eo pipefail
-            htmlproofer --allow-hash-href --check-html --empty-alt-ignore --disable-external ~/docs/site
+            htmlproofer \
+            --allow-hash-href \
+            --check-html \
+            --empty-alt-ignore \
+            --disable-external \
+            ~/docs/site
       - store_test_results:
           path: "/results.txt"

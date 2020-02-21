@@ -2,6 +2,8 @@
 
 - Full man page for collectd with full descriptions and configs:
   - ![Collectd.conf(5)](https://collectd.org/documentation/manpages/collectd.conf.5.shtml)
+- Collectd is installed on ubuntu and bsd machines
+  - Metrics are written to `zeus.internal` and then scrped by prometheus
 
 ## How to install collectd
 
@@ -59,13 +61,13 @@ $ make clean install
 ```config
 ExtendedStatus on
 <IfModule mod_status.c>
-<Location /mod_status>
-  SetHandler server-status
-</Location>
+  <Location /mod_status>
+    SetHandler server-status
+  </Location>
 </IfModule>
 ```
 
-- We also need to add this to the /etc/apache2/ports.conf
+- We also need to add this to the `/etc/apache2/ports.conf`
   - **This may break things in /etc/apache2/sites-enabled/**
 
 ```config
@@ -75,7 +77,7 @@ Listen 127.0.0.1:8081
 Listen 127.0.0.1:80
 ```
 
-- In /etc/collectd/collectd.conf we need to configure the apache module as so
+- In `/etc/collectd/collectd.conf` we need to configure the apache module as so
 
 ```config
 <Plugin apache>
@@ -91,3 +93,4 @@ Listen 127.0.0.1:80
 - Try curl from the machine you are on
 - Try curl from the machine doing the scraping
 - If that works then looks like apache is working right
+- ensure you are using internal addresses
