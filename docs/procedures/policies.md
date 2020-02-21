@@ -24,9 +24,8 @@ When su'ing to root, please observe the following:
 - Wait for the password prompt before typing in the password! Sometimes
   lag/terminal freezes or whatever can kick in. The other classic mistake is
   typing the password in place of the username (say for a console login).
-- Make sure LOGNAME is set to your unix name. The linux/solaris boxes will
-  prompt you for this (on solaris use 'su -', on linux don't ever use 'su -').
-  On OpenBSD you can use 'su -m' to keep the environment.
+- Make sure LOGNAME is set to your unix name. The linux boxes will prompt you
+  for this. On OpenBSD you can use 'su -m' to keep the environment.
 - Don't change the root account/finger information!
 - If you wish to use another shell, place customisations in your own file. For
   bash, `/root/.bash_profile.<USERNAME>` and for zsh `/root/.zshrc.<USERNAME>`.
@@ -52,14 +51,9 @@ existing ones, they can come in handy.
 Couple of things to look out for:
 
 - `killall` command, never ever use it!
-- Solaris commands which share same name as Linux/BSD commands can often be
-  radically different. Always check manpages.
 - Alias `cp`, `mv` & `rm` with the `-i` option.
 - If you're ever unsure, don't! Ask another admin or check the docs.
 - Always always double check commands before firing them off!
-- When using `chown` or `chgrp`, always supply `-h` option as by default Solaris
-  chown/chgrp will change the ownership of the file a symlink POINTS TO - NOT
-  the symlink itself!
 
 ## Admin mailing lists
 

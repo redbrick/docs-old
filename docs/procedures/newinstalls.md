@@ -250,35 +250,6 @@ will need to be added to the munin server.
 
 Mostly, do the same as debuntu...
 
-### /bin/sh is melting my brain
-
-If you have installed Solaris (my apologies if you have), you'll have noticed
-that sh is a pile of shite, and that su --shell isn't supported. Luckily you can
-script your way out of this horrid mess.
-
-```bash
-$ cat .profile
-
-logname=`tail -1 /var/adm/sulog|awk -F"-" '{print $1}'|awk '{print $6}'`
-/usr/bin/echo "Enter Logname [$logname] \c"
-read logname2
-if [ -n "$logname2" ]; then
-      logname=$logname2
-fi
-LOGNAME=$logname
-export LOGNAME
-if [ -f /root/.zshrc.$logname ]; then
-      exec zsh
-else
-      exec bash
-fi
-```
-
-Then just "su -" and you'll get a sensible shell, and your logname will be
-preserved.
-
-On ubuntu, this is handled by redbrick-root-env.
-
 ### Exim
 
 - Install Exim from somewhere.
@@ -323,11 +294,6 @@ On ubuntu, this is handled by redbrick-root-env.
 - Don't touch anything else, unless you want to ;)
 - If you're scripting this to run as a service the options you probably want
   are: `/path/to/exim -bd -q10m`
-
-On OpenBSD it's nicely packaged, on Solaris it's not. You can get one from
-blastwave (it's in use on murphy at the time of writing), or you could build
-your own. I build 4.69 for murphy, there's a tar with instructions in
-/srv/admin/src (unless someone deleted it)
 
 ### bug in fail2ban init script
 
