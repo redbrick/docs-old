@@ -9,7 +9,7 @@ Redbrick uses [Gitea](https://gitea.io/en-US/) a community driven fork of
 
 ## Deployment
 
-- Gitea and its database are deployed with Nix to Hardcase
+- Gitea and its database are deployed to Hardcase which runs NixOS
 - The actual repositories are stored in `/zroot/git`, and most
 other data is stored in `/var/lib/gitea`
 - The `SECRET_KEY` and `INTERNAL_TOKEN_URI` are stored in `/var/secrets`.
@@ -20,9 +20,8 @@ Permissions on the gitea_token.secret must be 740 and owned by git:gitea
 ## Redbrick Special Notes
 
 - The giteadmin credentials are in the passwordsafe
-- SSH is set to `10022` because otherwise it would clash with the host's real SSH
-- OpenID and user registration are disabled to stop non-RB users joining,
-only LDAP works.
+- SSH is set to `10022` because otherwise it would clash with the host's real SSH.
+- OpenID and user registration are disabled to stop non-RB users joining, only LDAP works.
 
 ## Operation
 
