@@ -101,16 +101,15 @@ After each emergency remember to write a postmortem!
 #### Paphos - Primary Services
 
 - [DNS](services/bind9)
+- [IceCast](/services/icecast2)
 
-#### Zeus - Secondary Services and New web
+#### Zeus - Secondary Services
 
 - [Techweek](web/techweek)
-- [Website](web/website)
 
-#### Metharme - Web Applications
+#### Hardcase - Web Applications
 
 - [Web Server](web/apache)
-- [IceCast](services/icecast2)
 
 #### halfpint - Admin Bastion
 
@@ -150,23 +149,17 @@ After each emergency remember to write a postmortem!
 
 Software written by RedBrick, or with RedBrick customisations etc.
 
-- [RedBrick Apt Repo (work in progress)](procedures/redbrick-apt)
-- [Backported Packages](procedures/backport-packages)
-- [Hey (and huh)](services/hey)
-- [Rbusers](procedures/rbusers)
-- [Chfn & Chsh for ldap](procedures/ldapchshchfn)
-- [Small scripts](procedures/rbscripts)
-- [RedBrick MOTD setup](services/unifiedmotd)
-- [Icecast Streaming Service for DCUFM](services/icecast2)
+- [Backported Packages](/procedures/backport-packages)
+- [Hey (and huh)](/services/hey)
+- [Rbusers](/procedures/rbusers)
+- [Chfn & Chsh for ldap](/procedures/ldapchshchfn)
+- [Small scripts](/procedures/rbscripts)
+- [RedBrick MOTD setup](/services/unifiedmotd)
+- [Icecast Streaming Service for DCUFM](/services/icecast2)
 
 ---
 
 ## System Documentation Redundancy
-
-### docs.redbrick.dcu.ie
-
-This is a self hosted version running on halfpint. Its a cron job that pull from
-github once an hour and if it finds an update it rebuilds the site.
 
 ### Github
 
@@ -176,4 +169,5 @@ accessed and read from anywhere.
 ### ReadTheDocs
 
 Docs are auto deployed to [readthedocs](https://readthedocs.io) on commit to the
-`master` branch. They should always be up to date.
+`master` branch. They should always be up to date. They are available at
+https://docs.redbrick.dcu.ie and https://redbrick.rtfd.io
