@@ -4,7 +4,7 @@
 
 - [`node-exporter`](#node-exporter)
 - [`prometheus`](#prometheus)
-- [`fluentd`](#fluentd)
+- [`promtail`](#promtail)
 - [`loki`](#loki)
 - [`grafana`](#grafana)
 
@@ -32,19 +32,17 @@ or `1m` later on. All data is retained for 15 days by default. Redbrick
 currently has no use cases for long term data. But if required an influx or
 graphite database should be used as a remote_write for Prometheus.
 
-### [fluentd](https://docs.fluentd.org/)
+### [promtail](https://github.com/grafana/loki/tree/master/docs/clients/promtail)
 
-Fluentd is used as a syslog endpoint. `log.internal:514` is the logs endpoint.
-Fluentd can be configured to parse and tag logs. Manual parsing of should be
-avoided in fluentd in favour of Loki and fluentd plugins.
-
-Fluentd is configured to send logs to Loki on the same host it is running on.
+Promtail is used as a syslog endpoint. `log.internal:514` is the logs endpoint.
+Promtail is configured to parse fields syslog fields and add them as tags in
+loki. Promtail will to send logs to Loki on behind `log.internal:3100`.
 
 ### [Loki](https://github.com/grafana/loki/tree/master/docs)
 
 Loki is grafana's logging solution. Loki is query able in grafana. All Logs
 should be configured to send to it. Loki supports multiple ways to receive logs,
-redbrick uses fluentd and docker logging driver.
+redbrick uses promtail and docker logging driver.
 
 To send logs to Loki using a Loki client point logs to `log.internal:3100`
 
