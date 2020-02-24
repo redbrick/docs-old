@@ -20,8 +20,6 @@ Permissions on the gitea_token.secret must be 740 and owned by git:gitea
 ## Redbrick Special Notes
 
 - The giteadmin credentials are in the passwordsafe
-- SSH is set to `10022` because otherwise it would clash with the host's real SSH.
-- OpenID and user registration are disabled to stop non-RB users joining, only LDAP works.
 
 ## Operation
 
