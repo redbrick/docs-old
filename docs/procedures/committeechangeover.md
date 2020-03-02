@@ -134,5 +134,3 @@ $ ldapmodify -D cn=root,ou=ldap,o=redbrick -x -y /etc/ldap.secret
 ```
 
 - Give each new admin a local account (in `/etc/passwd`) on each machine
-
--Atlas - 12 Apr 07
