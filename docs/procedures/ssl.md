@@ -2,7 +2,7 @@
 
 ## Background
 
-Redbrick has a wildcard ssl cert for \*.redbrick.dcu.ie, issued by The SSL
+Redbrick has a wildcard SSL cert for *.redbrick.dcu.ie, issued by The SSL
 Store/RapidSSL. It was purchased before LetsEncrypt supported wildcard certs and
 for the sake of the price paid is being kept in use until it expires.
 
@@ -32,7 +32,7 @@ For more configuration info on Certbot see
 ### Paperwork
 
 This should be on the grant app at the start of each year, in the past it has
-not been approved. The price is \$149 for the year.
+not been approved. The price is $149 for the year.
 
 Rapidssl will email admins@rb about a month before the cert is due for renewal
 with instructions, this usually happens around April.
@@ -55,7 +55,7 @@ credentials in pwsafe under "ssl".
 #### Generating a CSR
 
 **NOTE**: You most likely do not need to do this! These instructions exist in
-the event the key and csr are lost.
+the event the key and CSR are lost.
 
 - Start generating a CSR with this command:
 
@@ -67,7 +67,7 @@ openssl req –new –newkey rsa:2048 –nodes –keyout redbrick.dcu.ie.key –
 
 | Field               | Value                               |
 | ------------------- | ----------------------------------- |
-| Common Name         | \*.redbrick.dcu.ie                  |
+| Common Name         | *.redbrick.dcu.ie                  |
 | Organization Name   | Redbrick - DCU's Networking Society |
 | Organizational Unit | Admins                              |
 | City/Locality       | Glasnevin                           |
@@ -128,7 +128,7 @@ ls -l backup_$(date +'%F')
 | PKCS7.p7b                        | unused                    |
 
 (Note: If you do not get an intermediate cert, you can download the RapidSSL
-wildcard intermediate SHA1 CA from
+wildcard intermediate SHA2 CA from
 [here](https://www.thesslstore.com/knowledgebase/ssl-support/ca-bundle/))
 
 - Copy the files to the relevant places in the ssl folder
