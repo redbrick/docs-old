@@ -11,13 +11,95 @@ At the time of writing, our cert deployment looks like so:
 | Host      | Location              | RapidSSL? | LetsEncrypt? |
 | --------- | --------------------- | --------- | ------------ |
 | albus     | /etc/apache2/ssl      | Y         | N            |
-| metharme  | /etc/apache2/ssl      | Y         | N            |
 | pygmalion | /etc/apache2/ssl      | Y         | N            |
 | paphos    | /etc/apache2/ssl      | Y         | N            |
 | paphos    | /etc/dovecot/ssl      | Y         | N            |
 | azazel    | /etc/letsencrypt/live | N         | Y            |
+| hardcase  | /var/lib/acme/certs   | N         | Y            |
 
-## LetsEncrypt
+## NixOS and SSL Certs
+
+On hardcase, we have a very sophisticated system for managing certs. We now
+correctly generate certs for all domains and aliases explicitly for all the
+vhosts we have. The cert for our own top level domain is a LetsEncrypt
+wildcard cert. There's a number of components to this system.
+
+### Port 80 Vhost
+
+There is only one port 80 vhost configured for Apache. This vhost serves
+the webroot for the Acme module, which will add and remove files needed for
+HTTP-01 validation. The path of this folder is `config.security.acme.webroot`.
+
+Any traffic that is not destined for the `/.well-known/acme-challenge` URL
+is promoted to HTTPS, and thus goes to the corresponding vhost for that domain.
+This means that NONE of our other vhosts are served on port 80 - everything
+is explicitly HTTPS now. All domains use HTTP-01 validation, except for our
+own domain...
+
+### DNS-01 Validation
+
+Redbrick used to have its own acme module written by m1cr0man to support DNS-01,
+but after this was merged into nixpkgs we switched back to the regular module.
+The configuration we use utilises [rfc2136](https://go-acme.github.io/lego/dns/rfc2136/)
+to talk to our Bind9 DNS server. The process for DNS-01 involves adding a TXT
+record to our domain, requesting LE to verify it exists, then removing the
+record. Lego (the application the acme module uses) handles this.
+
+There is a key shared between the DNS server and hardcase which is stored in
+`/var/secrets/certs.secret`, which is an environment variables file. See the
+rfc2136 docs linked above for the keys.
+
+The key must be generated on the DNS server. This is done with this command:
+
+```bash
+tsig-keygen dnsupdate.${tld} > /var/secrets/dnskeys.conf
+```
+
+Our dns module is configured to import the key from this file.
+
+### The magic certs config
+
+We have a [complex Nix config](https://github.com/redbrick/nix-configs/blob/cc99a5e27aa505224f6ce628b346c4ca69c1c84a/services/certs/default.nix)
+which generates certs from the vhosts list in the Apache config. It accounts
+for vhost names and all its aliases. It tries to find the [domain's TLD](https://github.com/redbrick/nix-configs/blob/cc99a5e27aa505224f6ce628b346c4ca69c1c84a/common/variables.nix#L24)
+to minimise the number of certs that are required. This is subject to fail
+under certain conditions:
+
+- The TLD does not point to our web server
+- The hostname or one of the aliases does not point to our web server
+
+This causes the HTTP-01 validation to fail for that vhost, and thus no cert
+will get generated for it at all. The [broken domains](https://github.com/redbrick/nix-configs/blob/cc99a5e27aa505224f6ce628b346c4ca69c1c84a/common/variables.nix#L12)
+list allows us to work around that, by providing an explicit mapping of a
+domain to what its cert domain will be. This bypasses the domainTld function.
+
+NixOS will create 3 systemd pieces for every cert bundle: A renew service,
+a renew timer, and a selfsigned cert service. This selfsigned service allows
+us to start Apache before the certs are initially generated. When deploying a
+new web server, you will need to run this service for all domains. See
+the Apache docs for the steps here.
+
+The renew service does not automatically restart Apache, instead we have a
+[systemd timer](https://github.com/redbrick/nix-configs/blob/cc99a5e27aa505224f6ce628b346c4ca69c1c84a/services/httpd/default.nix#L155)
+to restart Apache at 5am on Saturdays.
+
+### Regenerating all certs, and pruning dead ones
+
+It may happen that LetsEncrypt requests everyone to regenerate their certs,
+which happened us once. The fastest way to do this is by using the list
+of folders as service names and an awk script:
+
+```bash
+cd /var/lib/acme/certs
+ls -1 | awk '{ print "acme-" $1 }' | xargs systemctl start
+```
+
+There may be reason to do this every once in a while regardless: When
+you run that command, any domains which do not have certs associated with them,
+and thus have no systemd service, will fail to start. You should delete these
+folders as they are no longer used.
+
+## Other LetsEncrypt Deployments
 
 CertBot is set up on Azazel and Metharme, in `/local/usr/sbin`. It is cron'd to
 run at 02:30 and 14:30 daily and log to `/var/log/le-renew.log`. The Apache on

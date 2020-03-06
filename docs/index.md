@@ -9,8 +9,8 @@ work. Ever. For anything).
 
 ## Current stuff
 
-- [Current TODO list](/plans/TODO-2017)
-- [Suggested Ideas](/plans/project-ideas)
+- [Current TODO list](plans/TODO-2017)
+- [Suggested Ideas](plans/project-ideas)
 
 ---
 
@@ -19,8 +19,8 @@ work. Ever. For anything).
 You will regret this decision. But if you are sure make sure you are familiar
 with the following:
 
-- [Policies](/procedures/policies)
-- [Abuse@redbrick, and the committee stance on it](/procedures/abuse)
+- [Policies](procedures/policies)
+- [Abuse@redbrick, and the committee stance on it](procedures/abuse)
 
 ---
 
@@ -28,56 +28,56 @@ with the following:
 
 Day to day running of things.
 
-- [IRC Operator Guide](/procedures/irc_operator)
-- [IRC](/services/irc)
-- [LDAP](/services/ldap)
-- [News Server (the boards)](/services/news)
-- [Clubs and Socs Day](/procedures/rrs)
-- [Changing a local Password](/procedures/passwd)
-- [Committee changeover procedure](/procedures/committeechangeover)
-- [Installing new machines](/procedures/newinstalls)
-- [Responding to tickets](/procedures/ticketing)
+- [IRC Operator Guide](procedures/irc_operator)
+- [IRC](services/irc)
+- [LDAP](services/ldap)
+- [News Server (the boards)](services/news)
+- [Clubs and Socs Day](procedures/rrs)
+- [Changing a local Password](procedures/passwd)
+- [Committee changeover procedure](procedures/committeechangeover)
+- [Installing new machines](procedures/newinstalls)
+- [Responding to tickets](procedures/ticketing)
 
 #### Storage
 
-- [Current NFS setup](/services/nfs)
+- [Current NFS setup](services/nfs)
 
 #### Mail
 
-- [Exim email setup](/services/exim)
-- [Dovecot IMAP](/services/dovecot)
-- [Mailing Lists (Mailman)](/services/mailman)
-- [Mail setup for mutt](/procedures/mail_setup)
+- [Exim email setup](services/exim)
+- [Dovecot IMAP](services/dovecot)
+- [Mailing Lists (Mailman)](services/mailman)
+- [Mail setup for mutt](procedures/mail_setup)
 
 #### NNTP
 
-- [Setting up a new board](/procedures/newboard)
+- [Setting up a new board](procedures/newboard)
 
 #### Databases
 
-- [MySQL](/services/mysql)
-- [postgres](/services/postgres)
+- [MySQL](services/mysql)
+- [postgres](services/postgres)
 
 #### Network
 
-- [.15 Address Space](/network/mainaddressspace)
-- [Network setup](/network/networksetup) (internal LAN, external LAN, switches,
+- [.15 Address Space](network/mainaddressspace)
+- [Network setup](network/networksetup) (internal LAN, external LAN, switches,
   cable colours etc)
-- [tunnel.redbrick.dcu.ie](/services/tunnel.redbrick.dcu.ie)
-- [Switch Setup](/procedures/switch)
-- [Gratuitous ARP](/procedures/gratuitousarp) (or, how to force update an IP
+- [tunnel.redbrick.dcu.ie](services/tunnel.redbrick.dcu.ie.md)
+- [Switch Setup](procedures/switch)
+- [Gratuitous ARP](procedures/gratuitousarp) (or, how to force update an IP
   address's associated MAC on the router and other machines)
-- [JunOS Configuration](/network/junos)
+- [JunOS Configuration](network/junos)
 
 #### WWW
 
-- [Redbrick SSL certs](/procedures/ssl)
-- [Webchat (qwebirc)](/web/webchat)
+- [Redbrick SSL certs](web/ssl)
+- [Webchat (qwebirc)](web/webchat)
 
 #### Backups
 
-- [BackupPC](/services/backuppc)
-- [Moving severus to CSD](/procedures/severuscolocation)
+- [BackupPC](services/backuppc)
+- [Moving severus to CSD](procedures/severuscolocation)
 
 ---
 
@@ -85,7 +85,7 @@ Day to day running of things.
 
 After each emergency remember to write a postmortem!
 
-- [What to do immediately after a power cut](/procedures/post_powercut)
+- [What to do immediately after a power cut](procedures/post_powercut)
 
 ---
 
@@ -95,27 +95,27 @@ After each emergency remember to write a postmortem!
 
 #### Daedalus + Icarus - LDAP + Distributed storage
 
-- [LDAP](/services/ldap)
+- [LDAP](services/ldap)
 - NFS, (a.k.a /storage) from Icarus
 
 #### Paphos - Primary Services
 
-- [DNS](/services/bind9)
+- [DNS](services/bind9)
 
 #### Zeus - Secondary Services and New web
 
-- [Techweek](/web/techweek)
-- [Website](/web/website)
+- [Techweek](web/techweek)
+- [Website](web/website)
 
 #### Metharme - Web Applications
 
-- [Web Server](/web/apache)
-- [IceCast](/services/icecast2)
+- [Web Server](web/apache)
+- [IceCast](services/icecast2)
 
 #### halfpint - Admin Bastion
 
-- [DRAC Access](/procedures/dracaccess)
-- [Password Safe](/procedures/pwsafe)
+- [DRAC Access](procedures/dracaccess)
+- [Password Safe](procedures/pwsafe)
 
 ### User Login
 
@@ -123,41 +123,41 @@ After each emergency remember to write a postmortem!
 
 #### Pygmalion - User Development
 
-- [DRAC Access](/procedures/dracaccess)
+- [DRAC Access](procedures/dracaccess)
 
 ## Security
 
-- [Rootholder public keys](/procedures/gpgkeys)
+- [Rootholder public keys](procedures/gpgkeys)
 
 ## Hardware
 
 ### Switches
 
-- [Cisco IOS](/network/ciscoios)
-- [Hadron](/network/hadron)
-- [JunOS](/network/junos)
-- [Higgs](/network/higgs)
+- [Cisco IOS](network/ciscoios)
+- [Hadron](network/hadron)
+- [JunOS](network/junos)
+- [Higgs](network/higgs)
 
 ### UPS
 
-- [The PDUs](/hardware/the_pdus)
+- [The PDUs](hardware/the_pdus)
 
 ### Other
 
-- [Dell IP-KVM](/hardware/ipkvm)
+- [Dell IP-KVM](hardware/ipkvm)
 
 ## Software
 
 Software written by RedBrick, or with RedBrick customisations etc.
 
-- [RedBrick Apt Repo (work in progress)](/procedures/redbrick-apt)
-- [Backported Packages](/procedures/backport-packages)
-- [Hey (and huh)](/services/hey)
-- [Rbusers](/procedures/rbusers)
-- [Chfn & Chsh for ldap](/procedures/ldapchshchfn)
-- [Small scripts](/procedures/rbscripts)
-- [RedBrick MOTD setup](/services/unifiedmotd)
-- [Icecast Streaming Service for DCUFM](/services/icecast2)
+- [RedBrick Apt Repo (work in progress)](procedures/redbrick-apt)
+- [Backported Packages](procedures/backport-packages)
+- [Hey (and huh)](services/hey)
+- [Rbusers](procedures/rbusers)
+- [Chfn & Chsh for ldap](procedures/ldapchshchfn)
+- [Small scripts](procedures/rbscripts)
+- [RedBrick MOTD setup](services/unifiedmotd)
+- [Icecast Streaming Service for DCUFM](services/icecast2)
 
 ---
 
