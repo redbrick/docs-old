@@ -14,7 +14,7 @@ At the time of writing, our cert deployment looks like so:
 | pygmalion | /etc/apache2/ssl      | Y         | N            |
 | paphos    | /etc/apache2/ssl      | Y         | N            |
 | paphos    | /etc/dovecot/ssl      | Y         | N            |
-| hardcase  | /var/lib/acme/certs   | N         | Y            |
+| hardcase  | /var/lib/acme/        | N         | Y            |
 
 ## NixOS and SSL Certs
 
@@ -89,7 +89,7 @@ which happened us once. The fastest way to do this is by using the list
 of folders as service names and an awk script:
 
 ```bash
-cd /var/lib/acme/certs
+cd /var/lib/acme
 ls -1 | awk '{ print "acme-" $1 }' | xargs systemctl start
 ```
 
