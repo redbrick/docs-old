@@ -2,9 +2,9 @@
 
 ## Background
 
-Redbrick has a wildcard ssl cert for \*.redbrick.dcu.ie, issued by The SSL
+Redbrick has a wildcard SSL cert for \*.redbrick.dcu.ie, issued by The SSL
 Store/RapidSSL. It was purchased before LetsEncrypt supported wildcard certs and
-for the sake of the price paid is being kept in use until it expires.
+for the sake of the price paid was being kept in use until it expires.
 
 At the time of writing, our cert deployment looks like so:
 
@@ -14,7 +14,6 @@ At the time of writing, our cert deployment looks like so:
 | pygmalion | /etc/apache2/ssl      | Y         | N            |
 | paphos    | /etc/apache2/ssl      | Y         | N            |
 | paphos    | /etc/dovecot/ssl      | Y         | N            |
-| azazel    | /etc/letsencrypt/live | N         | Y            |
 | hardcase  | /var/lib/acme/certs   | N         | Y            |
 
 ## NixOS and SSL Certs
@@ -99,22 +98,12 @@ you run that command, any domains which do not have certs associated with them,
 and thus have no systemd service, will fail to start. You should delete these
 folders as they are no longer used.
 
-## Other LetsEncrypt Deployments
-
-CertBot is set up on Azazel and Metharme, in `/local/usr/sbin`. It is cron'd to
-run at 02:30 and 14:30 daily and log to `/var/log/le-renew.log`. The Apache on
-Azazel is configured to use this cert for redbrick.dcu.ie and
-azazel.redbrick.dcu.ie
-
-For more configuration info on Certbot see
-[here](https://certbot.eff.org/#ubuntutrusty-apache)
-
 ## The RapidSSL Cert
 
 ### Paperwork
 
 This should be on the grant app at the start of each year, in the past it has
-not been approved. The price is \$149 for the year.
+not been approved. The price is $149 for the year.
 
 Rapidssl will email admins@rb about a month before the cert is due for renewal
 with instructions, this usually happens around April.
@@ -137,7 +126,7 @@ credentials in pwsafe under "ssl".
 #### Generating a CSR
 
 **NOTE**: You most likely do not need to do this! These instructions exist in
-the event the key and csr are lost.
+the event the key and CSR are lost.
 
 - Start generating a CSR with this command:
 
@@ -149,7 +138,7 @@ openssl req –new –newkey rsa:2048 –nodes –keyout redbrick.dcu.ie.key –
 
 | Field               | Value                               |
 | ------------------- | ----------------------------------- |
-| Common Name         | \*.redbrick.dcu.ie                  |
+| Common Name         | *.redbrick.dcu.ie                   |
 | Organization Name   | Redbrick - DCU's Networking Society |
 | Organizational Unit | Admins                              |
 | City/Locality       | Glasnevin                           |
