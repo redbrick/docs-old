@@ -170,4 +170,5 @@ accessed and read from anywhere.
 
 Docs are auto deployed to [readthedocs](https://readthedocs.io) on commit to the
 `master` branch. They should always be up to date. They are available at
-https://docs.redbrick.dcu.ie and https://redbrick.rtfd.io
+[docs.redbrick.dcu.ie](https://docs.redbrick.dcu.ie) and
+[redbrick.rtfd.io](https://redbrick.rtfd.io)
