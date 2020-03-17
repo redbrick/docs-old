@@ -96,7 +96,7 @@ $ ldapmodify -D cn=root,ou=ldap,o=redbrick -x -y /etc/ldap.secret
 
 Add the webmaster to the webmaster mailing list
 (webmaster@lists.redbrick.dcu.ie) on
-[lists](http://lists.redbrick.dcu.ie/mailman/admin/webmaster/)
+[lists](https://lists.redbrick.dcu.ie/mailman/admin/webmaster/)
 
 ### Helpdesk
 

@@ -137,6 +137,6 @@ $ cat .procmailrc
     .inbox/
 ```
 
-Refer to [The rbwiki article on mutt](http://wiki.redbrick.dcu.ie/mw/Mutt) if
+Refer to [The rbwiki article on mutt](https://wiki.redbrick.dcu.ie/mw/Mutt) if
 you have trouble or PM me (no idea who me is but its not the person git says it
 is\_).

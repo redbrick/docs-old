@@ -61,7 +61,7 @@ nav:
       - Post-Powercut: procedures/post_powercut.md
       - Pwsafe: procedures/pwsafe.md
       - RRS: procedures/rrs.md
-      - Redbrick-apt: procedures/redbrick-apt.md
+      - SSL: procedures/ssl.md
       - Severus Colocation: procedures/severuscolocation.md
       - Switch: procedures/switch.md
       - Ticketing: procedures/ticketing.md

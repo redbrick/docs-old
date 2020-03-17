@@ -7,11 +7,11 @@ This distribution contains other software in object code form:
 
 Graphviz
 Licensed under Eclipse Public License - v 1.0
-http://www.graphviz.org
+https://www.graphviz.org
 
 zlib
 Copyright (C) 1995-2013 Jean-loup Gailly and Mark Adler
-http://www.zlib.net/zlib_license.html
+https://www.zlib.net/zlib_license.html
 */
 (function(global) {
 var Module = function(Module) {
@@ -57,7 +57,7 @@ function Viz(src) {
   var i;
   
   for (i = 0; i < images.length; i++) {
-    files.push({ path: images[i].path, data: "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n<svg width=\"" + images[i].width + "\" height=\"" + images[i].height + "\"></svg>" });
+    files.push({ path: images[i].path, data: "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"https://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n<svg width=\"" + images[i].width + "\" height=\"" + images[i].height + "\"></svg>" });
   }
 
   if (format == "png-image-element") {

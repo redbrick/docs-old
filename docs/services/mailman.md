@@ -74,8 +74,8 @@ structure is changed. The options that match this apache config are:
   #-------------------------------------------------------------
   # If you change these, you have to configure your http server
   # accordingly (Alias and ScriptAlias directives in most httpds)
-  #DEFAULT_URL_PATTERN = 'http://%s/cgi-bin/mailman/'
-  DEFAULT_URL_PATTERN = 'http://%s/'
+  #DEFAULT_URL_PATTERN = 'https://%s/cgi-bin/mailman/'
+  DEFAULT_URL_PATTERN = 'https://%s/'
   PRIVATE_ARCHIVE_URL = '/private'
 
   # Images - Put redbrick_icon.ico in /usr/share/mailman/images!

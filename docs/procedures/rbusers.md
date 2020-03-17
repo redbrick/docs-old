@@ -1,10 +1,6 @@
 # RBUsers
 
-There are various versions of this floating around.
+Tool to show other Redbrick users on logged in currently and what there account
+type is.
 
-There's source for it in `/srv/admin/src`, but someone somewhere could possibly
-have a more recent version
-
-rbusers is available in both i386 and amd64 from [redbrick-apt](../redbrick-apt)
-
-Ideally someone should write a shiny python version of this
+Source is on [Github](https://github.com/redbrick/rbusers-python(

@@ -91,7 +91,7 @@ services:
     logging:
       driver: loki
       options:
-        loki-url: 'http://log.internal:3100/loki/api/v1/push'
+        loki-url: 'https://log.internal:3100/loki/api/v1/push'
 
   haste:
     build: .

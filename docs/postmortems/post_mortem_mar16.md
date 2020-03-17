@@ -16,7 +16,7 @@ Logs from admins discussing issue
 15:27 <zergless> ah wank
 16:08 <koffee> also, that array has a standby backup power supply.... that we've never plugged in?!
 16:11 <zergless> koffee: work remotely sure if you wanna head
-16:20 <koffee> I'm going to go read this: http://www.dell.com/downloads/global/products/pvaul/en/cxseries_initialconfig.pdf
+16:20 <koffee> I'm going to go read this: https://www.dell.com/downloads/global/products/pvaul/en/cxseries_initialconfig.pdf
 16:20 <koffee> and see if there's any way to access it.
 16:20 <koffee> it's currently connected into gi 0/44 on hadron and into fa 0/12 on a switch to which basementcat is also connected.
 16:21 <koffee> I need some way to get at the disk level management to ascertain what the issue is and get a replacement disk

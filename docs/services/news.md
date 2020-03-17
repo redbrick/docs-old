@@ -1,7 +1,7 @@
 # News
 
 Boards runs on a piece of software called inn2 (InterNetNews). Google turned up
-[this document](http://www.eyrie.org/~eagle/faqs/inn.html) about it. You
+[this document](https://www.eyrie.org/~eagle/faqs/inn.html) about it. You
 shouldn't really need to touch it anyway.
 
 ## Reinstalling news
@@ -20,7 +20,7 @@ These steps may require validation
 
 - Install inn2 (obviously enough)
 - Follow the instructions here
-  [here](http://www.eyrie.org/~eagle/faqs/inn.html#S6.4)
+  [here](https://www.eyrie.org/~eagle/faqs/inn.html#S6.4)
 - Note that you do not _need_ anything in `passwd.nntp`, as I was led to
   believe, we seemed to hit upon some sort of weird bug, as long as the old
   server is listed in `incoming.conf`.

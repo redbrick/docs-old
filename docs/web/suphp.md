@@ -14,8 +14,8 @@ Before you begin, and possibly break apache, you'll want the source of the
 currently installed version, and the build scripts. If this is still my own
 version, you can get them at:
 
-- [suphp_0.6.3-2redbrick1.tar.gz](http://www.redbrick.dcu.ie/~werdz/suphp_0.6.3-2redbrick1.tar.gz)
-- [suphp_0.6.3-2redbrick1.dsc](http://www.redbrick.dcu.ie/~werdz/suphp_0.6.3-2redbrick1.dsc)
+- [suphp_0.6.3-2redbrick1.tar.gz](https://www.redbrick.dcu.ie/~werdz/suphp_0.6.3-2redbrick1.tar.gz)
+- [suphp_0.6.3-2redbrick1.dsc](https://www.redbrick.dcu.ie/~werdz/suphp_0.6.3-2redbrick1.dsc)
 
 If apache is already broken, you have my permission to manually
 `cp ~werdz/public_html/suphp-0.6.3-2redbrick1.tar.gz`, etc :)
@@ -77,8 +77,8 @@ Reload apache. Cry over any errors you get for a while. Enjoy your new suPHP.
 
 ## References
 
-[ACCESS_CONF | RSRC_CONF](http://lists.marsching.com/pipermail/suphp/2005-June/000876.html)
+[ACCESS_CONF | RSRC_CONF](https://lists.marsching.com/pipermail/suphp/2005-June/000876.html)
 
-[Multi-docroot](http://lists.marsching.com/pipermail/suphp/2006-June/001301.html)
+[Multi-docroot](https://lists.marsching.com/pipermail/suphp/2006-June/001301.html)
 
 -werdz\\ 20/04/08

@@ -30,9 +30,9 @@ as the install is complete.
 
 2015-Ubuntu 14.04-These are now defunct.
 
-As of July 2009 most of the basic setup can be handled by the
-[redbrick packages](/procedures/redbrick-apt). For login servers, install
-redbrick-login-server, otherwise just install redbrick-server.
+As of July 2009 most of the basic setup can be handled by the redbrick packages.
+For login servers, install redbrick-login-server, otherwise just install
+redbrick-server.
 
 ### MOTD Amusement
 

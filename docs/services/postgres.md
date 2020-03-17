@@ -3,7 +3,7 @@
 - Install postgres (This bit should be easy, it's in apt repos)
 - Create data base (`initdb -D /var/db/postgres` (or other file))
 - Set up auth (we want to use ident same user. Details of this are
-  [here](http://www.postgresql.org/docs/8.3/interactive/auth-pg-hba-conf.html).
+  [here](https://www.postgresql.org/docs/8.3/interactive/auth-pg-hba-conf.html).
   We should need a rule something like
 
 ```text

@@ -2,16 +2,7 @@
 
 There are some packages backported to hardy from later debian/ubuntu because
 there wasn't one available or suitable in hardy. These packages are generally
-available from the [apt repo](/procedures/redbrick-apt).
-
-## bitlbee
-
-- **Version:** 1.2.7
-- **Source:** Rebuilt from Sid source deb.
-- **Built by:** receive
-- **Build date:** May 16th 2010
-- **Reason:** The version of bitlbee in hardy can't connect to either Yahoo or
-  MSN.
+available from the redbrick apt repo
 
 ## tmux
 

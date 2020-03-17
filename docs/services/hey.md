@@ -2,13 +2,11 @@
 
 ## Getting Hey
 
-All the source for hey is on in the c-hey account. Packages for i386 and amd64
-are available from [redbrick-apt](/procedures/redbrick-apt)
+All the source for hey is on in the c-hey account.
 
 ## Getting huh
 
-The source for huh is on [hg.redbrick](http://hg.redbrick.dcu.ie/huh/). Package
-for amd64 is available from [redbrick-apt](/procedures/redbrick-apt)
+The source for huh is on [github](https://github.com/redbrick/huh).
 
 ## Making huh actually work
 

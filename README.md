@@ -1,6 +1,6 @@
 # Docs
 
-[![Documentation Status](https://readthedocs.org/projects/redbrick/badge/?version=latest)](http://redbrick.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/redbrick/badge/?version=latest)](https://redbrick.readthedocs.io/en/latest/?badge=latest)
 [![Code Climate](https://codeclimate.com/github/redbrick/docs/badges/gpa.svg)](https://codeclimate.com/github/redbrick/docs)
 [![CircleCI](https://circleci.com/gh/redbrick/docs.svg?style=shield)](https://circleci.com/gh/redbrick/docs)
 

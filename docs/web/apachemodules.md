@@ -5,7 +5,7 @@
 First, modify `mod_suphp.c` to allow certain configuration directives from
 within the Apache configuration.
 
-[A usenet post](http://lists.marsching.com/pipermail/suphp/2005-June/000876.html)
+[A usenet post](https://lists.marsching.com/pipermail/suphp/2005-June/000876.html)
 explains:
 
 > Edit `src/apache/mod_suphp.c` and change line `252` so it reads

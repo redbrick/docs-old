@@ -82,7 +82,7 @@ Listen 127.0.0.1:80
 ```config
 <Plugin apache>
     <Instance "Machine_Name">
-        URL "http://localhost/server-status/?auto"
+        URL "https://localhost/server-status/?auto"
         Server "apache"
     </Instance>
 </Plugin>

@@ -1,6 +1,6 @@
 # Dell IP KVM Switch
 
-We have a [Dell 2161DS-2 IP KVM Switch](http://downloads.dell.com/published/pages/poweredge-2161ds.html).
+We have a [Dell 2161DS-2 IP KVM Switch](https://downloads.dell.com/published/pages/poweredge-2161ds.html).
 It is running the last released firmware. The login details are in the passwordsafe.
 At the time of writing its address is 192.168.0.240 although this might become 192.168.1.240 soon.
 
@@ -23,9 +23,9 @@ You can only inspect things from the web console, you can't view any servers.
 You need a proprietary tool from Dell to connect remotely. There are two versions available.
 
 - The latest version (v4) uses HTTP to connect to the remote screen. It works on Linux but has an iffy
-Java based viewer. Download it [here](http://downloads.dell.com/RACK%20SOLUTIONS/DELL_MULTI-DEVICE_A02_R270943.exe).
+Java based viewer. Download it [here](https://downloads.dell.com/RACK%20SOLUTIONS/DELL_MULTI-DEVICE_A02_R270943.exe).
 - The older version (v3) uses weird ports only to connect to the remote screen. It has no Linux support
-but works absolutely fine in Wine, which can be easier than the Linux install. Download it [here](http://downloads.dell.com/RACK%20SOLUTIONS/R132099.EXE)
+but works absolutely fine in Wine, which can be easier than the Linux install. Download it [here](https://downloads.dell.com/RACK%20SOLUTIONS/R132099.EXE)
 
 Installation depends on the version you download. For v4, download + extract it, and
 run the Linux/setup.bin file. Install somewhere like ~/.local/dell. To run it,

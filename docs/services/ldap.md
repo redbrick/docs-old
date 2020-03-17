@@ -23,7 +23,7 @@ automatically created and must be copied when setting up new hosts
 ## Redbrick Special Notes
 
 - The root user password is in the passwordsafe
-- The OID for most of the schema is [DCU's](http://www.oid-info.com/cgi-bin/display?oid=1.3.6.1.4.1.9736&submit=Display&action=display)
+- The OID for most of the schema is [DCU's](https://www.oid-info.com/cgi-bin/display?oid=1.3.6.1.4.1.9736&submit=Display&action=display)
 - The configs that exist for NixOS were mostly ported from our last
 LDAP server (Paphos) to maintain compatibility
 - At the time of writing, LDAP is not configured with TLS

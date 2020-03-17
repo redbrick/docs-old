@@ -1,6 +1,10 @@
 ---
-version: 2
+version: 2.1
+orbs:
+  md-sheriff: nubank/md-sheriff@0.0.4
+  eslint: arrai/eslint@1.3.0
 jobs:
+  "Lint Markdown": md-sheriff/run-lint
   build:
     docker:
       - image: 18fgsa/html-proofer
@@ -10,19 +14,22 @@ jobs:
     steps:
       - run: apk add --no-cache --virtual build-dependencies python3-dev git
       - checkout
-      - run: python3 -m pip install -r requirements.txt
+      - run: |
+          set -eo pipefail
+          python3 -m pip install --upgrade pip
+          python3 -m pip install -r requirements.txt
       - run:
           name: Test Build
-          command: mkdocs build -v
+          command: mkdocs build
       - run:
           name: Test Internal Links
           command: |
             set -eo pipefail
             htmlproofer \
-            --allow-hash-href \
-            --check-html \
-            --empty-alt-ignore \
-            --disable-external \
-            ~/docs/site
-      - store_test_results:
-          path: "/results.txt"
+              --allow-hash-href \
+              --check-html \
+              --check-img-http \
+              --disable-external \
+              --empty-alt-ignore \
+              --enforce-https \
+              ~/docs/site

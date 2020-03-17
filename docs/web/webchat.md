@@ -51,7 +51,7 @@ Upstart script /etc/init/webchat.conf
 # qwebirc
 #
 # Customised version of qwebirc powering Redbrick webchat
-# http://bitbucket.org/werdz/redbrick-qwebirc
+# https://bitbucket.org/werdz/redbrick-qwebirc
 
 #description     "webchat daemon"
 #author          "Andrew Martin `<werdz@redbrick.dcu.ie>`"

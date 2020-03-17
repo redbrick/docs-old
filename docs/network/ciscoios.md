@@ -28,7 +28,7 @@ Let's look at some information about the switch. Type `sh ver`:
 ```text
 hadron#sh ver
 Cisco IOS Software, C3560 Software (C3560-IPSERVICESK9-M), Version 12.2(50)SE3, RELEASE SOFTWARE (fc1)
-Technical Support: http://www.cisco.com/techsupport
+Technical Support: https://www.cisco.com/techsupport
 Copyright (c) 1986-2009 by Cisco Systems, Inc.
 Compiled Wed 22-Jul-09 06:41 by prod_rel_team
 Image text-base: 0x01000000, data-base: 0x02D00000
@@ -126,6 +126,6 @@ werdz@sprout:~$
 
 ## Resources
 
-- [Where I learned everything I know about IOS](http://eirik.sier.no/cisco-ios-cheat-sheet/).
+- [Where I learned everything I know about IOS](https://eirik.sier.no/cisco-ios-cheat-sheet/).
   Which isn't a lot.
-- [Some IOS commands](http://www.pantz.org/software/ios/ioscommands.html).
+- [Some IOS commands](https://www.pantz.org/software/ios/ioscommands.html).

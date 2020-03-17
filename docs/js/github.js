@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  var git = 'http://github.com/redbrick/docs/edit/master/docs'
+  var git = 'https://github.com/redbrick/docs/edit/master/docs'
   var t1 = window.location.pathname
   var url = null
   if (t1 === '/') {

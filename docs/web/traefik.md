@@ -8,7 +8,7 @@ Traefik is used for http traffic on all docker hosts rather then apache because
 - don't have to restart for config changes or addition or removal of services
 
 See [docker-services](/procedures/docker-service) to see how to configure and
-individual container. See [Traefik-docs](http://docs.traefik.io) for
+individual container. See [Traefik-docs](https://docs.traefik.io) for
 configuration specifics.
 
 - Traefik is configured to route all http traffik to https.
