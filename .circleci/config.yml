@@ -14,22 +14,12 @@ jobs:
     steps:
       - run: apk add --no-cache --virtual build-dependencies python3-dev git
       - checkout
-      - run: |
-          set -eo pipefail
-          python3 -m pip install --upgrade pip
-          python3 -m pip install -r requirements.txt
+      - run:
+          name: Install Dependencies
+          command: make circleci-dep
       - run:
           name: Test Build
-          command: mkdocs build
+          command: make build
       - run:
           name: Test Internal Links
-          command: |
-            set -eo pipefail
-            htmlproofer \
-              --allow-hash-href \
-              --check-html \
-              --check-img-http \
-              --disable-external \
-              --empty-alt-ignore \
-              --enforce-https \
-              ~/docs/site
+          command: make test
