@@ -1,6 +1,6 @@
 # Pastebin
 
-Redbrick currently uses m1cr0man's fork of [Privatebin](https://github.com/m1cr0man/PrivateBin) as a paste utility.
+Redbrick currently uses  [Privatebin](https://github.com/PrivateBin/PrivateBin) as a paste utility.
 - [Redbrick deployment](https://paste.redbrick.dcu.ie)
 
 ## Privatebin
