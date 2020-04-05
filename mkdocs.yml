@@ -62,7 +62,6 @@ nav:
       - Pwsafe: procedures/pwsafe.md
       - RRS: procedures/rrs.md
       - Redbrick-apt: procedures/redbrick-apt.md
-      - SSL: procedures/ssl.md
       - Severus Colocation: procedures/severuscolocation.md
       - Switch: procedures/switch.md
       - Ticketing: procedures/ticketing.md
@@ -88,10 +87,12 @@ nav:
       - Network Setup: network/networksetup.md
   - Postmortems:
       - March 2016: postmortems/post_mortem_mar16.md
+      - Template: postmortems/template.md
   - Web:
       - Apache Modules: web/apachemodules.md
       - Apache: web/apache.md
       - PubCookie: web/pubcookie.md
+      - SSL: web/ssl.md
       - SuPHP: web/suphp.md
       - Traefik: web/traefik.md
       - TechWeek: web/techweek.md
