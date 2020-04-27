@@ -6,6 +6,8 @@ MAKEFLAGS += --warn-undefined-variables
 MAKEFLAGS += --no-builtin-rules
 
 # You can set these variables from the command line.
+PYTHON          = python
+PROOFER         = htmlproofer
 BUILDDIR        ?= site
 MKDOCS          = mkdocs
 MKDOCSBUILDOPTS = --clean --strict
@@ -29,24 +31,17 @@ clean: ## clean repo
 	rm -rf $(BUILDDIR)
 
 dep: ## Install dependencies
-	python -m pip install --user -r requirements.txt
-
-circleci-dep:
-	python3 -m pip install --upgrade pip
-	python3 -m pip install -r requirements.txt
+	$(PYTHON) -m pip install --user -r requirements.txt
 
 test: site  ## Test documentation with htmlproofer
-	ifeq (, $(shell which htmlproofer))
-	$(error "No htmlproofer in $(PATH), consider doing `gem install html-proofer`")
-	endif
-	htmlproofer \
+	$(PROOFER) \
 		--allow-hash-href \
 		--check-html \
 		--check-img-http \
 		--disable-external \
 		--empty-alt-ignore \
 		--enforce-https \
-		site
+		$(BUILDIR)
 
 help: ## Display this help screen
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'

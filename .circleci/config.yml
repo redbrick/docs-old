@@ -7,19 +7,35 @@ jobs:
   "Lint Markdown": md-sheriff/run-lint
   build:
     docker:
-      - image: 18fgsa/html-proofer
+      - image: ruby:2.4-alpine
         environment:
           ENV: CI
     working_directory: ~/docs
     steps:
-      - run: apk add --no-cache --virtual build-dependencies python3-dev git
+      - run:
+          name: Setup ENV
+          command: >-
+            apk add --no-cache --virtual \
+              build-dependencies \
+              build-base \
+              libcurl \
+              libxml2-dev \
+              libxslt-dev \
+              bash \
+              git \
+              make \
+              python3-dev
       - checkout
       - run:
           name: Install Dependencies
-          command: make circleci-dep
+          command: |-
+            echo 'gem: --no-document' >> /etc/gemrc
+            gem install html-proofer
+            python3 -m pip install --upgrade pip
+            python3 -m pip install -r requirements.txt
       - run:
           name: Test Build
-          command: make build
+          command: make build PYTHON=python3
       - run:
           name: Test Internal Links
-          command: make test
+          command: make test PROOFER=htmlproofer
