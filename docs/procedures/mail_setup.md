@@ -5,136 +5,75 @@ you became an admin you've been getting a lot more mail from members wanting
 accounts renewed/logwatch telling you the status of the machines/Nigerian
 princes offering you vast sums of money. This comes with the territory,
 unfortunately. The following are config files that will allow you to manage
-admin emails within mutt.
-
-To make these configs work, you need to go to your `~/Maildir` and run
-`mdmake <mailbox_name>`, where mailbox_name is the name of each mailbox in the
-mailboxes line of the below `.muttrc`. e.g. `mdmake committee`
+admin emails within mutt or webmail.
 
 ```bash
 $ cat .muttrc
-  alias ealist Elected-Admins `<elected-admins@redbrick.dcu.ie>`
-  alias rbcmte Redbrick Committee `<committee@redbrick.dcu.ie>`
-  alias rbaccts Redbrick Accounts `<accounts@redbrick.dcu.ie>`
-  alias rbadmins Redbrick Admins `<admins@redbrick.dcu.ie>`
-
-  set reverse_name=yes
-  set from=gw@redbrick.dcu.ie
-
-  set folder="~/Maildir"
-  mailboxes =.inbox =.spam =.sent =.committee =.helpdesk =.admin.reports =.admin
+  ## General options
   set copy
-  set record=+.sent
+
+  ## Redbrick Settings
+  set imap_user     = `echo $USER@redbrick.dcu.ie`
+  set from          = "$imap_user"
+  set use_from      = yes
+  set ssl_use_sslv3 = yes
+  set folder        = "imaps://mail.redbrick.dcu.ie:993"
+  set smtp_url      = "smtp://$imap_user@mail.redbrick.dcu.ie:587"
+  set spoolfile     = +INBOX
+  mailboxes         = +INBOX
+  set record        = +Sent
+  set postponed     = +Drafts
+  set ssl_force_tls = yes
+  set ssl_starttls  = yes
 ```
 
 ```bash
-$ cat .procmailrc
-  # Fecked this config off of haus.
+$ cat .dovecot.sieve
 
-  USER=`<your username here>`
-  MAILDIR=$HOME/Maildir
-  SHELL=/usr/local/shells/zsh
-  LOGFILE=~/procmaillog
-  VERBOSE=ON
+require ["fileinto","regex","envelope","vacation"];
 
-  #dcu already scan spam, if they've marked it as spam, it's probably spam.
+if header :comparator "i;octet" :contains "X-Spam-Status" "Yes" {
+  fileinto ".spam/";
+}
 
-  :0:
+if header :regex :comparator "i;octet"  "(To|CC|Delivered-To|BCC|Sender)" ".*announce-redbrick@(.*)?redbrick.dcu.ie" {
+  fileinto ".announce/";
+}
 
-  * ^X-Spam-Status: Yes
-  .spam/
-
-  :0fw: spamassassin.lock
-
-  * < 256000
-  | spamassassin
-
-  :0: admin.reports.lock
-
-     *^(To|CC|Delivered-To|BCC): dirvish@(.*)?dirvish.org
-     .admin.reports/
-
-  :0: admin.reports.lock
-
-     *^(To|CC|Delivered-To|BCC): .*system-reports@(.*)?redbrick.dcu.ie
-     .admin.reports/
-
-  :0: admin.reports.lock
-
-     *^(To): .*owner@lists.redbrick.dcu.ie
-     .admin.reports/
-
-  #:0: admin-discuss.lock
-  #   *^(To|CC|Delivered-To|BCC|Sender): .*admin-discuss@(.*)?redbrick.dcu.ie
-  #   .admin-discuss/
-
-  #:0: admin-discuss.lock
-  #   *^(To|CC|Delivered-To|BCC|Sender): .*trainee-admins@(.*)?redbrick.dcu.ie
-  #   .admin-discuss/
-
-  :0: admin.reports.lock
-
-     *^(To|CC|Delivered-To|BCC|Sender): .*full-disclosure@(.*)?lists.grok.org.uk
-     .admin.reports/
-
-  :0: admin.reports.lock
-
-     *^(To): .*security-reports@redbrick.dcu.ie
-     .admin.reports/
-
-  :0: admin.reports.lock
-
-     *^(To): .*ubuntu-security-announce@lists.ubuntu.com
-     .admin.reports/
-
-  :0: admin.lock
-
-     *^(To|CC|Delivered-To|BCC|Sender): .*admin(.*)@(.*)?redbrick.dcu.ie
-     .admin/
-
-  :0: admin.lock
-
-     *^(To|CC|Delivered-To|BCC|Sender): .*root@(.*)?redbrick.dcu.ie
-     .admin/
-
-  :0: admin.lock
-
-     *^(To|CC|Delivered-To|BCC): .*abuse@(.*)?redbrick.dcu.ie
-     .admin/
-
-  :0: admin.lock
-
-     *^(To|CC|Delivered-To|BCC): .*webgroup@(.*)?redbrick.dcu.ie
-     .admin/
-
-  :0: admin.accounts.lock
-
-      *^(To|CC|Delivered-To|BCC): .*accounts@(.*)?redbrick.dcu.ie
-      .admin.accounts/
-
-  :0: admin.accounts.lock
-
-      *^(To|CC|Delivered-To|BCC): .*treasurer@(.*)?redbrick.dcu.ie
-      .admin.accouts/
-
-  :0: committee.lock
-
-     *^(To|CC|Delivered-To|BCC): .*committee@(.*)?redbrick.dcu.ie
-     .committee/
-
-  :0: admin.lock
-
-    *^(From): webmaster@(.*)?redbrick.dcu.ie
-    .admin/
-
-  # catch all replies for committee folder
-  :0: committee.lock
-
-     *^Subject: .*Re: .Committee.*
-     .committee/
-
-  :0:
-    .inbox/
+if anyof(
+  header :regex :comparator "i;octet"  "(To|CC|Delivered-To|BCC|Sender)" ".*admin(.*)@(.*)?redbrick.dcu.ie",
+  header :regex :comparator "i;octet"  "(To|CC|Delivered-To|BCC|Sender)" ".*root@(.*)?redbrick.dcu.ie",
+  header :regex :comparator "i;octet"  "(To|CC|Delivered-To|BCC)" ".*abuse@(.*)?redbrick.dcu.ie"
+) {
+  fileinto ".admin/";
+} elsif anyof(
+  header :regex :comparator "i;octet"  "(To|CC|Delivered-To|BCC)" "dirvish@(.*)?dirvish.org",
+  header :regex :comparator "i;octet"  "(To|CC|Delivered-To|BCC)" ".*system-reports@(.*)?redbrick.dcu.ie",
+  header :regex :comparator "i;octet"  "(To)" ".*owner@lists.redbrick.dcu.ie",
+  header :regex :comparator "i;octet"  "(To|CC|Delivered-To|BCC|Sender)" ".*full-disclosure@(.*)?lists.grok.org.uk",
+  header :regex :comparator "i;octet"  "(To)" ".*security-reports@redbrick.dcu.ie",
+  header :regex :comparator "i;octet"  "(To)" ".*ubuntu-security-announce@lists.ubuntu.com"
+) {
+  fileinto ".admin.reports/";
+} elsif header :regex :comparator "i;octet"  "(To|CC|Delivered-To|BCC|Sender)" ".*admin-discuss@(.*)?redbrick.dcu.ie" {
+  fileinto ".admin.discuss/";
+} elsif anyof(
+  header :regex :comparator "i;octet"  "(To|CC|Delivered-To|BCC)" ".*accounts@(.*)?redbrick.dcu.ie",
+  header :regex :comparator "i;octet"  "(To|CC|Delivered-To|BCC)" ".*treasurer@(.*)?redbrick.dcu.ie"
+) {
+  fileinto ".admin.accouts/";
+} elsif anyof(
+  header :regex :comparator "i;octet"  "(To|CC|Delivered-To|BCC)" ".*webgroup@(.*)?redbrick.dcu.ie",
+  header :regex :comparator "i;octet"  "(To|From)" "webmaster@(.*)?redbrick.dcu.ie"
+) {
+  fileinto ".admin.webmaster/";
+}
+if anyof(
+  header :regex :comparator "i;octet"  "(To|CC|Delivered-To|BCC)" ".*committee@(.*)?redbrick.dcu.ie",
+  header :regex :comparator "i;octet"  "Subject" ".*Re: .committee.*"
+) {
+  fileinto ".committee";
+}
 ```
 
 Refer to [The rbwiki article on mutt](https://wiki.redbrick.dcu.ie/mw/Mutt) if
