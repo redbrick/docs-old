@@ -21,6 +21,7 @@ with the following:
 
 - [Policies](procedures/policies)
 - [Abuse@redbrick, and the committee stance on it](procedures/abuse)
+- [Nixos - by god there's a lot of it](procedures/nixos)
 
 ---
 
