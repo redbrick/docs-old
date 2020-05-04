@@ -30,4 +30,8 @@ Nix is pretty small as an OS so setting yourself up a node, either as a home ser
 
 #### Getting set up to start deploying stuff
 
+The first step is to navigate to the ssh service config in the nix-config repo [here](https://github.com/redbrick/nix-configs/blob/master/services/ssh.nix)
 
+Make a pull request asking to add the **PUBLIC KEY** of your ssh key pait to the config file. The best thing to do is to copy the previous line and modify it to contain your details instead. At time of writing, it is expected for you to generate a `ssh-ed25519` key. This is subject to change with new cryprographic standards
+
+Once this is done, contact one of the currently set up users to pull and reload the given machines and you'll have access right away using the accompanying key.
