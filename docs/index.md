@@ -44,10 +44,7 @@ Day to day running of things.
 
 #### Mail
 
-- [Exim email setup](services/exim)
-- [Dovecot IMAP](services/dovecot)
-- [Mailing Lists (Mailman)](services/mailman)
-- [Mail setup for mutt](procedures/mail_setup)
+- [Mail docs index](mail)
 
 #### NNTP
 
