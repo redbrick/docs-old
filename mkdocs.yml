@@ -40,6 +40,7 @@ nav:
       - Dovecot: mail/dovecot.md
       - Rspamd: mail/rspamd.md
       - Mailman: mail/mailman.md
+      - Webmail: mail/webmail.md
   - Monitoring:
       - Grafana & Prometheus: monitoring/index.md
       - collectd: monitoring/collectd.md
