@@ -121,3 +121,9 @@ If not regenerate that file with this command (taken from runbook above):
 ```bash
 cd /var/lib/mailman && sudo -u mailman mailman aliases && systemctl restart postfix
 ```
+
+#### Log spam about failed tasks
+
+Log into the [Django admin page](https://lists.redbrick.dcu.ie/admin/django_q/ormq/)
+and clear all the queued tasks. Then ensure that the site domain matches
+the email domain.

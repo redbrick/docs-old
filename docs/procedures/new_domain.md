@@ -23,3 +23,6 @@ Do these things before running `nixos-rebuild switch`
 - Remove `/var/lib/acme/$olddomain`
 - Run `systemctl start acme-$newdomain.service`
 - Restart things that depend on certs (httpd, postfix, dovecot, etc)
+- Go to the [Mailman Django admin page](https://lists.redbricktest.cf/admin/)
+ and update the domain name in sites, and clear all queued tasks.
+
