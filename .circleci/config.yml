@@ -8,7 +8,7 @@ jobs:
           ENV: CI
     working_directory: ~/docs
     steps:
-      - run: apk add --no-cache --virtual build-dependencies python3-dev git
+      - run: apk add --no-cache --virtual build-dependencies python3-dev git gcc musl-dev
       - checkout
       - run: python3 -m pip install -r requirements.txt
       - run:
