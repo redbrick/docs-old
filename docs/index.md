@@ -42,10 +42,6 @@ Day to day running of things.
 
 - [Current NFS setup](services/nfs)
 
-#### Mail
-
-- [Mail docs index](mail)
-
 #### NNTP
 
 - [Setting up a new board](procedures/newboard)
@@ -104,10 +100,11 @@ After each emergency remember to write a postmortem!
 - [Techweek](web/techweek)
 - [Website](web/website)
 
-#### Metharme - Web Applications
+#### Hardcase - Web Applications
 
 - [Web Server](web/apache)
 - [IceCast](services/icecast2)
+- [Mail docs index](mail)
 
 #### halfpint - Admin Bastion
 

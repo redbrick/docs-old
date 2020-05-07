@@ -58,6 +58,7 @@ nav:
       - Library Migration: procedures/library_migration.md
       - Mail Setup: procedures/mail_setup.md
       - New Installs: procedures/newinstalls.md
+      - New board: procedures/newboard.md
       - New Domain: procedures/new_domain.md
       - News Overview Fix: procedures/newsoverviewfix.md
       - Passwd: procedures/passwd.md
