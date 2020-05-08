@@ -42,13 +42,6 @@ Day to day running of things.
 
 - [Current NFS setup](services/nfs)
 
-#### Mail
-
-- [Exim email setup](services/exim)
-- [Dovecot IMAP](services/dovecot)
-- [Mailing Lists (Mailman)](services/mailman)
-- [Mail setup for mutt](procedures/mail_setup)
-
 #### NNTP
 
 - [Setting up a new board](procedures/newboard)
@@ -107,10 +100,11 @@ After each emergency remember to write a postmortem!
 - [Techweek](web/techweek)
 - [Website](web/website)
 
-#### Metharme - Web Applications
+#### Hardcase - Web Applications
 
 - [Web Server](web/apache)
 - [IceCast](services/icecast2)
+- [Mail docs index](mail)
 
 #### halfpint - Admin Bastion
 

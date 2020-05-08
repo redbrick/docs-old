@@ -20,15 +20,12 @@ nav:
       - Backuppc: services/backuppc.md
       - Bind9: services/bind9.md
       - Bitlbee: services/bitlbee.md
-      - Dovecot: services/dovecot.md
-      - Exim: services/exim.md
       - Git: services/git.md
       - Hackmd: services/hackmd.md
       - Hey: services/hey.md
       - IRC: services/irc.md
       - Icecast2: services/icecast2.md
       - LDAP: services/ldap.md
-      - Mailman: services/mailman.md
       - Mastodon: services/mastodon.md
       - MySQL: services/mysql.md
       - NFS: services/nfs.md
@@ -37,6 +34,13 @@ nav:
       - Postgres: services/postgres.md
       - Tunnel.redbrick.dcu.ie: services/tunnel.redbrick.dcu.ie.md
       - Unified MOTD: services/unifiedmotd.md
+  - Mail:
+      - General: mail/index.md
+      - Postfix: mail/postfix.md
+      - Dovecot: mail/dovecot.md
+      - Rspamd: mail/rspamd.md
+      - Mailman: mail/mailman.md
+      - Webmail: mail/webmail.md
   - Monitoring:
       - Grafana & Prometheus: monitoring/index.md
       - collectd: monitoring/collectd.md
@@ -55,6 +59,7 @@ nav:
       - Mail Setup: procedures/mail_setup.md
       - New Installs: procedures/newinstalls.md
       - New board: procedures/newboard.md
+      - New Domain: procedures/new_domain.md
       - News Overview Fix: procedures/newsoverviewfix.md
       - Passwd: procedures/passwd.md
       - Policies: procedures/policies.md
