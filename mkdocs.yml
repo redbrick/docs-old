@@ -15,7 +15,6 @@ nav:
   - Home: index.md
   - Plans:
       - Project Ideas: plans/project-ideas.md
-      - TODO-2017: plans/TODO-2017.md
   - Services:
       - Backuppc: services/backuppc.md
       - Bind9: services/bind9.md

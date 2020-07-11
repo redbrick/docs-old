@@ -3,7 +3,7 @@
 - Full man page for collectd with full descriptions and configs:
     - ![Collectd.conf(5)](https://collectd.org/documentation/manpages/collectd.conf.5.shtml)
 - Collectd is installed on ubuntu and bsd machines
-    - Metrics are written to `zeus.internal` and then scrped by prometheus
+    - Metrics are written to `zeus.internal` and then scraped by prometheus
 
 ## How to install collectd
 
