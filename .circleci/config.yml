@@ -4,7 +4,7 @@ jobs:
   build:
     docker:
       - image: circleci/python:3
-    working_directory: ~/docs
+    working_directory: /tmp
     steps:
       - checkout
       - run: python3 -m pip install -r requirements.txt
@@ -12,7 +12,7 @@ jobs:
           name: Build site
           command: mkdocs build -v
       - persist_to_workspace:
-          root: /tmp/
+          root: .
           paths:
             - site
   validate:
