@@ -59,6 +59,7 @@ Day to day running of things.
 - [tunnel.redbrick.dcu.ie](services/tunnel.redbrick.dcu.ie.md)
 - [Switch Setup](procedures/switch)
 - [JunOS Configuration](network/junos)
+- [iDRAC Network Setup](procedures/idrac-setup)
 
 #### WWW
 
