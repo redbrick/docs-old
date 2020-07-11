@@ -1,7 +1,7 @@
 # Docs
 
 [![Documentation Status](https://readthedocs.org/projects/redbrick/badge/?version=latest)](http://redbrick.readthedocs.io/en/latest/?badge=latest)
-[![CircleCI](https://circleci.com/gh/redbrick/docs.svg?style=shield)](https://circleci.com/gh/redbrick/docs)
+![Build and Validate](https://github.com/redbrick/docs/workflows/Build%20and%20Validate/badge.svg)
 
 Documentation for [Redbrick](https://redbrick.dcu.ie)
 
