@@ -3,44 +3,36 @@
 The Code is hosted on github in the
 [redbrick/react-site](https://github.com/redbrick/react-site) repository
 
-The site is comprised of static files generated using the ReactJS framework.
+The site is comprised of static files generated using the ReactJS framework
+Gatsby.
 
 ## Google Sheet
 
 The google sheet controlling the information can be found
 [here](https://docs.google.com/spreadsheets/d/15pFYVzuFPK4HFOpnnFHuoTNh3L3iThBCpoVMQzT5RlM/edit?usp=sharing).
 
-## Data Endpoint
-
-The events, images, and slides get pulled from the root directory of 'fraz'.
-This file gets updated every 24 hours at 00:00 from the google sheet. The google
-sheet can only be edited by cmt members.
+Gatsby uses the google sheet as a datasource pulling data every time the site is
+built.
 
 ### Requirements
 
 - **Node** : Download [Node](https://nodejs.org/download/)
 - Slight insanity
 - general understanding of ReactJS
+- google api key. [refer to
+  here](https://www.gatsbyjs.org/packages/gatsby-source-google-spreadsheets/#step-2-set-up-sheetspermissions)
 
 ## Deployment
 
-1. git clone the repo.
-2. run npm install.
-3. ensure the "homepage" in package.json is set correctly.
-4. ensure this.dataURL is set to pull information from the correct JSON file.
-5. run npm build.
-6. ensure there are no errors in the output.
-7. copy &amp; paste the .htaccess file located in the apache folder into the
-   build folder.
-8. copy &amp; paste the static files in the build folder that has been created.
-   This is your site now :)
+Deployment is handled by a systemd service in nixos. This service will rebuild
+the site at 00:00 everyday to ensure latest details from the google sheet.
 
-- Ensure the JSON file this.dataURL is set to pull from is being regularly
-  updated (~ once day)
+See
+[nix-configs](https://github.com/redbrick/nix-configs/blob/master/services/httpd/react-site.nix)
+for details.
 
-- As of 19/11/2019, the release of this site, the data.json file can be pulled
-  from fraz.redbrick.dcu.ie/data.json
-    - This file is updated by a cron job running at 00:00 everyday. :)
+To update the site the version of the package in the config will need to
+increased.
 
 ## I want to make changes
 
@@ -49,35 +41,21 @@ So you want to make changes? okay.
 ### Installation
 
 1. git clone the repo
-2. run npm install in the root directory
-3. start a hotreload server with npm start
+2. run `yarn` in the root directory
+3. start a hot reload server with `yarn start`
 4. make changes and watch the magical hot reload take action live!
 
-Note: the main code is located in /src
+Note: the main code is located in `/src`
 
 ## Common Deployment Issues
 
-### .htaccess
+### Virtual Router
 
-- Since react uses a virtual router all requests to the site should redirect to
-  the index.
-- The easiest way of doing this if running apache is to drop a .htaccess file
-  into the root folder.
-- Ensure the permissions of this is readable.
+Since react uses a virtual router all requests to the site should redirect to
+the index. This is handled by Apache config in
+[nix-config](https://github.com/redbrick/nix-configs/blob/master/services/httpd/default.nix#L40)
 
-```.htaccess
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase /
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME} !-l
-  RewriteRule . /index.html [L]
-</IfModule>
-```
+### Permissions
 
-## Old Site
-
-The old redbrick static site is still available on github under
-[redbrick/static-site](https://github.com/redbrick/static-site)
+Ensure the permissions of the generate files are readable. All files should be
+world readable.
