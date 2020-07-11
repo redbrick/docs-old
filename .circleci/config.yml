@@ -4,7 +4,7 @@ jobs:
   build:
     docker:
       - image: circleci/python:3
-    working_directory: /tmp
+    working_directory: /tmp/docs
     steps:
       - checkout
       - run: python3 -m pip install -r requirements.txt
@@ -29,6 +29,6 @@ jobs:
             --check-html \
             --empty-alt-ignore \
             --disable-external \
-            /tmp/site
+            /tmp/docs/site
       - store_test_results:
           path: "/results.txt"
