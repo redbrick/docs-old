@@ -35,3 +35,9 @@ docker-compose run --rm test
 ```
 
 This will test the docs build and if there are any dead links in them
+
+To lint the Markdown locally, use this command (downloads very fast):
+
+```bash
+docker run --rm -v $(pwd):/docs ruby:2-alpine sh -c 'gem install mdl && mdl /docs/docs/ -s /docs/.markdown.style.rb'
+```
