@@ -55,14 +55,6 @@ each of the new committee members.
 
 ### IRC
 
-#### #rbcommittee
-
-Add each user to the `#rbcommittee` access list, with an access level of `40`.
-
-```text
-/msg chanserv access #rbcommittee add *!$new_committee_member@redbrick.dcu.ie 40
-```
-
 #### #lobby
 
 Add each user to the #lobby access list, with a level of `10` (or `40` for
@@ -71,8 +63,6 @@ admins).
 ```text
 /msg chanserv access #lobby add *!$new_committee_member@redbrick.dcu.ie 10
 ```
-
-Also remove each outgoing member from both lists.
 
 ### Wiki
 
@@ -96,7 +86,7 @@ $ ldapmodify -D cn=root,ou=ldap,o=redbrick -x -y /etc/ldap.secret
 
 Add the webmaster to the webmaster mailing list
 (webmaster@lists.redbrick.dcu.ie) on
-[lists](http://lists.redbrick.dcu.ie/mailman/admin/webmaster/)
+[lists](https://lists.redbrick.dcu.ie/postorius/lists/webmaster.lists.redbrick.dcu.ie)
 
 ### Helpdesk
 
@@ -132,7 +122,3 @@ $ ldapmodify -D cn=root,ou=ldap,o=redbrick -x -y /etc/ldap.secret
   memberUid: $new_admin_member3**
   modifying entry "cn=root,ou=groups,o=redbrick"
 ```
-
-- Give each new admin a local account (in `/etc/passwd`) on each machine
-
--Atlas - 12 Apr 07
