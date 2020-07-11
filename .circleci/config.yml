@@ -3,17 +3,26 @@ version: 2
 jobs:
   build:
     docker:
-      - image: 18fgsa/html-proofer
-        environment:
-          ENV: CI
-    working_directory: ~/docs
+      - image: circleci/python:3
+    working_directory: /tmp/docs
     steps:
-      - run: apk add --no-cache --virtual build-dependencies python3-dev git
       - checkout
       - run: python3 -m pip install -r requirements.txt
       - run:
-          name: Test Build
+          name: Build site
           command: mkdocs build -v
+      - persist_to_workspace:
+          root: /tmp/docs
+          paths:
+            - site
+  validate:
+    docker:
+      - image: circleci/ruby:2
+    working_directory: /tmp/docs
+    steps:
+      - run: gem install html-proofer
+      - attach_workspace:
+          at: /tmp/docs
       - run:
           name: Test Internal Links
           command: |
@@ -23,6 +32,12 @@ jobs:
             --check-html \
             --empty-alt-ignore \
             --disable-external \
-            ~/docs/site
-      - store_test_results:
-          path: "/results.txt"
+            ./site
+workflows:
+  version: 2
+  build_and_validate:
+    jobs:
+      - build
+      - validate:
+          requires:
+            - build
