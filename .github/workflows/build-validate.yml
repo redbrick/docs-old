@@ -13,11 +13,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Run markdownlint (mdl)
-      uses: bewuethr/mdl-action@v1.0.12
-      with:
-        style-file: .markdown.style.rb
     - name: Set up Python 3
       uses: actions/setup-python@v2
       with:
@@ -26,12 +21,15 @@ jobs:
       uses: ruby/setup-ruby@v1.39.0
       with:
         ruby-version: ruby
+    - uses: actions/checkout@v2
     - name: Install dependencies
       run: |
-        gem install html-proofer &
+        gem install html-proofer mdl &
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         wait
+    - name: Run markdownlint (mdl)
+      run: mdl .
     - name: Build site
       run: mkdocs build -s -v
     - name: Validate site's HTML
