@@ -204,17 +204,18 @@ wildcard intermediate SHA1 CA from
 
 - Copy the files to the relevant places in the ssl folder
 - Test the changes
-  - Apache: `apache2ctl configtest`
-  - Dovecot: `doveconf | grep ssl`
+    - Apache: `apache2ctl configtest`
+    - Dovecot: `doveconf | grep ssl`
 - Apply the changes
-  - Apache: `apache2ctl restart`
-  - Dovecot: `doveadm reload`
+    - Apache: `apache2ctl restart`
+    - Dovecot: `doveadm reload`
 - Validate the changes
-  - Apache:
-    [here](https://www.thesslstore.com/ssltools/ssl-checker.php?hostname=https://www.redbrick.dcu.ie#results)
-    (make sure to test domains served by each apache)
-  - Dovecot:
-    `openssl s_client -CApath /etc/ssl/certs/ -connect 136.206.15.58:993 2>/dev/null | grep -ie 'verify return code' -e rapidssl`
+    - Apache:
+      [here](https://www.thesslstore.com/ssltools/ssl-checker.php?hostname=https://www.redbrick.dcu.ie#results)
+      (make sure to test domains served by each apache)
+    - Dovecot:
+      `openssl s_client -CApath /etc/ssl/certs/ -connect 136.206.15.58:993 2>/dev/null`
+      ` | grep -ie 'verify return code' -e rapidssl`
 - Delete the previous year's backup folder(s) (BE CAREFUL NOT TO DELETE YOUR OWN
   ONE)
 

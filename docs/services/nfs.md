@@ -7,7 +7,7 @@ which in turn serves `/home`, `/webtree`, and some other critical folders.
 
 - NFS is deployed with Nix on [Icarus](/hardware/daedalus_icarus)
 - It is backed onto the Powervault MD1200, with all its disk passed through
-single-drive RAID 0's to allow for the setup of ZFS:
+  single-drive RAID 0's to allow for the setup of ZFS:
     - 1 mirror of 2x 500gb drives
     - 1 mirror of 2x 750gb drives
     - 1 mirror of 2x 1tb drives
@@ -19,10 +19,10 @@ single-drive RAID 0's to allow for the setup of ZFS:
 ## Redbrick Special Notes
 
 - On each machine, `/storage` is where NFS is mounted, but `/home` and
-`/webtree` are symlinks into there.
+  `/webtree` are symlinks into there.
 - There are 2 scripts used to control quotas, detailed below
 - This is supposed to backup to [Albus](/hardware/albus) using
-[backuppc](/services/backuppc), but it's broken at the moment
+  [backuppc](/services/backuppc), but it's broken at the moment
 
 ## `zfsquota` and `zfsquotaquery`
 

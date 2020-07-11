@@ -47,10 +47,10 @@ EOF
 # Used by mailman-web
 cat > /var/secrets/mailman.json << EOF
 {
-	"db_user": "mailman",
-	"db_password": "mailman_psql_pwd",
-	"email_user": "mailmgr@redbrick.dcu.ie",
-	"email_password": "mailmgrpwd"
+  "db_user": "mailman",
+  "db_password": "mailman_psql_pwd",
+  "email_user": "mailmgr@redbrick.dcu.ie",
+  "email_password": "mailmgrpwd"
 }
 EOF
 

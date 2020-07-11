@@ -9,7 +9,6 @@ work. Ever. For anything).
 
 ## Current stuff
 
-- [Current TODO list](plans/TODO-2017)
 - [Suggested Ideas](plans/project-ideas)
 
 ---
