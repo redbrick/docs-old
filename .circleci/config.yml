@@ -20,6 +20,8 @@ jobs:
       - image: circleci/ruby:2
     steps:
       - run: gem install html-proofer
+      - attach_workspace:
+          at: /tmp/docs
       - run:
           name: Test Internal Links
           command: |
