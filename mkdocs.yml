@@ -98,7 +98,6 @@ nav:
   - Web:
       - Apache: web/apache.md
       - SSL: web/ssl.md
-      - SuPHP: web/suphp.md
       - Traefik: web/traefik.md
       - TechWeek: web/techweek.md
       - Webchat: web/webchat.md

@@ -1,29 +1,29 @@
 # Collectd
 
 - Full man page for collectd with full descriptions and configs:
-  - ![Collectd.conf(5)](https://collectd.org/documentation/manpages/collectd.conf.5.shtml)
+    - ![Collectd.conf(5)](https://collectd.org/documentation/manpages/collectd.conf.5.shtml)
 - Collectd is installed on ubuntu and bsd machines
-  - Metrics are written to `zeus.internal` and then scrped by prometheus
+    - Metrics are written to `zeus.internal` and then scrped by prometheus
 
 ## How to install collectd
 
 ### Ubuntu Systems
 
 ```shell
-$ apt-get install collectd
+apt-get install collectd
 ```
 
 ### FreeBSD Port
 
 ```shell
-$ pkg_add -r collectd
+pkg_add -r collectd
 ```
 
 ##### To install the port (source package)
 
 ```shell
-$ cd /usr/ports/net-mgmt/collectd
-$ make clean install
+cd /usr/ports/net-mgmt/collectd
+make clean install
 ```
 
 ## How to configure collectd
@@ -68,7 +68,7 @@ ExtendedStatus on
 ```
 
 - We also need to add this to the `/etc/apache2/ports.conf`
-  - **This may break things in /etc/apache2/sites-enabled/**
+    - **This may break things in /etc/apache2/sites-enabled/**
 
 ```config
 # mod_status

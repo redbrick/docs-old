@@ -33,7 +33,10 @@ To update the list of users in apache ssh to the apache server and run
 
 ```bash
 cd services/httpd
-ldapsearch -b o=redbrick -h ldap.internal -xLLL objectClass=posixAccount uid homeDirectory gidNumber | python3 ldap2nix.py /storage/webtree/ > users.nix
+ldapsearch \
+    -b o=redbrick -h ldap.internal -xLLL \
+    objectClass=posixAccount uid homeDirectory gidNumber \
+| python3 ldap2nix.py /storage/webtree/ > users.nix
 ```
 
 It will query ldap for a list of all users, clubs and societies and create the
@@ -42,7 +45,8 @@ users.nix that will be used in nixos rebuild.
 Then generate the preliminary certs for every domain so that httpd can start:
 
 ```bash
-# List all acme-selfsigned-* services and put them in a txt file. Do this with `systemctl status acme-selfsigned-<tab>`
+# List all acme-selfsigned-* services and put them in a txt file.
+# Do this with `systemctl status acme-selfsigned-<tab>`
 cat selfsigned-svcs.txt | xargs systemctl start
 ```
 
@@ -51,6 +55,9 @@ to not get rate limited
 
 ```bash
 cd /var/lib/acme
-for cert in *; do journalctl -fu acme-$cert.service & systemctl start acme-$cert.service && kill $!; done
+for cert in *; do
+    journalctl -fu acme-$cert.service &
+    systemctl start acme-$cert.service && kill $!
+done
 systemctl reload httpd
 ```

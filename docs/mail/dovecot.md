@@ -1,6 +1,6 @@
 # Dovecot
 
-<img src="https://www.dovecot.org/typo3conf/ext/dvc_content/Resources/Public/Images/dovecot_logo_vector.svg" alt="dovecot" width="150" />
+<img src="../../img/dovecot_logo_vector.svg" alt="dovecot" width="150" />
 
 ## Runbook
 

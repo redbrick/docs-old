@@ -11,13 +11,13 @@ and distinguished names work.
 
 - OpenLDAP is deployed with Nix to Daedalus and Icarus
 - Daedalus is the master, Icarus is slaved to it and can
-be used as a read only failover
+  be used as a read only failover
 - `ldap.internal` and `ldap2.internal` are slaved to Daedalus +
-Icarus respectively
+  Icarus respectively
 - Both servers store their data in `/var/db/openldap`
 - The ldap.secret, which should **ALWAYS** have permissions `400`,
-and owned by the openldap user, is stored in `/var/secrets`. It is not
-automatically created and must be copied when setting up new hosts
+  and owned by the openldap user, is stored in `/var/secrets`. It is not
+  automatically created and must be copied when setting up new hosts
 - `rb-ldap` and `useradm` are wrappers around LDAP that are custom built
 
 ## Redbrick Special Notes
@@ -25,13 +25,13 @@ automatically created and must be copied when setting up new hosts
 - The root user password is in the passwordsafe
 - The OID for most of the schema is [DCU's](http://www.oid-info.com/cgi-bin/display?oid=1.3.6.1.4.1.9736&submit=Display&action=display)
 - The configs that exist for NixOS were mostly ported from our last
-LDAP server (Paphos) to maintain compatibility
+  LDAP server (Paphos) to maintain compatibility
 - At the time of writing, LDAP is not configured with TLS
 - There are 2 scripts to manage quotas on /storage that run on
-the server serving NFS (`zfsquota` and `zfsquotaquery`). They are
-covered under the NFS documentation.
+  the server serving NFS (`zfsquota` and `zfsquotaquery`). They are
+  covered under the NFS documentation.
 - There's a user in ldap called testing, for testing.
-The password is in pwsafe.
+  The password is in pwsafe.
 
 ## Operation
 

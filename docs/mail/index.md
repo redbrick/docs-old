@@ -41,5 +41,5 @@ See the other pages under this section for service docs.
 
 ## Architecture
 
-<img src="/img/mail.svg" alt="architecture" width="800" />
+<img src="../img/mail.svg" alt="architecture" width="800" />
 

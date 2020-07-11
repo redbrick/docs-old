@@ -2,7 +2,7 @@
 
 - Main mysql runs on morpheus (mysql.internal, 192.168.0.76).
 - There are mysql slaves on thunder and severus, which used to
-be backed up by dirvish up nightly.
+  be backed up by dirvish up nightly.
 
 ## Moving Mysql
 
@@ -76,10 +76,14 @@ master.
 - If this wasn't previously a slave server, set server-id in my.cnf, and
   restart. This server id must be unique.
 - Login to the slave mysql as root
-- `mysql> stop slave;`
-- `mysql> change master to master_host='mysql.internal', master_user='replication', master_password='passsword', master_log_file='mysql-bin.xxxxxx', master_log_pos=1234567;`
-- `mysql> start slave;`
-- `mysql> show slave status\G`
+
+```bash
+mysql> stop slave;
+mysql> change master to master_host='mysql.internal', master_user='replication', master_password='passsword', master_log_file='mysql-bin.xxxxxx', master_log_pos=1234567;
+mysql> start slave;
+mysql> show slave status\G
+```
+
 - Hopefully the status output will look normal. If it doesn't, cry.
 
 ### Step 4: Backup user
@@ -88,7 +92,8 @@ master.
   operate correctly. The username and password are specified in
   `/etc/mysql/backup.conf`. If the db was copied from another slave you can
   probably skip this step, otherwise it needs to be done now.
-- `mysql > grant select, reload, lock tables, show databases, show view, replication client on *.* to 'backup'@'localhost' identified by 'the_password'`
+- `mysql > grant select, reload, lock tables, show databases, show view,`
+  ` replication client on *.* to 'backup'@'localhost' identified by 'the_password'`
 
 #### Notes
 

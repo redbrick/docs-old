@@ -11,10 +11,10 @@ Redbrick uses [Gitea](https://gitea.io/en-US/) a community driven fork of
 
 - Gitea and its database are deployed to Hardcase which runs NixOS
 - The actual repositories are stored in `/zroot/git`, and most
-other data is stored in `/var/lib/gitea`
+  other data is stored in `/var/lib/gitea`
 - The `SECRET_KEY` and `INTERNAL_TOKEN_URI` are stored in `/var/secrets`.
-They are not automatically created and must be copied when setting up new hosts.
-Permissions on the gitea_token.secret must be 740 and owned by git:gitea
+  They are not automatically created and must be copied when setting up new hosts.
+  Permissions on the gitea_token.secret must be 740 and owned by git:gitea
 - Make sure that the gitea_token.secret does NOT have a newline character in it
 
 ## Redbrick Special Notes

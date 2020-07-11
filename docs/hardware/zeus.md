@@ -25,7 +25,7 @@
 - [monitoring](/monitoring)
 - compose-status
 - docs
-- email generator 
+- email generator
 - rb-ldap
 - wetty
 - netbooter

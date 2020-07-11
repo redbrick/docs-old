@@ -22,11 +22,12 @@ jobs:
     - name: Install dependencies
       run: |
         gem install html-proofer mdl &
-        python -m pip install --upgrade pip
+        python -m pip install --upgrade pip setuptools
+        python -m pip install wheel
         pip install -r requirements.txt
         wait
     - name: Run markdownlint (mdl)
-      run: mdl .
+      run: mdl -s .markdown.style.rb docs/
     - name: Build site
       run: mkdocs build -s -v
     - name: Validate site's HTML

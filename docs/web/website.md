@@ -40,7 +40,7 @@ sheet can only be edited by cmt members.
 
 - As of 19/11/2019, the release of this site, the data.json file can be pulled
   from fraz.redbrick.dcu.ie/data.json
-  - This file is updated by a cron job running at 00:00 everyday. :)
+    - This file is updated by a cron job running at 00:00 everyday. :)
 
 ## I want to make changes
 
