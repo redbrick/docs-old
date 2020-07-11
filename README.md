@@ -1,7 +1,7 @@
 # Docs
 
-[![Documentation Status](https://readthedocs.org/projects/redbrick/badge/?version=latest)](http://redbrick.readthedocs.io/en/latest/?badge=latest)
-![Build and Validate](https://github.com/redbrick/docs/workflows/Build%20and%20Validate/badge.svg)
+[![Documentation Status](https://readthedocs.org/projects/redbrick/badge/?version=latest)](http://redbrick.readthedocs.io/)
+[![Build and Validate](https://github.com/redbrick/docs/workflows/Build%20and%20Validate/badge.svg)](https://github.com/redbrick/docs/actions?query=workflow%3A%22Build+and+Validate%22)
 
 Documentation for [Redbrick](https://redbrick.dcu.ie)
 
