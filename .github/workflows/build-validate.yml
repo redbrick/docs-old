@@ -19,6 +19,8 @@ jobs:
         python-version: 3
     - name: Setup Ruby, JRuby and TruffleRuby
       uses: ruby/setup-ruby@v1.39.0
+      with:
+        ruby-version: ruby
     - uses: actions/checkout@v2
     - name: Install dependencies
       run: |
