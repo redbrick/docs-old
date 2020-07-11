@@ -14,7 +14,7 @@ jobs:
             mkdocs build -v
             ls -al
       - persist_to_workspace:
-          root: .
+          root: /tmp/docs
           paths:
             - site
   validate:
@@ -42,4 +42,6 @@ workflows:
   build_and_validate:
     jobs:
       - build
-      - validate
+      - validate:
+          requires:
+            - build
