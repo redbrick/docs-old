@@ -78,7 +78,6 @@ mkdir -p /mnt/{boot,nix}
 mount -t zfs zroot/nixos/store /mnt/nix
 mount /dev/sda1 /mnt/boot
 swapon /dev/sda2
-nixos-generate-config --root /mnt
 export http_proxy="http://proxy.internal:3128/"
 export https_proxy="$http_proxy"
 export HTTP_PROXY="$http_proxy"
@@ -86,6 +85,18 @@ export HTTPs_PROXY="$http_proxy"
 export CURL_NIX_FLAGS="-x $http_proxy"
 # Here you would clone your git repo to /mnt/etc/nixos and set system config
 # if you have a repo
+nixos-generate-config --root /mnt
+cd /mnt/etc/nixos
+mv hardware-configuration.nix ~/
+rm configuration.nix
+git clone https://github.com/redbrick/nix-configs.git .
+# Set the hostname
+export HOSTNAME=mynewhost
+mkdir hosts/$HOSTNAME/
+cp hosts/motherlode/configuration.nix hosts/$HOSTNAME/
+# Edit the above file, set IP and remove unwanted services
+mv ~/hardware-configuration.nix hosts/$HOSTNAME/
+# Make sure the above file looks correct
 nixos-install
 # RECORD THE NEW ROOT PASSWORD IN PASSWORDSAFE
 swapoff /dev/sda2
