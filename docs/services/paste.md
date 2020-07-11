@@ -1,18 +1,11 @@
 # Pastebin
 
-Redbrick uses [hastebin](https://github.com/seejohnrun/haste-server) for pastes
+Redbrick currently uses  [Privatebin](https://github.com/PrivateBin/PrivateBin) as a paste utility.
 - [Redbrick deployment](https://paste.redbrick.dcu.ie)
 
-## Hastebin
+## Privatebin
 
-The hastebin instance is run in docker on zeus and its configuration file is the
-`config.js` file found in `/etc/docker-compose/services/hastebin`
+The Privatebin instance is run as a serivce on Hardcase and its package configuration file can be found [here](https://github.com/redbrick/nix-configs/blob/master/packages/privatebin/default.nix). 
 
-See
-[docker-sevices repo](https://github.com/redbrickCmt/docker-compose-services)
-for configs.
+The configuration file for the Privatebin vhost can be found [here](https://github.com/redbrick/nix-configs/blob/master/services/httpd/privatebin.nix).
 
-The important things to note from these files are
-
-- Redis runs in a separate container (as in the docker-compose)
-- The port used is 5484
