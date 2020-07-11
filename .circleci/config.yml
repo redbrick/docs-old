@@ -10,7 +10,9 @@ jobs:
       - run: python3 -m pip install -r requirements.txt
       - run:
           name: Build site
-          command: mkdocs build -v
+          command: |
+            mkdocs build -v
+            ls -al
       - persist_to_workspace:
           root: .
           paths:
@@ -26,6 +28,7 @@ jobs:
           name: Test Internal Links
           command: |
             set -eo pipefail
+            ls -al /tmp/docs
             htmlproofer \
             --allow-hash-href \
             --check-html \
