@@ -14,13 +14,10 @@ The docs are built using mkdocs. To bring up a local server with a copy of the
 docs just run
 
 ```bash
-docker-compose up docs
-```
-
-To build the docs just run
-
-```bash
-docker-compose up -d docs
+python3 -m venv .venv
+chmod +x -R .venv/bin
+. .venv/bin/activate
+pip install -r requirements.txt
 ```
 
 ## Testing locally
