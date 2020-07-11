@@ -57,6 +57,7 @@ nav:
       - LDAP chsh chfn: procedures/ldapchshchfn.md
       - Library Migration: procedures/library_migration.md
       - Mail Setup: procedures/mail_setup.md
+      - Installing NixOS: procedures/nixos-install.md
       - New Installs: procedures/newinstalls.md
       - New board: procedures/newboard.md
       - New Domain: procedures/new_domain.md
