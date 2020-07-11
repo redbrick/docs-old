@@ -29,9 +29,8 @@ When you make a change make sure it works by building it locally.
 
 Run:
 
-```bash
-docker-compose run --rm docs mkdocs build
-docker-compose run --rm test
+```sh
+mkdocs build -s -v
 ```
 
 This will test the docs build and if there are any dead links in them
