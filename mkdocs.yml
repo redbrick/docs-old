@@ -71,6 +71,7 @@ nav:
       - Severus Colocation: procedures/severuscolocation.md
       - Switch: procedures/switch.md
       - Ticketing: procedures/ticketing.md
+      - Using NixOS: procedures/nixos.md
       - rb-ldap: procedures/rb-ldap.md
   - Hardware:
       - Daedalus and Icarus: hardware/daedalus_icarus.md
