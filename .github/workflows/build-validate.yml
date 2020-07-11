@@ -32,7 +32,7 @@ jobs:
     - name: Validate site's HTML
       run: |
         htmlproofer \
-        --allow-hash-ref \
+        --allow-hash-href \
         --check-html \
         --empty-alt-ignore \
         --disable-external \
