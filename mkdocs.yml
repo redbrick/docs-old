@@ -71,6 +71,7 @@ nav:
       - Switch: procedures/switch.md
       - Ticketing: procedures/ticketing.md
       - Using NixOS: procedures/nixos.md
+      - Upgrading Postgresql: procedures/postgres_upgrade.md
       - rb-ldap: procedures/rb-ldap.md
   - Hardware:
       - Daedalus and Icarus: hardware/daedalus_icarus.md
