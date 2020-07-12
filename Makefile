@@ -8,11 +8,11 @@ MAKEFLAGS += --no-builtin-rules
 
 build: public  ## Build site
 public:
-	mkdocs build -s -v
+	.venv/bin/mkdocs build -s -v
 
 .PHONY: serve
 serve:  ## Run development server in debug mode
-	mkdocs serve
+	.venv/bin/mkdocs serve
 
 .PHONY: clean
 clean:  ## clean built docs

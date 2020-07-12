@@ -49,7 +49,8 @@ Day to day running of things.
 #### Databases
 
 - [MySQL](services/mysql)
-- [postgres](services/postgres)
+- [Postgres](services/postgres)
+    - [Upgrading Postgres](procedures/postgres_upgrade)
 
 #### Network
 

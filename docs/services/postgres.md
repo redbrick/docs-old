@@ -1,15 +1,9 @@
 # Postgres
 
-- Install postgres (This bit should be easy, it's in apt repos)
-- Create data base (`initdb -D /var/db/postgres` (or other file))
-- Set up auth (we want to use ident same user. Details of this are
-  [here](http://www.postgresql.org/docs/8.3/interactive/auth-pg-hba-conf.html).
-  We should need a rule something like
+Postgres is deployed to Hardcase via NixOS.
+Consult the nix-configs repo for information on its deployment.
 
-```text
-host all all 136.206.15/24 ident sameuser
-```
+## Upgrades
 
-- We need to set up a `listen_address` in the config file at `postgres.internal`
-  (`listen_address <ip addr>`)
-- We need to set up `postgresql.internal` to point to (whatever machine)
+Occasionaly NixOS will bump the major version. Follow
+[this procedure](../../procedures/postgres_upgrade) to update the DBs.
