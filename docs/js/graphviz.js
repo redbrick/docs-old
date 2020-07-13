@@ -1,4 +1,4 @@
-var graphvizs = $('.section').find('code.graphviz');
+var graphvizs = $('.section').find('code.language-graphviz');
 graphvizs.each(function (key, value) {
   try {
     var $value = $(value);

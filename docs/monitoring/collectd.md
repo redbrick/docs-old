@@ -58,7 +58,7 @@ make clean install
 - ExtendedStatus directive needs to be enabled
 - This goes in the apache config
 
-```config
+```apacheconf
 ExtendedStatus on
 <IfModule mod_status.c>
   <Location /mod_status>
@@ -70,7 +70,7 @@ ExtendedStatus on
 - We also need to add this to the `/etc/apache2/ports.conf`
     - **This may break things in /etc/apache2/sites-enabled/**
 
-```config
+```apacheconf
 # mod_status
 NameVirtualHost 127.0.0.1
 Listen 127.0.0.1:8081
@@ -79,7 +79,7 @@ Listen 127.0.0.1:80
 
 - In `/etc/collectd/collectd.conf` we need to configure the apache module as so
 
-```config
+```xml
 <Plugin apache>
     <Instance "Machine_Name">
         URL "http://localhost/server-status/?auto"
