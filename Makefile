@@ -27,9 +27,12 @@ clean:  ## clean built docs
 	. $(word 1, $^)
 	.venv/bin/python -m pip install -r $(word 2, $^)
 
-.PHONY: lint
-lint:  ## run linter on markdown
+.PHONY: lint, lint-markdown, lint-html
+lint: lint-markdown lint-html ## run makrdown and html linter
+lint-markdown: ## Run markdown linter
 	@docker run --rm -v $$(pwd):/docs ruby:2-alpine sh -c 'gem install mdl && mdl /docs/docs/ -s /docs/.markdown.style.rb'
+lint-html: build ## Run html linter
+	@docker run --rm -v $$(pwd):/docs ruby:2 sh -c 'gem install html-proofer && htmlproofer --allow-hash-href --check-html --empty-alt-ignore --disable-external /docs/site'
 
 .PHONY: help
 help: ## Display this help screen
