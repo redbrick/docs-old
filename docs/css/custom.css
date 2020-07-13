@@ -1,9 +1,9 @@
 .wy-side-nav-search {
-  background-color: #AA0202;
+  background-color: #aa0202;
 }
 
-.wy-side-nav-search input[type=text] {
-  border-color: #AA0202;
+.wy-side-nav-search input[type='text'] {
+  border-color: #aa0202;
 }
 
 .task-list-item {
