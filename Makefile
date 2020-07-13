@@ -6,26 +6,26 @@ SHELL := bash
 MAKEFLAGS += --warn-undefined-variables
 MAKEFLAGS += --no-builtin-rules
 
-build: public  ## Build site
-public:
+build: site  ## Build site
+site: .venv/bin/mkdocs docs mkdocs.yml
 	.venv/bin/mkdocs build -s -v
 
 .PHONY: serve
-serve:  ## Run development server in debug mode
+serve: .venv/bin/mkdocs  ## Run development server in debug mode
 	.venv/bin/mkdocs serve
 
 .PHONY: clean
 clean:  ## clean built docs
-	rm -rf public
+	rm -rf site
 
 .venv/bin/activate:
 	python3 -m venv .venv
 	chmod +x -R .venv/bin
+	.venv/bin/python -m pip install --upgrade pip
 
-.PHONY: setup
-setup: .venv/bin/activate  ## Setup env
-	. $<
-	pip install -r requirements.txt
+.venv/bin/mkdocs: .venv/bin/activate requirements.txt
+	. $(word 1, $^)
+	.venv/bin/python -m pip install -r $(word 2, $^)
 
 .PHONY: lint
 lint:  ## run linter on markdown
@@ -36,4 +36,3 @@ help: ## Display this help screen
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
 	| sort \
 	| awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-10s\033[0m %s\n", $$1, $$2}'
-

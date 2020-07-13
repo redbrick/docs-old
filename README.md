@@ -12,10 +12,6 @@ Docs are automatically deployed on commit to `master` to `readthedocs`
 
 The docs are built using mkdocs.
 
-```bash
-make setup
-```
-
 ## Testing locally
 
 When you make a change make sure it works by building it locally.
