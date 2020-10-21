@@ -27,3 +27,6 @@ DNS etc.
 ## Management VLAN
 
 **Subnet:** 192.168.1.0/24
+
+The internal network is used for managing our serversthat should not be
+accessible from the outside.
