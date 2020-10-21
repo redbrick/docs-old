@@ -106,9 +106,7 @@ To do this you will need to do the following:
 To create a NAT pool you will need use the following commands:
 
 ``
-edit security nat destination
-
-``
+edit security nat destination``
 
 
 ``
