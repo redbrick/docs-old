@@ -1,11 +1,11 @@
 # Junos
 
-Currently in Redbrick we are using a SRX 210 firewall. There is a router-on-a-stick setup between Sebastian and our SRX. This allows multiple VLANs to go over the link between Sebastian and the SRX. <br>The SRX is also our gateway whether that be 192.168.x.254/X or 136.206.15.254/24
+Currently in Redbrick we are using a SRX220H firewall. There is a router-on-a-stick setup between Sebastian and our SRX. This allows multiple VLANs to go over the link between Sebastian and the SRX. The SRX is also our gateway whether that be 192.168.x.254/X or 136.206.15.254/24
 
 
 ## Junos Commands
 
-Unlike Cisco you do not need to be in priviledge mode to view configuration. However as Junos runs FreeBSD you do need to have the correct priviledge level to access different hierachies of the Junos device.
+Unlike Cisco you do not need to be in privilege mode to view configuration. However as Junos runs FreeBSD you do need to have the correct privilege level to access different hierarchies of the Junos device.
 
 ### Login
 If you log in as root you will be greeted with a UNIX cli this is denoted by the `%`. You will need to type `cli` in order to view any configuration.
@@ -44,7 +44,7 @@ ge-0/0/1.16             up    up   inet     136.206.16.254/24
 ge-0/0/1.20             up    up
 ```
 
-The interface name in this case will be:<br>
+The interface name in this case will be:
 `ge` which stands for gigabit ethernet-0/0/number of port
 
 
@@ -99,7 +99,7 @@ user@SRX#
 If you want to reach a service within Redbrick you will need destination NAT unless it is running on a ``136.206.15.X/24`` address already.
 
 To do this you will need to do the following:
-1. Configure a NAT pool to the destination IP within Redbrick<br>
+1. Configure a NAT pool to the destination IP within Redbrick
 2. Create a NAT rule within the destination NAT ruleset
 
 ##### Create a NAT pool
