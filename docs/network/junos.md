@@ -104,14 +104,15 @@ To do this you will need to do the following:
 
 ##### Create a NAT pool
 To create a NAT pool you will need use the following commands:
+
 ``
 edit security nat destination
 
 ``
 
+
 ``
 set pool NAME_OF_POOL address X.X.X.X
-
 ``
 	
 ##### Create a NAT rule within the destination NAT ruleset
@@ -142,9 +143,14 @@ To do this you will need to do the following:
 
 ##### Create a NAT pool
 To create a NAT pool you will need to do the following commands:
-``edit security nat source``
 
-``set pool NAME_OF_POOL address X.X.X.X``
+``
+edit security nat source
+``
+
+``
+set pool NAME_OF_POOL address X.X.X.X
+``
 
 ##### Create a NAT rule within the source NAT ruleset 
 To create a rule within the source NAT ruleset you need to use the following commands:
