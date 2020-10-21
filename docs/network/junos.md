@@ -109,13 +109,22 @@ To create a NAT pool you will need use the following commands:
 	
 ##### Create a NAT rule within the destination NAT ruleset
 To create a rule within the destination NAT ruleset you need to use the following commands:<br>
-``edit security nat destination ruleset NAME_OF_RULESET``<br>
-``set rule NAME match source-address 136.206.X.X `` <br>
-``set rule NAME match destination-port X `` <br>
-``set rule NAME then destination-nat pool WHATEVERYOUCALLEDTHEPOOL``<br>
+``
+edit security nat destination ruleset NAME_OF_RULESET
+``
+``
+set rule NAME match source-address 136.206.X.X 
+`` 
+
+``
+set rule NAME match destination-port X 
+`` 
+``
+set rule NAME then destination-nat pool WHATEVERYOUCALLEDTHEPOOL
+``
 
 #### Source NAT
-If you want to allow a specific machine to access the internet from within Redbrick you will need source NAT you will need to configure source NAT that will use a ``136.206.15.X/24`` address
+If you want to allow a specific machine to access the internet from within Redbrick  you will need to configure source NAT that will use a ``136.206.15.X/24`` address
 
 To do this you will need to do the following:
 - Configure a NAT pool to the external IP within Redbrick's 136.206.15.X subnet
@@ -128,7 +137,9 @@ To create a NAT pool you will need to do the following commands:
 
 ##### Create a NAT rule within the source NAT ruleset 
 To create a rule within the source NAT ruleset you need to use the following commands:<br>
-``edit security nat source ruleset NAME_OF_RULESET``<br>
-``set rule NAME match source-address X.X.X.X `` <br>
-``set rule NAME match destination-port X `` <br>
-``set rule NAME then source-nat pool WHATEVERYOUCALLEDTHEPOOL``
+``
+edit security nat source ruleset OUTBOUND
+set rule NAME match source-address X.X.X.X 
+set rule NAME match destination-port X 
+set rule NAME then source-nat pool WHATEVERYOUCALLEDTHEPOOL
+``
