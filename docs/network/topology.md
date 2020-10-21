@@ -4,7 +4,7 @@
 
 <br>
 ### How we get internet
-Redbrick has a L2 fibre connection back to DCU's core that is connected on Sebastian's port fibre port.
+Redbrick has a L2 fibre connection back to DCU's core that is connected on Sebastian's fibre ports.
 
 ### Links to be aware of
 - Between Steve and Sebastian there is a LACP Fibre link which allows all tagged VLANs across. In the event of a fibre link failure there is an ethernet LACP link configured. 
