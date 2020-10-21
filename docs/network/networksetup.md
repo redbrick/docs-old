@@ -19,14 +19,15 @@ accessible from the outside. eg NFS, LDAP, MySQL etc.
 
 **Subnet:** 136.206.15.0/24
 
-The external network is used for publically hosted services eg. SSH, Web hosting,
+The external network is used for publicly hosted services eg. SSH, Web hosting,
 DNS etc.
 
-**Note:** The subnet 136.206.16.0/24 was also allocated to Redbrick at one point but unfortunately we are unable to use it. This will need to be looked into.
+**Note:** The subnet 136.206.16.0/24 was also allocated to Redbrick at one point
+but unfortunately we are unable to use it. This will need to be looked into.
 
 ## Management VLAN
 
 **Subnet:** 192.168.1.0/24
 
-The internal network is used for managing our serversthat should not be
+The internal network is used for managing our servers that should not be
 accessible from the outside.

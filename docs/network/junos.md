@@ -1,14 +1,20 @@
 # Junos
 
-Currently in Redbrick we are using a SRX220H firewall. There is a router-on-a-stick setup between Sebastian and our SRX. This allows multiple VLANs to go over the link between Sebastian and the SRX. The SRX is also our gateway whether that be 192.168.x.254/X or 136.206.15.254/24
-
+Currently in Redbrick we are using a SRX220H firewall.
+There is a router-on-a-stick setup between Sebastian and our SRX.
+This allows multiple VLANs to go over the link between Sebastian and the SRX.
+The SRX is also our gateway whether that be 192.168.x.254/X or 136.206.15.254/24
 
 ## Junos Commands
 
-Unlike Cisco you do not need to be in privilege mode to view configuration. However as Junos runs FreeBSD you do need to have the correct privilege level to access different hierarchies of the Junos device.
+Unlike Cisco you do not need to be in privilege mode to view configuration.
+However as Junos runs FreeBSD you do need to have the correct privilege level
+to access different hierarchies of the Junos device.
 
 ### Login
-If you log in as root you will be greeted with a UNIX cli this is denoted by the `%`. You will need to type `cli` in order to view any configuration.
+
+If you log in as root you will be greeted with a UNIX cli this is denoted
+by the `%`. You will need to type `cli` in order to view any configuration.
 
 ```text
 root% cli
@@ -19,6 +25,7 @@ root@SRX>
 
 To view any interfaces on a Junos device you can do the following command:
 `show interface terse` This will output information as below:
+
 ```text
 user@SRX> show interfaces terse
 Interface               Admin Link Proto    Local                 Remote
@@ -47,13 +54,13 @@ ge-0/0/1.20             up    up
 The interface name in this case will be:
 `ge` which stands for gigabit ethernet-0/0/number of port
 
-
 #### What do the points after the interface name mean?
 
-They are the logical interfaces of that interface. 
+They are the logical interfaces of that interface.
 
 ### Enter Configuration Mode
-Unlike Cisco IOS you do not need to type `conf t` you would instead type `edit` 
+
+Unlike Cisco IOS you do not need to type `conf t` you would instead type `edit`
 
 ```text
 user@SRX> edit
@@ -66,9 +73,14 @@ user@SRX#
 In order to navigate around this mode you start your command with `edit`
 
 ### Saving Configuration
-Before saving your changes it is recommeneded to do the following command `` show | compare`` this will show you any configuration changes that have been made.
 
-Unlike Cisco when you edit the configuration. It is not running until you commit it. In order to commit, you need to type ``commit confirmed`` this command will automatically rollback to the previous configuration in the event that you lost access and cannot finalize the change by typing ``commit`` 
+Before saving your changes it is recommended to do the following command `show | compare`.
+This will show you any configuration changes that have been made.
+
+Unlike Cisco when you edit the configuration. It is not running until you commit it.
+In order to commit, you need to type `commit confirmed` this command will automatically
+rollback to the previous configuration in the event that you
+lost access and cannot finalize the change by typing `commit`.
 
 ```text
 [edit]
@@ -78,9 +90,12 @@ user@SRX# show | compare
 user@SRX#
 ```
 
-
 #### Edit an interface
-To edit an interface you will need to do the following command ```edit interfaces ge-x/x/x``` To edit a logical interface you would do the same command but you would include the logical number ```edit interfaces ge-x/x/x.x```
+
+To edit an interface you will need to do the following command `edit interfaces ge-x/x/x`.
+
+To edit a logical interface you would do the same command but you would
+include the logical number `edit interfaces ge-x/x/x.x`.
 
 ```text
 [edit]
@@ -95,74 +110,69 @@ family inet {
 [edit interfaces ge-0/0/1 unit 1]
 user@SRX#
 ```
+
 #### Destination NAT
-If you want to reach a service within Redbrick you will need destination NAT unless it is running on a ``136.206.15.X/24`` address already.
+
+If you want to reach a service within Redbrick you will need destination NAT
+unless it is running on a ``136.206.15.X/24`` address already.
 
 To do this you will need to do the following:
+
 1. Configure a NAT pool to the destination IP within Redbrick
 2. Create a NAT rule within the destination NAT ruleset
 
-##### Create a NAT pool
+##### Create a destination NAT pool
+
 To create a NAT pool you will need use the following commands:
 
-``
-edit security nat destination``
-
-
-``
+```text
+edit security nat destination
 set pool NAME_OF_POOL address X.X.X.X
-``
-	
+```
+
 ##### Create a NAT rule within the destination NAT ruleset
+
 To create a rule within the destination NAT ruleset you need to use the following commands:
 
-``
+```text
 edit security nat destination ruleset NAME_OF_RULESET
-``
 
-``
-set rule NAME match source-address 136.206.X.X 
-`` 
+set rule NAME match source-address 136.206.X.X
 
-``
-set rule NAME match destination-port X 
-`` 
+set rule NAME match destination-port X
 
-``
 set rule NAME then destination-nat pool WHATEVERYOUCALLEDTHEPOOL
-``
+```
 
 #### Source NAT
-If you want to allow a specific machine to access the internet from within Redbrick  you will need to configure source NAT that will use a ``136.206.15.X/24`` address
 
-To do this you will need to do the following:
+If you want to allow a specific machine to access the internet from within Redbrick
+you will need to configure source NAT that will use a ``136.206.15.X/24`` address.
+To do this you'll need to do the following:
+
 - Configure a NAT pool to the external IP within Redbrick's 136.206.15.X subnet
 - Create a NAT rule within the source NAT ruleset
 
-##### Create a NAT pool
+##### Create a source NAT pool
+
 To create a NAT pool you will need to do the following commands:
 
-``
+```text
 edit security nat source
-``
 
-``
 set pool NAME_OF_POOL address X.X.X.X
-``
+```
 
-##### Create a NAT rule within the source NAT ruleset 
+##### Create a NAT rule within the source NAT ruleset
+
 To create a rule within the source NAT ruleset you need to use the following commands:
-``
+
+```text
 edit security nat source ruleset OUTBOUND
-``
 
-``
-set rule NAME match source-address X.X.X.X 
-``
+set rule NAME match source-address X.X.X.X
 
-``
-set rule NAME match destination-port X 
-``
+set rule NAME match destination-port X
 
-``
-set rule NAME then source-nat pool WHATEVERYOUCALLEDTHEPOOL``
+set rule NAME then source-nat pool WHATEVERYOUCALLEDTHEPOOL
+```

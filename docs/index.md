@@ -54,13 +54,10 @@ Day to day running of things.
 
 #### Network
 
-- [.15 Address Space](network/mainaddressspace)
 - [Network setup](network/networksetup) (internal LAN, external LAN, switches,
   cable colours etc)
 - [tunnel.redbrick.dcu.ie](services/tunnel.redbrick.dcu.ie.md)
 - [Switch Setup](procedures/switch)
-- [Gratuitous ARP](procedures/gratuitousarp) (or, how to force update an IP
-  address's associated MAC on the router and other machines)
 - [JunOS Configuration](network/junos)
 
 #### WWW
@@ -129,9 +126,7 @@ After each emergency remember to write a postmortem!
 ### Switches
 
 - [Cisco IOS](network/ciscoios)
-- [Hadron](network/hadron)
 - [JunOS](network/junos)
-- [Higgs](network/higgs)
 
 ### UPS
 

@@ -76,7 +76,6 @@ nav:
       - Docker Serivce: procedures/docker-service.md
       - DRAC Access: procedures/dracaccess.md
       - GPGKeys: procedures/gpgkeys.md
-      - Gratuitous ARP: procedures/gratuitousarp.md
       - IRC Operations: procedures/irc_operator.md
       - LDAP chsh chfn: procedures/ldapchshchfn.md
       - Library Migration: procedures/library_migration.md
@@ -112,10 +111,7 @@ nav:
       - IPKVM: hardware/ipkvm.md
   - Network:
       - Cisco iOS: network/ciscoios.md
-      - Hadron: network/hadron.md
-      - Higgs: network/higgs.md
       - Junos: network/junos.md
-      - Main Address Space: network/mainaddressspace.md
       - Network Setup: network/networksetup.md
   - Postmortems:
       - March 2016: postmortems/post_mortem_mar16.md
