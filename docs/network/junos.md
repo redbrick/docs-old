@@ -98,20 +98,29 @@ user@SRX#
 #### Destination NAT
 If you want to reach a service within Redbrick you will need destination NAT unless it is running on a ``136.206.15.X/24`` address already.
 
-To do this you will need to do the following:<br>
+To do this you will need to do the following:
 1. Configure a NAT pool to the destination IP within Redbrick<br>
 2. Create a NAT rule within the destination NAT ruleset
 
 ##### Create a NAT pool
 To create a NAT pool you will need use the following commands:
-``edit security nat destination``<br>
-``set pool NAME_OF_POOL address X.X.X.X``
+``
+edit security nat destination
+
+``
+
+``
+set pool NAME_OF_POOL address X.X.X.X
+
+``
 	
 ##### Create a NAT rule within the destination NAT ruleset
-To create a rule within the destination NAT ruleset you need to use the following commands:<br>
+To create a rule within the destination NAT ruleset you need to use the following commands:
+
 ``
 edit security nat destination ruleset NAME_OF_RULESET
 ``
+
 ``
 set rule NAME match source-address 136.206.X.X 
 `` 
@@ -119,6 +128,7 @@ set rule NAME match source-address 136.206.X.X
 ``
 set rule NAME match destination-port X 
 `` 
+
 ``
 set rule NAME then destination-nat pool WHATEVERYOUCALLEDTHEPOOL
 ``
@@ -132,21 +142,23 @@ To do this you will need to do the following:
 
 ##### Create a NAT pool
 To create a NAT pool you will need to do the following commands:
-``edit security nat source``<br>
+``edit security nat source``
+
 ``set pool NAME_OF_POOL address X.X.X.X``
 
 ##### Create a NAT rule within the source NAT ruleset 
-To create a rule within the source NAT ruleset you need to use the following commands:<br>
+To create a rule within the source NAT ruleset you need to use the following commands:
 ``
 edit security nat source ruleset OUTBOUND
 ``
+
 ``
 set rule NAME match source-address X.X.X.X 
 ``
+
 ``
 set rule NAME match destination-port X 
 ``
-``
-set rule NAME then source-nat pool WHATEVERYOUCALLEDTHEPOOL
 
 ``
+set rule NAME then source-nat pool WHATEVERYOUCALLEDTHEPOOL``
