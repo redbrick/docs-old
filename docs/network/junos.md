@@ -139,7 +139,11 @@ To create a NAT pool you will need to do the following commands:
 To create a rule within the source NAT ruleset you need to use the following commands:<br>
 ``
 edit security nat source ruleset OUTBOUND
+
 set rule NAME match source-address X.X.X.X 
+
 set rule NAME match destination-port X 
+
 set rule NAME then source-nat pool WHATEVERYOUCALLEDTHEPOOL
+
 ``
