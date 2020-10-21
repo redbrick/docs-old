@@ -8,4 +8,4 @@ Redbrick has a L2 fibre connection back to DCU's core that is connected on Sebas
 
 ### Links to be aware of
 - Between Steve and Sebastian there is a LACP Fibre link which allows all tagged VLANs across. In the event of a fibre link failure there is an ethernet LACP link configured. 
-- Between Sebastian and the SRX due to unforeseen circumstances LACP between the two was never completed. However there is a router-on-a-stick is implementation in place.
+- Between Sebastian and the SRX due to unforeseen circumstances LACP between the two was never completed. However, there is a router-on-a-stick implementation in place.
