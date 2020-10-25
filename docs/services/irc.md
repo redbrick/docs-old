@@ -1,83 +1,71 @@
 # IRC
 
-## RedBrick IRCd
+## Redbrick InspIRCd
 
-This runs on paphos, irc.redbrick has it's own service address for this.
-
-IRCd runs on ircd-hybrid build from the apt source package. It needs to be
-compiled by us to have ssl support to peer with the network (and also to have
-halfops, nicklength=9\*, opme etc.). Because of this hybrid is pinned in apt and
-should NEVER be automatically upgraded. Letting apt upgrade hybrid will cause us
-to fall off the network, and things to asplode.
-
-Most of the stuff in ircd.conf is fairly obvious. For adding new external users
-etc. just copy and change one of the existing blocks. After changes are made to
-the file /rehash as an oper, don't restart it with the init script.
-
-Peers: It's important that autoconn is set to no, apparently due to endian
-issues or something.
-
-- The limit on the network is 9 character nicks, allowing our server to do more
-  than this will result in our server letting people set long nicks, but they'll
-  immediately be kicked off the network. This gets old pretty quick.
-
-#### Compiling
-
-```bash
-$ cd /tmp; mkdir build; cd build
-
-# may want to delete the other files that you get with it for clarity
-$ apt-get source ircd-hybrid
-$ cd ircd-hybrid-7.2.2.dfsg.2
-# edit debian/rules and add export USE_OPENSSL=1 and change nicklen=9
-# (Optional)Patch m_opme.c to allow it to always give you ops, see below
-# run fakeroot debian/rules binary
-$ cd ..
-$ dpkg -i ___.deb # generated .deb (not the hybrid-dev one, you can ignore/delete that)
-# Copy appropriate configuration files
-# Add block to /etc/network/interfaces
-$ /etc/init.d/ircd-hybrid (re)start
-```
-
-#### Admin tools
-
-1. Go to `/usr/lib/ircd-hybrid/modules`
-2. Copy `m_force.so` (forcejoin and forcepart) `m_ojoin.so` (OJOIN) and
-   `m_opme.so`(OPME) to `autoload/`
-3. Make sure that these are chmoded so that they are world readable, or at least
-   readable to `ircd`
-
-##### m_opme
-
-OPME is no fun if you can't use it to take over any channel you want, patch
-`contrib/m_opme.c` before compiling to make the function `chan_is_opless` always
-`return 1`:
-
-```c
-chan_is_opless(const struct Channel *const chptr) {
-  const dlink_node *ptr = NULL;
-
-  DLINK_FOREACH(ptr, chptr->members.head)
-    if (((struct Membership *)ptr->data)->flags & CHFL_CHANOP)
-      return(1);
-
-  return(1);
-}
-```
-
-## Redbrick Inspircd
-
-In 2016/2017 we began work to move to inspircd. This was due to the
+In 2016/2017 we began work to move to InspIRCd. This was due to the
 complications in ircd-hybrid and how old it was. These complications stopped new
-netsocs joinging us so we all agreeded to move irc. We run inspircd on zeus
-inside docker. We build the container ourself locally, the container pulls from
-git to build version 2.0.23.
+netsocs joining us so we all agreed to move irc. \$ 4 years later after multiple
+attempts we had not migrated. Until TCD decided to shutdown their server
+breaking the network.
+
+We run Inspircd v3 on Metharme. InspIRCd's docs can be found
+[here](https://docs.inspircd.org/) for configuration specifics.
+
+IRC is available at `irc.redbrick.dcu.ie` on port 6697. SSL is required for
+connection we do not support non-SSL.
+
+When connecting from a redbrick server a user will be automatically logged in.
+If connecting from an external server a user must pass their password on login.
+
+For the purpose of external peering of other servers the port 7001 is expose as
+well. Similarly to clients we only support SSL on this port
+
+For docs on connecting and using an IRC client please refer to the
+[wiki](https://wiki.redbrick.dcu.ie/index.php/IRC)
 
 ### Installation
 
-See
-[docker-sevices repo](https://github.com/redbrickCmt/docker-compose-services)
-for configs.
+InspIRCd is installed with Nix. There is no Nix package for InspIRCd so we
+compile a specific git tag from source. See
+[Nix package](https://github.com/redbrick/nix-configs/tree/master/packages/inspircd)
+for details on how it is compiled.
 
-To build and deploy a version of irc from source run
-`docker-compose up -d --build`
+Given we only support SSL and require LDAP, we need to enable both at compile
+time.
+
+### Configuration
+
+InspIRCd's configuration is in Nix
+[here](https://github.com/redbrick/nix-configs/blob/master/services/ircd/inspircd_conf.nix).
+This config will be converted to xml on disc.
+
+#### Important Configuration
+
+_oper_ is a list of admin users on the irc server. Their OPER password will need
+to be manually hashes with hmac-sha256 and placed in a secret on the server to
+be read in and placed in a secret on the server to be read in.
+
+_ldapwhitelist_ is a list of cidr addresses that do no require authentication.
+The list consists of Redbrick public and private addresses as well as `oldsoc`
+
+_link_ is a list of all servers we peer with including the anope services server
+that runs on the same box.
+
+### oldsoc.net
+
+`oldsoc.net` is a server run by old TCD netsocers. All the users on it are the
+remaining TCD associates following the shutdown of TCD IRCd. This server is
+maintained by its own users and has explicit permission to join IRC without LDAP
+auth.
+
+## Anope
+
+Redbrick runs Anope services for the entire network. As with inspircd we
+[compile from source](https://github.com/redbrick/nix-configs/tree/master/packages/inspircd).
+Refer to anopes [github docs](https://github.com/anope/anope/tree/2.0/docs) for
+configuration specifics.
+
+Our current Anope is configured with standard mods of chanserv, nickserv and
+operserv. All config is in [here](https://github.com/redbrick/nix-configs/tree/master/services/anope/conf)
+
+Anope stores all info in a custom db file on disk.
