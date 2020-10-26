@@ -1,21 +1,24 @@
 # Bitlbee on RedBrick
 
-This is set up on zeus
+This is set up on Metharme.
 
-bitlbee is run from a docker contaier we build locally on zeus. It mostly uses
-default bitlbee settings. Its settings can be found in
-`/etc/docker-compose/services/bitlbee`, see
-[docker-sevices repo](https://github.com/redbrickCmt/docker-compose-services)
-for configs.
+bitlbee is run using the nixos bitlbee service, see
+[here](https://search.nixos.org/options?query=services.bitlbee) for config
+options.
 
-### Update
+We use default bitlbee settings. Its settings can be found in
+[nixos repo](https://github.com/redbrick/nix-configs/blob/master/services/bitlbee.nix).
 
-To update the easiest way is to rebuild the container. Run
-`docker-compose build --no-cache` and then `docker-compose up -d`
+`bitlbee.redbrick.dcu.ie` is not expose externally. It is available at
+`bitlbee.internal`. For legacy support `bitlbee.redbrick.dcu.ie` is added to the
+host files of all boxes to point to the internal address.
 
-### Migration
+We add 2 plugins to bitlbee:
 
-User details are stored in `/var/lib/bitlbee` as xml data. It should be possible
-to migrate the user data just by copying the xml files.
+- discord
+- facebook
 
-Run `docker-compose up -d` to build and start the container
+## Data Migration
+
+User details are stored in `/var/lib/bitlbee` as xml data. It is possible to
+migrate the user data just by copying the xml files.

@@ -19,11 +19,13 @@ Known for its hard to open top cover.
 ## Services
 
 - PostgreSQL
-- Gitea
-- Apache (soon)
+- [Gitea](/services/git)
+- [Apache](/web/apache)
+- [pastebin](/services/paste)
+- [monitoring](/monitoring)
 
 ## Disk Management
 
-LSIUtil can be used to manage the hardware RAID controller. It is installed
-on this machine. It has a remarkably easy to use interface, just run `lsiutil`
-and choose the actions you want to take like an automated phone support line.
+LSIUtil can be used to manage the hardware RAID controller. It is installed on
+this machine. It has a remarkably easy to use interface, just run `lsiutil` and
+choose the actions you want to take like an automated phone support line.

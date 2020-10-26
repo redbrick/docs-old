@@ -17,14 +17,7 @@
 **This is a docker host all services should run in a container** see
 [docs](/procedures/docker-service)
 
-- [bitlbee](/services/bitlbee)
-- [git](/services/git)
-- [mastodon](/services/mastodon)
-- [pastebin](/services/paste)
 - [hackmd](/services/hackmd)
-- [monitoring](/monitoring)
-- compose-status
-- docs
 - email generator
 - rb-ldap
 - wetty

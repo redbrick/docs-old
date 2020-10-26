@@ -9,8 +9,9 @@ These 2 PowerEdge servers are twins, and thus share documentation too.
 - CPU: 2 x Intel Xeon L5335 @ 2.00GHz
 - RAM: 32GB (Daedalus), 16GB (Icarus)
 - Storage: Dell Perc 6/i Integrated RAID controller
-- Disks: 2 x 73GB SAS disks in RAID 1 (hardware)
-         3 x 600GB SAS disks in passthrough (3x RAID 0)
+- Disks:
+  - 2 x 73GB SAS disks in RAID 1 (hardware)
+  - 3 x 600GB SAS disks in passthrough (3x RAID 0)
 - Drives: Internal SATA DVD+/-RW
 - Network: 2x Onboard Ethernet, 802.3ad bonding
 - iDRAC NIC: Shared on port 1
@@ -25,8 +26,8 @@ These 2 PowerEdge servers are twins, and thus share documentation too.
 
 ## Disk Management
 
-MegaCli64 can be used to manage the hardware RAID controller. It is installed
-on both machines. Take note that there is 1x RAID 1 and 3x RAID 0 set up on both.
+MegaCli64 can be used to manage the hardware RAID controller. It is installed on
+both machines. Take note that there is 1x RAID 1 and 3x RAID 0 set up on both.
 The RAID 0's are effective passthrough for the 3 600gb sas disks used for ZFS.
 
 ```bash

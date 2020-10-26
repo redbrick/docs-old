@@ -8,11 +8,11 @@ which in turn serves `/home`, `/webtree`, and some other critical folders.
 - NFS is deployed with Nix on [Icarus](/hardware/daedalus_icarus)
 - It is backed onto the Powervault MD1200, with all its disk passed through
   single-drive RAID 0's to allow for the setup of ZFS:
-    - 1 mirror of 2x 500gb drives
-    - 1 mirror of 2x 750gb drives
-    - 1 mirror of 2x 1tb drives
-    - Stripe across all mirrors for 2tb usable storage
-    - 1 hot spare 750gb drive
+  - 1 mirror of 2x 500gb drives
+  - 1 mirror of 2x 750gb drives
+  - 1 mirror of 2x 1tb drives
+  - Stripe across all mirrors for 2tb usable storage
+  - 1 hot spare 750gb drive
 - ZFS is configured with compression on and dedup off
 - The ZFS pool is called `zbackup`
 

@@ -7,10 +7,10 @@ have to install some new hardware. This is a list of things you should know
 ## Starter For 10
 
 - Have you installed Ubuntu?
-    - Excellent, now for gods sake fix the gids for Redbrick groups before you do
-      anything else
+  - Excellent, now for gods sake fix the gids for Redbrick groups before you do
+    anything else
 - Have you installed OpenBSD?
-    - If not why not?
+  - If not why not?
 
 ## Debian/Ubuntu
 
