@@ -50,7 +50,7 @@ Day to day running of things.
 
 - [MySQL](services/mysql)
 - [Postgres](services/postgres)
-    - [Upgrading Postgres](procedures/postgres_upgrade)
+  - [Upgrading Postgres](procedures/postgres_upgrade)
 
 #### Network
 
@@ -111,11 +111,8 @@ After each emergency remember to write a postmortem!
 
 ### User Login
 
-#### Azazel - Primary User Login
-
-#### Pygmalion - User Development
-
-- [DRAC Access](procedures/dracaccess)
+- Azazel - Primary User Login
+- Pygmalion - User Development
 
 ## Security
 

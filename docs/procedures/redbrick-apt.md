@@ -114,24 +114,24 @@ of current dependencies for these packages.
 
 - **redbrick-server** - pulls in things that are needed on all servers, not just
   login servers:
-    - logwatch-apt
-    - logwatch-chkrootkit
-    - redbrick-nagios-nrpe
-    - nfs-kernel-server
-    - openssh-server
-    - syslog-ng
-    - redbrick-root-env
-    - fail2ban
-    - exim4-daemon-light
-    - openntpd|ntp
+  - logwatch-apt
+  - logwatch-chkrootkit
+  - redbrick-nagios-nrpe
+  - nfs-kernel-server
+  - openssh-server
+  - syslog-ng
+  - redbrick-root-env
+  - fail2ban
+  - exim4-daemon-light
+  - openntpd|ntp
 - **redbrick-login-server** - this pulls in almost everything in the redbrick
   repo to create a login.redbrick environment. Also depends on:
-    - sl
-    - vim
-    - pwsafe
-    - weechat-curses
-    - irssi
-    - etc.
+  - sl
+  - vim
+  - pwsafe
+  - weechat-curses
+  - irssi
+  - etc.
 - **redbrick-backup-server** - Depends on redbrick-server, ldap-utils, and all
   the backup system packages. Conflicts with mlocate, cause this seems to run
   for ages and use loads of disk space on these machines.
@@ -196,9 +196,9 @@ of current dependencies for these packages.
 
 ### Backup System
 
-These packages are designed to keep the
-backup systems on [thunder](#) and [severus](#) in
-sync, and also to allow backup servers to be quickly redeployed when necessary.
+These packages are designed to keep the backup systems on [thunder](#) and
+[severus](#) in sync, and also to allow backup servers to be quickly redeployed
+when necessary.
 
 - **redbrick-dirvish**: Contains all the configuration for the dirvish system.
   Also patches `/usr/sbin/dirvish` to stop it complaining about error 24.

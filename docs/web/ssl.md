@@ -8,13 +8,13 @@ for the sake of the price paid was being kept in use until it expires.
 
 At the time of writing, our cert deployment looks like so:
 
-| Host      | Location              | RapidSSL? | LetsEncrypt? |
-| --------- | --------------------- | --------- | ------------ |
-| albus     | /etc/apache2/ssl      | Y         | N            |
-| pygmalion | /etc/apache2/ssl      | Y         | N            |
-| paphos    | /etc/apache2/ssl      | Y         | N            |
-| paphos    | /etc/dovecot/ssl      | Y         | N            |
-| hardcase  | /var/lib/acme/        | N         | Y            |
+| Host      | Location         | RapidSSL? | LetsEncrypt? |
+| --------- | ---------------- | --------- | ------------ |
+| albus     | /etc/apache2/ssl | Y         | N            |
+| pygmalion | /etc/apache2/ssl | Y         | N            |
+| paphos    | /etc/apache2/ssl | Y         | N            |
+| paphos    | /etc/dovecot/ssl | Y         | N            |
+| hardcase  | /var/lib/acme/   | N         | Y            |
 
 ## NixOS and SSL Certs
 
@@ -138,7 +138,7 @@ openssl req –new –newkey rsa:2048 –nodes –keyout redbrick.dcu.ie.key –
 
 | Field               | Value                               |
 | ------------------- | ----------------------------------- |
-| Common Name         | *.redbrick.dcu.ie                   |
+| Common Name         | \*.redbrick.dcu.ie                  |
 | Organization Name   | Redbrick - DCU's Networking Society |
 | Organizational Unit | Admins                              |
 | City/Locality       | Glasnevin                           |
@@ -204,18 +204,18 @@ wildcard intermediate SHA1 CA from
 
 - Copy the files to the relevant places in the ssl folder
 - Test the changes
-    - Apache: `apache2ctl configtest`
-    - Dovecot: `doveconf | grep ssl`
+  - Apache: `apache2ctl configtest`
+  - Dovecot: `doveconf | grep ssl`
 - Apply the changes
-    - Apache: `apache2ctl restart`
-    - Dovecot: `doveadm reload`
+  - Apache: `apache2ctl restart`
+  - Dovecot: `doveadm reload`
 - Validate the changes
-    - Apache:
-      [here](https://www.thesslstore.com/ssltools/ssl-checker.php?hostname=https://www.redbrick.dcu.ie#results)
-      (make sure to test domains served by each apache)
-    - Dovecot:
-      `openssl s_client -CApath /etc/ssl/certs/ -connect 136.206.15.58:993 2>/dev/null`
-      ` | grep -ie 'verify return code' -e rapidssl`
+  - Apache:
+    [here](https://www.thesslstore.com/ssltools/ssl-checker.php?hostname=https://www.redbrick.dcu.ie#results)
+    (make sure to test domains served by each apache)
+  - Dovecot:
+    `openssl s_client -CApath /etc/ssl/certs/ -connect 136.206.15.58:993 2>/dev/null`
+    `| grep -ie 'verify return code' -e rapidssl`
 - Delete the previous year's backup folder(s) (BE CAREFUL NOT TO DELETE YOUR OWN
   ONE)
 

@@ -1,9 +1,9 @@
 # Collectd
 
 - Full man page for collectd with full descriptions and configs:
-    - ![Collectd.conf(5)](https://collectd.org/documentation/manpages/collectd.conf.5.shtml)
+  - ![Collectd.conf(5)](https://collectd.org/documentation/manpages/collectd.conf.5.shtml)
 - Collectd is installed on ubuntu and bsd machines
-    - Metrics are written to `zeus.internal` and then scraped by prometheus
+  - Metrics are written to `zeus.internal` and then scraped by prometheus
 
 ## How to install collectd
 
@@ -68,7 +68,7 @@ ExtendedStatus on
 ```
 
 - We also need to add this to the `/etc/apache2/ports.conf`
-    - **This may break things in /etc/apache2/sites-enabled/**
+  - **This may break things in /etc/apache2/sites-enabled/**
 
 ```apacheconf
 # mod_status
