@@ -36,7 +36,7 @@ time.
 ### Configuration
 
 InspIRCd's configuration is in Nix
-[here](https://github.com/redbrick/nix-configs/blob/master/services/ircd/inspircd_conf.nix).
+[here](https://github.com/redbrick/nix-configs/blob/master/services/ircd/inspircd/conf.nix).
 This config will be converted to xml on disc.
 
 #### Important Configuration
@@ -66,6 +66,18 @@ Refer to anopes [github docs](https://github.com/anope/anope/tree/2.0/docs) for
 configuration specifics.
 
 Our current Anope is configured with standard mods of chanserv, nickserv and
-operserv. All config is in [here](https://github.com/redbrick/nix-configs/tree/master/services/anope/conf)
+operserv. All config is in
+[here](https://github.com/redbrick/nix-configs/tree/master/services/ircd/anope/confs)
 
 Anope stores all info in a custom db file on disk.
+
+## Discord
+
+We run a [bridge](https://github.com/qaisjp/go-discord-irc) between Redbrick
+discord and irc. The configuration for this is
+[here](https://github.com/redbrick/nix-configs/tree/master/services/ircd/discord/conf.nix).
+
+The bridge adds all users to from discord with the suffix `_d2` and all irc
+users appear as them self but tagged as a bot in discord. Not all discord
+channels are on IRC, the config above contains a mapping of irc channels to
+discord channels id's. This needs to be manually updated to add more channels.
