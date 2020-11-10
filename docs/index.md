@@ -35,7 +35,7 @@ Day to day running of things.
 - [Clubs and Socs Day](procedures/rrs)
 - [Changing a local Password](procedures/passwd)
 - [Committee changeover procedure](procedures/committeechangeover)
-- [Installing new machines](procedures/newinstalls)
+- [Installing NixOS](procedures/nixos-install)
 - [Responding to tickets](procedures/ticketing)
 
 #### Storage
