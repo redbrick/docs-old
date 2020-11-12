@@ -12,7 +12,7 @@ We run Inspircd v3 on Metharme. InspIRCd's docs can be found
 [here](https://docs.inspircd.org/) for configuration specifics.
 
 IRC is available at `irc.redbrick.dcu.ie` on port 6697. SSL is required for
-connection we do not support non-SSL.
+connection, we do not support non-SSL.
 
 When connecting from a redbrick server a user will be automatically logged in.
 If connecting from an external server a user must pass their password on login.
@@ -41,9 +41,9 @@ This config will be converted to xml on disc.
 
 #### Important Configuration
 
-_oper_ is a list of admin users on the irc server. Their OPER password will need
-to be manually hashes with hmac-sha256 and placed in a secret on the server to
-be read in and placed in a secret on the server to be read in.
+_oper_ is a list of admin users on the irc server. Their `OPER` password will
+need to be manually hashed with `hmac-sha256`, and placed in a secret on the
+server to be read in by inspircd
 
 _ldapwhitelist_ is a list of cidr addresses that do no require authentication.
 The list consists of Redbrick public and private addresses as well as `oldsoc`
@@ -77,7 +77,7 @@ We run a [bridge](https://github.com/qaisjp/go-discord-irc) between Redbrick
 discord and irc. The configuration for this is
 [here](https://github.com/redbrick/nix-configs/tree/master/services/ircd/discord/conf.nix).
 
-The bridge adds all users to from discord with the suffix `_d2` and all irc
+The bridge adds all users from discord with the suffix `_d2` and all irc
 users appear as them self but tagged as a bot in discord. Not all discord
 channels are on IRC, the config above contains a mapping of irc channels to
 discord channels id's. This needs to be manually updated to add more channels.

@@ -6,10 +6,10 @@ bitlbee is run using the nixos bitlbee service, see
 [here](https://search.nixos.org/options?query=services.bitlbee) for config
 options.
 
-We use default bitlbee settings. Its settings can be found in
+We use the default bitlbee settings. Its settings can be found in
 [nixos repo](https://github.com/redbrick/nix-configs/blob/master/services/bitlbee.nix).
 
-`bitlbee.redbrick.dcu.ie` is not expose externally. It is available at
+`bitlbee.redbrick.dcu.ie` is not exposed externally. It is available at
 `bitlbee.internal`. For legacy support `bitlbee.redbrick.dcu.ie` is added to the
 host files of all boxes to point to the internal address.
 
