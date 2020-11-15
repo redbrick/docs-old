@@ -55,11 +55,11 @@ zpool create \
         -O xattr=sa \
         -O dnodesize=2k \
         -O mountpoint=none \
-        -O failmode=continue \
-        -O autoexpand=on \
+        -o failmode=continue \
+        -o autoexpand=on \
         -o comment="$HOSTNAME ZFS" \
         -o ashift=12 \
-        zroot /dev/disk/by-partuuid/$PARTUUID
+        zbackup /dev/disk/by-partuuid/$PARTUUID
 zfs create -o mountpoint=legacy zroot/nixos
 zfs create -o mountpoint=legacy -o atime=off zroot/nixos/store
 ```
@@ -77,7 +77,7 @@ Reasoning behind each property:
 - `xattr=sa` `dnodesize=2k`: Enable extended attributes and a larger space to store them.
 - `faimode=continue`: Keep reading if possible if there is a disk failure
 - `autoexpand=on`: If the disks are replaced, grow to the maximum size. U.
-- `ashift=12`: 4kib sector alignment for compatibility with SSDs and HDDsseful for mirrors.
+- `ashift=12`: 4kib sector alignment for compatibility with SSDs and HDDs.
 
 <img src="../../img/nixos-install-partitions.png" alt="partition layout" />
 
