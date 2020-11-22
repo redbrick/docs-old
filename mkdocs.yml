@@ -41,7 +41,6 @@ nav:
   - Plans:
       - Project Ideas: plans/project-ideas.md
   - Services:
-      - Backuppc: services/backuppc.md
       - Bind9: services/bind9.md
       - Bitlbee: services/bitlbee.md
       - Git: services/git.md
@@ -58,6 +57,7 @@ nav:
       - Postgres: services/postgres.md
       - Tunnel.redbrick.dcu.ie: services/tunnel.redbrick.dcu.ie.md
       - Unified MOTD: services/unifiedmotd.md
+      - ZnapZend: services/znapzend.md
   - Mail:
       - General: mail/index.md
       - Postfix: mail/postfix.md
@@ -91,7 +91,6 @@ nav:
       - Pwsafe: procedures/pwsafe.md
       - RRS: procedures/rrs.md
       - Redbrick-apt: procedures/redbrick-apt.md
-      - Severus Colocation: procedures/severuscolocation.md
       - Switch: procedures/switch.md
       - Ticketing: procedures/ticketing.md
       - Using NixOS: procedures/nixos.md

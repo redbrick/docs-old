@@ -17,6 +17,10 @@ Mostly used for backups.
 - Albus's IP is `0.56`
 - Its iDRAC IP is `1.56`
 
+## Services
+
+- [ZnapZend](/services/znapzend)
+
 ## Installation Notes
 
 - Hardware RAID must be set up in the BIOS or using MegaCli64.
