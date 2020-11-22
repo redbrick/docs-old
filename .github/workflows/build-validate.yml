@@ -15,7 +15,7 @@ jobs:
       with:
         python-version: 3
     - name: Set up Ruby
-      uses: ruby/setup-ruby@v1.39.0
+      uses: ruby/setup-ruby@v1.52.0
       with:
         ruby-version: ruby
     - uses: actions/checkout@v2
