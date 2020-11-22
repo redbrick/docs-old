@@ -23,7 +23,7 @@ ipmitool lan set 1 defgw ipaddr 192.168.1.254
 ipmitool lan print 1
 ```
 
-- Give it about a minute to activate. If it doesn't work reset the idrac.
+- Give it about a minute to activate. If it doesn't work reboot the idrac.
 
 ```bash
 ipmitool bmc reset cold
