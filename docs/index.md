@@ -68,8 +68,7 @@ Day to day running of things.
 
 #### Backups
 
-- [BackupPC](services/backuppc)
-- [Moving severus to CSD](procedures/severuscolocation)
+- [ZnapZend](services/znapzend)
 
 ---
 

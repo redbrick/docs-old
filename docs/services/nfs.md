@@ -21,8 +21,8 @@ which in turn serves `/home`, `/webtree`, and some other critical folders.
 - On each machine, `/storage` is where NFS is mounted, but `/home` and
   `/webtree` are symlinks into there.
 - There are 2 scripts used to control quotas, detailed below
-- This is supposed to backup to [Albus](/hardware/albus) using
-  [backuppc](/services/backuppc), but it's broken at the moment
+- NFS is backed up to [Albus](/hardware/albus) using
+  [ZnapZend](/services/znapzend).
 
 ## `zfsquota` and `zfsquotaquery`
 
@@ -111,3 +111,7 @@ mount -o remount,ro /storage
 
 # Not much left you can do but remount entirely or reboot
 ```
+
+### Rolling back or restoring a backup
+
+See [ZnapZend](../znapzend#rolling-back-nfs).
