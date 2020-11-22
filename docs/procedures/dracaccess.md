@@ -2,66 +2,22 @@
 
 ## Overview
 
-Our two poweredges have a DRAC, an embedded 'Dell Remote Access Controller' This
-allows us to:
+Most of our servers are Dell, and feature an integrated Dell
+Remote Access Controller (AKA iDRAC). This allows us to perform
+hard and soft reboots of the servers, get VNC access* to the host.
 
-- Perform remote reboots, shutdown, power up.
-- View the actual VGA console, and even use it, but incredibly slowly.
-- View all sorts of sensor information.
+The iDRAC can be accessed in 3 ways. The most convenient is usually
+over the web GUI. `ipmitool` can also be used on the host's OS to
+connect to its respective iDRAC. You can also use `ipmitool` to connect
+to remote iDRACs. In all cases, the username is root and the password
+is in the password safe.
 
-These embedded systems are running a few services like ftp, https, vnc, but
-we're only interested in https, the others aren't really useful on their own and
-should be ignored.
+\* Not all of our hosts have iDRAC enterprise licences, and those
+which do may require a java applet to run the VNC client (use icedtea
+to run it).
 
-They are protected by ssl and a username/password, but since we don't want them
-being fucked with, they're physically seperated from our other networks.
+## Networking
 
-The only machine on our network that can access these is currently
-sprout.redbrick.dcu.ie. T
-
-The DRAC network is: 192.168.1.x - don't confuse this with our internal network,
-192.168.0.x!
-
-Note that carbon is on .2 because at some point there was a gateway on .1, or
-crap.
-
-## DRAC network diagram
-
-```graphviz
-  digraph DRAC {
-    nodesep=1.0
-    rankdir=LR
-    node [color=Red,fontname=Courier,shape=Mrecord]
-    edge [color=Blue, style=dashed]
-    sprout [label="{sprout|.8}"]
-    carbon [label="{carbon | DRAC | .1}"]
-    deathray [label="{deathray | DRAC | .3}"]
-    murphy [label="{murphy | ALOM | .14}"]
-    cynic [label="{cynic | RSC | .23}"]
-    pike [label="{pike | IP-KVM | .123}"]
-    sprout->hub
-    hub->{carbon deathray murphy cynic pike}
-  }
-```
-
-To access the DRAC on either machine, you'll need to do some ssh port forwarding
-via sprout.
-
-Forward local port 443 to 192.168.1.3 via fap.
-
-`ssh -L 443:192.168.1.3:443 username@b4.redbrick.dcu.ie`
-
-Open [https://localhost](https://localhost:443/) in your browser and you should
-have the requested machine's DRAC login page there. Eventually. They're slow
-fuckers. You can get the login details from pwsafe.
-
-## Quirks
-
-You'll need a browser with a JRE to get anywhere. The remote console doesn't
-appear to work with ssh forwarding, I think one may need to forward port 5900
-(vnc) too, but not sure.
-
-Ryaner - 5901 is where the vnc comes from. You'll need to forward that or remote
-listen for it. I did both and it worked so.
-
--- phaxx - 28/04/05
+All iDRACs are on the management VLAN (2) with IPs in the subnet
+192.168.1.0/24. See [the configuration procedure](./idrac-setup) for
+more info.
