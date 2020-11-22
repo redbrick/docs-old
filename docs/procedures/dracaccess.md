@@ -19,5 +19,5 @@ to run it).
 ## Networking
 
 All iDRACs are on the management VLAN (2) with IPs in the subnet
-192.168.1.0/24. See [the configuration procedure](./idrac-setup) for
+192.168.1.0/24. See [the configuration procedure](../idrac-setup) for
 more info.
