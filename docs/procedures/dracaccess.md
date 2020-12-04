@@ -21,3 +21,9 @@ to run it).
 All iDRACs are on the management VLAN (2) with IPs in the subnet
 192.168.1.0/24. See [the configuration procedure](../idrac-setup) for
 more info.
+
+## Remote Console Access
+
+ylmcc found a piece of software for connecting to the idrac.
+It has been configured and uploaded to a Google Drive folder [here](https://drive.google.com/folderview?id=1Q2qgqcWYgQ3rAVJx-n2uqF0xo4qQ97fk).
+You will need to use your DCU email address to access it.
