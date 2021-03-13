@@ -21,9 +21,9 @@ the ZnapZend backups.
 1. Create an SSH key for the root user with no password on
    the host you want to send the backups from. Use
    `ssh-keygen -t ed25519`.
-2. Add this new SSH public key to the znapzend user's authorized
+2. Add this new SSH public key to the rbbackup user's authorized
    keys [on Albus](https://github.com/redbrick/nix-configs/blob/5ddaf2097a3267b871368fea73a530e399381b4a/hosts/albus/configuration.nix#L32).
-3. Try sshing to `znapzend@albus.internal` to load the host key and
+3. Try sshing to `rbbackup@albus.internal` to load the host key and
    test the passwordless authentication.
 4. Import the [znapzend service config](https://github.com/redbrick/nix-configs/blob/5ddaf2097a3267b871368fea73a530e399381b4a/services/znapzend.nix)
    on the sending host and configure `redbrick.znapzendSourceDataset`
