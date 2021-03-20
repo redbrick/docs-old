@@ -68,6 +68,7 @@ Day to day running of things.
 
 #### Backups
 
+- [RBBackup](services/rbbackup)
 - [ZnapZend](services/znapzend)
 
 ---

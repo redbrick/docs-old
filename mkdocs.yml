@@ -55,6 +55,7 @@ nav:
       - News: services/news.md
       - Pastebin: services/paste.md
       - Postgres: services/postgres.md
+      - RBBackup: services/rbbackup.md
       - Tunnel.redbrick.dcu.ie: services/tunnel.redbrick.dcu.ie.md
       - Unified MOTD: services/unifiedmotd.md
       - ZnapZend: services/znapzend.md
