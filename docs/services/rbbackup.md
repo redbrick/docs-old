@@ -3,7 +3,7 @@
 ## Overview
 
 Redbrick backup is a custom script run as a Systemd service on
-configured NixOS machines which rsyncs files over to [Albus](../hardware/albus).
+configured NixOS machines which rsyncs files over to [Albus](../../hardware/albus/).
 It is managed by a few custom NixOS options (`redbrick.rbbackup`)
 defined in our [nix-configs](https://github.com/redbrick/nix-configs/blob/master/common/options.nix#L75)
 repo.
@@ -31,7 +31,7 @@ repo.
   means you don't need to worry about interfering with other configured
   backups on the same system.
 - If the system you are backing up uses ZFS, and you are considering
-  rsync'ing an entire dataset, please use [znapzend](./znapsend) instead.
+  rsync'ing an entire dataset, please use [znapzend](../znapzend/) instead.
 - `zbackup/generic` already has ZFS compression (zstd-5) configured, so
   there's no real need to compress your backups unless it makes a significant
   time saving during the rsync (e.g. SQL dumps compress really well).
@@ -42,7 +42,7 @@ Setting up of RBBackup isn't completely automatic - you must
 create an SSH key for root on the source host and add it to
 the rbbackup user's authorised keys. These are the same steps
 taken when preparing to use ZnapZend on a machine, so follow
-the steps [there](./znapzend#adding-another-backup).
+the steps [there](../znapzend/#adding-another-backup).
 
 ## Configuring a new backup
 
@@ -72,7 +72,7 @@ The below example is based on our existing LDAP backup configuration.
 3. Configure the backup sources which will be rsync'ed to Albus. Relative and
    absolute paths are supported.
 
-```bash
+```nix
   redbrick.rbbackup.sources = [ "ldap.ldif.gz" ];
 ```
 
